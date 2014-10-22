@@ -11,6 +11,6 @@ package javaapplication1;
  */
 public class Castrellon {
      public static void main(String[] args){
-         System.out.println("YA CHINGAMOS");
+         System.out.println("Ya se hizo la machaca");
      }
 }

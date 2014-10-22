@@ -10,5 +10,7 @@ package javaapplication1;
  * @author ISW-USER Marcos
  */
 public class Castrellon {
-    
+     public static void main(String[] args){
+         System.out.println("YA CHINGAMOS");
+     }
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistaadministrador.docentes;
+package inicio.usuarios.admimistrador.cuatrimestres;
 
 /**
  *
  * @author ISW-USER
  */
-public class P3 {
+public class prueba {
     
 }

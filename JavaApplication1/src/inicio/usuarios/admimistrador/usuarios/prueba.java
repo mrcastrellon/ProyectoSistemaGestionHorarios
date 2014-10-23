@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package inicio.usuarios.admimistrador.usuarios;
 
 /**
  *
  * @author ISW-USER
  */
-public class vistausuario {
+public class prueba {
     
 }

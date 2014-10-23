@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistausuario;
+package inicio.usuarios.admimistrador.horariosalumnos;
 
 /**
  *
  * @author ISW-USER
  */
-public class porsiseofrece2 {
+public class prueba {
     
 }

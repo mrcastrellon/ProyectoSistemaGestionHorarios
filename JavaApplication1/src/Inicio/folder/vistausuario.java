@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package Vista;
 
 /**
  *
- * @author ISW-USER Marcos
+ * @author ISW-USER
  */
-public class Castrellon {
-     public static void main(String[] args){
-         System.out.println("Ya se hizo la machaca");
-     }
+public class vistausuario {
+    
 }

@@ -12,12 +12,12 @@ import inicio.usuarios.admimistrador.cuatrimestres.*;
  *
  * @author BENJAMIN
  */
-public class AltasUsuarios extends javax.swing.JFrame {
+public class AsignaciondePrivilegios extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public AltasUsuarios() {
+    public AsignaciondePrivilegios() {
         initComponents();
     }
 
@@ -47,21 +47,27 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         AsignarMaterias = new javax.swing.JButton();
-        AltasdeUsuarios = new javax.swing.JButton();
+        AltasUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
-        ModificaciondeUsuarios = new javax.swing.JButton();
+        ModificarUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
-        AltaUsuario = new javax.swing.JLabel();
-        AltaNombre = new javax.swing.JLabel();
-        AltaContraseña = new javax.swing.JLabel();
-        AltaConfirmarContraseña = new javax.swing.JLabel();
-        AltaIngresaNombre = new javax.swing.JTextField();
-        AltaIngresaUsuario = new javax.swing.JTextField();
-        AltaIngresaContraseña = new javax.swing.JPasswordField();
-        AltaIngresaConfirmarContrseña = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        AltaGuardar = new javax.swing.JButton();
+        AsignarPrivilegiosCuatrimestre = new javax.swing.JLabel();
+        AsignarPrivilegiosDocente = new javax.swing.JLabel();
+        AsignarPrivilegiosHorariosExternos = new javax.swing.JLabel();
+        AsignarPrivilegiosHorariosAlumnos = new javax.swing.JLabel();
+        AsignarPrivilegiosAsignarMateria = new javax.swing.JLabel();
+        AsignarPrivilegiosUsuarios = new javax.swing.JLabel();
+        AsignarPrivilegiosGeneraciondeHorarios = new javax.swing.JLabel();
+        PermitirAccesoCuatrimestres = new javax.swing.JCheckBox();
+        PermitirAccesoDocentes = new javax.swing.JCheckBox();
+        PermitirAccesoHorariosExternos = new javax.swing.JCheckBox();
+        PermitirAccesoHorariosAlumnos = new javax.swing.JCheckBox();
+        PermitirAccesoAsignarMateria = new javax.swing.JCheckBox();
+        PermitirAccesoUsuarios = new javax.swing.JCheckBox();
+        PermitirAccesoGeneraciondeHorarios = new javax.swing.JCheckBox();
+        AsignarPrivilegiosGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -162,7 +168,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(401, 401, 401))
+                .addGap(400, 400, 400))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,19 +186,19 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
 
-        AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltasdeUsuarios.setText("Altas de Usuarios");
-        AltasdeUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        AltasUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AltasUsuarios.setText("Altas de Usuarios");
+        AltasUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AltasdeUsuariosActionPerformed(evt);
+                AltasUsuariosActionPerformed(evt);
             }
         });
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Asignacion de Privilegios");
 
-        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Modificar Usuarios");
+        ModificarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        ModificarUsuarios.setText("Modificar Usuarios");
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Consultar Usuarios");
@@ -202,34 +208,64 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
 
-        AltaUsuario.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AltaUsuario.setText("Usuario");
-
-        AltaNombre.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AltaNombre.setText("Nombre");
-
-        AltaContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AltaContraseña.setText("Contraseña");
-
-        AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AltaConfirmarContraseña.setText("Confirmar Contraseña");
-
-        AltaIngresaNombre.setText("Ingresa Nombre");
-
-        AltaIngresaUsuario.setText("Ingresa Usuario");
-
-        AltaIngresaContraseña.setText("jPasswordField1");
-
-        AltaIngresaConfirmarContrseña.setText("jPasswordField2");
-
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText("Altas Usuarios");
+        jLabel9.setText("Asignar Privilegios");
 
-        AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        AltaGuardar.setText("Guardar");
+        AsignarPrivilegiosCuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosCuatrimestre.setText("Cuatrimestres");
+
+        AsignarPrivilegiosDocente.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosDocente.setText("Docentes");
+
+        AsignarPrivilegiosHorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosHorariosExternos.setText("Horarios Externos");
+
+        AsignarPrivilegiosHorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosHorariosAlumnos.setText("Horarios Alumnos");
+
+        AsignarPrivilegiosAsignarMateria.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosAsignarMateria.setText("Asignar Materias");
+
+        AsignarPrivilegiosUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosUsuarios.setText("Usuarios");
+
+        AsignarPrivilegiosGeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignarPrivilegiosGeneraciondeHorarios.setText("Generación de Horarios");
+
+        PermitirAccesoCuatrimestres.setText("Permitir Acceso");
+
+        PermitirAccesoDocentes.setText("Permitir Acceso");
+        PermitirAccesoDocentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PermitirAccesoDocentesActionPerformed(evt);
+            }
+        });
+
+        PermitirAccesoHorariosExternos.setText("Permitir Acceso");
+
+        PermitirAccesoHorariosAlumnos.setText("Permitir Acceso");
+        PermitirAccesoHorariosAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PermitirAccesoHorariosAlumnosActionPerformed(evt);
+            }
+        });
+
+        PermitirAccesoAsignarMateria.setText("Permitir Acceso");
+
+        PermitirAccesoUsuarios.setText("Permitir Acceso");
+
+        PermitirAccesoGeneraciondeHorarios.setText("Permitir Acceso");
+        PermitirAccesoGeneraciondeHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PermitirAccesoGeneraciondeHorariosActionPerformed(evt);
+            }
+        });
+
+        AsignarPrivilegiosGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        AsignarPrivilegiosGuardar.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -268,44 +304,42 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AltasUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ModificarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(527, 527, 527))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(577, 577, 577))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(592, 592, 592))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AltaConfirmarContraseña))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AltaNombre)
-                            .addComponent(AltaUsuario)
-                            .addComponent(AltaContraseña))))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AltaGuardar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(AltaIngresaNombre)
-                        .addComponent(AltaIngresaUsuario)
-                        .addComponent(AltaIngresaContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(AltaIngresaConfirmarContrseña)))
-                .addGap(298, 298, 298))
+                            .addComponent(AsignarPrivilegiosCuatrimestre)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AsignarPrivilegiosDocente)
+                            .addComponent(AsignarPrivilegiosHorariosExternos)
+                            .addComponent(AsignarPrivilegiosAsignarMateria)
+                            .addComponent(AsignarPrivilegiosUsuarios)
+                            .addComponent(AsignarPrivilegiosGeneraciondeHorarios)
+                            .addComponent(AsignarPrivilegiosHorariosAlumnos))
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PermitirAccesoCuatrimestres)
+                            .addComponent(PermitirAccesoDocentes)
+                            .addComponent(PermitirAccesoHorariosExternos)
+                            .addComponent(PermitirAccesoHorariosAlumnos)
+                            .addComponent(PermitirAccesoAsignarMateria)
+                            .addComponent(PermitirAccesoUsuarios)
+                            .addComponent(PermitirAccesoGeneraciondeHorarios)
+                            .addComponent(AsignarPrivilegiosGuardar))
+                        .addGap(338, 338, 338))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(577, 577, 577))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,34 +373,57 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addGap(74, 74, 74)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AltasdeUsuarios)
-                    .addComponent(AltaNombre)
-                    .addComponent(AltaIngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(AltasUsuarios)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AsignarPrivilegiosCuatrimestre)
+                            .addComponent(PermitirAccesoCuatrimestres))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AsignarPrivilegiosDocente)
+                            .addComponent(PermitirAccesoDocentes))
+                        .addGap(19, 19, 19)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
-                    .addComponent(AltaUsuario)
-                    .addComponent(AltaIngresaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModificaciondeUsuarios)
-                    .addComponent(AltaContraseña)
-                    .addComponent(AltaIngresaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConsultarUsuarios)
-                    .addComponent(AltaConfirmarContraseña)
-                    .addComponent(AltaIngresaConfirmarContrseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(AltaGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AsignarPrivilegiosHorariosExternos)
+                    .addComponent(PermitirAccesoHorariosExternos))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ModificarUsuarios)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AsignarPrivilegiosHorariosAlumnos)
+                        .addComponent(PermitirAccesoHorariosAlumnos)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(ConsultarUsuarios)
+                        .addGap(0, 185, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AsignarPrivilegiosAsignarMateria)
+                            .addComponent(PermitirAccesoAsignarMateria))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AsignarPrivilegiosUsuarios)
+                            .addComponent(PermitirAccesoUsuarios))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AsignarPrivilegiosGeneraciondeHorarios)
+                            .addComponent(PermitirAccesoGeneraciondeHorarios))
+                        .addGap(18, 18, 18)
+                        .addComponent(AsignarPrivilegiosGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -404,13 +461,25 @@ public class AltasUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DocentesActionPerformed
 
-    private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
+    private void AltasUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasUsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AltasdeUsuariosActionPerformed
+    }//GEN-LAST:event_AltasUsuariosActionPerformed
 
     private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
+
+    private void PermitirAccesoDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PermitirAccesoDocentesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PermitirAccesoDocentesActionPerformed
+
+    private void PermitirAccesoHorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PermitirAccesoHorariosAlumnosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PermitirAccesoHorariosAlumnosActionPerformed
+
+    private void PermitirAccesoGeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PermitirAccesoGeneraciondeHorariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PermitirAccesoGeneraciondeHorariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,37 +498,36 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignaciondePrivilegios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignaciondePrivilegios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignaciondePrivilegios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignaciondePrivilegios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AltasUsuarios().setVisible(true);
+                new AsignaciondePrivilegios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AltaConfirmarContraseña;
-    private javax.swing.JLabel AltaContraseña;
-    private javax.swing.JButton AltaGuardar;
-    private javax.swing.JPasswordField AltaIngresaConfirmarContrseña;
-    private javax.swing.JPasswordField AltaIngresaContraseña;
-    private javax.swing.JTextField AltaIngresaNombre;
-    private javax.swing.JTextField AltaIngresaUsuario;
-    private javax.swing.JLabel AltaNombre;
-    private javax.swing.JLabel AltaUsuario;
-    private javax.swing.JButton AltasdeUsuarios;
+    private javax.swing.JButton AltasUsuarios;
     private javax.swing.JButton AsignaciondePrivilegios;
     private javax.swing.JButton AsignarMaterias;
+    private javax.swing.JLabel AsignarPrivilegiosAsignarMateria;
+    private javax.swing.JLabel AsignarPrivilegiosCuatrimestre;
+    private javax.swing.JLabel AsignarPrivilegiosDocente;
+    private javax.swing.JLabel AsignarPrivilegiosGeneraciondeHorarios;
+    private javax.swing.JButton AsignarPrivilegiosGuardar;
+    private javax.swing.JLabel AsignarPrivilegiosHorariosAlumnos;
+    private javax.swing.JLabel AsignarPrivilegiosHorariosExternos;
+    private javax.swing.JLabel AsignarPrivilegiosUsuarios;
     private javax.swing.JButton CerrarSesion;
     private javax.swing.JButton ConsultarUsuarios;
     private javax.swing.JButton Cuatrimestre;
@@ -468,8 +536,15 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton HorariosAlumnos;
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
-    private javax.swing.JButton ModificaciondeUsuarios;
+    private javax.swing.JButton ModificarUsuarios;
     private javax.swing.JLabel NombredelUsuario;
+    private javax.swing.JCheckBox PermitirAccesoAsignarMateria;
+    private javax.swing.JCheckBox PermitirAccesoCuatrimestres;
+    private javax.swing.JCheckBox PermitirAccesoDocentes;
+    private javax.swing.JCheckBox PermitirAccesoGeneraciondeHorarios;
+    private javax.swing.JCheckBox PermitirAccesoHorariosAlumnos;
+    private javax.swing.JCheckBox PermitirAccesoHorariosExternos;
+    private javax.swing.JCheckBox PermitirAccesoUsuarios;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JLabel jLabel2;

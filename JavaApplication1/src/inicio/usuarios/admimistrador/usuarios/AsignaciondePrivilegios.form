@@ -42,9 +42,9 @@
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="LogoUnipoli" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="NombredelUsuario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="CerrarSesion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
@@ -56,7 +56,7 @@
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="HorariosAlumnos" min="-2" pref="148" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="HorariosAlumnos1" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="AsignarMaterias" min="-2" pref="148" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="Usuarios" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -69,24 +69,46 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AltasUsuarios" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AsignaciondePrivilegios" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ModificarUsuarios" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ConsultarUsuarios" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="ImagenUnipoli" min="-2" pref="986" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel2" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="527" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="AsignarPrivilegiosCuatrimestre" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="222" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosDocente" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosHorariosExternos" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosAsignarMateria" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosUsuarios" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosGeneraciondeHorarios" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosHorariosAlumnos" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="PermitirAccesoCuatrimestres" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoDocentes" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoHorariosExternos" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoHorariosAlumnos" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoAsignarMateria" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoUsuarios" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoGeneraciondeHorarios" min="-2" max="-2" attributes="0"/>
+                          <Component id="AsignarPrivilegiosGuardar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="588" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel8" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="577" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -101,8 +123,8 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="LogoUnipoli" min="-2" pref="56" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CerrarSesion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NombredelUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
@@ -122,31 +144,77 @@
                   <Component id="HorariosAlumnos" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Usuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="GeneraciondeHorarios" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="HorariosAlumnos1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AsignarMaterias" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="AltasUsuarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="ImagenUnipoli" min="-2" pref="312" max="-2" attributes="0"/>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="AsignarPrivilegiosCuatrimestre" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoCuatrimestres" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AsignarPrivilegiosDocente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoDocentes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AsignarPrivilegiosHorariosExternos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PermitirAccesoHorariosExternos" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="ModificarUsuarios" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="AsignarPrivilegiosHorariosAlumnos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PermitirAccesoHorariosAlumnos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="185" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AsignarPrivilegiosAsignarMateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoAsignarMateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AsignarPrivilegiosUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AsignarPrivilegiosGeneraciondeHorarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PermitirAccesoGeneraciondeHorarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="AsignarPrivilegiosGuardar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" pref="23" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -275,14 +343,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="ImagenUnipoli">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Cabina Interactiva\Documents\NetBeansProjects\imagenes\politecnica_1.jpg"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="CerrarSesion">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="66" red="ff" type="rgb"/>
@@ -293,10 +354,10 @@
         <Property name="text" type="java.lang.String" value="Cerrrar sesi&#xf3;n"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CerrarSesionActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="NombredelUsuario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre del Usuario"/>
       </Properties>
@@ -328,7 +389,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel3" min="-2" pref="420" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="394" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="400" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -352,7 +413,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="HorariosAlumnos1">
+    <Component class="javax.swing.JButton" name="AsignarMaterias">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="66" red="ff" type="rgb"/>
@@ -363,45 +424,169 @@
         <Property name="text" type="java.lang.String" value="Asignar Materias"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HorariosAlumnos1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AsignarMateriasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="AltasUsuarios">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Generacion de Horario"/>
+        <Property name="text" type="java.lang.String" value="Altas de Usuarios"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AltasUsuariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="AsignaciondePrivilegios">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Consultar Horario"/>
+        <Property name="text" type="java.lang.String" value="Asignacion de Privilegios"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="ModificarUsuarios">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Exportar Horario"/>
+        <Property name="text" type="java.lang.String" value="Modificar Usuarios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ConsultarUsuarios">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Consultar Usuarios"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarUsuariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="11" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Usuarios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="11" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asignar Privilegios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosCuatrimestre">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cuatrimestres"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosDocente">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Docentes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosHorariosExternos">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Horarios Externos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosHorariosAlumnos">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Horarios Alumnos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosAsignarMateria">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asignar Materias"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosUsuarios">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Usuarios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AsignarPrivilegiosGeneraciondeHorarios">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Generaci&#xf3;n de Horarios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoCuatrimestres">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoDocentes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PermitirAccesoDocentesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoHorariosExternos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoHorariosAlumnos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PermitirAccesoHorariosAlumnosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoAsignarMateria">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoUsuarios">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="PermitirAccesoGeneraciondeHorarios">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Permitir Acceso"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PermitirAccesoGeneraciondeHorariosActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="AsignarPrivilegiosGuardar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="11" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -132,7 +132,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTION DE HORARIOS");
 
-        LogoUnipoli.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cabina Interactiva\\Documents\\NetBeansProjects\\imagenes\\descarga.jpg")); // NOI18N
+        LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
         CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
         CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N

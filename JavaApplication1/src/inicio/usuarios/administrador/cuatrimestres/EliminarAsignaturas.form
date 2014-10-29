@@ -40,7 +40,7 @@
                       <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
                       <Component id="SGH" min="-2" pref="414" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="LogoUnipoli" pref="323" max="32767" attributes="0"/>
+                      <Component id="LogoUnipoli" pref="329" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="NombredelUsuario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -275,7 +275,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Franklin Gothic Demi" size="24" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="SISTEMA DE GESTION DE HORARIOS"/>
+        <Property name="text" type="java.lang.String" value="SISTEMA DE GESTI&#xd3;N DE HORARIOS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LogoUnipoli">
@@ -293,7 +293,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cerrrar sesi&#xf3;n"/>
+        <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CerrarSesionActionPerformed"/>

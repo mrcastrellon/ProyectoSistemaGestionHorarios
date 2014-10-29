@@ -132,13 +132,13 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        SGH.setText("SISTEMA DE GESTION DE HORARIOS");
+        SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
         CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
         CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        CerrarSesion.setText("Cerrrar sesión");
+        CerrarSesion.setText("Cerrar sesión");
         CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CerrarSesionActionPerformed(evt);
@@ -279,7 +279,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(NombredelUsuario)
                         .addGap(32, 32, 32)

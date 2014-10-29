@@ -6,11 +6,16 @@
 
 package inicio;
 
-import inicio.usuarios.admimistrador.cuatrimestres.*;
+import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
+import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
+import inicio.usuarios.administrador.docentes.AltadeDocentes;
+import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
+import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.IngresaralSistema;
+
 
 /**
  *
- * @author BENJAMIN
  */
 public class Interfaz extends javax.swing.JFrame {
 
@@ -260,7 +265,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
- 
+       // Link para modulo usuarios
+        AltasUsuarios obj=new AltasUsuarios();
+        obj.setVisible(true);
+        dispose();
        
     }//GEN-LAST:event_UsuariosActionPerformed
 
@@ -269,16 +277,25 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-       
+      // Link para modulo cuatrimestres
+        AltasAsignaturas obj=new AltasAsignaturas();
+        obj.setVisible(true);
+        dispose();
        
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // TODO add your handling code here:
+           // Link para modulo horarios alumnos
+        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo cerrar sesion
+        IngresaralSistema obj=new IngresaralSistema();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
@@ -286,7 +303,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo docentes
+        AltadeDocentes obj=new AltadeDocentes();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_DocentesActionPerformed
 
     /**

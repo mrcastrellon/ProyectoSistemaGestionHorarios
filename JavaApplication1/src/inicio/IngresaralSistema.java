@@ -5,7 +5,7 @@
  */
 
 package inicio;
-import inicio.usuarios.admimistrador.cuatrimestres.*;
+import inicio.*;
 import javax.swing.*;
 
 /**
@@ -30,24 +30,15 @@ public class IngresaralSistema extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Cuatrimestre = new javax.swing.JButton();
-        Docentes = new javax.swing.JButton();
-        HorariosExternos = new javax.swing.JButton();
-        HorariosAlumnos = new javax.swing.JButton();
-        Usuarios = new javax.swing.JButton();
-        GeneraciondeHorarios = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         SGH = new javax.swing.JLabel();
         LogoUnipoli = new javax.swing.JLabel();
         ImagenUnipoli = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        HorariosAlumnos1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -58,61 +49,6 @@ public class IngresaralSistema extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
-        Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Cuatrimestre.setText("Cuatrimestre");
-        Cuatrimestre.setAlignmentX(0.1F);
-        Cuatrimestre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CuatrimestreActionPerformed(evt);
-            }
-        });
-
-        Docentes.setBackground(new java.awt.Color(255, 102, 0));
-        Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Docentes.setText("Docentes");
-        Docentes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DocentesActionPerformed(evt);
-            }
-        });
-
-        HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosExternos.setText("Horarios Externos");
-        HorariosExternos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosExternosActionPerformed(evt);
-            }
-        });
-
-        HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos.setText("Horarios Alumnos");
-        HorariosAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnosActionPerformed(evt);
-            }
-        });
-
-        Usuarios.setBackground(new java.awt.Color(255, 102, 0));
-        Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Usuarios.setText("Usuarios");
-        Usuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosActionPerformed(evt);
-            }
-        });
-
-        GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
-        GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        GeneraciondeHorarios.setText("Generación de Horarios");
-        GeneraciondeHorarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneraciondeHorariosActionPerformed(evt);
-            }
-        });
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
 
@@ -126,17 +62,6 @@ public class IngresaralSistema extends javax.swing.JFrame {
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
         ImagenUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
-
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Pagina Principal");
@@ -164,15 +89,6 @@ public class IngresaralSistema extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos1.setText("Asignar Materias");
-        HorariosAlumnos1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnos1ActionPerformed(evt);
-            }
-        });
-
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel4.setText("Usuario");
 
@@ -198,33 +114,11 @@ public class IngresaralSistema extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Cuatrimestre)
-                        .addGap(37, 37, 37)
-                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(HorariosExternos)
-                        .addGap(52, 52, 52)
-                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GeneraciondeHorarios)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(233, 233, 233)
+                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(296, 296, 296))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,27 +141,14 @@ public class IngresaralSistema extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jLabel1)))
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios)
-                    .addComponent(HorariosAlumnos1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
@@ -295,38 +176,6 @@ public class IngresaralSistema extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosExternosActionPerformed
-
-    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuariosActionPerformed
-
-    private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
-
-    private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CuatrimestreActionPerformed
-
-    private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosAlumnosActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
-
-    private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DocentesActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
      String usuario= "Benjamin";
@@ -380,19 +229,10 @@ public class IngresaralSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cuatrimestre;
-    private javax.swing.JButton Docentes;
-    private javax.swing.JButton GeneraciondeHorarios;
-    private javax.swing.JButton HorariosAlumnos;
-    private javax.swing.JButton HorariosAlumnos1;
-    private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel ImagenUnipoli;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
-    private javax.swing.JButton Usuarios;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

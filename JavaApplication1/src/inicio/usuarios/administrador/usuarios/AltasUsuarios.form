@@ -8,7 +8,7 @@
       <Color blue="99" green="ff" red="99" type="rgb"/>
     </Property>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-      <Color id="Cursor Por defecto"/>
+      <Color id="Default Cursor"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -110,10 +110,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="AltaGuardar" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="AltaIngresaNombre" max="32767" attributes="0"/>
-                      <Component id="AltaIngresaUsuario" alignment="0" max="32767" attributes="0"/>
-                      <Component id="AltaIngresaContraseña" alignment="0" pref="150" max="32767" attributes="0"/>
-                      <Component id="AltaIngresaConfirmarContrseña" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nombre" max="32767" attributes="0"/>
+                      <Component id="usuario" alignment="0" max="32767" attributes="0"/>
+                      <Component id="contraseña" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="contraseña_conf" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
@@ -164,25 +164,25 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AltasdeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AltaIngresaNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AltaIngresaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="usuario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ModificaciondeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AltaIngresaContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contraseña" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ConsultarUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaConfirmarContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AltaIngresaConfirmarContrseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contraseña_conf" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="AltaGuardar" min="-2" max="-2" attributes="0"/>
@@ -470,22 +470,22 @@
         <Property name="text" type="java.lang.String" value="Confirmar Contrase&#xf1;a"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="AltaIngresaNombre">
+    <Component class="javax.swing.JTextField" name="nombre">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa Nombre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="AltaIngresaUsuario">
+    <Component class="javax.swing.JTextField" name="usuario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa Usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="AltaIngresaContrase&#xf1;a">
+    <Component class="javax.swing.JPasswordField" name="contrase&#xf1;a">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="AltaIngresaConfirmarContrse&#xf1;a">
+    <Component class="javax.swing.JPasswordField" name="contrase&#xf1;a_conf">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField2"/>
       </Properties>

@@ -95,6 +95,12 @@ public class IngresaralSistema extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Contraseña");
 
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+
         txtContraseña.setText("jPasswordField1");
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -192,6 +198,10 @@ public class IngresaralSistema extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "Usuario o Contraseña incorrecta..");
      }
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

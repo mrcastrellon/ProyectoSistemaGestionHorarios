@@ -62,7 +62,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
         AltaConfirmarContraseña = new javax.swing.JLabel();
-        AltaIngresaNombre = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
         AltaIngresaUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -232,7 +232,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Horas");
 
-        AltaIngresaNombre.setText("Ingresa Nombre");
+        nombre.setText("Ingresa Nombre");
 
         AltaIngresaUsuario.setText("Ingresa Usuario");
 
@@ -321,7 +321,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                                 .addComponent(jButton1))
                             .addComponent(AltaIngresaUsuario)
-                            .addComponent(AltaIngresaNombre)
+                            .addComponent(nombre)
                             .addComponent(jTextField1)
                             .addComponent(jTextField2))
                         .addGap(269, 269, 269))
@@ -370,7 +370,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
-                    .addComponent(AltaIngresaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
@@ -513,7 +513,6 @@ public class AltasAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel AltaConfirmarContraseña;
     private javax.swing.JLabel AltaContraseña;
     private javax.swing.JButton AltaGuardar;
-    private javax.swing.JTextField AltaIngresaNombre;
     private javax.swing.JTextField AltaIngresaUsuario;
     private javax.swing.JLabel AltaNombre;
     private javax.swing.JLabel AltaUsuario;
@@ -543,5 +542,6 @@ public class AltasAsignaturas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }

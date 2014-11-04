@@ -12,12 +12,12 @@ import inicio.usuarios.administrador.generaciondehorarios.*;
  *
  * @author BENJAMIN
  */
-public class AsinarAsignatura extends javax.swing.JFrame {
+public class AsignarAsignatura extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public AsinarAsignatura() {
+    public AsignarAsignatura() {
         initComponents();
     }
 

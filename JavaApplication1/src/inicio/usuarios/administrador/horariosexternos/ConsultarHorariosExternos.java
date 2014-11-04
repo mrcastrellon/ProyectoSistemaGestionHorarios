@@ -210,7 +210,7 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
         jLabel4.setText("Horarios Externos");
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel5.setText("Eliminar Horarios Externos");
+        jLabel5.setText("Baja Horarios Externos");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -284,7 +284,7 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addGap(554, 554, 554))
+                .addGap(564, 564, 564))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

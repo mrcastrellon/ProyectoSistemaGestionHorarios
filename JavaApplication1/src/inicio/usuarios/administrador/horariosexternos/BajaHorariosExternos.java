@@ -13,12 +13,12 @@ import inicio.usuarios.administrador.usuarios.Usuarios;
  *
  * @author BENJAMIN
  */
-public class EliminarHorariosExternos extends javax.swing.JFrame {
+public class BajaHorariosExternos extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public EliminarHorariosExternos() {
+    public BajaHorariosExternos() {
         initComponents();
     }
 

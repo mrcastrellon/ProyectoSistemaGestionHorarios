@@ -10,12 +10,12 @@ package inicio.usuarios.administrador.generaciondehorarios;
  *
  * @author BENJAMIN
  */
-public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
+public class PaginaPrincipalGeneraciondeHorarios extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public GeneraciondeHorariosDocente() {
+    public PaginaPrincipalGeneraciondeHorarios() {
         initComponents();
     }
 
@@ -50,7 +50,6 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,9 +193,6 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel4.setText("Generacion de Horarios");
 
-        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel5.setText("Generacion de Horario");
-
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton6.setText("Exportar Horario");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -220,9 +216,7 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(527, 527, 527))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(566, 566, 566))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,9 +292,7 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addGap(25, 25, 25)
+                        .addGap(48, 48, 48)
                         .addComponent(ImagenUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(99, 99, 99)
@@ -381,20 +373,20 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GeneraciondeHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PaginaPrincipalGeneraciondeHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GeneraciondeHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PaginaPrincipalGeneraciondeHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GeneraciondeHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PaginaPrincipalGeneraciondeHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GeneraciondeHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PaginaPrincipalGeneraciondeHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GeneraciondeHorariosDocente().setVisible(true);
+                new PaginaPrincipalGeneraciondeHorarios().setVisible(true);
             }
         });
     }
@@ -419,7 +411,6 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

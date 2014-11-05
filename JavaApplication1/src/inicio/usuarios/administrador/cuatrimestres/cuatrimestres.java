@@ -8,7 +8,6 @@ package inicio.usuarios.administrador.cuatrimestres;
 
 import inicio.IngresaralSistema;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
-import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.docentes.AltadeDocentes;
 import inicio.usuarios.administrador.cuatrimestres.AltasCuatrimestre;
 import inicio.usuarios.administrador.cuatrimestres.EliminarAsignaturas;

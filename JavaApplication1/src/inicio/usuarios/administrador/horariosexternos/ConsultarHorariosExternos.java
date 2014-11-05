@@ -212,6 +212,7 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel5.setText("Baja Horarios Externos");
 
+        jTable1.setBackground(new java.awt.Color(153, 255, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},

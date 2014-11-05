@@ -220,7 +220,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel9.setText(" Modificar Asignaturas");
 
-        jTable1.setBackground(new java.awt.Color(204, 255, 204));
+        jTable1.setBackground(new java.awt.Color(153, 255, 153));
         jTable1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

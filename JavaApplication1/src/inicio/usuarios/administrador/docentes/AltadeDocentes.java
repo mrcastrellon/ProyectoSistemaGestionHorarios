@@ -265,7 +265,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Correo");
 
-        jTextField1.setText("Escribe el nombre completo a dar de alta");
+        jTextField1.setText("Escribe el nombre completo del Docente a dar de alta");
 
         jTextField2.setText("Escribe la direccion completa del docente a  dar de alta");
 

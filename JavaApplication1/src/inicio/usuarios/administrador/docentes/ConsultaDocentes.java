@@ -241,6 +241,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Consultar Docentes");
 
+        jTable1.setBackground(new java.awt.Color(153, 255, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},

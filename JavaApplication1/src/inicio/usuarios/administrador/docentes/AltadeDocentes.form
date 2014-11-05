@@ -560,7 +560,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Escribe el nombre completo a dar de alta"/>
+        <Property name="text" type="java.lang.String" value="Escribe el nombre completo del Docente a dar de alta"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">

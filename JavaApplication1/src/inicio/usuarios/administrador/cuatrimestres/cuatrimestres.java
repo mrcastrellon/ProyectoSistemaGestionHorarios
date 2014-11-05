@@ -210,7 +210,7 @@ public class cuatrimestres extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Usuarios");
+        jLabel8.setText("Cuatrimestre");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

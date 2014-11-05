@@ -184,7 +184,7 @@ public class GeneraciondeHorariosDocente extends javax.swing.JFrame {
         jButton3.setText("Consultar Horario");
 
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton5.setText("Exportar Horario");
+        jButton5.setText("Modificar Horario");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);

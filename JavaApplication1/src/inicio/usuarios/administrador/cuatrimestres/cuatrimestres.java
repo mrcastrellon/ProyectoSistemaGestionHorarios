@@ -18,12 +18,12 @@ import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocen
  *
  * @author BENJAMIN
  */
-public class Cuatrimestre extends javax.swing.JFrame {
+public class cuatrimestre extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public Cuatrimestre() {
+    public cuatrimestre() {
         initComponents();
     }
 
@@ -58,7 +58,6 @@ public class Cuatrimestre extends javax.swing.JFrame {
         ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -213,9 +212,6 @@ public class Cuatrimestre extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
 
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText("Altas Asignaturas");
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
@@ -255,10 +251,6 @@ public class Cuatrimestre extends javax.swing.JFrame {
                         .addComponent(GeneraciondeHorarios)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(585, 585, 585))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,11 +302,9 @@ public class Cuatrimestre extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
+                        .addGap(97, 97, 97)
                         .addComponent(AltasdeUsuarios)
                         .addGap(32, 32, 32)
                         .addComponent(AsignaciondePrivilegios)
@@ -323,7 +313,7 @@ public class Cuatrimestre extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(ConsultarUsuarios))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(66, 66, 66)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -460,7 +450,6 @@ public class Cuatrimestre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

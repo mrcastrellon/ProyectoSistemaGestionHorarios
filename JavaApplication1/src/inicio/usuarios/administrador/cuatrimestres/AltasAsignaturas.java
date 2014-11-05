@@ -438,7 +438,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
         // Link para modulo horarios alumnos
-        HorarioAlumnos obj=new HorariosAlumnos();
+        HorariosAlumnos obj=new HorariosAlumnos();
         obj.setVisible(true);
         dispose();
 

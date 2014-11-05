@@ -7,14 +7,23 @@
 package inicio.usuarios.administrador.docentes;
 
 import inicio.usuarios.administrador.usuarios.Usuarios;
-import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
-import inicio.usuarios.administrador.docentes.AltadeDocentes;
-import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
+import inicio.usuarios.administrador.docentes.Docentes;
+import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
 import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 import inicio.IngresaralSistema;
 import inicio.usuarios.administrador.docentes.ConsultaDocentes;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
+import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
+import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
+import inicio.usuarios.administrador.docentes.AltadeDocentes;
+import inicio.usuarios.administrador.docentes.BajaDocentes;
+import inicio.usuarios.administrador.docentes.ModificarDocentes;
+import inicio.usuarios.administrador.docentes.AltaDisponibilidadDocentes;
+import inicio.usuarios.administrador.docentes.ModificarDisponibilidadDocentes;
+import inicio.usuarios.administrador.docentes.BitacoraDocentes;
 
 
 
@@ -155,7 +164,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
+        jButton1.setText("Cerrar sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -209,6 +218,11 @@ public class AltadeDocentes extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton3.setText("Baja de Docentes");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton4.setText("Modificar Docentes");
@@ -343,7 +357,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel1)
                         .addGap(32, 32, 32)
@@ -493,38 +507,46 @@ public class AltadeDocentes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios externos
+        HorariosExternos obj=new HorariosExternos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
         // Link para modulo usuarios
-        AltasUsuarios obj=new AltasUsuarios();
+        Usuarios obj=new Usuarios();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para modulo generacion de horarios
-        ConsultarHorariosDocente obj=new ConsultarHorariosDocente();
+        // Link para modulo usuarios
+        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para cuatrimestres
-        AltasAsignaturas obj=new AltasAsignaturas();
+        // Link para modulo cuatrimestres
+        cuatrimestres obj=new cuatrimestres();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // Link para modulo horarios alumno
-        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
+        // Link para modulo horarios alumnos
+        HorariosAlumnos obj=new HorariosAlumnos();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
@@ -534,46 +556,73 @@ public class AltadeDocentes extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
 
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios alumnos
+        AsignarAsignatura obj=new AsignarAsignatura();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
         // Link para modulo docentes
-        AltadeDocentes obj=new AltadeDocentes();
+        Docentes obj=new Docentes();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo alta docentes
+       AltadeDocentes obj=new AltadeDocentes ();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Link para consultar docentes
-        ConsultaDocentes obj=new ConsultaDocentes();
+        // Link para consultar docente
+       ConsultaDocentes obj=new ConsultaDocentes();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // Link para modificar docentes
+       ModificarDocentes obj=new ModificarDocentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // Link para alta disponibilidad docente
+       AltaDisponibilidadDocentes obj=new AltaDisponibilidadDocentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        // Link para modificar disponibilidad docentes
+       ModificarDisponibilidadDocentes obj=new ModificarDisponibilidadDocentes ();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        // Link para bitácora de modificaciones
+       BitacoraDocentes obj=new BitacoraDocentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -591,6 +640,14 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // Link para baja de docentes
+       BajaDocentes obj=new BajaDocentes ();
+        obj.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

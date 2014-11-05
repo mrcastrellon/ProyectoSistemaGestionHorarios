@@ -7,15 +7,19 @@
 package inicio.usuarios.administrador.cuatrimestres;
 
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
-import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
-import inicio.usuarios.administrador.docentes.AltadeDocentes;
-import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
-import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
 import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 import inicio.IngresaralSistema;
 import inicio.usuarios.administrador.cuatrimestres.ModificarAsignaturas;
 import inicio.usuarios.administrador.cuatrimestres.EliminarAsignaturas;
 import inicio.usuarios.administrador.cuatrimestres.AltasCuatrimestre;
+import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
+import inicio.usuarios.administrador.docentes.Docentes;
+import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
+import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
+import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
+import inicio.usuarios.administrador.usuarios.Usuarios;
+import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
 
 /**
  *
@@ -399,35 +403,43 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios externos
+        HorariosExternos obj=new HorariosExternos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // Link para usuarios
-        AltasUsuarios obj=new AltasUsuarios();
+        // Link para modulo usuarios
+        Usuarios obj=new Usuarios();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para generacion de horarios
-        ConsultarHorariosDocente obj=new ConsultarHorariosDocente();
+        // Link para modulo usuarios
+        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para cuatrimestres
-        AltasAsignaturas obj=new AltasAsignaturas();
+        // Link para modulo cuatrimestres
+        cuatrimestres obj=new cuatrimestres();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // Link para horarios alumnos
-        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
+        // Link para modulo horarios alumnos
+        HorarioAlumnos obj=new HorariosAlumnos();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
@@ -438,14 +450,19 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     }//GEN-LAST:event_CerrarSesionActionPerformed
 
     private void AsignarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarMateriasActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios alumnos
+        AsignarAsignatura obj=new AsignarAsignatura();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_AsignarMateriasActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // Link para docentes
-        AltadeDocentes obj=new AltadeDocentes();
+        // Link para modulo docentes
+        Docentes obj=new Docentes();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed

@@ -6,12 +6,14 @@
 
 package inicio;
 
-import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
-import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
-import inicio.usuarios.administrador.docentes.AltadeDocentes;
-import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
-import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
+import inicio.usuarios.administrador.docentes.Docentes;
+import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
 import inicio.IngresaralSistema;
+import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
+import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
+import inicio.usuarios.administrador.usuarios.Usuarios;
+import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
 
 
 /**
@@ -121,7 +123,7 @@ public class Interfaz extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        SGH.setText("SISTEMA DE GESTION DE HORARIOS");
+        SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
@@ -129,7 +131,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
+        jButton1.setText("Cerrar sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -139,7 +141,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -261,32 +263,41 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios externos
+        HorariosExternos obj=new HorariosExternos();
+        obj.setVisible(true);
+        dispose();
+      
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
        // Link para modulo usuarios
-        AltasUsuarios obj=new AltasUsuarios();
+        Usuarios obj=new Usuarios();
         obj.setVisible(true);
         dispose();
        
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo usuarios
+        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
       // Link para modulo cuatrimestres
-        AltasAsignaturas obj=new AltasAsignaturas();
+        cuatrimestres obj=new cuatrimestres();
         obj.setVisible(true);
         dispose();
        
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-           // Link para modulo horarios alumnos
-        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
+        // Link para modulo horarios alumnos
+        HorariosAlumnos obj=new HorariosAlumnos();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
@@ -299,12 +310,16 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios alumnos
+        AsignarAsignatura obj=new AsignarAsignatura();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
         // Link para modulo docentes
-        AltadeDocentes obj=new AltadeDocentes();
+        Docentes obj=new Docentes();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_DocentesActionPerformed

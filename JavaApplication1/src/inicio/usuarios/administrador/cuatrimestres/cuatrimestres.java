@@ -18,12 +18,12 @@ import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocen
  *
  * @author BENJAMIN
  */
-public class cuatrimestre extends javax.swing.JFrame {
+public class cuatrimestres extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public cuatrimestre() {
+    public cuatrimestres() {
         initComponents();
     }
 

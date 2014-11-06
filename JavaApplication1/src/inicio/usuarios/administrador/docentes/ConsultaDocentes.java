@@ -13,6 +13,7 @@ import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 import inicio.IngresaralSistema;
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
 
 
 
@@ -400,10 +401,11 @@ public class ConsultaDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para cuatrimestres
-        AltasAsignaturas obj=new AltasAsignaturas();
+        // Link para modulo cuatrimestres
+        cuatrimestres obj=new cuatrimestres();
         obj.setVisible(true);
         dispose();
+
 
     }//GEN-LAST:event_CuatrimestreActionPerformed
 

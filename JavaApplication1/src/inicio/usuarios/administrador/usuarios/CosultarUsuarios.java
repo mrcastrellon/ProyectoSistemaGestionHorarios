@@ -220,7 +220,7 @@ public class CosultarUsuarios extends javax.swing.JFrame {
         jLabel8.setText("Usuarios");
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText("Consultar Usuarios");
+        jLabel9.setText("Modificar Usuarios");
 
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton6.setText("Guardar");

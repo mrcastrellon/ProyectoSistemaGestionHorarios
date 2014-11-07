@@ -418,6 +418,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Asignacion de Privilegios"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AsignaciondePrivilegiosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ModificaciondeUsuarios">
       <Properties>
@@ -426,6 +429,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Modificar Usuarios"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModificaciondeUsuariosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ConsultarUsuarios">
       <Properties>

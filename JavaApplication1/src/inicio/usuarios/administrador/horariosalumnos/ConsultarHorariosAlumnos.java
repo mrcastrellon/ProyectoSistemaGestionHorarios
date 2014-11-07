@@ -6,6 +6,17 @@
 
 package inicio.usuarios.administrador.horariosalumnos;
 
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
+import inicio.usuarios.administrador.docentes.Docentes;
+import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
+import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
+import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
+import inicio.usuarios.administrador.usuarios.Usuarios;
+import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
+import inicio.IngresaralSistema;
+import inicio.usuarios.administrador.horariosalumnos.GeneracionHorariosAlumnos;
+import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
+import inicio.usuarios.administrador.horariosalumnos.ExportarHorariosAlumnos;
 /**
  *
  * @author BENJAMIN
@@ -183,6 +194,11 @@ public class ConsultarHorariosAlumnos extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton3.setText("Consultar Horario");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton5.setText("Exportar Horario");
@@ -330,44 +346,92 @@ public class ConsultarHorariosAlumnos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios externos
+        HorariosExternos obj=new HorariosExternos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo usuarios
+        Usuarios obj=new Usuarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo generación de horarios
+        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo cuatrimestres
+        cuatrimestres obj=new cuatrimestres();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios alumnos
+        HorariosAlumnos obj=new HorariosAlumnos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo cerrar sesion
+        IngresaralSistema obj=new IngresaralSistema();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo asignar materias
+        AsignarAsignatura obj=new AsignarAsignatura();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo docentes
+        Docentes obj=new Docentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Link para generación de horarios alumnos
+        GeneracionHorariosAlumnos obj=new GeneracionHorariosAlumnos ();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        // Link para generación de horarios alumnos
+        ExportarHorariosAlumnos obj=new ExportarHorariosAlumnos ();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // Link para generación de horarios alumnos
+        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos ();
+        obj.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

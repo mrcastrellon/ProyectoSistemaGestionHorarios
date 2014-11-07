@@ -4,31 +4,26 @@
  * and open the template in the editor.
  */
 
-package inicio.usuarios.administrador.horariosalumnos;
+package inicio.usuarios.administrador.cuatrimestres;
 
-import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
-import inicio.usuarios.administrador.docentes.Docentes;
-import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
-import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
-import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
-import inicio.usuarios.administrador.usuarios.Usuarios;
-import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
 import inicio.IngresaralSistema;
-import inicio.usuarios.administrador.horariosalumnos.GeneracionHorariosAlumnos;
+import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.usuarios.administrador.docentes.AltadeDocentes;
+import inicio.usuarios.administrador.cuatrimestres.AltasCuatrimestre;
+import inicio.usuarios.administrador.cuatrimestres.EliminarAsignaturas;
+import inicio.usuarios.administrador.cuatrimestres.ModificarAsignaturas;
 import inicio.usuarios.administrador.horariosalumnos.ConsultarHorariosAlumnos;
-import inicio.usuarios.administrador.horariosalumnos.ExportarHorariosAlumnos;
-
-
+import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 /**
  *
  * @author BENJAMIN
  */
-public class HorariosAlumnos extends javax.swing.JFrame {
+public class cuatrimestre extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public HorariosAlumnos() {
+    public cuatrimestre() {
         initComponents();
     }
 
@@ -52,17 +47,18 @@ public class HorariosAlumnos extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         SGH = new javax.swing.JLabel();
         LogoUnipoli = new javax.swing.JLabel();
-        ImagenUnipoli = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        CerrarSesion = new javax.swing.JButton();
+        NombredelUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        HorariosAlumnos1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        AsignarMaterias = new javax.swing.JButton();
+        AltasdeUsuarios = new javax.swing.JButton();
+        AsignaciondePrivilegios = new javax.swing.JButton();
+        ModificaciondeUsuarios = new javax.swing.JButton();
+        ConsultarUsuarios = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -135,21 +131,19 @@ public class HorariosAlumnos extends javax.swing.JFrame {
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
-        ImagenUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
-
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrar sesión");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
+        CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        CerrarSesion.setText("Cerrar sesión");
+        CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CerrarSesionActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Nombre del Usuario");
+        NombredelUsuario.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
+        jLabel2.setText("Pagina Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -165,7 +159,7 @@ public class HorariosAlumnos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(394, 394, 394))
+                .addGap(401, 401, 401))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,41 +168,52 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos1.setText("Asignar Materias");
-        HorariosAlumnos1.addActionListener(new java.awt.event.ActionListener() {
+        AsignarMaterias.setBackground(new java.awt.Color(255, 102, 0));
+        AsignarMaterias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        AsignarMaterias.setText("Asignar Materias");
+        AsignarMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnos1ActionPerformed(evt);
+                AsignarMateriasActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton2.setText("Generacion de Horario");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AltasdeUsuarios.setText("Alta Asignaturas");
+        AltasdeUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AltasdeUsuariosActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton3.setText("Consultar Horario");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AsignaciondePrivilegios.setText("Modificar Asignatura");
+        AsignaciondePrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AsignaciondePrivilegiosActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton5.setText("Exportar Horario");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        ModificaciondeUsuarios.setText("Eliminar Asignatura");
+        ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ModificaciondeUsuariosActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel4.setText("Horarios Alumnos");
+        ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        ConsultarUsuarios.setText("Alta Cuatrimestres");
+        ConsultarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarUsuariosActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel8.setText("Usuarios");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,7 +221,7 @@ public class HorariosAlumnos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1304, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,11 +229,11 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel1)
+                        .addComponent(NombredelUsuario)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton1))
+                        .addComponent(CerrarSesion))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(Cuatrimestre)
@@ -239,7 +244,7 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
-                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
                         .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
@@ -247,23 +252,23 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(28, 28, 28)
-                .addComponent(ImagenUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(527, 527, 527))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(588, 588, 588))))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(577, 577, 577))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,8 +279,8 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jLabel1)))
+                                .addComponent(CerrarSesion)
+                                .addComponent(NombredelUsuario)))
                         .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -290,121 +295,105 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                     .addComponent(HorariosAlumnos)
                     .addComponent(Usuarios)
                     .addComponent(GeneraciondeHorarios)
-                    .addComponent(HorariosAlumnos1))
+                    .addComponent(AsignarMaterias))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addGap(45, 45, 45)
-                        .addComponent(ImagenUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(97, 97, 97)
+                        .addComponent(AltasdeUsuarios)
+                        .addGap(32, 32, 32)
+                        .addComponent(AsignaciondePrivilegios)
+                        .addGap(33, 33, 33)
+                        .addComponent(ModificaciondeUsuarios)
+                        .addGap(36, 36, 36)
+                        .addComponent(ConsultarUsuarios))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jButton2)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton3)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton5)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // Link para modulo horarios externos
-        HorariosExternos obj=new HorariosExternos();
-        obj.setVisible(true);
-        dispose();
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
         // Link para modulo usuarios
-        Usuarios obj=new Usuarios();
+        AltasUsuarios obj=new AltasUsuarios();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para modulo generación de horarios
-        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
+        // Link para modulo generacion de horarios
+        ConsultarHorariosDocente obj=new ConsultarHorariosDocente();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para modulo cuatrimestres
-        cuatrimestres obj=new cuatrimestres();
-        obj.setVisible(true);
-        dispose();
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // Link para modulo horarios alumnos
-        HorariosAlumnos obj=new HorariosAlumnos();
+        // Link para modulo horarios alumno
+        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
         // Link para modulo cerrar sesion
         IngresaralSistema obj=new IngresaralSistema();
         obj.setVisible(true);
         dispose();
+    }//GEN-LAST:event_CerrarSesionActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // Link para modulo asignar materias
-        AsignarAsignatura obj=new AsignarAsignatura();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
+    private void AsignarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarMateriasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AsignarMateriasActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
         // Link para modulo docentes
-        Docentes obj=new Docentes();
+        AltadeDocentes obj=new AltadeDocentes();
+        obj.setVisible(true);
+        dispose();    }//GEN-LAST:event_DocentesActionPerformed
+
+    private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AltasdeUsuariosActionPerformed
+
+    private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
+        // Link para alta cuatrimestre
+        AltasCuatrimestre obj=new AltasCuatrimestre();
         obj.setVisible(true);
         dispose();
+    }//GEN-LAST:event_ConsultarUsuariosActionPerformed
 
-    }//GEN-LAST:event_DocentesActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Link para generación de horarios alumnos
-        GeneracionHorariosAlumnos obj=new GeneracionHorariosAlumnos ();
+    private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
+        // Link para eliminar asignatura
+        EliminarAsignaturas obj=new EliminarAsignaturas();
         obj.setVisible(true);
         dispose();
+    }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Link para generación de horarios alumnos
-        ExportarHorariosAlumnos obj=new ExportarHorariosAlumnos ();
+    private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
+        // Link para modificar asignatura
+        ModificarAsignaturas obj=new ModificarAsignaturas();
         obj.setVisible(true);
         dispose();
-
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // Link para generación de horarios alumnos
-        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos ();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -423,43 +412,44 @@ public class HorariosAlumnos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HorariosAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HorariosAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HorariosAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HorariosAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AltasUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HorariosAlumnos().setVisible(true);
+                new AltasUsuarios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AltasdeUsuarios;
+    private javax.swing.JButton AsignaciondePrivilegios;
+    private javax.swing.JButton AsignarMaterias;
+    private javax.swing.JButton CerrarSesion;
+    private javax.swing.JButton ConsultarUsuarios;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
     private javax.swing.JButton GeneraciondeHorarios;
     private javax.swing.JButton HorariosAlumnos;
-    private javax.swing.JButton HorariosAlumnos1;
     private javax.swing.JButton HorariosExternos;
-    private javax.swing.JLabel ImagenUnipoli;
     private javax.swing.JLabel LogoUnipoli;
+    private javax.swing.JButton ModificaciondeUsuarios;
+    private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

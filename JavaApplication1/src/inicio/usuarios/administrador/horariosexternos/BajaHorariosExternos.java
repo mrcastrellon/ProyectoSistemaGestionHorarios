@@ -225,6 +225,7 @@ public class BajaHorariosExternos extends javax.swing.JFrame {
                 "Materia", "Clave", "Horario", "Cuatrimestre", "Grupo"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N

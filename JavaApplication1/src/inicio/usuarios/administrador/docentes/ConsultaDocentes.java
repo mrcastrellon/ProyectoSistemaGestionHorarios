@@ -260,8 +260,40 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         jLabel12.setText("Consultar Docentes");
 
         jTable1.setBackground(new java.awt.Color(153, 255, 153));
+        jTable1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {"Benjamin Castillo Pérez", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Hector Duarte", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Joel", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Iván", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"José de Jesús", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Iracema", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Jesús Valedez", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Yolanda", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Luis", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Francisco", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Marcos", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Octavio", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Liliana", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Ozcar Flores", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Alejandra", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Rosalinda", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Pedro", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Júan José", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Eduardo", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Saúl", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Juliana", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Letycia", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Teresa", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {"Gabriel", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -271,6 +303,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
                 "Nombre Completo", "Direccion", "Telefono", "Correo", "Carrera o Especialidad", "Materias Tentativas a Impartir"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

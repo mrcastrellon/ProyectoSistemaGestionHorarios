@@ -227,7 +227,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
+                {"Programacion", "62254ffdgv25", "5 Horas", "4 Creditos"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -258,6 +258,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 "Nombre", "Clave", "Horas", "Creditos"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N

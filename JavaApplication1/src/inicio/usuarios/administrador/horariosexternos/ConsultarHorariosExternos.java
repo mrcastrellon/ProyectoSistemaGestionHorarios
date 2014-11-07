@@ -224,6 +224,7 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
                 "Materia", "Clave", "Horario", "Cuatrimestre", "Grupo"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

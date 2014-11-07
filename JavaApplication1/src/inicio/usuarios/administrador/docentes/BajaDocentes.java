@@ -268,6 +268,7 @@ public class BajaDocentes extends javax.swing.JFrame {
                 "Nombre Completo", "Direccion", "Telefono", "Correo", "Carrera o Especialidad", "Materias Tentativas a Impartir"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N

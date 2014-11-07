@@ -318,9 +318,9 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 

@@ -192,7 +192,7 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         });
 
         AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltasdeUsuarios.setText("Alta Asignaturas");
+        AltasdeUsuarios.setText("Alta de Horarios");
         AltasdeUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AltasdeUsuariosActionPerformed(evt);
@@ -200,7 +200,7 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         });
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AsignaciondePrivilegios.setText("Modificar Asignatura");
+        AsignaciondePrivilegios.setText("Baja de Horarios");
         AsignaciondePrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AsignaciondePrivilegiosActionPerformed(evt);
@@ -208,7 +208,7 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         });
 
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Eliminar Asignatura");
+        ModificaciondeUsuarios.setText("Modificar Horario");
         ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificaciondeUsuariosActionPerformed(evt);
@@ -216,7 +216,7 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         });
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ConsultarUsuarios.setText("Alta Cuatrimestres");
+        ConsultarUsuarios.setText("Consultar Horario");
         ConsultarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarUsuariosActionPerformed(evt);

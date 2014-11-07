@@ -7,6 +7,8 @@
 package inicio;
 import inicio.*;
 import javax.swing.*;
+import Conexion_base_de_datos.*;
+import java.sql.*;
 
 /**
  *
@@ -20,7 +22,11 @@ public class IngresaralSistema extends javax.swing.JFrame {
     public IngresaralSistema() {
         initComponents();
     }
-
+    void ingresar(){
+        
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -254,4 +260,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+//CONECTAR A LA BASE DE DATOS.
+    Conexion con=new Conexion();
+    Connection con2=con.conexion();
 }

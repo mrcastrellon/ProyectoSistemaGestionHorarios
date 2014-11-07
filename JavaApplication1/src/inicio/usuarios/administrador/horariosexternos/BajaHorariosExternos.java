@@ -125,13 +125,13 @@ public class BajaHorariosExternos extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        SGH.setText("SISTEMA DE GESTION DE HORARIOS");
+        SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
+        jButton1.setText("Cerrar sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -141,7 +141,7 @@ public class BajaHorariosExternos extends javax.swing.JFrame {
         jLabel1.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -259,7 +259,7 @@ public class BajaHorariosExternos extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel1)
                         .addGap(32, 32, 32)

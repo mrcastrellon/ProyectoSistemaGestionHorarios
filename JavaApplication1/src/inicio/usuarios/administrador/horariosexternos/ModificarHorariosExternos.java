@@ -159,7 +159,7 @@ public class ModificarHorariosExternos extends javax.swing.JFrame {
         NombredelUsuario.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -388,11 +388,12 @@ public class ModificarHorariosExternos extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AltasdeUsuarios)
-                    .addComponent(AltaNombre)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AltasdeUsuarios)
+                        .addComponent(AltaNombre)
+                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)

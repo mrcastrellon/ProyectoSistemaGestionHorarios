@@ -41,12 +41,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Cuatrimestre = new javax.swing.JButton();
-        Docentes = new javax.swing.JButton();
-        HorariosExternos = new javax.swing.JButton();
-        HorariosAlumnos = new javax.swing.JButton();
-        Usuarios = new javax.swing.JButton();
-        GeneraciondeHorarios = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -57,15 +51,11 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        HorariosAlumnos1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -88,61 +78,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
-        Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Cuatrimestre.setText("Cuatrimestre");
-        Cuatrimestre.setAlignmentX(0.1F);
-        Cuatrimestre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CuatrimestreActionPerformed(evt);
-            }
-        });
-
-        Docentes.setBackground(new java.awt.Color(255, 102, 0));
-        Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Docentes.setText("Docentes");
-        Docentes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DocentesActionPerformed(evt);
-            }
-        });
-
-        HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosExternos.setText("Horarios Externos");
-        HorariosExternos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosExternosActionPerformed(evt);
-            }
-        });
-
-        HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos.setText("Horarios Alumnos");
-        HorariosAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnosActionPerformed(evt);
-            }
-        });
-
-        Usuarios.setBackground(new java.awt.Color(255, 102, 0));
-        Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Usuarios.setText("Usuarios");
-        Usuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosActionPerformed(evt);
-            }
-        });
-
-        GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
-        GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        GeneraciondeHorarios.setText("Generación de Horarios");
-        GeneraciondeHorarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneraciondeHorariosActionPerformed(evt);
-            }
-        });
-
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
@@ -156,7 +91,7 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
+        jButton1.setText("Cerrar sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -166,7 +101,7 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
         jLabel1.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -191,15 +126,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos1.setText("Asignar Materias");
-        HorariosAlumnos1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnos1ActionPerformed(evt);
-            }
-        });
-
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton2.setText("Altas de Docentes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -208,22 +134,11 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton3.setText("Baja de Docentes");
-
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton4.setText("Modificar Docentes");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton5.setText("Consultar de Docentes");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
             }
         });
 
@@ -243,14 +158,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton8.setText("Bitacora de Modificaciones");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
             }
         });
 
@@ -344,60 +251,40 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel1)
                         .addGap(32, 32, 32)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(Cuatrimestre)
-                                .addGap(37, 37, 37)
-                                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(HorariosExternos)
-                                .addGap(52, 52, 52)
-                                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(GeneraciondeHorarios))
+                                .addGap(329, 329, 329)
+                                .addComponent(jLabel9))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
+                                .addGap(224, 224, 224)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11))
+                                .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(329, 329, 329)
-                                        .addComponent(jLabel9))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(224, 224, 224)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel11))
-                                        .addGap(54, 54, 54)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField2)
-                                            .addComponent(jTextField3)
-                                            .addComponent(jTextField5)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                                            .addComponent(jTextField4)
-                                            .addComponent(jTextField1))))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(jTextField2)
+                                    .addComponent(jTextField3)
+                                    .addComponent(jTextField5)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                                    .addComponent(jTextField4)
+                                    .addComponent(jTextField1))))
+                        .addGap(0, 104, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -421,16 +308,7 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios)
-                    .addComponent(HorariosAlumnos1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
@@ -446,18 +324,11 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
+                        .addGap(14, 14, 14)
                         .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton6)
-                        .addGap(18, 18, 18)
+                        .addGap(101, 101, 101)
                         .addComponent(jButton7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton8)
-                        .addGap(0, 119, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -469,7 +340,8 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton6))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addGap(29, 29, 29)
@@ -484,7 +356,7 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton9)
                             .addComponent(jButton10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -492,42 +364,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosExternosActionPerformed
-
-    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // Link para modulo usuarios
-        AltasUsuarios obj=new AltasUsuarios();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_UsuariosActionPerformed
-
-    private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para modulo generacion de horarios
-        ConsultarHorariosDocente obj=new ConsultarHorariosDocente();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
-
-    private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para cuatrimestres
-        AltasAsignaturas obj=new AltasAsignaturas();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_CuatrimestreActionPerformed
-
-    private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // Link para modulo horarios alumno
-        ConsultarHorariosAlumnos obj=new ConsultarHorariosAlumnos();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Link para modulo cerrar sesion
@@ -537,29 +373,9 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void HorariosAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnos1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosAlumnos1ActionPerformed
-
-    private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // Link para modulo docentes
-        AltadeDocentes obj=new AltadeDocentes();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_DocentesActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Link para consultar docentes
-        ConsultaDocentes obj=new ConsultaDocentes();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -572,10 +388,6 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -629,24 +441,14 @@ public class AltadeDocentesUsuarioNormal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cuatrimestre;
-    private javax.swing.JButton Docentes;
-    private javax.swing.JButton GeneraciondeHorarios;
-    private javax.swing.JButton HorariosAlumnos;
-    private javax.swing.JButton HorariosAlumnos1;
-    private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
-    private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

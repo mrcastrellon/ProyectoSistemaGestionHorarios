@@ -136,7 +136,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Cerrrar sesión");
+        jButton1.setText("Cerrar sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -146,7 +146,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jLabel1.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));

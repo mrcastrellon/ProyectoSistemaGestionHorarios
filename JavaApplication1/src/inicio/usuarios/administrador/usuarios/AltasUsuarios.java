@@ -128,13 +128,13 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        SGH.setText("SISTEMA DE GESTION DE HORARIOS");
+        SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
 
         CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
         CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        CerrarSesion.setText("Cerrrar sesión");
+        CerrarSesion.setText("Cerrar sesión");
         CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CerrarSesionActionPerformed(evt);
@@ -144,7 +144,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         NombredelUsuario.setText("Nombre del Usuario");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Pagina Principal");
+        jLabel2.setText("Página Principal");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));

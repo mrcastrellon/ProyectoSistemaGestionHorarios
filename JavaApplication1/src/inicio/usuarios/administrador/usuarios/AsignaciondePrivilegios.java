@@ -6,6 +6,25 @@
 
 package inicio.usuarios.administrador.usuarios;
 
+import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
+import inicio.usuarios.administrador.docentes.Docentes;
+import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
+import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
+import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
+import inicio.usuarios.administrador.usuarios.Usuarios;
+import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
+import inicio.IngresaralSistema;
+import inicio.usuarios.administrador.usuarios.AltasUsuarios;
+import inicio.usuarios.administrador.usuarios.AsignaciondePrivilegios;
+import inicio.usuarios.administrador.usuarios.ModificaciondeUsuarios;
+import inicio.usuarios.administrador.usuarios.ConsultarUsuarios;
+
+
+
+
+
+
+
 /**
  *
  * @author BENJAMIN
@@ -194,9 +213,19 @@ public class AsignaciondePrivilegios extends javax.swing.JFrame {
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Asignacion de Privilegios");
+        AsignaciondePrivilegios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AsignaciondePrivilegiosActionPerformed(evt);
+            }
+        });
 
         ModificarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificarUsuarios.setText("Modificar Usuarios");
+        ModificarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarUsuariosActionPerformed(evt);
+            }
+        });
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Consultar Usuarios");
@@ -428,43 +457,82 @@ public class AsignaciondePrivilegios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios externos
+        HorariosExternos obj=new HorariosExternos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo usuarios
+        Usuarios obj=new Usuarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo generación de horarios
+        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
     private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo cuatrimestres
+        cuatrimestres obj=new cuatrimestres();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo horarios alumnos
+        HorariosAlumnos obj=new HorariosAlumnos();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo cerrar sesion
+        IngresaralSistema obj=new IngresaralSistema();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_CerrarSesionActionPerformed
 
     private void AsignarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarMateriasActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo asignar materias
+        AsignarAsignatura obj=new AsignarAsignatura();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_AsignarMateriasActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // TODO add your handling code here:
+        // Link para modulo docentes
+        Docentes obj=new Docentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void AltasUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasUsuariosActionPerformed
-        // TODO add your handling code here:
+        // Link para altas usuarios
+        AltasUsuarios obj=new AltasUsuarios();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_AltasUsuariosActionPerformed
 
     private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
-        // TODO add your handling code here:
+        // Link para asignación de privilegios
+        ConsultarUsuarios obj=new ConsultarUsuarios ();
+        obj.setVisible(true);
+
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
 
     private void PermitirAccesoDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PermitirAccesoDocentesActionPerformed
@@ -478,6 +546,22 @@ public class AsignaciondePrivilegios extends javax.swing.JFrame {
     private void PermitirAccesoGeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PermitirAccesoGeneraciondeHorariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PermitirAccesoGeneraciondeHorariosActionPerformed
+
+    private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
+        // Link para asignación de privilegios
+        AsignaciondePrivilegios obj=new AsignaciondePrivilegios ();
+        obj.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
+
+    private void ModificarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarUsuariosActionPerformed
+        // Link para asignación de privilegios
+        ModificaciondeUsuarios obj=new ModificaciondeUsuarios ();
+        obj.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_ModificarUsuariosActionPerformed
 
     /**
      * @param args the command line arguments

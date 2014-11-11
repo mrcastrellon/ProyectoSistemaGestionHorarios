@@ -39,14 +39,14 @@ void limpiar (){
      AltaAsignaturaIngreseClave.setText("");
       AltaAsignaturaIngreseCreditos.setText("");
        AltaAsignaturaIngreseHoras.setText("");
-        
+} 
   void desbloquear(){
     AltaAsignaturaIngreseNombre.setEnabled(true);
      AltaAsignaturaIngreseClave.setEnabled(true);
       AltaAsignaturaIngreseCreditos.setEnabled(true);
        AltaAsignaturaIngreseHoras.setEnabled(true);
 
-}
+
 }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -615,7 +615,5 @@ AltaAsignaturaIngreseHoras.transferFocus();       // TODO add your handling code
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 
-    private void desbloquear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

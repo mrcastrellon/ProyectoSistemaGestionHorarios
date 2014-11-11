@@ -253,6 +253,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
+        AltaGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -490,6 +495,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
+
+    private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AltaGuardarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -40,12 +40,11 @@ void limpiar (){
       AltaAsignaturaIngreseCreditos.setText("");
        AltaAsignaturaIngreseHoras.setText("");
         
-  void desbloquear() {
+  void desbloquear(){
     AltaAsignaturaIngreseNombre.setEnabled(true);
      AltaAsignaturaIngreseClave.setEnabled(true);
       AltaAsignaturaIngreseCreditos.setEnabled(true);
        AltaAsignaturaIngreseHoras.setEnabled(true);
-   
 
 }
 }

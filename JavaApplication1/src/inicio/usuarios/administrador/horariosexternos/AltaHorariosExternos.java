@@ -242,9 +242,9 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Cuatrimestre");
 
-        nombre.setText("Ingresa Nombre");
+        nombre.setText("Ingresa Nombre de la Materia");
 
-        AltaIngresaUsuario.setText("Ingresa Usuario");
+        AltaIngresaUsuario.setText("Ingresa la Clave de la Materia");
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Horarios Externos");
@@ -255,9 +255,9 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
 
-        jTextField1.setText("Ingresa el Numero de Creditos");
+        jTextField1.setText("Ingresa el Horario de la Materia");
 
-        jTextField2.setText("Ingresa el Numero de Horas");
+        jTextField2.setText("Ingresa el Cuatrimestre");
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");

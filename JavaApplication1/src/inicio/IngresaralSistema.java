@@ -23,8 +23,8 @@ public class IngresaralSistema extends javax.swing.JFrame {
         initComponents();
     }
     void ingresar(){
-        
-        
+        String sql="SELECT * FROM usuario WHERE usuario='"+usuario+"'&& password='"+contraseña+"'";        
+        Statement st=con2.createStatement();
     }
     
     /**
@@ -47,8 +47,8 @@ public class IngresaralSistema extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JPasswordField();
+        usuario = new javax.swing.JTextField();
+        contraseña = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,13 +101,13 @@ public class IngresaralSistema extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Contraseña");
 
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+                usuarioActionPerformed(evt);
             }
         });
 
-        txtContraseña.setText("jPasswordField1");
+        contraseña.setText("jPasswordField1");
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnIngresar.setText("Ingresar");
@@ -141,8 +141,8 @@ public class IngresaralSistema extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(btnIngresar)
-                    .addComponent(txtUsuario)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                    .addComponent(usuario)
+                    .addComponent(contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ImagenUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 975, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -176,11 +176,11 @@ public class IngresaralSistema extends javax.swing.JFrame {
                         .addGap(98, 98, 98)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(jLabel5)
                         .addGap(29, 29, 29)
-                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(btnIngresar)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -193,8 +193,8 @@ public class IngresaralSistema extends javax.swing.JFrame {
      String usuario= "Benjamin";
      String contra= "Truper";
      
-     String pass= new String(txtContraseña.getPassword());
-     String user= new String(txtUsuario.getText());
+     String pass= new String(contraseña.getPassword());
+     String user= new String(usuario.getText());
      if (user.equals(usuario)&& pass.equals(contra)){
          
          Interfaz p1 = new Interfaz();
@@ -205,10 +205,10 @@ public class IngresaralSistema extends javax.swing.JFrame {
      }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_usuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,6 +250,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JPasswordField contraseña;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -258,8 +259,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JPasswordField txtContraseña;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 //CONECTAR A LA BASE DE DATOS.
     Conexion con=new Conexion();

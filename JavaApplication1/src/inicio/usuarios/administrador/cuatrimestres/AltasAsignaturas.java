@@ -67,13 +67,13 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
         AltaConfirmarContraseña = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        AltaIngresaUsuario = new javax.swing.JTextField();
+        AltaAsignaturaIngreseNombre = new javax.swing.JTextField();
+        AltaAsignaturaIngreseClave = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        AltaAsignaturaIngreseCreditos = new javax.swing.JTextField();
+        AltaAsignaturaIngreseHoras = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -237,9 +237,19 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Horas");
 
-        nombre.setText("Ingresa Nombre");
+        AltaAsignaturaIngreseNombre.setText("Ingresa Nombre");
+        AltaAsignaturaIngreseNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaAsignaturaIngreseNombreActionPerformed(evt);
+            }
+        });
 
-        AltaIngresaUsuario.setText("Ingresa Usuario");
+        AltaAsignaturaIngreseClave.setText("Ingresa Clave ");
+        AltaAsignaturaIngreseClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaAsignaturaIngreseClaveActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
@@ -250,9 +260,19 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
 
-        jTextField1.setText("Ingresa el Numero de Creditos");
+        AltaAsignaturaIngreseCreditos.setText("Ingresa el Numero de Creditos");
+        AltaAsignaturaIngreseCreditos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaAsignaturaIngreseCreditosActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("Ingresa el Numero de Horas");
+        AltaAsignaturaIngreseHoras.setText("Ingresa el Numero de Horas");
+        AltaAsignaturaIngreseHoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaAsignaturaIngreseHorasActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");
@@ -325,10 +345,10 @@ public class AltasAsignaturas extends javax.swing.JFrame {
                                 .addComponent(AltaGuardar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                                 .addComponent(jButton1))
-                            .addComponent(AltaIngresaUsuario)
-                            .addComponent(nombre)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2))
+                            .addComponent(AltaAsignaturaIngreseClave)
+                            .addComponent(AltaAsignaturaIngreseNombre)
+                            .addComponent(AltaAsignaturaIngreseCreditos)
+                            .addComponent(AltaAsignaturaIngreseHoras))
                         .addGap(269, 269, 269))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -375,22 +395,22 @@ public class AltasAsignaturas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AltaAsignaturaIngreseNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
                     .addComponent(AltaUsuario)
-                    .addComponent(AltaIngresaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AltaAsignaturaIngreseClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ModificaciondeUsuarios)
                     .addComponent(AltaContraseña)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AltaAsignaturaIngreseCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConsultarUsuarios)
                     .addComponent(AltaConfirmarContraseña)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AltaAsignaturaIngreseHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltaGuardar)
@@ -466,7 +486,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         dispose();    }//GEN-LAST:event_DocentesActionPerformed
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
-        // Link para modulo altas de asignaturas
+AltaAsignaturaIngreseNombre.requestFocus();        // Link para modulo altas de asignaturas
         AltasAsignaturas obj=new AltasAsignaturas();
         obj.setVisible(true);
         dispose();    
@@ -496,6 +516,22 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
+
+    private void AltaAsignaturaIngreseNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaAsignaturaIngreseNombreActionPerformed
+AltaAsignaturaIngreseNombre.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_AltaAsignaturaIngreseNombreActionPerformed
+
+    private void AltaAsignaturaIngreseClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaAsignaturaIngreseClaveActionPerformed
+AltaAsignaturaIngreseClave.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_AltaAsignaturaIngreseClaveActionPerformed
+
+    private void AltaAsignaturaIngreseCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaAsignaturaIngreseCreditosActionPerformed
+AltaAsignaturaIngreseCreditos.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_AltaAsignaturaIngreseCreditosActionPerformed
+
+    private void AltaAsignaturaIngreseHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaAsignaturaIngreseHorasActionPerformed
+AltaAsignaturaIngreseHoras.transferFocus();       // TODO add your handling code here:
+    }//GEN-LAST:event_AltaAsignaturaIngreseHorasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -533,10 +569,13 @@ public class AltasAsignaturas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AltaAsignaturaIngreseClave;
+    private javax.swing.JTextField AltaAsignaturaIngreseCreditos;
+    private javax.swing.JTextField AltaAsignaturaIngreseHoras;
+    private javax.swing.JTextField AltaAsignaturaIngreseNombre;
     private javax.swing.JLabel AltaConfirmarContraseña;
     private javax.swing.JLabel AltaContraseña;
     private javax.swing.JButton AltaGuardar;
-    private javax.swing.JTextField AltaIngresaUsuario;
     private javax.swing.JLabel AltaNombre;
     private javax.swing.JLabel AltaUsuario;
     private javax.swing.JButton AltasdeUsuarios;
@@ -563,8 +602,5 @@ public class AltasAsignaturas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }

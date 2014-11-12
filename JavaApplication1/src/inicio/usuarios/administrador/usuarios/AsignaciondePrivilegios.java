@@ -293,6 +293,11 @@ public class AsignaciondePrivilegios extends javax.swing.JFrame {
 
         AsignarPrivilegiosGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AsignarPrivilegiosGuardar.setText("Guardar");
+        AsignarPrivilegiosGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AsignarPrivilegiosGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -562,6 +567,10 @@ public class AsignaciondePrivilegios extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_ModificarUsuariosActionPerformed
+
+    private void AsignarPrivilegiosGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarPrivilegiosGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AsignarPrivilegiosGuardarActionPerformed
 
     /**
      * @param args the command line arguments

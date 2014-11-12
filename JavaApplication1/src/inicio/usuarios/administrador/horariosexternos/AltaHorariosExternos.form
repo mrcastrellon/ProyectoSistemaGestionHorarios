@@ -95,11 +95,11 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="AltaIngresaUsuario" max="32767" attributes="0"/>
-                          <Component id="nombre" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField1" alignment="0" pref="189" max="32767" attributes="0"/>
-                          <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField3" max="32767" attributes="0"/>
+                          <Component id="IngresaClaveMateria" max="32767" attributes="0"/>
+                          <Component id="IngresaNombreMateria" alignment="0" max="32767" attributes="0"/>
+                          <Component id="IngresaHorarioMateria" alignment="0" pref="189" max="32767" attributes="0"/>
+                          <Component id="IngresaCuatrimestreMateria" alignment="0" max="32767" attributes="0"/>
+                          <Component id="IngresaGrupoMateria" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                   </Group>
@@ -163,30 +163,30 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AltasdeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresaNombreMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AltaIngresaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresaClaveMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ModificaciondeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresaHorarioMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ConsultarUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaConfirmarContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresaCuatrimestreMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresaGrupoMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -483,15 +483,21 @@
         <Property name="text" type="java.lang.String" value="Cuatrimestre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre">
+    <Component class="javax.swing.JTextField" name="IngresaNombreMateria">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa Nombre de la Materia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresaNombreMateriaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="AltaIngresaUsuario">
+    <Component class="javax.swing.JTextField" name="IngresaClaveMateria">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa la Clave de la Materia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresaClaveMateriaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -516,16 +522,25 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AltaGuardarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="IngresaHorarioMateria">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa el Horario de la Materia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresaHorarioMateriaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="IngresaCuatrimestreMateria">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa el Cuatrimestre"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresaCuatrimestreMateriaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -546,10 +561,13 @@
         <Property name="text" type="java.lang.String" value="Grupo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="IngresaGrupoMateria">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa el Grupo al que Pertenece"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresaGrupoMateriaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

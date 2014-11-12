@@ -9,6 +9,9 @@ import inicio.*;
 import javax.swing.*;
 import Conexion_base_de_datos.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import inicio.Interfaz.*;
 
 /**
  *
@@ -22,11 +25,29 @@ public class IngresaralSistema extends javax.swing.JFrame {
     public IngresaralSistema() {
         initComponents();
     }
+    //METODO PARA INGRESAR AL SISTEMA.
     void ingresar(){
+        String cap=" ";
         String sql="SELECT * FROM usuario WHERE usuario='"+usuario+"'&& password='"+contraseña+"'";        
-        Statement st=con2.createStatement();
+        try {
+            Statement st=con2.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            while (rs.next()){
+                cap=rs.getString("tipo_usuario");
+            }
+            if (cap.equals("administrador")){
+            }
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null,"Bienvenido");
+            Interfaz ingreso=new Interfaz();
+            ingreso.setVisible(true);
+            ingreso.pack();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(IngresaralSistema.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -190,7 +211,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-     String usuario= "Benjamin";
+     /**String usuario= "Benjamin";
      String contra= "Truper";
      
      String pass= new String(contraseña.getPassword());
@@ -204,14 +225,15 @@ public class IngresaralSistema extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "Usuario o Contraseña incorrecta..");
      }
     }//GEN-LAST:event_btnIngresarActionPerformed
-
+    */     
+    }
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
         // TODO add your handling code here:
     }//GEN-LAST:event_usuarioActionPerformed
 
     /**
-     * @param args the command line arguments
+    // * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -262,6 +284,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 //CONECTAR A LA BASE DE DATOS.
+   
     Conexion con=new Conexion();
     Connection con2=con.conexion();
 }

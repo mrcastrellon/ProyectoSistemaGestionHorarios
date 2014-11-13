@@ -1,34 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package inicio;
-import inicio.*;
-import javax.swing.*;
 import Conexion_base_de_datos.*;
+import inicio.*;
+import inicio.Interfaz.*;
+import  inicio.usuarios.administrador.docentes.docentesusuariocumun.DocentesUsuarioComun;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import inicio.Interfaz.*;
-
+import javax.swing.*;
 /**
  *
- * @author BENJAMIN
+ * @author MARCOS
  */
 public class IngresaralSistema extends javax.swing.JFrame {
 
-    /**
-     * Creates new form INTERFAZ
-     */
     public IngresaralSistema() {
         initComponents();
     }
-    //METODO PARA INGRESAR AL SISTEMA.
-    void ingresar(){
+                                                         //METODO PARA INGRESAR AL SISTEMA.
+    void ingresar(String usuario, String password){
         String cap=" ";
-        String sql="SELECT * FROM usuario WHERE usuario='"+usuario+"'&& password='"+contraseña+"'";        
+        String sql="SELECT * FROM usuarios WHERE nom_usuario='"+usuario+"'&& contrasena='"+password+"'";        
         try {
             Statement st=con2.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -39,11 +30,21 @@ public class IngresaralSistema extends javax.swing.JFrame {
             }
             this.setVisible(false);
             JOptionPane.showMessageDialog(null,"Bienvenido");
-            Interfaz ingreso=new Interfaz();
-            ingreso.setVisible(true);
-            ingreso.pack();
-            
-        } catch (SQLException ex) {
+            Interfaz inter=new Interfaz();
+            inter.setVisible(true);
+            inter.pack();
+         if (cap.equals("invitado")){
+            }
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null,"Bienvenido");
+            DocentesUsuarioComun uc=new DocentesUsuarioComun();
+            uc.setVisible(true);
+            uc.pack();  
+        }
+        
+    
+    
+        catch (SQLException ex) {
             Logger.getLogger(IngresaralSistema.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -69,7 +70,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
-        contraseña = new javax.swing.JPasswordField();
+        contrasena = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,7 +129,12 @@ public class IngresaralSistema extends javax.swing.JFrame {
             }
         });
 
-        contraseña.setText("jPasswordField1");
+        contrasena.setText("jPasswordField1");
+        contrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contrasenaActionPerformed(evt);
+            }
+        });
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         btnIngresar.setText("Ingresar");
@@ -163,7 +169,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(btnIngresar)
                     .addComponent(usuario)
-                    .addComponent(contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                    .addComponent(contrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ImagenUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 975, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -201,7 +207,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(jLabel5)
                         .addGap(29, 29, 29)
-                        .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(btnIngresar)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -211,55 +217,25 @@ public class IngresaralSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-     /**String usuario= "Benjamin";
-     String contra= "Truper";
-     
-     String pass= new String(contraseña.getPassword());
-     String user= new String(usuario.getText());
-     if (user.equals(usuario)&& pass.equals(contra)){
-         
-         Interfaz p1 = new Interfaz();
-         p1.setVisible(true);//mantiene abierto
-         dispose();
-     }else{
-         JOptionPane.showMessageDialog(this, "Usuario o Contraseña incorrecta..");
-     }
+        String usu=usuario.getText();
+        String pas=new String(contrasena.getPassword());
+        ingresar(usu,pas);
     }//GEN-LAST:event_btnIngresarActionPerformed
-    */     
-    }
+
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
         // TODO add your handling code here:
     }//GEN-LAST:event_usuarioActionPerformed
 
+    private void contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contrasenaActionPerformed
+
     /**
     // * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IngresaralSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IngresaralSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IngresaralSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IngresaralSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new IngresaralSistema().setVisible(true);
@@ -272,7 +248,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JPasswordField contraseña;
+    private javax.swing.JPasswordField contrasena;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

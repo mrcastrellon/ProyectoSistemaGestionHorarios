@@ -24,6 +24,7 @@ import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
 import Conexion_base_de_datos.Conexion;
 import java.sql.*;
 import javax.swing.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author BENJAMIN
@@ -567,26 +568,27 @@ horas.transferFocus();       // TODO add your handling code here:
         cla=clave.getText();
         cre=creditos.getText();
         hor=horas.getText();
-                
-        sql= "INSERT INTO asignatura (nombre,clave,creditos,horas)VALUES (?,?,?,?,?)";
+       
+                       
+        sql= "INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
         
         
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             pst.setString(1,nom);
-            pst.setString(1,cla);
-            pst.setString(1,cre);
-            pst.setString(1,hor);
+            pst.setString(2,cla);
+            pst.setString(3,cre);
+            pst.setString(4,hor);
+            pst.executeUpdate();
             int n=pst.executeUpdate();
             if (n>0){
-                JOptionPane.showMessageDialog(null, "registrado con exito en la base de datos");
-            
-               }
+                JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                    }
 {
             
                         }
          }catch (Exception e){
-             System.out.println("Error Mortal Combat" + e);
+             System.out.println("Error Mortal Combat --no funciona" + e);
         } 
     }//GEN-LAST:event_AltaGuardarActionPerformed
 

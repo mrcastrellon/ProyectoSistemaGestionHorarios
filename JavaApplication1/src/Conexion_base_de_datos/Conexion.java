@@ -21,11 +21,11 @@ public class Conexion {
            //cargar nuestro driver
            Class.forName("com.mysql.jdbc.Driver");
            con=DriverManager.getConnection("jdbc:mysql://localhost/horarios","root","");
-           System.out.println("conexion establecida");
-           JOptionPane.showMessageDialog(null, "conexion establecida");
+           System.out.println("conexion establecida correctamente");
+           JOptionPane.showMessageDialog(null, "conexion establecida correctamente");
        } catch (ClassNotFoundException | SQLException e) {
-           System.out.println("error de conexion");
-           JOptionPane.showMessageDialog(null, "error de conexion "+e);
+           System.out.println("error de conexion, algo esta mal");
+           JOptionPane.showMessageDialog(null, "error de conexion, algo esta mal "+e);
        }
        return con;
    }

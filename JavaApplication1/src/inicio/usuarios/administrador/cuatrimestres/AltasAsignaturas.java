@@ -561,20 +561,14 @@ horas.transferFocus();       // TODO add your handling code here:
         Connection con2=con.conexion();
         //declarando 
         String nom,cla,cre,hor;
-        String sql;
-                   
         
         nom=nombre.getText();
         cla=clave.getText();
         cre=creditos.getText();
         hor=horas.getText();
-       
-                       
-        sql= "INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
-        
-        
+          
         try {
-            PreparedStatement pst=con2.prepareStatement(sql);
+            PreparedStatement pst=con2.prepareStatement("INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)");
             pst.setString(1,nom);
             pst.setString(2,cla);
             pst.setString(3,cre);
@@ -583,6 +577,7 @@ horas.transferFocus();       // TODO add your handling code here:
             int n=pst.executeUpdate();
             if (n>0){
                 JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
                     }
 {
             
@@ -591,7 +586,7 @@ horas.transferFocus();       // TODO add your handling code here:
              System.out.println("Error Mortal Combat --no funciona" + e);
         } 
     }//GEN-LAST:event_AltaGuardarActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

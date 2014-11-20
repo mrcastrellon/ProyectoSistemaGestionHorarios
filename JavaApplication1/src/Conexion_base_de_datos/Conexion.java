@@ -20,7 +20,7 @@ public class Conexion {
        try {
            //cargar nuestro driver
            Class.forName("com.mysql.jdbc.Driver");
-           con=DriverManager.getConnection("jdbc:mysql://localhost:3306/horarios","root","");
+           con=DriverManager.getConnection("jdbc:mysql://localhost::8080/horarios","root","");
            System.out.println("conexion establecida correctamente");
            JOptionPane.showMessageDialog(null, "conexion establecida correctamente");
        } catch (ClassNotFoundException | SQLException e) {

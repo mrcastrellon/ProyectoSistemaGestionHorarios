@@ -94,10 +94,10 @@
                               <EmptySpace pref="25" max="32767" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="clave" max="32767" attributes="0"/>
-                          <Component id="nombre" alignment="0" max="32767" attributes="0"/>
-                          <Component id="creditos" alignment="0" max="32767" attributes="0"/>
-                          <Component id="horas" alignment="0" max="32767" attributes="0"/>
+                          <Component id="clavecampo" max="32767" attributes="0"/>
+                          <Component id="nombrecampo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="creditoscampo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="horascampo" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                   </Group>
@@ -162,25 +162,25 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AltasdeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombrecampo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="clave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="clavecampo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ModificaciondeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="creditos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="creditoscampo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ConsultarUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="AltaConfirmarContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="horas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="horascampo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -477,20 +477,20 @@
         <Property name="text" type="java.lang.String" value="Horas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre">
+    <Component class="javax.swing.JTextField" name="nombrecampo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa Nombre"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombrecampoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="clave">
+    <Component class="javax.swing.JTextField" name="clavecampo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa Clave "/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="claveActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clavecampoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -520,20 +520,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AltaGuardarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="creditos">
+    <Component class="javax.swing.JTextField" name="creditoscampo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa el Numero de Creditos"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creditosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creditoscampoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="horas">
+    <Component class="javax.swing.JTextField" name="horascampo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingresa el Numero de Horas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="horasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="horascampoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

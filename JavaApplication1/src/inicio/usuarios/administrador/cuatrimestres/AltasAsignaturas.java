@@ -41,16 +41,16 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         desbloquear();
     }
 void limpiar (){
-    nombre.setText("");
-     clave.setText("");
-      creditos.setText("");
-       horas.setText("");
+    nombrecampo.setText("");
+     clavecampo.setText("");
+      creditoscampo.setText("");
+       horascampo.setText("");
 } 
   void desbloquear(){
-    nombre.setEnabled(true);
-     clave.setEnabled(true);
-      creditos.setEnabled(true);
-       horas.setEnabled(true);
+    nombrecampo.setEnabled(true);
+     clavecampo.setEnabled(true);
+      creditoscampo.setEnabled(true);
+       horascampo.setEnabled(true);
 
 
 }
@@ -83,13 +83,13 @@ void limpiar (){
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
         AltaConfirmarContraseña = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        clave = new javax.swing.JTextField();
+        nombrecampo = new javax.swing.JTextField();
+        clavecampo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
-        creditos = new javax.swing.JTextField();
-        horas = new javax.swing.JTextField();
+        creditoscampo = new javax.swing.JTextField();
+        horascampo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,17 +253,17 @@ void limpiar (){
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Horas");
 
-        nombre.setText("Ingresa Nombre");
-        nombre.addActionListener(new java.awt.event.ActionListener() {
+        nombrecampo.setText("Ingresa Nombre");
+        nombrecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
+                nombrecampoActionPerformed(evt);
             }
         });
 
-        clave.setText("Ingresa Clave ");
-        clave.addActionListener(new java.awt.event.ActionListener() {
+        clavecampo.setText("Ingresa Clave ");
+        clavecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                claveActionPerformed(evt);
+                clavecampoActionPerformed(evt);
             }
         });
 
@@ -281,17 +281,17 @@ void limpiar (){
             }
         });
 
-        creditos.setText("Ingresa el Numero de Creditos");
-        creditos.addActionListener(new java.awt.event.ActionListener() {
+        creditoscampo.setText("Ingresa el Numero de Creditos");
+        creditoscampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                creditosActionPerformed(evt);
+                creditoscampoActionPerformed(evt);
             }
         });
 
-        horas.setText("Ingresa el Numero de Horas");
-        horas.addActionListener(new java.awt.event.ActionListener() {
+        horascampo.setText("Ingresa el Numero de Horas");
+        horascampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                horasActionPerformed(evt);
+                horascampoActionPerformed(evt);
             }
         });
 
@@ -362,10 +362,10 @@ void limpiar (){
                                 .addComponent(AltaGuardar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                                 .addComponent(jButton1))
-                            .addComponent(clave)
-                            .addComponent(nombre)
-                            .addComponent(creditos)
-                            .addComponent(horas))
+                            .addComponent(clavecampo)
+                            .addComponent(nombrecampo)
+                            .addComponent(creditoscampo)
+                            .addComponent(horascampo))
                         .addGap(269, 269, 269))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -416,22 +416,22 @@ void limpiar (){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombrecampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
                     .addComponent(AltaUsuario)
-                    .addComponent(clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clavecampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ModificaciondeUsuarios)
                     .addComponent(AltaContraseña)
-                    .addComponent(creditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(creditoscampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConsultarUsuarios)
                     .addComponent(AltaConfirmarContraseña)
-                    .addComponent(horas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(horascampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltaGuardar)
@@ -508,7 +508,7 @@ void limpiar (){
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
 desbloquear();
-        nombre.requestFocus();        
+        nombrecampo.requestFocus();        
         AltasAsignaturas obj=new AltasAsignaturas();
         obj.setVisible(true);
         dispose();    
@@ -539,21 +539,21 @@ desbloquear();
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
-nombre.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
+    private void nombrecampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrecampoActionPerformed
+//nombre.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_nombrecampoActionPerformed
 
-    private void claveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claveActionPerformed
-clave.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_claveActionPerformed
+    private void clavecampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clavecampoActionPerformed
+//clave.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_clavecampoActionPerformed
 
-    private void creditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditosActionPerformed
-creditos.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_creditosActionPerformed
+    private void creditoscampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditoscampoActionPerformed
+//creditos.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_creditoscampoActionPerformed
 
-    private void horasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horasActionPerformed
-horas.transferFocus();       // TODO add your handling code here:
-    }//GEN-LAST:event_horasActionPerformed
+    private void horascampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horascampoActionPerformed
+//horas.transferFocus();       // TODO add your handling code here:
+    }//GEN-LAST:event_horascampoActionPerformed
 
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
          // codigo para boton de guardar
@@ -562,20 +562,25 @@ horas.transferFocus();       // TODO add your handling code here:
         //declarando 
         String nom,cla,cre,hor;
         String sql;
-        nom=nombre.getText();
-        cla=clave.getText();
-        cre=creditos.getText();
-        hor=horas.getText();
+        //declaro la variable error
+        String mensajeerror;
+        //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+        nom=nombrecampo.getText();
+        cla=clavecampo.getText();
+        cre=creditoscampo.getText();
+        hor=horascampo.getText();
         sql="INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
+        //le digo a la variable que hara la del error para luego ser llamada
+        mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             pst.setString(1,nom);
             pst.setString(2,cla);
             pst.setString(3,cre);
-            pst.setString(4,hor);
+            pst.setString(4,hor);            
             pst.executeUpdate();
             int n=pst.executeUpdate();
-            if (n>0){
+            if (n>=0){
                 JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
                 System.out.println("Guardado correctamente");
                     }
@@ -583,7 +588,11 @@ horas.transferFocus();       // TODO add your handling code here:
             
                         }
          }catch (Exception e){
-             System.out.println("Error Mortal Combat --no funciona" + e);
+             //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             //este mensaje solo se imprimira en el registro--
+             System.out.println("Ingresa los datos correctamente" + e);
+             
         } 
     }//GEN-LAST:event_AltaGuardarActionPerformed
     
@@ -643,9 +652,9 @@ horas.transferFocus();       // TODO add your handling code here:
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JTextField clave;
-    private javax.swing.JTextField creditos;
-    private javax.swing.JTextField horas;
+    private javax.swing.JTextField clavecampo;
+    private javax.swing.JTextField creditoscampo;
+    private javax.swing.JTextField horascampo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -655,7 +664,7 @@ horas.transferFocus();       // TODO add your handling code here:
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField nombre;
+    private javax.swing.JTextField nombrecampo;
     // End of variables declaration//GEN-END:variables
 
     

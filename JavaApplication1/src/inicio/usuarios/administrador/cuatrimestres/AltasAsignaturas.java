@@ -561,14 +561,14 @@ horas.transferFocus();       // TODO add your handling code here:
         Connection con2=con.conexion();
         //declarando 
         String nom,cla,cre,hor;
-        
+        String sql;
         nom=nombre.getText();
         cla=clave.getText();
         cre=creditos.getText();
         hor=horas.getText();
-          
+        sql="INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
         try {
-            PreparedStatement pst=con2.prepareStatement("INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)");
+            PreparedStatement pst=con2.prepareStatement(sql);
             pst.setString(1,nom);
             pst.setString(2,cla);
             pst.setString(3,cre);

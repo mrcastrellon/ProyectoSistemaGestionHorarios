@@ -560,28 +560,26 @@ desbloquear();
         Conexion con=new Conexion();
         Connection con2=con.conexion();
         //declarando 
-        String nom,cla,cre,hor;
+        
         String sql;
         //declaro la variable error
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
-        nom=nombrecampo.getText();
-        cla=clavecampo.getText();
-        cre=creditoscampo.getText();
-        hor=horascampo.getText();
+                   
         sql="INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
-            pst.setString(1,nom);
-            pst.setString(2,cla);
-            pst.setString(3,cre);
-            pst.setString(4,hor);            
-            pst.executeUpdate();
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+            pst.setString(1,nombrecampo.getText());
+            pst.setString(2,clavecampo.getText());
+            pst.setString(3,creditoscampo.getText());
+            pst.setString(4,horascampo.getText());            
             int n=pst.executeUpdate();
             if (n>=0){
-                JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                //son los mensajes de que se ejecuto correctamente la insercion
+             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
                 System.out.println("Guardado correctamente");
                     }
 {

@@ -43,18 +43,18 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         desbloquear();
     }
     void limpiar (){
-    IngresaNombreMateria.setText("");
-     IngresaClaveMateria.setText("");
-      IngresaHorarioMateria.setText("");
-       IngresaCuatrimestreMateria.setText("");
-       IngresaGrupoMateria.setText("");
+    materia.setText("");
+     clave.setText("");
+      horario.setText("");
+       cuatrimestre.setText("");
+       grupo.setText("");
     }
             void desbloquear(){
-     IngresaNombreMateria.setEnabled(true);
-     IngresaClaveMateria.setEnabled(true);
-      IngresaHorarioMateria.setEnabled(true);
-       IngresaCuatrimestreMateria.setEnabled(true);
-       IngresaGrupoMateria.setEnabled(true);
+     materia.setEnabled(true);
+     clave.setEnabled(true);
+      horario.setEnabled(true);
+       cuatrimestre.setEnabled(true);
+       grupo.setEnabled(true);
        }
 
     /**
@@ -91,16 +91,16 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
         AltaConfirmarContraseña = new javax.swing.JLabel();
-        IngresaNombreMateria = new javax.swing.JTextField();
-        IngresaClaveMateria = new javax.swing.JTextField();
+        materia = new javax.swing.JTextField();
+        clave = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
-        IngresaHorarioMateria = new javax.swing.JTextField();
-        IngresaCuatrimestreMateria = new javax.swing.JTextField();
+        horario = new javax.swing.JTextField();
+        cuatrimestre = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        IngresaGrupoMateria = new javax.swing.JTextField();
+        grupo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -263,17 +263,17 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Cuatrimestre");
 
-        IngresaNombreMateria.setText("Ingresa Nombre de la Materia");
-        IngresaNombreMateria.addActionListener(new java.awt.event.ActionListener() {
+        materia.setText("Ingresa Nombre de la Materia");
+        materia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresaNombreMateriaActionPerformed(evt);
+                materiaActionPerformed(evt);
             }
         });
 
-        IngresaClaveMateria.setText("Ingresa la Clave de la Materia");
-        IngresaClaveMateria.addActionListener(new java.awt.event.ActionListener() {
+        clave.setText("Ingresa la Clave de la Materia");
+        clave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresaClaveMateriaActionPerformed(evt);
+                claveActionPerformed(evt);
             }
         });
 
@@ -291,17 +291,17 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
             }
         });
 
-        IngresaHorarioMateria.setText("Ingresa el Horario de la Materia");
-        IngresaHorarioMateria.addActionListener(new java.awt.event.ActionListener() {
+        horario.setText("Ingresa el Horario de la Materia");
+        horario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresaHorarioMateriaActionPerformed(evt);
+                horarioActionPerformed(evt);
             }
         });
 
-        IngresaCuatrimestreMateria.setText("Ingresa el Cuatrimestre");
-        IngresaCuatrimestreMateria.addActionListener(new java.awt.event.ActionListener() {
+        cuatrimestre.setText("Ingresa el Cuatrimestre");
+        cuatrimestre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresaCuatrimestreMateriaActionPerformed(evt);
+                cuatrimestreActionPerformed(evt);
             }
         });
 
@@ -316,10 +316,10 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel1.setText("Grupo");
 
-        IngresaGrupoMateria.setText("Ingresa el Grupo al que Pertenece");
-        IngresaGrupoMateria.addActionListener(new java.awt.event.ActionListener() {
+        grupo.setText("Ingresa el Grupo al que Pertenece");
+        grupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresaGrupoMateriaActionPerformed(evt);
+                grupoActionPerformed(evt);
             }
         });
 
@@ -383,11 +383,11 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
                                 .addComponent(AltaGuardar)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1))
-                            .addComponent(IngresaClaveMateria)
-                            .addComponent(IngresaNombreMateria)
-                            .addComponent(IngresaHorarioMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                            .addComponent(IngresaCuatrimestreMateria)
-                            .addComponent(IngresaGrupoMateria))
+                            .addComponent(clave)
+                            .addComponent(materia)
+                            .addComponent(horario, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                            .addComponent(cuatrimestre)
+                            .addComponent(grupo))
                         .addGap(269, 269, 269))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,26 +437,26 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
-                    .addComponent(IngresaNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(materia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
                     .addComponent(AltaUsuario)
-                    .addComponent(IngresaClaveMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ModificaciondeUsuarios)
                     .addComponent(AltaContraseña)
-                    .addComponent(IngresaHorarioMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(horario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConsultarUsuarios)
                     .addComponent(AltaConfirmarContraseña)
-                    .addComponent(IngresaCuatrimestreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cuatrimestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(IngresaGrupoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltaGuardar)
@@ -533,7 +533,7 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
 desbloquear();
-        IngresaNombreMateria.requestFocus();        // TODO add your handling code here:
+        materia.requestFocus();        // TODO add your handling code here:
     }//GEN-LAST:event_AltasdeUsuariosActionPerformed
 
     private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
@@ -561,51 +561,57 @@ desbloquear();
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
-    private void IngresaNombreMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaNombreMateriaActionPerformed
-IngresaNombreMateria.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresaNombreMateriaActionPerformed
+    private void materiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiaActionPerformed
+materia.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_materiaActionPerformed
 
-    private void IngresaClaveMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaClaveMateriaActionPerformed
-IngresaClaveMateria.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresaClaveMateriaActionPerformed
+    private void claveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claveActionPerformed
+clave.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_claveActionPerformed
 
-    private void IngresaHorarioMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaHorarioMateriaActionPerformed
-IngresaHorarioMateria.transferFocus();       // TODO add your handling code here:
-    }//GEN-LAST:event_IngresaHorarioMateriaActionPerformed
+    private void horarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horarioActionPerformed
+horario.transferFocus();       // TODO add your handling code here:
+    }//GEN-LAST:event_horarioActionPerformed
 
-    private void IngresaCuatrimestreMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaCuatrimestreMateriaActionPerformed
-IngresaCuatrimestreMateria.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresaCuatrimestreMateriaActionPerformed
+    private void cuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatrimestreActionPerformed
+cuatrimestre.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_cuatrimestreActionPerformed
 
-    private void IngresaGrupoMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresaGrupoMateriaActionPerformed
-IngresaGrupoMateria.transferFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresaGrupoMateriaActionPerformed
+    private void grupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupoActionPerformed
+grupo.transferFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_grupoActionPerformed
 
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
-    Conexion con=new Conexion();
-    Connection con2=con.conexion();
-    String materia,clave,horario,cuatrimestre, grupo;
-    materia = IngresaNombreMateria.getText();
-    clave = IngresaClaveMateria.getText();
-    horario = IngresaHorarioMateria.getText();
-    cuatrimestre = IngresaCuatrimestreMateria.getText();
-    grupo = IngresaGrupoMateria.getText();
-   String sql="INSERT INTO horarios externos (materia, clave, horario, cuatrimestre, grupo)VALUES (?,?,?,?,?)";
-    try {
-    PreparedStatement pst = cn.PrepareStatement(sql);
-            pst.setString(1, materia);
-            pst.setString(1, clave);
-            pst.setString(1, horario);
-            pst.setString(1, cuatrimestre);
-            pst.setString(1, grupo);
-          int  n=Pst.ExecuteUpdate();
-          if (n>0){
-              JOptionPane.showMessageDialog(null,"Registro Guardado con Exito");
-                      }
-          }catch (SQLExeption ex){
-              Logger.getLogger(HorariosExternos.class.getName()).log(Level.SEVERE, null.ex);
-          }
-    
+   Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        // TODO add your handling code here:
+        String mat,clav,horar,cuatri,grup;
+        String sql;
+        mat=materia.getText();
+        clav=clave.getText();
+        horar=horario.getText();
+        cuatri=cuatrimestre.getText();
+        grup=grupo.getText();
+        sql="INSERT INTO horarios_externos(materia,clave,horario,cuatrimestre,grupo)VALUES (?,?,?,?.?)";
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            pst.setString(1,mat);
+            pst.setString(2,clav);
+            pst.setString(3,horar);
+            pst.setString(4,cuatri);
+            pst.setString(5,grup);
+            pst.executeUpdate();
+            int n=pst.executeUpdate();
+            if (n>0){
+                
+                System.out.println("Guardado correctamente");
+                    }
+{
+            
+                        }
+         }catch (Exception e){
+             System.out.println("Error Mortal Combat --no funciona" + e);
+        } 
         // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
 
@@ -660,16 +666,15 @@ IngresaGrupoMateria.transferFocus();        // TODO add your handling code here:
     private javax.swing.JButton GeneraciondeHorarios;
     private javax.swing.JButton HorariosAlumnos;
     private javax.swing.JButton HorariosExternos;
-    private javax.swing.JTextField IngresaClaveMateria;
-    private javax.swing.JTextField IngresaCuatrimestreMateria;
-    private javax.swing.JTextField IngresaGrupoMateria;
-    private javax.swing.JTextField IngresaHorarioMateria;
-    private javax.swing.JTextField IngresaNombreMateria;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JTextField clave;
+    private javax.swing.JTextField cuatrimestre;
+    private javax.swing.JTextField grupo;
+    private javax.swing.JTextField horario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -680,5 +685,6 @@ IngresaGrupoMateria.transferFocus();        // TODO add your handling code here:
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField materia;
     // End of variables declaration//GEN-END:variables
 }

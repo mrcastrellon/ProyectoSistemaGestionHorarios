@@ -6,6 +6,7 @@
 
 package inicio.usuarios.administrador.docentes;
 
+import Conexion_base_de_datos.Conexion;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
 import inicio.usuarios.administrador.docentes.Docentes;
@@ -25,6 +26,12 @@ import inicio.usuarios.administrador.docentes.AltaDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.ModificarDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.BitacoraDocentes;
 
+
+///para inportar ala base de datos
+import Conexion_base_de_datos.Conexion;
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -78,15 +85,15 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        nombrecompleto = new javax.swing.JTextField();
+        direccion = new javax.swing.JTextField();
+        telefono = new javax.swing.JTextField();
+        correo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        especialidad = new javax.swing.JTextField();
+        tentativas = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -279,21 +286,15 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Correo");
 
-        jTextField1.setText("Escribe el nombre completo del Docente a dar de alta");
-
-        jTextField2.setText("Escribe la direccion completa del docente a  dar de alta");
-
-        jTextField3.setText("Escribe numero telefonico del docente a  dar de alta");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                telefonoActionPerformed(evt);
             }
         });
 
-        jTextField4.setText("Escribe el correo del docente a  dar de alta");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                correoActionPerformed(evt);
             }
         });
 
@@ -306,17 +307,15 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel11.setText("Materias tentativas a inpartir");
 
-        jTextField5.setText("Escribe la carrera o especialidad del docente a  dar de alta");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        especialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                especialidadActionPerformed(evt);
             }
         });
 
-        jTextField6.setText("Escribe las materias probables a inpartir por parte del docente del docente a  dar de alta");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        tentativas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                tentativasActionPerformed(evt);
             }
         });
 
@@ -325,6 +324,11 @@ public class AltadeDocentes extends javax.swing.JFrame {
 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Enviar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Altas Docentes");
@@ -404,12 +408,12 @@ public class AltadeDocentes extends javax.swing.JFrame {
                                             .addComponent(jLabel11))
                                         .addGap(54, 54, 54)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField2)
-                                            .addComponent(jTextField3)
-                                            .addComponent(jTextField5)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                                            .addComponent(jTextField4)
-                                            .addComponent(jTextField1))))))
+                                            .addComponent(direccion)
+                                            .addComponent(telefono)
+                                            .addComponent(especialidad)
+                                            .addComponent(tentativas, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                                            .addComponent(correo)
+                                            .addComponent(nombrecompleto))))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -455,7 +459,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombrecompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -474,25 +478,25 @@ public class AltadeDocentes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tentativas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton9)
@@ -625,21 +629,21 @@ public class AltadeDocentes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_telefonoActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_correoActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void especialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especialidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_especialidadActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void tentativasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_tentativasActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
@@ -648,6 +652,46 @@ public class AltadeDocentes extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+ Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        //declarando 
+        
+        String sql;
+        //declaro la variable error
+        String mensajeerror;
+        //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+                   
+        sql="INSERT INTO asignatura(correo,direccion,especialidad,nombre_completo,telefono,tentativas)VALUES (?,?,?,?,?,?)";
+        //le digo a la variable que hara la del error para luego ser llamada
+        mensajeerror="Ingresa los datos correctamente";
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+            pst.setString(1,nombrecompleto.getText());
+            pst.setString(2,direccion.getText());
+            pst.setString(3,telefono.getText());
+            pst.setString(4,correo.getText());
+            pst.setString(4,especialidad.getText());
+            pst.setString(4,tentativas.getText());
+            int n=pst.executeUpdate();
+            if (n>=0){
+                //son los mensajes de que se ejecuto correctamente la insercion
+             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                    }
+{
+            
+                        }
+         }catch (Exception e){
+             //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             //este mensaje solo se imprimira en el registro--
+             System.out.println("Ingresa los datos correctamente" + e);
+             
+        } 
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -694,6 +738,9 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JTextField correo;
+    private javax.swing.JTextField direccion;
+    private javax.swing.JTextField especialidad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -720,11 +767,8 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField nombrecompleto;
+    private javax.swing.JTextField telefono;
+    private javax.swing.JTextField tentativas;
     // End of variables declaration//GEN-END:variables
 }

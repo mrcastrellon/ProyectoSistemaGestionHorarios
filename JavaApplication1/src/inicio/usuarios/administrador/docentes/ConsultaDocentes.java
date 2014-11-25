@@ -6,6 +6,7 @@
 
 package inicio.usuarios.administrador.docentes;
 
+import Conexion_base_de_datos.Conexion;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import inicio.usuarios.administrador.cuatrimestres.AltasAsignaturas;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
@@ -25,6 +26,8 @@ import inicio.usuarios.administrador.docentes.ConsultaDocentes;
 import inicio.usuarios.administrador.docentes.AltaDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.ModificarDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.BitacoraDocentes;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -40,7 +43,35 @@ public class ConsultaDocentes extends javax.swing.JFrame {
      */
     public ConsultaDocentes() {
         initComponents();
+        mostrardatos();
     }
+    void mostrardatos(){
+        DefaultTableModel modelo= new DefaultTableModel();
+        modelo.addColumn("correo");
+        modelo.addColumn("direccion");
+        modelo.addColumn("especialidad");
+        modelo.addColumn("nombre_completo");
+        modelo.addColumn("carrera");
+        modelo.addColumn("tentativas");
+        tablaconsultadocentes.setModel(modelo);
+        String []datos = new String [4];
+        try{
+        Statement st = con.createStatement();
+        ResulSet rs= st.executeQuery("SELECT * FROM docentes");
+        while (rs.next()){
+        datos [0]=rs.getString(1);
+        datos [1]=rs.getString(2);
+        datos [2]=rs.getString(3);
+        datos [3]=rs.getString(4);
+        modelo.addRow(datos);
+        tablaconsultadocentes.setModel(modelo);
+}
+    }catch (Exception e){
+         Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex);  
+    }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,7 +109,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaconsultadocentes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -259,52 +290,28 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Consultar Docentes");
 
-        jTable1.setBackground(new java.awt.Color(153, 255, 153));
-        jTable1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaconsultadocentes.setBackground(new java.awt.Color(153, 255, 153));
+        tablaconsultadocentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        tablaconsultadocentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Benjamin Castillo Pérez", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Hector Duarte", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Joel", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Iván", "Calle Sn. Ignacio, Fraccionamiento La Forestal", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"José de Jesús", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Iracema", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Jesús Valedez", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Yolanda", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Luis", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Francisco", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Marcos", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Octavio", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Liliana", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Ozcar Flores", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Alejandra", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Rosalinda", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Pedro", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Júan José", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Eduardo", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Saúl", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Juliana", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Letycia", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Teresa", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {"Gabriel", "Calle Sn. Ignacio", "6182202020", "uni_alumno@hotmail.com", "Ing.Informatica", "Bases de Datos, Programacion"},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nombre Completo", "Direccion", "Telefono", "Correo", "Carrera o Especialidad", "Materias Tentativas a Impartir"
+
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(jTable1);
+        tablaconsultadocentes.setGridColor(new java.awt.Color(204, 0, 0));
+        jScrollPane1.setViewportView(tablaconsultadocentes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -618,6 +625,8 @@ public class ConsultaDocentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaconsultadocentes;
     // End of variables declaration//GEN-END:variables
+ Conexion con=new Conexion();
+        Connection con2=con.conexion();
 }

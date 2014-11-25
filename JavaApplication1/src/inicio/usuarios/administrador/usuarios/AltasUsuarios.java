@@ -6,6 +6,7 @@
 
 package inicio.usuarios.administrador.usuarios;
 
+import Conexion_base_de_datos.Conexion;
 import inicio.usuarios.administrador.cuatrimestres.cuatrimestres;
 import inicio.usuarios.administrador.docentes.Docentes;
 import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
@@ -18,6 +19,9 @@ import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.usuarios.AsignaciondePrivilegios;
 import inicio.usuarios.administrador.usuarios.ModificaciondeUsuarios;
 import inicio.usuarios.administrador.usuarios.ConsultarUsuarios;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 
 
@@ -68,8 +72,8 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
         AltaConfirmarContraseña = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        usuario = new javax.swing.JTextField();
+        camponombre = new javax.swing.JTextField();
+        campousuario = new javax.swing.JTextField();
         contraseña = new javax.swing.JPasswordField();
         contraseña_conf = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
@@ -237,9 +241,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Confirmar Contraseña");
 
-        nombre.setText("Ingresa Nombre");
+        camponombre.setText("Ingresa Nombre");
 
-        usuario.setText("Ingresa Usuario");
+        campousuario.setText("Ingresa Usuario");
 
         contraseña.setText("jPasswordField1");
 
@@ -329,8 +333,8 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AltaGuardar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(nombre)
-                        .addComponent(usuario)
+                        .addComponent(camponombre)
+                        .addComponent(campousuario)
                         .addComponent(contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                         .addComponent(contraseña_conf)))
                 .addGap(298, 298, 298))
@@ -373,12 +377,12 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(camponombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignaciondePrivilegios)
                     .addComponent(AltaUsuario)
-                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ModificaciondeUsuarios)
@@ -497,7 +501,41 @@ public class AltasUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
-        // TODO add your handling code here:
+Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        //declarando 
+        
+        String sql;
+        //declaro la variable error
+        String mensajeerror;
+        //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+                   
+        sql="INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
+        //le digo a la variable que hara la del error para luego ser llamada
+        mensajeerror="Ingresa los datos correctamente";
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+            pst.setString(1,nombrecampo.getText());
+            pst.setString(2,clavecampo.getText());
+            pst.setString(3,creditoscampo.getText());
+            pst.setString(4,horascampo.getText());            
+            int n=pst.executeUpdate();
+            if (n>=0){
+                //son los mensajes de que se ejecuto correctamente la insercion
+             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                    }
+{
+            
+                        }
+         }catch (Exception e){
+             //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             //este mensaje solo se imprimira en el registro--
+             System.out.println("Ingresa los datos correctamente" + e);
+             
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
 
     /**
@@ -556,6 +594,8 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JTextField camponombre;
+    private javax.swing.JTextField campousuario;
     private javax.swing.JPasswordField contraseña;
     private javax.swing.JPasswordField contraseña_conf;
     private javax.swing.JLabel jLabel2;
@@ -566,7 +606,5 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }

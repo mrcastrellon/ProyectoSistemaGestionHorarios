@@ -111,12 +111,12 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="direccion" max="32767" attributes="0"/>
-                                          <Component id="telefono" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="especialidad" max="32767" attributes="0"/>
-                                          <Component id="tentativas" alignment="0" pref="456" max="32767" attributes="0"/>
-                                          <Component id="correo" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="nombrecompleto" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="campodireccion" max="32767" attributes="0"/>
+                                          <Component id="campotelefono" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="campoespecialidad" max="32767" attributes="0"/>
+                                          <Component id="campotentativas" alignment="0" pref="456" max="32767" attributes="0"/>
+                                          <Component id="campocorreo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="camponombrecompleto" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -178,7 +178,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombrecompleto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="camponombrecompleto" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -199,29 +199,29 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campodireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campotelefono" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="correo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campocorreo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="especialidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoespecialidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tentativas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campotentativas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -561,18 +561,18 @@
         <Property name="text" type="java.lang.String" value="Correo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombrecompleto">
+    <Component class="javax.swing.JTextField" name="camponombrecompleto">
     </Component>
-    <Component class="javax.swing.JTextField" name="direccion">
+    <Component class="javax.swing.JTextField" name="campodireccion">
     </Component>
-    <Component class="javax.swing.JTextField" name="telefono">
+    <Component class="javax.swing.JTextField" name="campotelefono">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="telefonoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campotelefonoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="correo">
+    <Component class="javax.swing.JTextField" name="campocorreo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="correoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campocorreoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -599,14 +599,14 @@
         <Property name="text" type="java.lang.String" value="Materias tentativas a inpartir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="especialidad">
+    <Component class="javax.swing.JTextField" name="campoespecialidad">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="especialidadActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoespecialidadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tentativas">
+    <Component class="javax.swing.JTextField" name="campotentativas">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tentativasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campotentativasActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton9">

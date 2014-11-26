@@ -74,11 +74,13 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaConfirmarContraseña = new javax.swing.JLabel();
         camponombre = new javax.swing.JTextField();
         campousuario = new javax.swing.JTextField();
-        contraseña = new javax.swing.JPasswordField();
-        contraseña_conf = new javax.swing.JPasswordField();
+        campocontraseña = new javax.swing.JPasswordField();
+        campocontraseña_conf = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
+        campotipo_usuario = new javax.swing.JTextField();
+        AltaConfirmarContraseña1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -245,9 +247,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
 
         campousuario.setText("Ingresa Usuario");
 
-        contraseña.setText("jPasswordField1");
+        campocontraseña.setText("jPasswordField1");
 
-        contraseña_conf.setText("jPasswordField2");
+        campocontraseña_conf.setText("jPasswordField2");
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
@@ -263,13 +265,18 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
 
+        campotipo_usuario.setText("invitado o administrador");
+
+        AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        AltaConfirmarContraseña1.setText("Tipo de Usuario");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1275, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +284,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(NombredelUsuario)
                         .addGap(32, 32, 32)
@@ -297,7 +304,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(GeneraciondeHorarios)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 24, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -315,28 +322,32 @@ public class AltasUsuarios extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AltaConfirmarContraseña))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 462, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(AltaNombre)
                             .addComponent(AltaUsuario)
-                            .addComponent(AltaContraseña))))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AltaGuardar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(camponombre)
-                        .addComponent(campousuario)
-                        .addComponent(contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(contraseña_conf)))
+                            .addComponent(AltaContraseña)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AltaConfirmarContraseña1)
+                            .addComponent(AltaConfirmarContraseña))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(camponombre)
+                    .addComponent(campousuario)
+                    .addComponent(campocontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(campocontraseña_conf)
+                    .addComponent(campotipo_usuario)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(AltaGuardar)))
                 .addGap(298, 298, 298))
         );
         layout.setVerticalGroup(
@@ -378,24 +389,37 @@ public class AltasUsuarios extends javax.swing.JFrame {
                     .addComponent(AltasdeUsuarios)
                     .addComponent(AltaNombre)
                     .addComponent(camponombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(AsignaciondePrivilegios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AltaUsuario))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(ModificaciondeUsuarios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campocontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AltaContraseña))))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campocontraseña_conf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AltaConfirmarContraseña))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ConsultarUsuarios)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AsignaciondePrivilegios)
-                    .addComponent(AltaUsuario)
-                    .addComponent(campousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModificaciondeUsuarios)
-                    .addComponent(AltaContraseña)
-                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConsultarUsuarios)
-                    .addComponent(AltaConfirmarContraseña)
-                    .addComponent(contraseña_conf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AltaConfirmarContraseña1))
+                .addGap(31, 31, 31)
                 .addComponent(AltaGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -501,7 +525,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
-Conexion con=new Conexion();
+        Conexion con=new Conexion();
         Connection con2=con.conexion();
         //declarando 
         
@@ -510,16 +534,17 @@ Conexion con=new Conexion();
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO asignatura(nombre,clave,creditos,horas)VALUES (?,?,?,?)";
+        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,contrasena_conf,tipo_usuario)VALUES (?,?,?,?,?)";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
-            pst.setString(1,nombrecampo.getText());
-            pst.setString(2,clavecampo.getText());
-            pst.setString(3,creditoscampo.getText());
-            pst.setString(4,horascampo.getText());            
+            pst.setString(1,camponombre.getText());
+            pst.setString(2,campousuario.getText());
+            pst.setString(3,campocontraseña.getText());
+            pst.setString(4,campocontraseña_conf.getText());  
+            pst.setString(5,campotipo_usuario.getText());
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
@@ -575,6 +600,7 @@ Conexion con=new Conexion();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AltaConfirmarContraseña;
+    private javax.swing.JLabel AltaConfirmarContraseña1;
     private javax.swing.JLabel AltaContraseña;
     private javax.swing.JButton AltaGuardar;
     private javax.swing.JLabel AltaNombre;
@@ -594,10 +620,11 @@ Conexion con=new Conexion();
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JPasswordField campocontraseña;
+    private javax.swing.JPasswordField campocontraseña_conf;
     private javax.swing.JTextField camponombre;
+    private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;
-    private javax.swing.JPasswordField contraseña;
-    private javax.swing.JPasswordField contraseña_conf;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;

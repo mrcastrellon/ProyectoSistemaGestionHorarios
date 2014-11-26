@@ -44,12 +44,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Cuatrimestre = new javax.swing.JButton();
-        Docentes = new javax.swing.JButton();
-        HorariosExternos = new javax.swing.JButton();
-        HorariosAlumnos = new javax.swing.JButton();
-        Usuarios = new javax.swing.JButton();
-        GeneraciondeHorarios = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -60,7 +54,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
         ModificaciondeUsuarios = new javax.swing.JButton();
@@ -72,61 +65,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
-        Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Cuatrimestre.setText("Cuatrimestre");
-        Cuatrimestre.setAlignmentX(0.1F);
-        Cuatrimestre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CuatrimestreActionPerformed(evt);
-            }
-        });
-
-        Docentes.setBackground(new java.awt.Color(255, 102, 0));
-        Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Docentes.setText("Docentes");
-        Docentes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DocentesActionPerformed(evt);
-            }
-        });
-
-        HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosExternos.setText("Horarios Externos");
-        HorariosExternos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosExternosActionPerformed(evt);
-            }
-        });
-
-        HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
-        HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        HorariosAlumnos.setText("Horarios Alumnos");
-        HorariosAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorariosAlumnosActionPerformed(evt);
-            }
-        });
-
-        Usuarios.setBackground(new java.awt.Color(255, 102, 0));
-        Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        Usuarios.setText("Usuarios");
-        Usuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosActionPerformed(evt);
-            }
-        });
-
-        GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
-        GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        GeneraciondeHorarios.setText("Generación de Horarios");
-        GeneraciondeHorarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneraciondeHorariosActionPerformed(evt);
-            }
-        });
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
 
@@ -176,15 +114,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        AsignarMaterias.setBackground(new java.awt.Color(255, 102, 0));
-        AsignarMaterias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        AsignarMaterias.setText("Asignar Materias");
-        AsignarMaterias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AsignarMateriasActionPerformed(evt);
-            }
-        });
-
         AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AltasdeUsuarios.setText("Alta Docentes");
         AltasdeUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -232,32 +161,14 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1304, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(NombredelUsuario)
-                        .addGap(32, 32, 32)
-                        .addComponent(CerrarSesion))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Cuatrimestre)
-                        .addGap(37, 37, 37)
-                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(HorariosExternos)
-                        .addGap(52, 52, 52)
-                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(AsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GeneraciondeHorarios)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(233, 233, 233)
+                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(NombredelUsuario)
+                .addGap(32, 32, 32)
+                .addComponent(CerrarSesion)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -295,16 +206,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios)
-                    .addComponent(AsignarMaterias))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
@@ -332,66 +234,12 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
-        // Link para modulo horarios externos
-        HorariosExternos obj=new HorariosExternos();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_HorariosExternosActionPerformed
-
-    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        // Link para modulo usuarios
-        Usuarios obj=new Usuarios();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_UsuariosActionPerformed
-
-    private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para modulo usuarios
-        PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
-
-    private void CuatrimestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuatrimestreActionPerformed
-        // Link para modulo cuatrimestres
-        cuatrimestres obj=new cuatrimestres();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_CuatrimestreActionPerformed
-
-    private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
-        // Link para modulo horarios alumnos
-        HorariosAlumnos obj=new HorariosAlumnos();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_HorariosAlumnosActionPerformed
-
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
         // Link para modulo cerrar sesion
         IngresaralSistema obj=new IngresaralSistema();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_CerrarSesionActionPerformed
-
-    private void AsignarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarMateriasActionPerformed
-        // Link para modulo horarios alumnos
-        AsignarAsignatura obj=new AsignarAsignatura();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_AsignarMateriasActionPerformed
-
-    private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
-        // Link para modulo docentes
-        Docentes obj=new Docentes();
-        obj.setVisible(true);
-        dispose();    }//GEN-LAST:event_DocentesActionPerformed
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
         // Link para modulo altas de asignaturas
@@ -460,19 +308,12 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AltasdeUsuarios;
     private javax.swing.JButton AsignaciondePrivilegios;
-    private javax.swing.JButton AsignarMaterias;
     private javax.swing.JButton CerrarSesion;
     private javax.swing.JButton ConsultarUsuarios;
-    private javax.swing.JButton Cuatrimestre;
-    private javax.swing.JButton Docentes;
-    private javax.swing.JButton GeneraciondeHorarios;
-    private javax.swing.JButton HorariosAlumnos;
-    private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
-    private javax.swing.JButton Usuarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -32,20 +32,20 @@ public class IngresaralSistema extends javax.swing.JFrame {
             if (cap.equals("administrador")){
             
             this.setVisible(true);
-            JOptionPane.showMessageDialog(null,"Bienvenido administrador");
+            JOptionPane.showMessageDialog(rootPane,"Bienvenido administrador");
             Interfaz inter=new Interfaz();
             inter.setVisible(true);
             inter.pack();
             }
             if (cap.equals("invitado")){
             this.setVisible(true);
-            JOptionPane.showMessageDialog(null,"Bienvenido al sistema");
+            JOptionPane.showMessageDialog(rootPane,"Bienvenido al sistema");
             DocentesUsuarioComun uc=new DocentesUsuarioComun();
             uc.setVisible(true);
             uc.pack(); 
             
             }else {
-                  JOptionPane.showMessageDialog(null,"EL usuario no existe vuelve a intentarlo");  
+                  JOptionPane.showMessageDialog(rootPane,"EL usuario no existe vuelve a intentarlo");  
                     }
             
         }

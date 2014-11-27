@@ -18,9 +18,15 @@ import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
 import inicio.IngresaralSistema;
+// para importar lo de la base de datos
+import Conexion_base_de_datos.Conexion;
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.JOptionPane;
 /**
+ * 
  *
- * @author BENJAMIN
+ * 
  */
 public class AltasCuatrimestre extends javax.swing.JFrame {
 
@@ -61,38 +67,37 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         AsignaciondePrivilegios = new javax.swing.JButton();
         ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
-        AltaUsuario = new javax.swing.JLabel();
-        AltaNombre = new javax.swing.JLabel();
-        AltaContraseña = new javax.swing.JLabel();
-        AltaConfirmarContraseña = new javax.swing.JLabel();
+        segundo = new javax.swing.JLabel();
+        primer = new javax.swing.JLabel();
+        tercero = new javax.swing.JLabel();
+        cuarto = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        AltaConfirmarContraseña1 = new javax.swing.JLabel();
-        AltaConfirmarContraseña2 = new javax.swing.JLabel();
-        AltaConfirmarContraseña3 = new javax.swing.JLabel();
-        AltaConfirmarContraseña4 = new javax.swing.JLabel();
-        AltaConfirmarContraseña5 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
-        jComboBox5 = new javax.swing.JComboBox();
-        jComboBox6 = new javax.swing.JComboBox();
-        jComboBox7 = new javax.swing.JComboBox();
-        jComboBox8 = new javax.swing.JComboBox();
-        jComboBox9 = new javax.swing.JComboBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        boton1 = new javax.swing.JCheckBox();
+        boton2 = new javax.swing.JCheckBox();
+        boton3 = new javax.swing.JCheckBox();
+        boton4 = new javax.swing.JCheckBox();
+        sexto = new javax.swing.JLabel();
+        septimo = new javax.swing.JLabel();
+        octavo = new javax.swing.JLabel();
+        noveno = new javax.swing.JLabel();
+        quinto = new javax.swing.JLabel();
+        boton7 = new javax.swing.JCheckBox();
+        boton8 = new javax.swing.JCheckBox();
+        boton9 = new javax.swing.JCheckBox();
+        boton6 = new javax.swing.JCheckBox();
+        combo1 = new javax.swing.JComboBox();
+        combo2 = new javax.swing.JComboBox();
+        combo3 = new javax.swing.JComboBox();
+        combo4 = new javax.swing.JComboBox();
+        combo6 = new javax.swing.JComboBox();
+        combo7 = new javax.swing.JComboBox();
+        combo8 = new javax.swing.JComboBox();
+        combo5 = new javax.swing.JComboBox();
+        combo9 = new javax.swing.JComboBox();
+        boton5 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -243,17 +248,17 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
 
-        AltaUsuario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaUsuario.setText("2do Cuatrimestre");
+        segundo.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        segundo.setText("2do Cuatrimestre");
 
-        AltaNombre.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaNombre.setText("1er Cuatrimestre");
+        primer.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        primer.setText("1er Cuatrimestre");
 
-        AltaContraseña.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaContraseña.setText("3er Cuatrimestre");
+        tercero.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        tercero.setText("3er Cuatrimestre");
 
-        AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña.setText("4to Cuatrimestre");
+        cuarto.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        cuarto.setText("4to Cuatrimestre");
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
@@ -263,6 +268,11 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
+        AltaGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AltaGuardarActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");
@@ -272,61 +282,67 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        boton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                boton1ActionPerformed(evt);
             }
         });
 
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        boton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                boton2ActionPerformed(evt);
             }
         });
 
-        AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña1.setText("6to Cuatrimestre");
-
-        AltaConfirmarContraseña2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña2.setText("7timo Cuatrimestre");
-
-        AltaConfirmarContraseña3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña3.setText("8vo Cuatrimestre");
-
-        AltaConfirmarContraseña4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña4.setText("9no Cuatrimestre");
-
-        AltaConfirmarContraseña5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltaConfirmarContraseña5.setText("5to Cuatrimestre");
-
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        boton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                boton3ActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        sexto.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        sexto.setText("6to Cuatrimestre");
+
+        septimo.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        septimo.setText("7timo Cuatrimestre");
+
+        octavo.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        octavo.setText("8vo Cuatrimestre");
+
+        noveno.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        noveno.setText("9no Cuatrimestre");
+
+        quinto.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        quinto.setText("5to Cuatrimestre");
+
+        boton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                boton8ActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo1ActionPerformed(evt);
+            }
+        });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+        combo5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
+
+        combo9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Intermedio" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -375,33 +391,33 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(combo3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(AltaConfirmarContraseña3)
+                                                .addComponent(octavo)
                                                 .addGap(18, 18, 18))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(combo5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(combo4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(69, 69, 69)
-                                                .addComponent(AltaConfirmarContraseña4)
+                                                .addComponent(noveno)
                                                 .addGap(18, 18, 18)))
-                                        .addComponent(jCheckBox7))
+                                        .addComponent(boton8))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(combo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(2, 2, 2)
-                                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addComponent(combo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addGap(55, 55, 55)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(AltaConfirmarContraseña2)
-                                            .addComponent(AltaConfirmarContraseña1))
+                                            .addComponent(septimo)
+                                            .addComponent(sexto))
                                         .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jCheckBox5)
-                                            .addComponent(jCheckBox6))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(boton7)
+                                            .addComponent(boton6))))
                                 .addGap(33, 33, 33))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -410,10 +426,10 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox9, 0, 111, Short.MAX_VALUE)))
+                                .addComponent(combo6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(combo7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(combo8, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(combo9, 0, 111, Short.MAX_VALUE)))
                         .addGap(258, 258, 258))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
@@ -434,25 +450,23 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(AltaUsuario)
-                                            .addComponent(AltaNombre)
-                                            .addComponent(AltaContraseña)
-                                            .addComponent(AltaConfirmarContraseña))
+                                            .addComponent(segundo)
+                                            .addComponent(primer)
+                                            .addComponent(tercero)
+                                            .addComponent(cuarto))
                                         .addGap(41, 41, 41)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jCheckBox1)
-                                            .addComponent(jCheckBox3)
-                                            .addComponent(jCheckBox2)
-                                            .addComponent(jCheckBox4)))
+                                            .addComponent(boton1)
+                                            .addComponent(boton3)
+                                            .addComponent(boton2)
+                                            .addComponent(boton4)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(3, 3, 3)
-                                        .addComponent(AltaConfirmarContraseña5)
+                                        .addComponent(quinto)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jCheckBox10)))
+                                        .addComponent(boton5)))
                                 .addGap(329, 329, 329)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox9)
-                                    .addComponent(jCheckBox8))
+                                .addComponent(boton9)
                                 .addGap(402, 402, 402))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -495,30 +509,27 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(AltasdeUsuarios)
-                                .addComponent(AltaNombre))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AltaConfirmarContraseña1))
-                                .addComponent(jCheckBox1)
-                                .addComponent(jCheckBox5)
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(AsignaciondePrivilegios)
-                                .addComponent(AltaUsuario))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(AltaConfirmarContraseña2))
-                            .addComponent(jCheckBox6)
-                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jCheckBox9))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AltasdeUsuarios)
+                        .addComponent(primer))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(combo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sexto))
+                        .addComponent(boton1)
+                        .addComponent(combo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(boton6)))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(boton2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AsignaciondePrivilegios)
+                        .addComponent(segundo))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(combo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(septimo))
+                    .addComponent(boton7)
+                    .addComponent(combo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -526,34 +537,34 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox3)
+                                    .addComponent(boton3)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(ModificaciondeUsuarios)
-                                        .addComponent(AltaContraseña))
+                                        .addComponent(tercero))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(AltaConfirmarContraseña3))))
-                            .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(combo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(octavo))))
+                            .addComponent(combo8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(AltaConfirmarContraseña4)
-                                        .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(combo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(noveno)
+                                        .addComponent(combo9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(boton4, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(ConsultarUsuarios)
-                                        .addComponent(AltaConfirmarContraseña)))
+                                        .addComponent(cuarto)))
                                 .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox10)
-                                    .addComponent(AltaConfirmarContraseña5)
-                                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(boton5)
+                                    .addComponent(quinto)
+                                    .addComponent(combo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(7, 7, 7)
-                                .addComponent(jCheckBox8)))
+                                .addComponent(boton9)))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -563,7 +574,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox7)
+                        .addComponent(boton8)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -652,17 +663,17 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_boton2ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void boton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_boton3ActionPerformed
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+    private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    }//GEN-LAST:event_boton8ActionPerformed
 
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
        // Link para modificar asignarura
@@ -678,9 +689,53 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_combo1ActionPerformed
+
+    private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
+          
+        // codigo para boton de guardar
+        Conexion con=new Conexion();
+        Connection con2=con.conexion();
+
+        String sql;
+        String mensajeerror;
+
+        sql="INSERT INTO cuatrimestre(no_cuatrimestre,turno,grupo)VALUES (?,?,?)";
+
+        mensajeerror="Ingresa los datos correctamente";
+
+        
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+
+            pst.setString(1,primer.getText());
+            pst.setString(2,combo1.getName());
+            pst.setString(3,boton1.getText());
+
+            int n=pst.executeUpdate();
+            if (n>=0){
+                //son los mensajes de que se ejecuto correctamente la insercion
+                JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+            }
+            {
+
+            }
+        }catch (Exception e){
+            //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+            JOptionPane.showMessageDialog(rootPane,mensajeerror);
+            //este mensaje solo se imprimira en el registro--
+            System.out.println("Ingresa los datos correctamente" + e);
+
+        }
+    }//GEN-LAST:event_AltaGuardarActionPerformed
+
+    private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -718,16 +773,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AltaConfirmarContraseña;
-    private javax.swing.JLabel AltaConfirmarContraseña1;
-    private javax.swing.JLabel AltaConfirmarContraseña2;
-    private javax.swing.JLabel AltaConfirmarContraseña3;
-    private javax.swing.JLabel AltaConfirmarContraseña4;
-    private javax.swing.JLabel AltaConfirmarContraseña5;
-    private javax.swing.JLabel AltaContraseña;
     private javax.swing.JButton AltaGuardar;
-    private javax.swing.JLabel AltaNombre;
-    private javax.swing.JLabel AltaUsuario;
     private javax.swing.JButton AltasdeUsuarios;
     private javax.swing.JButton AsignaciondePrivilegios;
     private javax.swing.JButton AsignarMaterias;
@@ -743,26 +789,26 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JCheckBox boton1;
+    private javax.swing.JCheckBox boton2;
+    private javax.swing.JCheckBox boton3;
+    private javax.swing.JCheckBox boton4;
+    private javax.swing.JCheckBox boton5;
+    private javax.swing.JCheckBox boton6;
+    private javax.swing.JCheckBox boton7;
+    private javax.swing.JCheckBox boton8;
+    private javax.swing.JCheckBox boton9;
+    private javax.swing.JComboBox combo1;
+    private javax.swing.JComboBox combo2;
+    private javax.swing.JComboBox combo3;
+    private javax.swing.JComboBox combo4;
+    private javax.swing.JComboBox combo5;
+    private javax.swing.JComboBox combo6;
+    private javax.swing.JComboBox combo7;
+    private javax.swing.JComboBox combo8;
+    private javax.swing.JComboBox combo9;
+    private javax.swing.JLabel cuarto;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
-    private javax.swing.JComboBox jComboBox7;
-    private javax.swing.JComboBox jComboBox8;
-    private javax.swing.JComboBox jComboBox9;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
@@ -771,5 +817,13 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel noveno;
+    private javax.swing.JLabel octavo;
+    private javax.swing.JLabel primer;
+    private javax.swing.JLabel quinto;
+    private javax.swing.JLabel segundo;
+    private javax.swing.JLabel septimo;
+    private javax.swing.JLabel sexto;
+    private javax.swing.JLabel tercero;
     // End of variables declaration//GEN-END:variables
 }

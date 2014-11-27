@@ -22,6 +22,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         Connection con2=con.conexion();
         String cap=" ";
         String sql="SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"'AND contrasena='"+password+"'";        ;        
+        
         try {
             Statement st=con2.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -29,28 +30,28 @@ public class IngresaralSistema extends javax.swing.JFrame {
                 cap=rs.getString("tipo_usuario");
             }
             if (cap.equals("administrador")){
-            }
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null,"Bienvenido");
+            
+            this.setVisible(true);
+            JOptionPane.showMessageDialog(null,"Bienvenido 7");
             Interfaz inter=new Interfaz();
             inter.setVisible(true);
             inter.pack();
-         if (cap.equals("invitado")){
             }
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null,"Bienvenido");
+            if (cap.equals("invitado")){
+            this.setVisible(true);
+            JOptionPane.showMessageDialog(null,"Bienvenido al sistema");
             DocentesUsuarioComun uc=new DocentesUsuarioComun();
             uc.setVisible(true);
-            uc.pack();  
+            uc.pack(); 
+            }else {
+                  JOptionPane.showMessageDialog(null,"EL usuario no existe vuelve a intentarlo");  
+                    }
+            
         }
-        
-    
-    
         catch (SQLException ex) {
             Logger.getLogger(IngresaralSistema.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

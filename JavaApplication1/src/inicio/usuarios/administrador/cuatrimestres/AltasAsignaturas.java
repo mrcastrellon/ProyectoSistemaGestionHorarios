@@ -579,7 +579,8 @@ desbloquear();
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
-             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                //Para que se muestre el mensaje de guardado correctamente hay que agregar rootpane, 
+             JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
                 System.out.println("Guardado correctamente");
                     }
 {
@@ -622,11 +623,16 @@ desbloquear();
         //</editor-fold>
 
         /* Create and display the form */
+        
+        
+        // comente eso ee 27-11-14   al final note que si quito esto, no funcionan el run directamente desde la pantalla
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AltasAsignaturas().setVisible(true);
+           public void run() {
+               new AltasAsignaturas().setVisible(true);
             }
-        });
+       });
+        
+        //hasta aqui lo comente para en caso de que falle
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

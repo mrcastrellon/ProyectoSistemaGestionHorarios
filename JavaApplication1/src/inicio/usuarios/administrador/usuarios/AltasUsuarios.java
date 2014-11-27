@@ -610,3 +610,4 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
+//ejemplo

@@ -74,6 +74,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         datos [7]=rs.getString(8);
         datos [8]=rs.getString(9);
         datos [9]=rs.getString(10);
+       
         modelo.addRow(datos);
         tablaconsultadocentes.setModel(modelo);
 }

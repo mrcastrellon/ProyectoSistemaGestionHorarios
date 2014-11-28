@@ -46,7 +46,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         mostrardatos();
     }
     void mostrardatos(){
-        DefaultTableModel modelo= new DefaultTableModel();
+       modelo = new DefaultTableModel();
         modelo.addColumn("correo");
         modelo.addColumn("direccion");
         modelo.addColumn("especialidad");
@@ -61,7 +61,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         tablaconsultadocentes.setModel(modelo);
         String []datos = new String [10];
         try{
-        Statement st = con.createStatement();
+        Statement st = con2.createStatement();
         ResultSet rs= st.executeQuery("SELECT * FROM docentes");
         while (rs.next()){
         datos [0]=rs.getString(1);
@@ -642,4 +642,5 @@ public class ConsultaDocentes extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
  Conexion con=new Conexion();
         Connection con2=con.conexion();
+        DefaultTableModel modelo;
 }

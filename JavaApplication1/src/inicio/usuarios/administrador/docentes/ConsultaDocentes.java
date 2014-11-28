@@ -51,23 +51,35 @@ public class ConsultaDocentes extends javax.swing.JFrame {
         modelo.addColumn("direccion");
         modelo.addColumn("especialidad");
         modelo.addColumn("nombre_completo");
-        modelo.addColumn("carrera");
-        modelo.addColumn("tentativas");
+        modelo.addColumn("telefono");
+        modelo.addColumn("materiaten1");
+        modelo.addColumn("materiaten2");
+        modelo.addColumn("materiaten3");
+        modelo.addColumn("materiaten4");
+        modelo.addColumn("materiaten5");
+        
         tablaconsultadocentes.setModel(modelo);
-        String []datos = new String [4];
+        String []datos = new String [10];
         try{
         Statement st = con.createStatement();
-        ResulSet rs= st.executeQuery("SELECT * FROM docentes");
+        ResultSet rs= st.executeQuery("SELECT * FROM docentes");
         while (rs.next()){
         datos [0]=rs.getString(1);
         datos [1]=rs.getString(2);
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
+        datos [4]=rs.getString(5);
+        datos [5]=rs.getString(6);
+        datos [6]=rs.getString(7);
+        datos [7]=rs.getString(8);
+        datos [8]=rs.getString(9);
+        datos [9]=rs.getString(10);
         modelo.addRow(datos);
         tablaconsultadocentes.setModel(modelo);
 }
     }catch (Exception e){
-         Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex);  
+       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
+        System.out.println("chupando faros" + e);
     }
     }
     
@@ -519,6 +531,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
        ConsultaDocentes obj=new ConsultaDocentes();
         obj.setVisible(true);
         dispose();
+        
 
     }//GEN-LAST:event_jButton5ActionPerformed
 

@@ -16,7 +16,7 @@ import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGenerac
 import inicio.IngresaralSistema;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.usuarios.ModificaciondeUsuarios;
-import inicio.usuarios.administrador.usuarios.ConsultarUsuarios;
+import inicio.usuarios.administrador.usuarios.ConsultaUsuarios;
 
 
 
@@ -393,7 +393,7 @@ public class Usuarios extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // Link para asignación de privilegios
-        ConsultarUsuarios obj=new ConsultarUsuarios ();
+        ConsultaUsuarios obj=new ConsultaUsuarios ();
         obj.setVisible(true);
         dispose();
 

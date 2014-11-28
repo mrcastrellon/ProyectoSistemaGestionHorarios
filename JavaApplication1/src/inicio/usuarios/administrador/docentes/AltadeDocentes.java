@@ -85,18 +85,23 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        camponombrecompleto = new javax.swing.JTextField();
-        campodireccion = new javax.swing.JTextField();
-        campotelefono = new javax.swing.JTextField();
-        campocorreo = new javax.swing.JTextField();
+        nombrecompletocampo = new javax.swing.JTextField();
+        direccioncampo = new javax.swing.JTextField();
+        telefonocampo = new javax.swing.JTextField();
+        correocampo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        campoespecialidad = new javax.swing.JTextField();
-        campotentativas = new javax.swing.JTextField();
+        especialidadcampo = new javax.swing.JTextField();
+        tentativas1campo = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        tentativas2campo = new javax.swing.JTextField();
+        barrauno = new javax.swing.JScrollBar();
+        tentativas5campo = new javax.swing.JTextField();
+        tentativas3campo = new javax.swing.JTextField();
+        tentativas4campo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -286,15 +291,15 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Correo");
 
-        campotelefono.addActionListener(new java.awt.event.ActionListener() {
+        telefonocampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campotelefonoActionPerformed(evt);
+                telefonocampoActionPerformed(evt);
             }
         });
 
-        campocorreo.addActionListener(new java.awt.event.ActionListener() {
+        correocampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campocorreoActionPerformed(evt);
+                correocampoActionPerformed(evt);
             }
         });
 
@@ -307,20 +312,25 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel11.setText("Materias tentativas a inpartir");
 
-        campoespecialidad.addActionListener(new java.awt.event.ActionListener() {
+        especialidadcampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoespecialidadActionPerformed(evt);
+                especialidadcampoActionPerformed(evt);
             }
         });
 
-        campotentativas.addActionListener(new java.awt.event.ActionListener() {
+        tentativas1campo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campotentativasActionPerformed(evt);
+                tentativas1campoActionPerformed(evt);
             }
         });
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Enviar");
@@ -333,6 +343,36 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Altas Docentes");
 
+        tentativas2campo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tentativas2campoActionPerformed(evt);
+            }
+        });
+
+        barrauno.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
+            public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
+                barraunoAdjustmentValueChanged(evt);
+            }
+        });
+
+        tentativas5campo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tentativas5campoActionPerformed(evt);
+            }
+        });
+
+        tentativas3campo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tentativas3campoActionPerformed(evt);
+            }
+        });
+
+        tentativas4campo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tentativas4campoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -344,11 +384,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton9)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton10)
-                        .addGap(313, 313, 313))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(630, 630, 630))
@@ -395,9 +430,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
                                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(329, 329, 329)
-                                        .addComponent(jLabel9))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(224, 224, 224)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel5)
@@ -407,19 +439,36 @@ public class AltadeDocentes extends javax.swing.JFrame {
                                             .addComponent(jLabel10)
                                             .addComponent(jLabel11))
                                         .addGap(54, 54, 54)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(campodireccion)
-                                            .addComponent(campotelefono)
-                                            .addComponent(campoespecialidad)
-                                            .addComponent(campotentativas, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                                            .addComponent(campocorreo)
-                                            .addComponent(camponombrecompleto))))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(especialidadcampo, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+                                                .addComponent(correocampo)
+                                                .addComponent(telefonocampo)
+                                                .addComponent(direccioncampo)
+                                                .addComponent(nombrecompletocampo))
+                                            .addComponent(tentativas1campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tentativas2campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tentativas3campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tentativas4campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tentativas5campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(329, 329, 329)
+                                        .addComponent(jLabel9)))
+                                .addGap(73, 73, 73)
+                                .addComponent(barrauno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(605, 605, 605))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(605, 605, 605))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(217, 217, 217))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,7 +508,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jLabel5)
-                    .addComponent(camponombrecompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombrecompletocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -473,38 +522,48 @@ public class AltadeDocentes extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton7)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
-                        .addGap(0, 119, Short.MAX_VALUE))
+                        .addComponent(jButton8))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(campodireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(direccioncampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(campotelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(campocorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(campotentativas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(barrauno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(telefonocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(correocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(especialidadcampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel11)
+                                    .addComponent(tentativas1campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(9, 9, 9)
+                        .addComponent(tentativas2campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(tentativas3campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tentativas4campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tentativas5campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -629,21 +688,21 @@ public class AltadeDocentes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void campotelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campotelefonoActionPerformed
+    private void telefonocampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonocampoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campotelefonoActionPerformed
+    }//GEN-LAST:event_telefonocampoActionPerformed
 
-    private void campocorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campocorreoActionPerformed
+    private void correocampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correocampoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campocorreoActionPerformed
+    }//GEN-LAST:event_correocampoActionPerformed
 
-    private void campoespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoespecialidadActionPerformed
+    private void especialidadcampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especialidadcampoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoespecialidadActionPerformed
+    }//GEN-LAST:event_especialidadcampoActionPerformed
 
-    private void campotentativasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campotentativasActionPerformed
+    private void tentativas1campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas1campoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campotentativasActionPerformed
+    }//GEN-LAST:event_tentativas1campoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
@@ -654,7 +713,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
- Conexion con=new Conexion();
+   Conexion con=new Conexion();
         Connection con2=con.conexion();
         //declarando 
         
@@ -663,18 +722,22 @@ public class AltadeDocentes extends javax.swing.JFrame {
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO asignatura(correo,direccion,especialidad,nombre_completo,telefono,tentativas)VALUES (?,?,?,?,?,?)";
+        sql="INSERT INTO docentes(correo,direccion,especialidad,nombre_completo,telefono,materiaten1,materiaten2,materiaten3,materiaten4,materiaten5)VALUES (?,?,?,?,?,?,?,?,?,?)";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
-            pst.setString(1,camponombrecompleto.getText());
-            pst.setString(2,campodireccion.getText());
-            pst.setString(3,campotelefono.getText());
-            pst.setString(4,campocorreo.getText());
-            pst.setString(5,campoespecialidad.getText());
-            pst.setString(6,campotentativas.getText());
+            pst.setString(1,correocampo.getText());
+            pst.setString(2,direccioncampo.getText());
+            pst.setString(3,especialidadcampo.getText());
+            pst.setString(4,nombrecompletocampo.getText());
+            pst.setString(5,telefonocampo.getText());
+            pst.setString(6,tentativas1campo.getText());
+            pst.setString(7,tentativas2campo.getText());
+            pst.setString(8,tentativas3campo.getText());
+            pst.setString(9,tentativas4campo.getText());
+            pst.setString(10,tentativas5campo.getText());
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
@@ -690,8 +753,32 @@ public class AltadeDocentes extends javax.swing.JFrame {
              //este mensaje solo se imprimira en el registro--
              System.out.println("Ingresa los datos correctamente" + e);
              
-        } 
+        }        
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void tentativas2campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas2campoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tentativas2campoActionPerformed
+
+    private void tentativas5campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas5campoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tentativas5campoActionPerformed
+
+    private void tentativas3campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas3campoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tentativas3campoActionPerformed
+
+    private void tentativas4campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas4campoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tentativas4campoActionPerformed
+
+    private void barraunoAdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_barraunoAdjustmentValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_barraunoAdjustmentValueChanged
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -738,12 +825,10 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JTextField campocorreo;
-    private javax.swing.JTextField campodireccion;
-    private javax.swing.JTextField campoespecialidad;
-    private javax.swing.JTextField camponombrecompleto;
-    private javax.swing.JTextField campotelefono;
-    private javax.swing.JTextField campotentativas;
+    private javax.swing.JScrollBar barrauno;
+    private javax.swing.JTextField correocampo;
+    private javax.swing.JTextField direccioncampo;
+    private javax.swing.JTextField especialidadcampo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -770,5 +855,12 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField nombrecompletocampo;
+    private javax.swing.JTextField telefonocampo;
+    private javax.swing.JTextField tentativas1campo;
+    private javax.swing.JTextField tentativas2campo;
+    private javax.swing.JTextField tentativas3campo;
+    private javax.swing.JTextField tentativas4campo;
+    private javax.swing.JTextField tentativas5campo;
     // End of variables declaration//GEN-END:variables
 }

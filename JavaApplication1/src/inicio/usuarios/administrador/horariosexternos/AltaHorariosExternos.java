@@ -532,13 +532,15 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
         dispose();    }//GEN-LAST:event_DocentesActionPerformed
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
-desbloquear();
-        materia.requestFocus();        // TODO add your handling code here:
+    // Link para altas horarios externos
+        AltaHorariosExternos obj=new AltaHorariosExternos();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_AltasdeUsuariosActionPerformed
 
     private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
-        // Link para alta cuatrimestre
-        AltasCuatrimestre obj=new AltasCuatrimestre();
+         // Link para modulo cerrar sesion
+        ConsultarHorariosExternos obj=new ConsultarHorariosExternos();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
@@ -548,15 +550,15 @@ desbloquear();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
-        // Link para eliminar asignatura
-        EliminarAsignaturas obj=new EliminarAsignaturas();
+        // Link para modificar horario externo
+        ModificarHorariosExternos obj=new ModificarHorariosExternos();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
-        // Link para modificar asignatura
-        ModificarAsignaturas obj=new ModificarAsignaturas();
+        // Link para baja horario externos
+        BajaHorariosExternos obj=new BajaHorariosExternos();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed

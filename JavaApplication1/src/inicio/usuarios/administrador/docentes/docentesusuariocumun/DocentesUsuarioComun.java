@@ -220,7 +220,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
                         .addComponent(AsignaciondePrivilegios)
                         .addGap(32, 32, 32)
                         .addComponent(ModificaciondeUsuarios)
-                        .addGap(42, 42, 42)
+                        .addGap(34, 34, 34)
                         .addComponent(ConsultarUsuarios))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
@@ -300,7 +300,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AltasUsuarios().setVisible(true);
+                new DocentesUsuarioComun().setVisible(true);
             }
         });
     }

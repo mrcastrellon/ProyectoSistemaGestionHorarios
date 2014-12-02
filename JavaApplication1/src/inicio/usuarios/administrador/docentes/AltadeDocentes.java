@@ -741,7 +741,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
-             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+             JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
                 System.out.println("Guardado correctamente");
                     }
 {
@@ -810,7 +810,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Usuarios().setVisible(true);
+                new AltadeDocentes().setVisible(true);
             }
         });
     }

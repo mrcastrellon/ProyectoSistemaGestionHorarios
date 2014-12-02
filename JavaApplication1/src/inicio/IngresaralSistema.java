@@ -32,7 +32,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
             if (cap.equals("administrador")){
             
             this.setVisible(true);
-            JOptionPane.showMessageDialog(rootPane,"Bienvenido administrador");
+            JOptionPane.showMessageDialog(rootPane,"Bienvenido Administrador");
             Interfaz inter=new Interfaz();
             inter.setVisible(true);
             inter.pack();

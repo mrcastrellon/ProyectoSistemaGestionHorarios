@@ -527,14 +527,19 @@ public class AltasUsuarios extends javax.swing.JFrame {
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
             pst.setString(1,camponombre.getText());
+            camponombre.setText(null);
             pst.setString(2,campousuario.getText());
+            campousuario.setText(null);
             pst.setString(3,campocontraseña.getText());
-            pst.setString(4,campocontraseña_conf.getText());  
+            campocontraseña.setText(null);
+            pst.setString(4,campocontraseña_conf.getText());
+            campocontraseña_conf.setText(null);
             pst.setString(5,campotipo_usuario.getText());
+            campotipo_usuario.setText(null);
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
-             JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+             JOptionPane.showMessageDialog(rootPane,"Usuario Registrado Satisfactoriamente!!!");
                 System.out.println("Guardado correctamente");
                     }
 {
@@ -542,10 +547,8 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         }
          }catch (Exception e){
              //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
-             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             JOptionPane.showMessageDialog(rootPane,"Ingresa los datos correctamente");
              //este mensaje solo se imprimira en el registro--
-             System.out.println("Ingresa los datos correctamente" + e);
-             
         }        // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
 

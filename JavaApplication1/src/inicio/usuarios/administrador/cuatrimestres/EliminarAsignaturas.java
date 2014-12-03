@@ -6,6 +6,7 @@
 
 package inicio.usuarios.administrador.cuatrimestres;
 
+import Conexion_base_de_datos.Conexion;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.generaciondehorarios.ConsultarHorariosDocente;
 import inicio.IngresaralSistema;
@@ -19,6 +20,10 @@ import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
 import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
+// para la conecion a la base de datos
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author BENJAMIN
@@ -30,6 +35,38 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
      */
     public EliminarAsignaturas() {
         initComponents();
+         mostrardatos();
+    }
+    void mostrardatos(){
+       modelo = new DefaultTableModel();
+        modelo.addColumn("cuatrimestre_id");
+        modelo.addColumn("nombre");
+        modelo.addColumn("clave");
+        modelo.addColumn("creditos");
+        modelo.addColumn("horas");
+        
+     
+        
+        tablaeliminar.setModel(modelo);
+        String []datos = new String [10];
+        try{
+        Statement st = con2.createStatement();
+        ResultSet rs= st.executeQuery("SELECT * FROM asignatura");
+        while (rs.next()){
+        datos [0]=rs.getString(1);
+        datos [1]=rs.getString(2);
+        datos [2]=rs.getString(3);
+        datos [3]=rs.getString(4);
+        datos [4]=rs.getString(5);
+       
+       
+        modelo.addRow(datos);
+        tablaeliminar.setModel(modelo);
+}
+    }catch (Exception e){
+       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
+        System.out.println("chupando faros" + e);
+    }
     }
 
     /**
@@ -64,9 +101,9 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         ConsultarUsuarios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        botoneliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        tablaeliminar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -223,66 +260,26 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel9.setText(" Eliminar Asignaturas");
 
-        jTable1.setBackground(new java.awt.Color(153, 255, 153));
-        jTable1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        botoneliminar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        botoneliminar.setText("Eliminar");
+        botoneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botoneliminarActionPerformed(evt);
+            }
+        });
+
+        tablaeliminar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nombre", "Clave", "Horas", "Creditos"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setGridColor(new java.awt.Color(204, 0, 0));
-        jTable1.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                jTable1ComponentAdded(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton2.setText("Eliminar");
+        ));
+        jScrollPane1.setViewportView(tablaeliminar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -331,18 +328,20 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(527, 527, 527))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(86, 86, 86))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(88, 88, 88)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botoneliminar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,23 +377,22 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
+                .addGap(74, 74, 74)
+                .addComponent(AltasdeUsuarios)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(AltasdeUsuarios)
-                        .addGap(32, 32, 32)
+                        .addGap(34, 34, 34)
                         .addComponent(AsignaciondePrivilegios)
                         .addGap(33, 33, 33)
                         .addComponent(ModificaciondeUsuarios)
                         .addGap(36, 36, 36)
-                        .addComponent(ConsultarUsuarios)
-                        .addGap(93, 93, 93))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ConsultarUsuarios))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)))
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(39, 39, 39)
+                .addComponent(botoneliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -494,10 +492,29 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
-    private void jTable1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTable1ComponentAdded
-        // TODO add your handling code here:
+    private void botoneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoneliminarActionPerformed
+        // El como eliminar
+      
+      //JOptionPane.showMessageDialog(rootPane, id);
+      String id=tablaeliminar.getValueAt(tablaeliminar.getSelectedRow(), 0).toString();
+        try {
+            
+            // si gustamos imprimir el id
+            //JOptionPane.showMessageDialog(rootPane, id);
+            Statement st = con2.createStatement();
+          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
+       st.executeUpdate("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
+            //ResultSet rs= st.executeQuery("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
+        //st=executeQuery("DELETE FROM asignatura WHERE ='"+id+"'");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane , e );
+        }
+          
+      
         
-    }//GEN-LAST:event_jTable1ComponentAdded
+      
+        
+    }//GEN-LAST:event_botoneliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -550,7 +567,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton botoneliminar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
@@ -560,6 +577,10 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaeliminar;
     // End of variables declaration//GEN-END:variables
-}
+
+Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        DefaultTableModel modelo;
+        }

@@ -704,21 +704,21 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
 
         sql="INSERT INTO cuatrimestre(no_cuatrimestre,turno,grupo)VALUES (?,?,?)";
 
-        mensajeerror="Ingresa los datos correctamente";
+        mensajeerror="--La diferencia entre un virus y este sistema, es que el virus si funciona--";
 
         
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
-
+            
             pst.setString(1,primer.getText());
-            pst.setString(2,combo1.getName());
-            pst.setString(3,boton1.getText());
+            pst.setString(2,boton1.getText());
+            pst.setString(3,combo1.getName());
 
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
-                JOptionPane.showMessageDialog(null,"registrado con exito en la base de datos");
+                JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
                 System.out.println("Guardado correctamente");
             }
             {

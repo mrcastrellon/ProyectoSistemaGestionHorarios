@@ -16,22 +16,23 @@ import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
 import inicio.usuarios.administrador.horariosexternos.HorariosExternos;
 import inicio.usuarios.administrador.usuarios.AltasUsuarios;
 import inicio.usuarios.administrador.usuarios.ConsultaUsuarios;
-import inicio.usuarios.administrador.usuarios.ConsultaUsuarios;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+
 
 
 /**
  *
  * @author MARCOS
  */
-public class ConsultaUsuarios extends javax.swing.JFrame {
-
-    
+public class ConsultaUsuarios extends javax.swing.JFrame  {
+      
     public ConsultaUsuarios() {
         initComponents();
         mostrardatos ();
@@ -71,6 +72,8 @@ public class ConsultaUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Cuatrimestre = new javax.swing.JButton();
         Docentes = new javax.swing.JButton();
         HorariosExternos = new javax.swing.JButton();
@@ -96,6 +99,14 @@ public class ConsultaUsuarios extends javax.swing.JFrame {
         eliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablausuarios = new javax.swing.JTable();
+
+        jMenuItem1.setText("Modificar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -254,16 +265,32 @@ public class ConsultaUsuarios extends javax.swing.JFrame {
 
         tablausuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Usuario", "Contraseña", "Tipo de Usuario"
+                "id", "Nombre", "Usuario", "Contraseña", "Tipo de Usuario"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablausuarios.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(tablausuarios);
+        if (tablausuarios.getColumnModel().getColumnCount() > 0) {
+            tablausuarios.getColumnModel().getColumn(0).setResizable(false);
+            tablausuarios.getColumnModel().getColumn(1).setResizable(false);
+            tablausuarios.getColumnModel().getColumn(2).setResizable(false);
+            tablausuarios.getColumnModel().getColumn(3).setResizable(false);
+            tablausuarios.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -470,9 +497,28 @@ public class ConsultaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        
-        // TODO add your handling code here:
+        String id=tablausuarios.getValueAt(tablausuarios.getSelectedRow(), 0).toString();
+        try {
+            
+            // si gustamos imprimir el id
+            //JOptionPane.showMessageDialog(rootPane, id);
+            Statement st = con2.createStatement();
+          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
+       st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
+            //ResultSet rs= st.executeQuery("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
+        //st=executeQuery("DELETE FROM asignatura WHERE ='"+id+"'");
+            JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
+            mostrardatos();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane , e );
+        }
     }//GEN-LAST:event_eliminarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       //MENU DONDE SE REALIZA LA ACTUALIZACION.
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -529,7 +575,9 @@ public class ConsultaUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

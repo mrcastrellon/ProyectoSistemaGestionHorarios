@@ -591,7 +591,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel AltaConfirmarContraseña;
     private javax.swing.JLabel AltaConfirmarContraseña1;
     private javax.swing.JLabel AltaContraseña;
-    private javax.swing.JButton AltaGuardar;
+    public javax.swing.JButton AltaGuardar;
     private javax.swing.JLabel AltaNombre;
     private javax.swing.JLabel AltaUsuario;
     private javax.swing.JButton AltasdeUsuarios;
@@ -610,7 +610,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton Usuarios;
     private javax.swing.JPasswordField campocontraseña;
     private javax.swing.JPasswordField campocontraseña_conf;
-    private javax.swing.JTextField camponombre;
+    public javax.swing.JTextField camponombre;
     private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;
     private javax.swing.JButton jButton1;

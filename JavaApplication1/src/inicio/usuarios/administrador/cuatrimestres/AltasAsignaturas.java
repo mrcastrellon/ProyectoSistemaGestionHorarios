@@ -581,7 +581,10 @@ desbloquear();
                 //son los mensajes de que se ejecuto correctamente la insercion
                 //Para que se muestre el mensaje de guardado correctamente hay que agregar rootpane, 
              JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
-                System.out.println("Guardado correctamente");
+                //para limpiar 
+                 limpiar();
+                     System.out.println("Guardado correctamente");
+                
                     }
 {
             

@@ -22,7 +22,7 @@ import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGenerac
 import inicio.usuarios.administrador.docentes.AltadeDocentes;
 import inicio.usuarios.administrador.docentes.BajaDocentes;
 import inicio.usuarios.administrador.docentes.ModificarDocentes;
-import inicio.usuarios.administrador.docentes.consultamodificar;
+import inicio.usuarios.administrador.docentes.Consultaeliminar;
 import inicio.usuarios.administrador.docentes.AltaDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.ModificarDisponibilidadDocentes;
 import inicio.usuarios.administrador.docentes.BitacoraDocentes;
@@ -37,12 +37,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author BENJAMIN
  */
-public class consultamodificar extends javax.swing.JFrame {
+public class Consultaeliminar extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public consultamodificar() {
+    public Consultaeliminar() {
         initComponents();
         mostrardatos();
     }
@@ -60,7 +60,7 @@ public class consultamodificar extends javax.swing.JFrame {
         modelo.addColumn("materiaten4");
         modelo.addColumn("materiaten5");
         
-        tablaconsultadocentes.setModel(modelo);
+        consultareliminardocente.setModel(modelo);
         String []datos = new String [11];
         try{
         Statement st = con2.createStatement();
@@ -77,9 +77,8 @@ public class consultamodificar extends javax.swing.JFrame {
         datos [8]=rs.getString(9);
         datos [9]=rs.getString(10);
         datos [10]=rs.getString(11);
-       
         modelo.addRow(datos);
-        tablaconsultadocentes.setModel(modelo);
+        consultareliminardocente.setModel(modelo);
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
@@ -125,30 +124,7 @@ public class consultamodificar extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaconsultadocentes = new javax.swing.JTable();
-        id_docente = new javax.swing.JTextField();
-        nombrecompletocampo = new javax.swing.JTextField();
-        direccioncampo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        correocampo = new javax.swing.JTextField();
-        tentativas2campo = new javax.swing.JTextField();
-        telefonocampo = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        tentativas1campo = new javax.swing.JTextField();
-        tentativas5campo = new javax.swing.JTextField();
-        tentativas3campo = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        tentativas4campo = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        especialidadcampo = new javax.swing.JTextField();
-        modificar = new javax.swing.JButton();
+        consultareliminardocente = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -329,9 +305,9 @@ public class consultamodificar extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Consultar Docentes");
 
-        tablaconsultadocentes.setBackground(new java.awt.Color(153, 255, 153));
-        tablaconsultadocentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        tablaconsultadocentes.setModel(new javax.swing.table.DefaultTableModel(
+        consultareliminardocente.setBackground(new java.awt.Color(153, 255, 153));
+        consultareliminardocente.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        consultareliminardocente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -349,49 +325,8 @@ public class consultamodificar extends javax.swing.JFrame {
 
             }
         ));
-        tablaconsultadocentes.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(tablaconsultadocentes);
-
-        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel5.setText("Id");
-
-        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel6.setText("Nombre Completo");
-
-        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel7.setText("Direccion");
-
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Telefono");
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText("Correo");
-
-        jLabel10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel10.setText("Carrera o Especialidad");
-
-        jLabel11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel11.setText("Materia Tentativa 2");
-
-        jLabel14.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel14.setText("Materia Tentativa 3");
-
-        jLabel15.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel15.setText("Materia Tentativa 4");
-
-        jLabel16.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel16.setText("Materia Tentativa 5");
-
-        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel13.setText("Materia Tentativa 1");
-
-        modificar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        modificar.setText("actualizar");
-        modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarActionPerformed(evt);
-            }
-        });
+        consultareliminardocente.setGridColor(new java.awt.Color(204, 0, 0));
+        jScrollPane1.setViewportView(consultareliminardocente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -399,10 +334,10 @@ public class consultamodificar extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1347, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
             .addComponent(jSeparator3)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(550, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -416,97 +351,46 @@ public class consultamodificar extends javax.swing.JFrame {
                         .addGap(233, 233, 233)
                         .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel1)
                         .addGap(32, 32, 32)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel5))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(id_docente, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(nombrecompletocampo)
-                                            .addComponent(direccioncampo))
-                                        .addGap(51, 51, 51)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel8))
-                                        .addGap(103, 103, 103)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(correocampo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(telefonocampo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(43, 43, 43)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(1, 1, 1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel13)
-                                                .addGap(37, 37, 37)
-                                                .addComponent(tentativas1campo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel10)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(especialidadcampo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(44, 44, 44)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))))
-                                .addGap(10, 10, 10)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(Cuatrimestre)
+                                .addGap(37, 37, 37)
+                                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(HorariosExternos)
+                                .addGap(52, 52, 52)
+                                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(GeneraciondeHorarios))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tentativas5campo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(tentativas4campo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tentativas3campo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tentativas2campo, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Cuatrimestre)
-                        .addGap(37, 37, 37)
-                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(HorariosExternos)
-                        .addGap(52, 52, 52)
-                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GeneraciondeHorarios)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 941, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(587, 587, 587))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(modificar)
-                        .addContainerGap())))
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(587, 587, 587))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -551,54 +435,15 @@ public class consultamodificar extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(id_docente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel8)
-                    .addComponent(telefonocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(tentativas2campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton6)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton7)
-                        .addComponent(jLabel6)
-                        .addComponent(nombrecompletocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(correocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tentativas3campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tentativas4campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton8)
-                                .addComponent(jLabel7))
-                            .addComponent(direccioncampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel10)
-                                .addComponent(especialidadcampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tentativas1campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel13)
-                            .addComponent(tentativas5campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(modificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton8))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -686,7 +531,7 @@ public class consultamodificar extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // Link para consultar docente
-       consultamodificar obj=new consultamodificar();
+       Consultaeliminar obj=new Consultaeliminar();
         obj.setVisible(true);
         dispose();
         
@@ -694,23 +539,11 @@ public class consultamodificar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     int fila= tablaconsultadocentes.getSelectedRow();
-    if(fila>=0){
-        id_docente.setText(tablaconsultadocentes.getValueAt(fila, 0).toString());
-        correocampo.setText(tablaconsultadocentes.getValueAt(fila, 1).toString());
-        direccioncampo.setText(tablaconsultadocentes.getValueAt(fila, 2).toString());
-        especialidadcampo.setText(tablaconsultadocentes.getValueAt(fila, 3).toString());
-        nombrecompletocampo.setText(tablaconsultadocentes.getValueAt(fila, 4).toString());
-        telefonocampo.setText(tablaconsultadocentes.getValueAt(fila, 5).toString());
-        tentativas1campo.setText(tablaconsultadocentes.getValueAt(fila, 6).toString());
-        tentativas2campo.setText(tablaconsultadocentes.getValueAt(fila, 7).toString());
-        tentativas3campo.setText(tablaconsultadocentes.getValueAt(fila, 8).toString());
-        tentativas4campo.setText(tablaconsultadocentes.getValueAt(fila, 9).toString());
-        tentativas5campo.setText(tablaconsultadocentes.getValueAt(fila, 10).toString());
-    }
-    else{
-    JOptionPane.showMessageDialog(null,"no seleciono fila");
-    }
+        // Link para modificar docentes
+       ModificarDocentes obj=new ModificarDocentes();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -738,23 +571,30 @@ public class consultamodificar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // Link para baja de docentes
-       BajaDocentes obj=new BajaDocentes ();
-        obj.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+      // El como eliminar
+      
+      //JOptionPane.showMessageDialog(rootPane, id);
+      String id=consultareliminardocente.getValueAt(consultareliminardocente.getSelectedRow(), 0).toString();
         try {
-        PreparedStatement pst;
-        pst = con2.prepareStatement("UPDATE docentes SET correo='"+correocampo.getText()+"',direccion='"+direccioncampo.getText()+"',especialidad='"+especialidadcampo.getText()+"',nombre_completo='"+nombrecompletocampo.getText()+"',telefono='"+telefonocampo.getText()+"',materiaten1='"+tentativas1campo.getText()+"',materiaten2='"+tentativas2campo.getText()+"',materiaten3='"+tentativas3campo.getText()+"',materiaten4='"+tentativas4campo.getText()+"',materiaten5='"+tentativas5campo.getText()+"' WHERE id_docente='"+id_docente.getText()+"'");
-        pst.executeUpdate();
-        mostrardatos();
-            } catch (Exception e) {
-        System.out.print(e.getMessage());
-    }
-    }//GEN-LAST:event_modificarActionPerformed
+            
+            // si gustamos imprimir el id
+            JOptionPane.showMessageDialog(rootPane, id);
+            Statement st = con2.createStatement();
+          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
+       st.executeUpdate("DELETE FROM docentes WHERE id_docente='"+id+"'");
+                  
+             JOptionPane.showMessageDialog(rootPane,"Eliminado correctamente");
+                System.out.println("Eliminado bien");
+                //para refrescar la pantalla
+                mostrardatos();
+            //ResultSet rs= st.executeQuery("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
+        //st=executeQuery("DELETE FROM asignatura WHERE ='"+id+"'");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane , e );
+            JOptionPane.showMessageDialog(rootPane,"No es posible eliminar");
+                System.out.println("Eliminado mal");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -786,7 +626,7 @@ public class consultamodificar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new consultamodificar().setVisible(true);
+                new Consultaeliminar().setVisible(true);
             }
         });
     }
@@ -801,10 +641,7 @@ public class consultamodificar extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JTextField correocampo;
-    private javax.swing.JTextField direccioncampo;
-    private javax.swing.JTextField especialidadcampo;
-    private javax.swing.JTextField id_docente;
+    private javax.swing.JTable consultareliminardocente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -814,35 +651,15 @@ public class consultamodificar extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JButton modificar;
-    private javax.swing.JTextField nombrecompletocampo;
-    private javax.swing.JTable tablaconsultadocentes;
-    private javax.swing.JTextField telefonocampo;
-    private javax.swing.JTextField tentativas1campo;
-    private javax.swing.JTextField tentativas2campo;
-    private javax.swing.JTextField tentativas3campo;
-    private javax.swing.JTextField tentativas4campo;
-    private javax.swing.JTextField tentativas5campo;
     // End of variables declaration//GEN-END:variables
  Conexion con=new Conexion();
         Connection con2=con.conexion();

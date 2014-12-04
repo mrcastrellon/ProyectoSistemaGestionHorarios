@@ -38,7 +38,14 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         initComponents();
         mostrardatos ();
     }
-
+    void limpiar (){
+    campoid.setText("");
+    camponombre.setText("");
+    campousuario.setText("");
+    campocontraseña.setText("");
+    campocontraseña_conf.setText("");
+    campotipo_usuario.setText("");
+} 
     void mostrardatos(){
        modelo = new DefaultTableModel();
         modelo.addColumn("id");
@@ -596,6 +603,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',contrasena_conf='"+campocontraseña_conf.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
+        limpiar();
     } catch (Exception e) {
         System.out.print(e.getMessage());
     }

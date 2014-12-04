@@ -593,7 +593,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         try {
         PreparedStatement pst;
-            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',usuario='"+campousuario.getText()+"',contraseña='"+campocontraseña.getText()+"',contraseña_conf='"+campocontraseña_conf.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE codpro='"+"id"+"'");
+            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',contrasena_conf='"+campocontraseña_conf.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
     } catch (Exception e) {

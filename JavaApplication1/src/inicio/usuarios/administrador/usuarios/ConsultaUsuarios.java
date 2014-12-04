@@ -47,7 +47,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     campotipo_usuario.setText("");
 } 
     void mostrardatos(){
-       modelo = new DefaultTableModel();
+        modelo = new DefaultTableModel();
         modelo.addColumn("id");
         modelo.addColumn("nombre");
         modelo.addColumn("nombre_usuario");

@@ -20,6 +20,7 @@ import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
 import inicio.usuarios.administrador.asignarmaterias.AsignarAsignatura;
 import inicio.usuarios.administrador.usuarios.Usuarios;
 import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
+import inicio.usuarios.administrador.horariosexternos.AltaHorariosExternos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
@@ -653,7 +654,7 @@ grupocampo.transferFocus();        // TODO add your handling code here:
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AltasUsuarios().setVisible(true);
+                new AltaHorariosExternos().setVisible(true);
             }
         });
     }

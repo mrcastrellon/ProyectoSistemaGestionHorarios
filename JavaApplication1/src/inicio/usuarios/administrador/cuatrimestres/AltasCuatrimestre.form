@@ -32,7 +32,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
           <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-          <Component id="jPanel2" alignment="1" pref="1353" max="32767" attributes="0"/>
+          <Component id="jPanel2" alignment="1" pref="1463" max="32767" attributes="0"/>
           <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -67,118 +67,39 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="609" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" pref="98" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="577" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="AltasdeUsuarios" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AsignaciondePrivilegios" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ModificaciondeUsuarios" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ConsultarUsuarios" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AltaGuardar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="491" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="combo3" min="-2" pref="123" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="octavo" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="combo5" alignment="1" min="-2" pref="122" max="-2" attributes="0"/>
-                                                  <Component id="combo4" min="-2" pref="122" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                              <Component id="noveno" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="boton8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="529" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" pref="222" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="combo1" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                              <Component id="combo2" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="septimo" min="-2" max="-2" attributes="0"/>
-                                          <Component id="sexto" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="boton7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="boton6" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="602" max="-2" attributes="0"/>
+                                      <Component id="turno" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="AltaGuardar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="combo6" max="32767" attributes="0"/>
-                              <Component id="combo7" alignment="0" max="32767" attributes="0"/>
-                              <Component id="combo8" alignment="0" max="32767" attributes="0"/>
-                              <Component id="combo9" alignment="0" pref="111" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel8" min="-2" pref="98" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="577" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="222" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="527" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="AltasdeUsuarios" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="AsignaciondePrivilegios" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="ModificaciondeUsuarios" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="ConsultarUsuarios" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="segundo" min="-2" max="-2" attributes="0"/>
-                                          <Component id="primer" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tercero" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cuarto" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="boton1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="boton3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="boton2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="boton4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      <Component id="quinto" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="boton5" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
-                              <Component id="boton9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -188,6 +109,16 @@
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="jLabel9" min="-2" pref="118" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="587" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="513" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="cuatrimestreactivar" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                  <Component id="cuatrimestrenumero" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <Component id="turnoactivar" min="-2" pref="218" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -232,97 +163,30 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AltasdeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="primer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="combo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sexto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="boton1" min="-2" max="-2" attributes="0"/>
-                      <Component id="combo6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="boton6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Component id="AltasdeUsuarios" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cuatrimestrenumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="turno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="boton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AsignaciondePrivilegios" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="segundo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="combo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="septimo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="boton7" min="-2" max="-2" attributes="0"/>
-                  <Component id="combo7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cuatrimestreactivar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="turnoactivar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="boton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="ModificaciondeUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tercero" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="combo3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="octavo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="combo8" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="combo4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="noveno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="combo9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="boton4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="ConsultarUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cuarto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="boton5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="quinto" min="-2" max="-2" attributes="0"/>
-                                  <Component id="combo5" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                              <Component id="boton9" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AltaGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="287" max="32767" attributes="0"/>
-                      <Component id="jSeparator3" min="-2" pref="2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel2" min="-2" pref="23" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="boton8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="ModificaciondeUsuarios" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ConsultarUsuarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AltaGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="392" max="32767" attributes="0"/>
+              <Component id="jSeparator3" min="-2" pref="2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -577,38 +441,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarUsuariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="segundo">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="2do Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="primer">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="1er Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="tercero">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="3er Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="cuarto">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="4to Cuatrimestre"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -647,75 +479,18 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="boton1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton2">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton2ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton3">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton3ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton4">
-    </Component>
-    <Component class="javax.swing.JLabel" name="sexto">
+    <Component class="javax.swing.JComboBox" name="turnoactivar">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Matutino"/>
+            <StringItem index="1" value="Vespertino"/>
+            <StringItem index="2" value="Intermedio"/>
+          </StringArray>
         </Property>
-        <Property name="text" type="java.lang.String" value="6to Cuatrimestre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="septimo">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="7timo Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="octavo">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="8vo Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="noveno">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="9no Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="quinto">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="12" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="5to Cuatrimestre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton7">
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton8">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton8ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton9">
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton6">
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo1">
+    <Component class="javax.swing.JComboBox" name="cuatrimestreactivar">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -726,98 +501,24 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combo1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cuatrimestreactivarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="combo2">
+    <Component class="javax.swing.JLabel" name="cuatrimestrenumero">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Numero de cuatrimestre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="combo3">
+    <Component class="javax.swing.JLabel" name="turno">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Turno"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo4">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo6">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo7">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo8">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo5">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combo9">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Matutino"/>
-            <StringItem index="1" value="Vespertino"/>
-            <StringItem index="2" value="Intermedio"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="boton5">
     </Component>
   </SubComponents>
 </Form>

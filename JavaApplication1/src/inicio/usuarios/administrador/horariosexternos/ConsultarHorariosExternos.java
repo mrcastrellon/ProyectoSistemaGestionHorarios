@@ -330,7 +330,7 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(jButton3)
                         .addGap(31, 31, 31)
@@ -404,31 +404,27 @@ public class ConsultarHorariosExternos extends javax.swing.JFrame {
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Link para altas horarios externos
+         // Link para altas horarios externos
         AltaHorariosExternos obj=new AltaHorariosExternos();
         obj.setVisible(true);
-        dispose();
+        dispose(); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Link para modulo consultar
+        // Link para modulo docentes
         ConsultarHorariosExternos obj=new ConsultarHorariosExternos();
         obj.setVisible(true);
-        dispose();
+        dispose(); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Link para modificar horario externo
-        ModificarHorariosExternos obj=new ModificarHorariosExternos();
-        obj.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja horario externos
-        BajaHorariosExternos obj=new BajaHorariosExternos();
-        obj.setVisible(true);
-        dispose();
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

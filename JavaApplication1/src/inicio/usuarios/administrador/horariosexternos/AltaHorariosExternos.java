@@ -551,16 +551,12 @@ public class AltaHorariosExternos extends javax.swing.JFrame {
 
     private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
         // Link para modificar horario externo
-        ModificarHorariosExternos obj=new ModificarHorariosExternos();
-        obj.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
         // Link para baja horario externos
-        BajaHorariosExternos obj=new BajaHorariosExternos();
-        obj.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
     private void materiacampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiacampoActionPerformed

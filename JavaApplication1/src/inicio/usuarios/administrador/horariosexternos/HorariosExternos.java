@@ -13,7 +13,8 @@ import inicio.usuarios.administrador.docentes.*;
 import inicio.usuarios.administrador.generaciondehorarios.PaginaPrincipalGeneraciondeHorarios;
 import inicio.usuarios.administrador.horariosalumnos.HorariosAlumnos;
 import inicio.usuarios.administrador.usuarios.Usuarios;
-
+import inicio.usuarios.administrador.horariosexternos.AltaHorariosExternos;
+import inicio.usuarios.administrador.horariosexternos.ConsultarHorariosExternos;
 /**
  *
  * @author BENJAMIN
@@ -382,11 +383,17 @@ public class HorariosExternos extends javax.swing.JFrame {
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+         // Link para altas horarios externos
+        AltaHorariosExternos obj=new AltaHorariosExternos();
+        obj.setVisible(true);
+        dispose(); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+         // Link para modulo docentes
+        ConsultarHorariosExternos obj=new ConsultarHorariosExternos();
+        obj.setVisible(true);
+        dispose(); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

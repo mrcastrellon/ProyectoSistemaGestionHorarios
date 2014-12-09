@@ -113,6 +113,9 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         creditosmodificar = new javax.swing.JTextField();
         clavemodificar = new javax.swing.JTextField();
         horasmodificar = new javax.swing.JTextField();
+        Id2 = new javax.swing.JLabel();
+        Creditos = new javax.swing.JLabel();
+        Creditos1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -309,6 +312,12 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
 
         Id1.setText("Nombre");
 
+        Id2.setText("Clave");
+
+        Creditos.setText("Creditos");
+
+        Creditos1.setText("Horas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -372,15 +381,20 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                                             .addComponent(Id))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(52, 52, 52)
-                                                .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(33, 33, 33)
-                                                .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Id2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(52, 52, 52)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(33, 33, 33)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Creditos1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(276, 276, 276))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,7 +454,10 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Id)
-                            .addComponent(Id1))
+                            .addComponent(Id1)
+                            .addComponent(Id2)
+                            .addComponent(Creditos)
+                            .addComponent(Creditos1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -566,21 +583,21 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         campoid.setText(tablamodificarasignaturas.getValueAt(fila, 0).toString());
         nombremodificar.setText(tablamodificarasignaturas.getValueAt(fila, 1).toString());
         clavemodificar.setText(tablamodificarasignaturas.getValueAt(fila, 2).toString());
-        especialidadcampo.setText(tablamodificarasignaturas.getValueAt(fila, 3).toString());
-        nombrecompletocampo.setText(tablamodificarasignaturas.getValueAt(fila, 4).toString());
+        creditosmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 3).toString());
+        horasmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 4).toString());
         
     }//GEN-LAST:event_botonguardarcambioActionPerformed
-
+}
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
         try {
         PreparedStatement pst;
-        pst = con2.prepareStatement("UPDATE docentes SET correo='"+correocampo.getText()+"',direccion='"+direccioncampo.getText()+"',especialidad='"+especialidadcampo.getText()+"',nombre_completo='"+nombrecompletocampo.getText()+"',telefono='"+telefonocampo.getText()+"',materiaten1='"+tentativas1campo.getText()+"',materiaten2='"+tentativas2campo.getText()+"',materiaten3='"+tentativas3campo.getText()+"',materiaten4='"+tentativas4campo.getText()+"',materiaten5='"+tentativas5campo.getText()+"' WHERE id_docente='"+id_docente.getText()+"'");
+        pst = con2.prepareStatement("UPDATE asignatura SET nombre='"+nombremodificar.getText()+"',clave='"+clavemodificar.getText()+"',creditos='"+creditosmodificar.getText()+"',horas='"+horasmodificar.getText()+"' WHERE cuatrimestre_id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
             } catch (Exception e) {
         System.out.print(e.getMessage());
     }//GEN-LAST:event_AltaGuardarActionPerformed
-
+}
     /**
      * @param args the command line arguments
      */
@@ -623,6 +640,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JButton AsignarMaterias;
     private javax.swing.JButton CerrarSesion;
     private javax.swing.JButton ConsultarUsuarios;
+    private javax.swing.JLabel Creditos;
+    private javax.swing.JLabel Creditos1;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
     private javax.swing.JButton GeneraciondeHorarios;
@@ -630,6 +649,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel Id;
     private javax.swing.JLabel Id1;
+    private javax.swing.JLabel Id2;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;

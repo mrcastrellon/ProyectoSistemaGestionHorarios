@@ -213,9 +213,9 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="ConsultarUsuarios" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombremodificar" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="campoid" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombremodificar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="clavemodificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="creditosmodificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="horasmodificar" alignment="3" min="-2" max="-2" attributes="0"/>

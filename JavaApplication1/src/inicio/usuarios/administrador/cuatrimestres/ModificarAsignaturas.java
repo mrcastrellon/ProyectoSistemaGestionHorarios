@@ -46,7 +46,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
          //para que se oculte el id
                //tablamodificarasignaturas.setModel(new DefaultTableModel());
                 //tablamodificarasignaturas.removeColumn(tablamodificarasignaturas.getColumnModel().getColumn(COLUMN_INDEX=0));
-         
+         //En caso de que no funcione eliminar esto
        modelo = new DefaultTableModel();
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");

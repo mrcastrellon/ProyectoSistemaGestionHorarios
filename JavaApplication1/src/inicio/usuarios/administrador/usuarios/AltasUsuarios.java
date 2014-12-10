@@ -223,8 +223,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Confirmar Contraseña");
 
-        campocontraseña_conf.setText("jPasswordField2");
-
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
 
@@ -290,12 +288,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(79, 79, 79)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(AltaNombre)
-                                            .addComponent(AltaUsuario)
-                                            .addComponent(AltaContraseña)))
+                                    .addComponent(AltaNombre)
+                                    .addComponent(AltaUsuario)
+                                    .addComponent(AltaContraseña)
                                     .addComponent(AltaConfirmarContraseña1)
                                     .addComponent(AltaConfirmarContraseña))
                                 .addGap(18, 18, 18)

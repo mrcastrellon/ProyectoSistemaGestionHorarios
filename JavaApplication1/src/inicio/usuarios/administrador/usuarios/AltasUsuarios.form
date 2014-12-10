@@ -77,14 +77,9 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="79" pref="79" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="AltaNombre" min="-2" max="-2" attributes="0"/>
-                                          <Component id="AltaUsuario" min="-2" max="-2" attributes="0"/>
-                                          <Component id="AltaContraseña" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="AltaNombre" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AltaUsuario" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AltaContraseña" min="-2" max="-2" attributes="0"/>
                                   <Component id="AltaConfirmarContraseña1" min="-2" max="-2" attributes="0"/>
                                   <Component id="AltaConfirmarContraseña" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -477,9 +472,6 @@
     <Component class="javax.swing.JPasswordField" name="campocontrase&#xf1;a">
     </Component>
     <Component class="javax.swing.JPasswordField" name="campocontrase&#xf1;a_conf">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>

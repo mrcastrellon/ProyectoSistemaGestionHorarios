@@ -287,11 +287,11 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         turno2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         turno2.setText("Seleccione un cuatrimestre para eliminar ");
 
-        turno3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        turno3.setText("Seleccione un cuatrimestre para eliminar ");
+        turno3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        turno3.setText("Seleccione una asignatura para eliminar ");
 
         turno4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        turno4.setText("Seleccione una asignatura para eliminar ");
+        turno4.setText("Eliminar asignatura seleccionada");
 
         turno5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -368,33 +368,26 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(501, 501, 501))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(478, Short.MAX_VALUE)
+                .addComponent(turno5)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(turno5)
-                        .addGap(587, 587, 587))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(turno6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(btnbuscar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(turno4)
-                                .addGap(18, 18, 18)
-                                .addComponent(botoneliminar)))
-                        .addGap(361, 361, 361))))
+                    .addComponent(turno3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(turno6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnbuscar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(turno4)
+                        .addGap(18, 18, 18)
+                        .addComponent(botoneliminar)))
+                .addGap(361, 361, 361))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(turno2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(turno3)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -440,9 +433,14 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(ConsultarUsuarios))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(turno5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(turno5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(turno3)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(turno6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscar)
@@ -451,7 +449,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botoneliminar)
                     .addComponent(turno4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -459,11 +457,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(turno2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(turno3)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 

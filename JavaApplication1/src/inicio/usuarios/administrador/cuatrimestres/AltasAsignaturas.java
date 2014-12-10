@@ -83,6 +83,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         limpiar();
         desbloquear();
     }
+       //solo los mandamos llamar asi desbloquear(); o asi limpiar(); para limpiar los campos requeridos
 void limpiar (){
     nombrecampo.setText("");
      clavecampo.setText("");

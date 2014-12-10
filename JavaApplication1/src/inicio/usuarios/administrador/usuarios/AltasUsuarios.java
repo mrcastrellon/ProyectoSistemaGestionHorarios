@@ -299,11 +299,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
                                     .addComponent(campousuario)
                                     .addComponent(campocontraseña)
                                     .addComponent(campocontraseña_conf)
-                                    .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(AltaGuardar))))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AltaGuardar))
                         .addGap(527, 527, 527))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -376,10 +374,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AltaConfirmarContraseña1))
-                        .addGap(31, 31, 31)
-                        .addComponent(AltaGuardar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                            .addComponent(AltaConfirmarContraseña1))))
+                .addGap(29, 29, 29)
+                .addComponent(AltaGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -488,12 +486,17 @@ public class AltasUsuarios extends javax.swing.JFrame {
             camponombre.setText(null);
             pst.setString(2,campousuario.getText());
             campousuario.setText(null);
-            pst.setString(3,campocontraseña.getText());
+             pst.setString(3,campocontraseña.getText());
             campocontraseña.setText(null);
             pst.setString(4,campocontraseña_conf.getText());
+            if (campocontraseña.equals(campocontraseña_conf)){
             campocontraseña_conf.setText(null);
             pst.setString(5,campotipo_usuario.getText());
             campotipo_usuario.setText(null);
+            }else{
+                JOptionPane.showMessageDialog(rootPane,"Las contraseñas no coinciden");
+                
+            }
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion

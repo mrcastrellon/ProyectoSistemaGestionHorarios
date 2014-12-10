@@ -77,6 +77,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaGuardar = new javax.swing.JButton();
         campotipo_usuario = new javax.swing.JTextField();
         AltaConfirmarContraseña1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -242,6 +243,14 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña1.setText("Tipo de Usuario");
 
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -301,7 +310,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
                                     .addComponent(campocontraseña_conf)
                                     .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AltaGuardar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(144, 144, 144)
+                                .addComponent(AltaGuardar)))
                         .addGap(527, 527, 527))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -376,7 +388,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
                             .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AltaConfirmarContraseña1))))
                 .addGap(29, 29, 29)
-                .addComponent(AltaGuardar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AltaGuardar)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -495,7 +509,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             campotipo_usuario.setText(null);
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Las contraseñas no coinciden ");
-                
+               
             }
             int n=pst.executeUpdate();
             if (n>=0){
@@ -512,6 +526,12 @@ public class AltasUsuarios extends javax.swing.JFrame {
              //este mensaje solo se imprimira en el registro--
         }        // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Usuarios   obj=new Usuarios();
+        obj.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -573,6 +593,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
     public javax.swing.JTextField camponombre;
     private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;

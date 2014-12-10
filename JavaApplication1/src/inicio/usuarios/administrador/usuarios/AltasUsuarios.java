@@ -494,7 +494,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             pst.setString(5,campotipo_usuario.getText());
             campotipo_usuario.setText(null);
             }else{
-                JOptionPane.showMessageDialog(rootPane,"Las contraseñas no coinciden");
+                JOptionPane.showMessageDialog(rootPane,"Las contraseñas no coinciden ");
                 
             }
             int n=pst.executeUpdate();

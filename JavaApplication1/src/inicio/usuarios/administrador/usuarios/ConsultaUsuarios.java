@@ -43,7 +43,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     camponombre.setText("");
     campousuario.setText("");
     campocontraseña.setText("");
-    campocontraseña_conf.setText("");
     campotipo_usuario.setText("");
 } 
     void mostrardatos(){
@@ -52,10 +51,9 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         modelo.addColumn("nombre");
         modelo.addColumn("nombre_usuario");
         modelo.addColumn("contrasena");
-        modelo.addColumn("contrasena_conf");
         modelo.addColumn("tipo_usuario");
         tablausuarios.setModel(modelo);
-        String []datos = new String [10];
+        String []datos = new String [5];
         try{
         Statement st = con2.createStatement();
         ResultSet rs= st.executeQuery("SELECT * FROM usuarios");
@@ -65,7 +63,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
-        datos [5]=rs.getString(6);
+        
        
        
         modelo.addRow(datos);
@@ -110,7 +108,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         camponombre = new javax.swing.JTextField();
         campousuario = new javax.swing.JTextField();
         campocontraseña = new javax.swing.JTextField();
-        campocontraseña_conf = new javax.swing.JTextField();
         campotipo_usuario = new javax.swing.JTextField();
         Modificar = new javax.swing.JButton();
         campoid = new javax.swing.JTextField();
@@ -376,7 +373,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
                         .addGap(78, 78, 78)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(camponombre)
-                            .addComponent(campocontraseña_conf)
                             .addComponent(campousuario)
                             .addComponent(campocontraseña)
                             .addComponent(campotipo_usuario)
@@ -457,9 +453,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
                                 .addComponent(Modificar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(campocontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(campocontraseña_conf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(56, 56, 56)
                                 .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -554,8 +548,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         camponombre.setText(tablausuarios.getValueAt(fila, 1).toString());
         campousuario.setText(tablausuarios.getValueAt(fila, 2).toString());
         campocontraseña.setText(tablausuarios.getValueAt(fila, 3).toString());
-        campocontraseña_conf.setText(tablausuarios.getValueAt(fila, 4).toString());
-        campotipo_usuario.setText(tablausuarios.getValueAt(fila, 5).toString());
+        campotipo_usuario.setText(tablausuarios.getValueAt(fila, 4).toString());
     }
     else{
     JOptionPane.showMessageDialog(null,"no seleciono fila");
@@ -592,7 +585,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         try {
         PreparedStatement pst;
-            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',contrasena_conf='"+campocontraseña_conf.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE id='"+campoid.getText()+"'");
+            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
         limpiar();
@@ -649,7 +642,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JTextField campocontraseña;
-    private javax.swing.JTextField campocontraseña_conf;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField camponombre;
     private javax.swing.JTextField campotipo_usuario;

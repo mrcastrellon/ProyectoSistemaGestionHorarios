@@ -107,7 +107,6 @@
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="camponombre" max="32767" attributes="0"/>
-                          <Component id="campocontraseña_conf" alignment="0" max="32767" attributes="0"/>
                           <Component id="campousuario" alignment="0" max="32767" attributes="0"/>
                           <Component id="campocontraseña" alignment="0" max="32767" attributes="0"/>
                           <Component id="campotipo_usuario" alignment="0" max="32767" attributes="0"/>
@@ -209,9 +208,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="campocontraseña" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="campocontraseña_conf" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Component id="campotipo_usuario" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -553,8 +550,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campocontrase&#xf1;aActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campocontrase&#xf1;a_conf">
     </Component>
     <Component class="javax.swing.JTextField" name="campotipo_usuario">
     </Component>

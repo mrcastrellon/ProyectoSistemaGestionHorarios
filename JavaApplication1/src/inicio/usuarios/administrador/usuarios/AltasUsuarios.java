@@ -67,11 +67,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaUsuario = new javax.swing.JLabel();
         AltaNombre = new javax.swing.JLabel();
         AltaContraseña = new javax.swing.JLabel();
-        AltaConfirmarContraseña = new javax.swing.JLabel();
         camponombre = new javax.swing.JTextField();
         campousuario = new javax.swing.JTextField();
         campocontraseña = new javax.swing.JPasswordField();
-        campocontraseña_conf = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
@@ -221,9 +219,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaContraseña.setText("Contraseña");
 
-        AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AltaConfirmarContraseña.setText("Confirmar Contraseña");
-
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
 
@@ -294,20 +289,19 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(577, 577, 577))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(AltaNombre)
                                     .addComponent(AltaUsuario)
                                     .addComponent(AltaContraseña)
-                                    .addComponent(AltaConfirmarContraseña1)
-                                    .addComponent(AltaConfirmarContraseña))
+                                    .addComponent(AltaConfirmarContraseña1))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(camponombre)
                                     .addComponent(campousuario)
                                     .addComponent(campocontraseña)
-                                    .addComponent(campocontraseña_conf)
                                     .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -379,11 +373,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campocontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AltaContraseña))
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campocontraseña_conf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AltaConfirmarContraseña))
-                        .addGap(39, 39, 39)
+                        .addGap(105, 105, 105)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AltaConfirmarContraseña1))))
@@ -490,7 +480,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,contrasena_conf,tipo_usuario)VALUES (?,?,?,?,?)";
+        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES (?,?,?,?)";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
@@ -502,15 +492,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
             campousuario.setText(null);
              pst.setString(3,campocontraseña.getText());
             campocontraseña.setText(null);
-            pst.setString(4,campocontraseña_conf.getText());
-            if (campocontraseña.equals(campocontraseña_conf)){
-            campocontraseña_conf.setText(null);
-            pst.setString(5,campotipo_usuario.getText());
-            campotipo_usuario.setText(null);
-            }else{
-                JOptionPane.showMessageDialog(rootPane,"Las contraseñas no coinciden ");
-               
-            }
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
@@ -569,7 +550,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AltaConfirmarContraseña;
     private javax.swing.JLabel AltaConfirmarContraseña1;
     private javax.swing.JLabel AltaContraseña;
     public javax.swing.JButton AltaGuardar;
@@ -589,7 +569,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JPasswordField campocontraseña;
-    private javax.swing.JPasswordField campocontraseña_conf;
     public javax.swing.JTextField camponombre;
     private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;

@@ -563,11 +563,11 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             //JOptionPane.showMessageDialog(rootPane, id);
             Statement st = con2.createStatement();
           //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
-       st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
-            JOptionPane.showMessageDialog(rootPane, "Estas seguro de eliminar este usuario");
+            st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
+    
             JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
             mostrardatos();
-        } catch (Exception e) {
+           } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane , e );
         }
     }//GEN-LAST:event_eliminarActionPerformed

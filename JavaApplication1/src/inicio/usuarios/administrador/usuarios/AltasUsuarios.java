@@ -32,6 +32,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
     /**
      * Creates new form INTERFAZ
      */
+    void limpiar(){
+    camponombre.setText(" ");
+    campousuario.setText(" ");
+    campocontraseña.setText(" ");
+    }
     public AltasUsuarios() {
         initComponents();
     }
@@ -73,9 +78,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
-        campotipo_usuario = new javax.swing.JTextField();
         AltaConfirmarContraseña1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        tipo_usuario = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -233,8 +238,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
 
-        campotipo_usuario.setText("invitado o administrador");
-
         AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña1.setText("Tipo de Usuario");
 
@@ -245,6 +248,8 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        tipo_usuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Invitado", "Administrador"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,33 +288,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGap(0, 24, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(415, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(577, 577, 577))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(AltaNombre)
-                                    .addComponent(AltaUsuario)
-                                    .addComponent(AltaContraseña)
-                                    .addComponent(AltaConfirmarContraseña1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(camponombre)
-                                    .addComponent(campousuario)
-                                    .addComponent(campocontraseña)
-                                    .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(144, 144, 144)
-                                .addComponent(AltaGuardar)))
-                        .addGap(527, 527, 527))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(592, 592, 592))
@@ -319,6 +297,33 @@ public class AltasUsuarios extends javax.swing.JFrame {
                     .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
                 .addGap(354, 1014, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(577, 577, 577))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(144, 144, 144)
+                                .addComponent(AltaGuardar)))
+                        .addGap(527, 527, 527))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AltaNombre)
+                            .addComponent(AltaUsuario)
+                            .addComponent(AltaContraseña)
+                            .addComponent(AltaConfirmarContraseña1))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(camponombre, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(campousuario)
+                            .addComponent(campocontraseña)
+                            .addComponent(tipo_usuario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(527, 527, 527))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,15 +378,15 @@ public class AltasUsuarios extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campocontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AltaContraseña))
-                        .addGap(105, 105, 105)
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campotipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AltaConfirmarContraseña1))))
-                .addGap(29, 29, 29)
+                            .addComponent(AltaConfirmarContraseña1)
+                            .addComponent(tipo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AltaGuardar)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -480,10 +485,13 @@ public class AltasUsuarios extends javax.swing.JFrame {
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES (?,?,?,?)";
+        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES ('"+camponombre.getText()+"','"+campousuario.getText()+"','"+campocontraseña.getText()+"','"+tipo_usuario.getSelectedItem()+"')";
         //le digo a la variable que hara la del error para luego ser llamada
+        
         mensajeerror="Ingresa los datos correctamente";
         try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            /*
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
             pst.setString(1,camponombre.getText());
@@ -492,11 +500,14 @@ public class AltasUsuarios extends javax.swing.JFrame {
             campousuario.setText(null);
              pst.setString(3,campocontraseña.getText());
             campocontraseña.setText(null);
+            pst.setString(4,tipo_usuario.getSelectedItem());
+            */
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
              JOptionPane.showMessageDialog(rootPane,"Usuario Registrado Satisfactoriamente!!!");
-                System.out.println("Guardado correctamente");
+             limpiar();
+             System.out.println("Guardado correctamente");
                     }
 {
             
@@ -570,7 +581,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton Usuarios;
     private javax.swing.JPasswordField campocontraseña;
     public javax.swing.JTextField camponombre;
-    private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
@@ -581,6 +591,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JComboBox tipo_usuario;
     // End of variables declaration//GEN-END:variables
 }
 //ejemplo

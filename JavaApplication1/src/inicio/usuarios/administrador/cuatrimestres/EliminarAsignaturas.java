@@ -45,13 +45,18 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         modelo.addColumn("creditos");
         modelo.addColumn("horas");
         
-     
+       String sql = "SELECT *FROM asignatura WHERE cuatrimestre_id LIKE '%" + buscartodo.getText() + "%' "
+                    + "OR nombre LIKE '%" + buscartodo.getText() + "%'"
+                    + "OR clave LIKE '%" + buscartodo.getText() + "%'"
+                    + "OR creditos LIKE '%" + buscartodo.getText() + "%'"
+                    + "OR horas LIKE '%" + buscartodo.getText() + "%'";
+                   
         
         tablaeliminar.setModel(modelo);
         String []datos = new String [10];
         try{
         Statement st = con2.createStatement();
-        ResultSet rs= st.executeQuery("SELECT * FROM asignatura");
+        ResultSet rs= st.executeQuery(sql);
         while (rs.next()){
         datos [0]=rs.getString(1);
         datos [1]=rs.getString(2);
@@ -109,7 +114,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         turno5 = new javax.swing.JLabel();
         turno6 = new javax.swing.JLabel();
         btnbuscar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        buscartodo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -306,9 +311,14 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        buscartodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                buscartodoActionPerformed(evt);
+            }
+        });
+        buscartodo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buscartodoKeyPressed(evt);
             }
         });
 
@@ -376,7 +386,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(turno6)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buscartodo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btnbuscar))
                     .addGroup(layout.createSequentialGroup()
@@ -444,7 +454,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(turno6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscar)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buscartodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botoneliminar)
@@ -586,12 +596,18 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     }//GEN-LAST:event_botoneliminarActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        // TODO add your handling code here:
+        // Mandando llamar el metodo de buscar, claro es de la creacion de la tabla
+        
     }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void buscartodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscartodoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_buscartodoActionPerformed
+
+    private void buscartodoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscartodoKeyPressed
+        // Evento, Key, key press y luego mandamos llamar el evento de la tabla 
+        mostrardatos();
+    }//GEN-LAST:event_buscartodoKeyPressed
 
     /**
      * @param args the command line arguments
@@ -646,6 +662,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton botoneliminar;
     private javax.swing.JButton btnbuscar;
+    private javax.swing.JTextField buscartodo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
@@ -654,7 +671,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tablaeliminar;
     private javax.swing.JLabel turno2;
     private javax.swing.JLabel turno3;

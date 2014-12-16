@@ -30,6 +30,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
             while (rs.next()){
                 cap=rs.getString("tipo_usuario");
                 usuarionom=rs.getString("nombre");
+                
             }
             if (cap.equals("administrador")){
             
@@ -129,7 +130,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(460, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(416, 416, 416))
         );

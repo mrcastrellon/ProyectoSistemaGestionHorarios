@@ -23,7 +23,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     public DocentesUsuarioComun(String usuario) {
         initComponents();
         this.setSize(1000,600);
-        usuar.setText(usuario);
+        label1.setText(usuario);
         setVisible(true);
     }
 
@@ -43,15 +43,14 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         LogoUnipoli = new javax.swing.JLabel();
         CerrarSesion = new javax.swing.JButton();
         usuar = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
         ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -90,14 +89,9 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1181, 51, 113, 25);
+        CerrarSesion.setBounds(1150, 50, 130, 25);
         getContentPane().add(usuar);
         usuar.setBounds(1056, 57, 0, 0);
-
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(555, 137, 222, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -111,7 +105,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(483, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(401, 401, 401))
         );
@@ -165,15 +159,15 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         getContentPane().add(ConsultarUsuarios);
         ConsultarUsuarios.setBounds(72, 471, 189, 27);
 
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Docentes");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(629, 178, 98, 17);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(330, 261, 918, 304);
+
+        label1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        label1.setText("jLabel4");
+        getContentPane().add(label1);
+        label1.setBounds(440, 170, 480, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -228,13 +222,12 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel SGH;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel label1;
     private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
 }

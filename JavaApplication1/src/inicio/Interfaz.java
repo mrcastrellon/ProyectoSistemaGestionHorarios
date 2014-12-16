@@ -27,9 +27,8 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz(String usuario) {
         setSize(1300,648);
         initComponents();
-        usuar.setText(usuario);
+        label1.setText(usuario);
         setResizable(true);
-        
         setVisible(true);
     }
 
@@ -60,6 +59,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
+        label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -67,7 +67,7 @@ public class Interfaz extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(1300, 648));
         setResizable(false);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -78,8 +78,7 @@ public class Interfaz extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
-        getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(49, 93, 130, 25);
+        getContentPane().add(Cuatrimestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 93, 130, -1));
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -89,8 +88,7 @@ public class Interfaz extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
-        getContentPane().add(Docentes);
-        Docentes.setBounds(200, 93, 120, 25);
+        getContentPane().add(Docentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 93, 120, -1));
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -100,8 +98,7 @@ public class Interfaz extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
-        getContentPane().add(HorariosExternos);
-        HorariosExternos.setBounds(351, 93, 160, 25);
+        getContentPane().add(HorariosExternos, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 93, 160, -1));
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -111,8 +108,7 @@ public class Interfaz extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
-        getContentPane().add(HorariosAlumnos);
-        HorariosAlumnos.setBounds(541, 93, 170, 25);
+        getContentPane().add(HorariosAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 93, 170, -1));
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -122,8 +118,7 @@ public class Interfaz extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(Usuarios);
-        Usuarios.setBounds(934, 93, 93, 25);
+        getContentPane().add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(934, 93, 93, -1));
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -133,33 +128,26 @@ public class Interfaz extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
-        getContentPane().add(GeneraciondeHorarios);
-        GeneraciondeHorarios.setBounds(1068, 93, 190, 25);
+        getContentPane().add(GeneraciondeHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(1068, 93, 190, -1));
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(0, 85, 1296, 2);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 1296, -1));
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(0, 124, 1296, 2);
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 124, 1296, -1));
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator3);
-        jSeparator3.setBounds(0, 568, 1296, 2);
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 568, 1296, -1));
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
-        getContentPane().add(SGH);
-        SGH.setBounds(233, 38, 414, 29);
+        getContentPane().add(SGH, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 38, 414, 29));
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
-        getContentPane().add(LogoUnipoli);
-        LogoUnipoli.setBounds(685, 20, 375, 56);
+        getContentPane().add(LogoUnipoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 310, 56));
 
         ImagenUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
-        getContentPane().add(ImagenUnipoli);
-        ImagenUnipoli.setBounds(137, 238, 1149, 312);
+        getContentPane().add(ImagenUnipoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 238, 1149, 312));
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -169,15 +157,12 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(1136, 51, 150, 25);
-        getContentPane().add(usuar);
-        usuar.setBounds(1066, 57, 75, 0);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 40, 150, -1));
+        getContentPane().add(usuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1066, 57, 75, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(547, 137, 222, 35);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 137, 222, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -202,8 +187,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 576, 1296, 23);
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 576, 1296, 23));
 
         HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -213,8 +197,10 @@ public class Interfaz extends javax.swing.JFrame {
                 HorariosAlumnos1ActionPerformed(evt);
             }
         });
-        getContentPane().add(HorariosAlumnos1);
-        HorariosAlumnos1.setBounds(735, 93, 160, 25);
+        getContentPane().add(HorariosAlumnos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(735, 93, 160, -1));
+
+        label1.setText("jLabel1");
+        getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, 170, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -304,6 +290,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel label1;
     public javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
 public javax.swing.JLabel usua;

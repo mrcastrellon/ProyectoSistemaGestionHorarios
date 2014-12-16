@@ -15,6 +15,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         setResizable(false);
         setSize(1300,648);
         setTitle("Inicio de Sesión");
+        setVisible(true);
     }
                                                          //METODO PARA INGRESAR AL SISTEMA.
     void ingresar(String usuario, String password){
@@ -37,6 +38,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
             Interfaz inter=new Interfaz(usuarionom);
             inter.setVisible(true);
             inter.pack();
+            this.dispose();
             //Interfaz.usuar.setText(usuario);
             }else{
             if (cap.equals("invitado")){
@@ -45,10 +47,11 @@ public class IngresaralSistema extends javax.swing.JFrame {
             DocentesUsuarioComun uc=new DocentesUsuarioComun();
             uc.setVisible(true);
             uc.pack();
+            this.dispose();
             }else {
                   JOptionPane.showMessageDialog(rootPane,"EL usuario no existe vuelve a intentarlo");  
-                    }
-            }
+                  }
+                } 
         }
         catch (SQLException ex) {
             Logger.getLogger(IngresaralSistema.class.getName()).log(Level.SEVERE, null, ex);
@@ -183,7 +186,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         String usu=usuario.getText();
         String pas=new String(contrasena.getPassword());
         ingresar(usu,pas);
-        this.dispose();
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed

@@ -15,7 +15,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
         setResizable(false);
         setSize(1300,648);
         setTitle("Inicio de Sesión");
-        setVisible(true);
+        
     }
                                                          //METODO PARA INGRESAR AL SISTEMA.
     void ingresar(String usuario, String password){
@@ -36,12 +36,11 @@ public class IngresaralSistema extends javax.swing.JFrame {
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido Administrador");
             Interfaz inter=new Interfaz(usuarionom);
-            inter.setVisible(true);
             inter.pack();
             this.dispose();
             //Interfaz.usuar.setText(usuario);
             }else{
-            if (cap.equals("invitado")){
+            if (cap.equals("Invitado")){
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido al sistema");
             DocentesUsuarioComun uc=new DocentesUsuarioComun();

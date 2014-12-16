@@ -25,10 +25,11 @@ public class Interfaz extends javax.swing.JFrame {
         setVisible(true);
     }
     public Interfaz(String usuario) {
+        setSize(1300,648);
         initComponents();
         usuar.setText(usuario);
         setResizable(true);
-        setSize(1300,648);
+        
         setVisible(true);
     }
 
@@ -64,6 +65,7 @@ public class Interfaz extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -77,7 +79,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 93, 111, 25);
+        Cuatrimestre.setBounds(49, 93, 130, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -88,7 +90,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Docentes);
-        Docentes.setBounds(216, 93, 104, 25);
+        Docentes.setBounds(200, 93, 120, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -99,7 +101,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HorariosExternos);
-        HorariosExternos.setBounds(370, 93, 141, 25);
+        HorariosExternos.setBounds(351, 93, 160, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -110,7 +112,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HorariosAlumnos);
-        HorariosAlumnos.setBounds(563, 93, 148, 25);
+        HorariosAlumnos.setBounds(541, 93, 170, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -132,7 +134,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GeneraciondeHorarios);
-        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
+        GeneraciondeHorarios.setBounds(1068, 93, 190, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
         getContentPane().add(jSeparator1);
@@ -168,7 +170,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1173, 51, 113, 25);
+        jButton1.setBounds(1136, 51, 150, 25);
 
         usuar.setText("usuario");
         getContentPane().add(usuar);
@@ -214,7 +216,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HorariosAlumnos1);
-        HorariosAlumnos1.setBounds(747, 93, 148, 25);
+        HorariosAlumnos1.setBounds(735, 93, 160, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

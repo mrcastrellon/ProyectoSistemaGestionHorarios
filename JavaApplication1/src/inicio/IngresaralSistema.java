@@ -1,8 +1,5 @@
 package inicio;
 import Conexion_base_de_datos.*;
-import inicio.*;
-import inicio.Interfaz.*;
-import  inicio.usuarios.administrador.docentes.docentesusuariocumun.DocentesUsuarioComun;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,12 +12,13 @@ public class IngresaralSistema extends javax.swing.JFrame {
 
     public IngresaralSistema() {
         initComponents();
+        setResizable(false);
     }
                                                          //METODO PARA INGRESAR AL SISTEMA.
     void ingresar(String usuario, String password){
         Conexion con=new Conexion();
         Connection con2=con.conexion();
-        String cap=" ";
+        String cap=" ",usuarionom="";
         String sql="SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"'AND contrasena='"+password+"'";        ;        
         
         try {
@@ -28,26 +26,27 @@ public class IngresaralSistema extends javax.swing.JFrame {
             ResultSet rs=st.executeQuery(sql);
             while (rs.next()){
                 cap=rs.getString("tipo_usuario");
+                usuarionom=rs.getString("nombre");
             }
             if (cap.equals("administrador")){
             
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido Administrador");
-            Interfaz inter=new Interfaz();
+            Interfaz inter=new Interfaz(usuarionom);
             inter.setVisible(true);
             inter.pack();
-            }
+            //Interfaz.usuar.setText(usuario);
+            }else{
             if (cap.equals("invitado")){
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido al sistema");
             DocentesUsuarioComun uc=new DocentesUsuarioComun();
             uc.setVisible(true);
-            uc.pack(); 
-            
+            uc.pack();
             }else {
                   JOptionPane.showMessageDialog(rootPane,"EL usuario no existe vuelve a intentarlo");  
                     }
-            
+            }
         }
         catch (SQLException ex) {
             Logger.getLogger(IngresaralSistema.class.getName()).log(Level.SEVERE, null, ex);
@@ -133,7 +132,6 @@ public class IngresaralSistema extends javax.swing.JFrame {
             }
         });
 
-        contrasena.setText("jPasswordField1");
         contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contrasenaActionPerformed(evt);

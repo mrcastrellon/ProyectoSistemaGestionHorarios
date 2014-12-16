@@ -244,9 +244,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="usuar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="usuario"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

@@ -171,10 +171,8 @@ public class Interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(1136, 51, 150, 25);
-
-        usuar.setText("usuario");
         getContentPane().add(usuar);
-        usuar.setBounds(1066, 57, 75, 14);
+        usuar.setBounds(1066, 57, 75, 0);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");

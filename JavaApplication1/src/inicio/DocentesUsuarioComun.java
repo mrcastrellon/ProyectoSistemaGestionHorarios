@@ -91,10 +91,8 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         });
         getContentPane().add(CerrarSesion);
         CerrarSesion.setBounds(1181, 51, 113, 25);
-
-        usuar.setText("Nombre del Usuario");
         getContentPane().add(usuar);
-        usuar.setBounds(1056, 57, 93, 14);
+        usuar.setBounds(1056, 57, 0, 0);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");

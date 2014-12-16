@@ -43,7 +43,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
             if (cap.equals("Invitado")){
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido al sistema");
-            DocentesUsuarioComun uc=new DocentesUsuarioComun();
+            DocentesUsuarioComun uc=new DocentesUsuarioComun(usuarionom);
             uc.setVisible(true);
             uc.pack();
             this.dispose();
@@ -113,6 +113,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Pagina Principal");
+        jLabel2.setMinimumSize(new java.awt.Dimension(1300, 648));
         getContentPane().add(jLabel2);
         jLabel2.setBounds(547, 137, 222, 35);
 

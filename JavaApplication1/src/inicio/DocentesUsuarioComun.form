@@ -11,7 +11,7 @@
       <Color id="Default Cursor"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[600, 600]"/>
+      <Dimension value="[1300, 648]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -114,7 +114,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="NombredelUsuario">
+    <Component class="javax.swing.JLabel" name="usuar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre del Usuario"/>
       </Properties>

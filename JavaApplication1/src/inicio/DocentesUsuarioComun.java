@@ -20,6 +20,12 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         initComponents();
         this.setSize(1000,600);
     }
+    public DocentesUsuarioComun(String usuario) {
+        initComponents();
+        this.setSize(1000,600);
+        usuar.setText(usuario);
+        setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +42,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         SGH = new javax.swing.JLabel();
         LogoUnipoli = new javax.swing.JLabel();
         CerrarSesion = new javax.swing.JButton();
-        NombredelUsuario = new javax.swing.JLabel();
+        usuar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,7 +57,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(600, 600));
+        setMinimumSize(new java.awt.Dimension(1300, 648));
         getContentPane().setLayout(null);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
@@ -86,9 +92,9 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         getContentPane().add(CerrarSesion);
         CerrarSesion.setBounds(1181, 51, 113, 25);
 
-        NombredelUsuario.setText("Nombre del Usuario");
-        getContentPane().add(NombredelUsuario);
-        NombredelUsuario.setBounds(1056, 57, 93, 14);
+        usuar.setText("Nombre del Usuario");
+        getContentPane().add(usuar);
+        usuar.setBounds(1056, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
@@ -222,7 +228,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     private javax.swing.JButton ConsultarUsuarios;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JButton ModificaciondeUsuarios;
-    private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -232,5 +237,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
 }

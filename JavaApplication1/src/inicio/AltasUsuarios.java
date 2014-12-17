@@ -352,7 +352,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AsignarAsignatura obj=new AsignarAsignatura();
         obj.setVisible(true);
         this.dispose();
-
+ 
     }//GEN-LAST:event_AsignarMateriasActionPerformed
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed

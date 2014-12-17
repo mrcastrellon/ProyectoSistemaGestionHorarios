@@ -56,7 +56,7 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AltaUsuarios = new javax.swing.JButton();
         ConsultaUsuarios = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         label1 = new javax.swing.JLabel();
@@ -211,15 +211,15 @@ public class Usuarios extends javax.swing.JFrame {
         getContentPane().add(HorariosAlumnos1);
         HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton2.setText("Altas de Usuarios");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AltaUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AltaUsuarios.setText("Altas de Usuarios");
+        AltaUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AltaUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(64, 268, 197, 27);
+        getContentPane().add(AltaUsuarios);
+        AltaUsuarios.setBounds(64, 268, 197, 27);
 
         ConsultaUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultaUsuarios.setText("Consultar Usuarios");
@@ -307,13 +307,13 @@ public class Usuarios extends javax.swing.JFrame {
 
     }//GEN-LAST:event_DocentesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AltaUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaUsuariosActionPerformed
         // Link para altas usuarios
-        AltasUsuarios obj=new AltasUsuarios();
+        AltasUsuarios obj=new AltasUsuarios(variable);
         obj.setVisible(true);
         this.dispose();
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AltaUsuariosActionPerformed
 
     private void ConsultaUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaUsuariosActionPerformed
         // Link para asignación de privilegios
@@ -331,6 +331,7 @@ public class Usuarios extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AltaUsuarios;
     private javax.swing.JButton ConsultaUsuarios;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
@@ -343,7 +344,6 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;

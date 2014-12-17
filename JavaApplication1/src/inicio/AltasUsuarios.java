@@ -31,9 +31,12 @@ public class AltasUsuarios extends javax.swing.JFrame {
         initComponents();
     }
     public AltasUsuarios(String usuario){
-    usuar.setText(usuario);
+        initComponents();
+        label1.setText(usuario);
         setResizable(true);
         setVisible(true);
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,6 +77,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         tipo_usuario = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -296,6 +300,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(580, 170, 130, 23);
 
+        label1.setText("jLabel1");
+        getContentPane().add(label1);
+        label1.setBounds(1000, 50, 150, 20);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -454,8 +462,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel label1;
     private javax.swing.JComboBox tipo_usuario;
     private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
+private String vinusuario;
 }
+
 //ejemplo

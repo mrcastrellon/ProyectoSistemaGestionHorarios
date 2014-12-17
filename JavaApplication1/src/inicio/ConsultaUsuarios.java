@@ -35,6 +35,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         setResizable(true);
         setVisible(true);
         mostrardatos ();
+        altusu=usuario;
     }
     void limpiar (){
     campoid.setText("");
@@ -95,7 +96,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AltaUsuario = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -268,15 +269,15 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         getContentPane().add(HorariosAlumnos1);
         HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
-        jButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton2.setText("Altas de Usuarios");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AltaUsuario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        AltaUsuario.setText("Altas de Usuarios");
+        AltaUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AltaUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(70, 300, 197, 27);
+        getContentPane().add(AltaUsuario);
+        AltaUsuario.setBounds(70, 300, 197, 27);
 
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton4.setText("Modificar Usuarios");
@@ -362,7 +363,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(Modificar);
-        Modificar.setBounds(892, 552, 93, 25);
+        Modificar.setBounds(892, 552, 140, 25);
         getContentPane().add(campoid);
         campoid.setBounds(892, 298, 132, 20);
 
@@ -437,13 +438,13 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
 
     }//GEN-LAST:event_DocentesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AltaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaUsuarioActionPerformed
         // Link para altas usuarios
-        AltasUsuarios obj=new AltasUsuarios();
+        AltasUsuarios obj=new AltasUsuarios(altusu);
         obj.setVisible(true);
         this.dispose();
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AltaUsuarioActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        int fila= tablausuarios.getSelectedRow();
@@ -455,7 +456,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         campotipo_usuario.setText(tablausuarios.getValueAt(fila, 4).toString());
     }
     else{
-    JOptionPane.showMessageDialog(null,"no seleciono fila");
+    JOptionPane.showMessageDialog(rootPane,"no seleciono fila");
     }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -469,10 +470,11 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
           //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
             st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
     
-            JOptionPane.showMessageDialog(null,"Usuario eliminado correctamente");
+            JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
             mostrardatos();
            } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane , e );
+            JOptionPane.showMessageDialog(rootPane,"Selecciona un usuario" + e);
+            System.out.print(e);
         }
     }//GEN-LAST:event_eliminarActionPerformed
 
@@ -493,8 +495,9 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         pst.executeUpdate();
         mostrardatos();
         limpiar();
-        JOptionPane.showInternalMessageDialog(rootPane, "Información Actualizada");
+        JOptionPane.showInternalMessageDialog(null, "Información Actualizada");
     } catch (Exception e) {
+        JOptionPane.showMessageDialog(rootPane,"Selecciona un Usuario y presiona modificar");
         System.out.print(e.getMessage());
     }
     }//GEN-LAST:event_ModificarActionPerformed
@@ -505,6 +508,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AltaUsuario;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
     private javax.swing.JButton GeneraciondeHorarios;
@@ -522,7 +526,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JTextField campousuario;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -542,4 +545,5 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
 Conexion con=new Conexion();
         Connection con2=con.conexion();
         DefaultTableModel modelo;
+        private String altusu;
 }

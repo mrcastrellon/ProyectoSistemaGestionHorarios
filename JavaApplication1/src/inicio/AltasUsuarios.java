@@ -35,7 +35,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         label1.setText(usuario);
         setResizable(true);
         setVisible(true);
-        
+        vinusuario=usuario;
         
     }
     /**
@@ -74,7 +74,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
         AltaConfirmarContraseña1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         tipo_usuario = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
         label1 = new javax.swing.JLabel();
@@ -281,15 +281,15 @@ public class AltasUsuarios extends javax.swing.JFrame {
         getContentPane().add(AltaConfirmarContraseña1);
         AltaConfirmarContraseña1.setBounds(460, 436, 120, 21);
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(464, 547, 90, 25);
+        getContentPane().add(Salir);
+        Salir.setBounds(464, 547, 90, 25);
 
         tipo_usuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Invitado", "Administrador"}));
         getContentPane().add(tipo_usuario);
@@ -373,7 +373,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
 
     private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
         // Link para asignación de privilegios
-        ConsultaUsuarios obj=new ConsultaUsuarios ();
+        ConsultaUsuarios obj=new ConsultaUsuarios (vinusuario);
         obj.setVisible(true);
 
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
@@ -422,11 +422,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Usuarios   obj=new Usuarios();
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        Usuarios   obj=new Usuarios(vinusuario);
         obj.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,11 +449,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
+    private javax.swing.JButton Salir;
     private javax.swing.JButton Usuarios;
     private javax.swing.JPasswordField campocontraseña;
     public javax.swing.JTextField camponombre;
     private javax.swing.JTextField campousuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;

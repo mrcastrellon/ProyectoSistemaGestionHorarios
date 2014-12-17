@@ -6,8 +6,19 @@
 
 package inicio;
 
-
+// son los import nesesarios eee
 import Conexion_base_de_datos.Conexion;
+import inicio.AltasAsignaturas;
+import inicio.AltasCuatrimestre;
+import inicio.AsignarAsignatura;
+import inicio.Docentes;
+import inicio.EliminarAsignaturas;
+import inicio.HorariosAlumnos;
+import inicio.HorariosExternos;
+import inicio.IngresaralSistema;
+import inicio.PaginaPrincipalGeneraciondeHorarios;
+import inicio.Usuarios;
+import inicio.cuatrimestres;
 import java.sql.*;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,42 +26,37 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author BENJAMIN
+ * @author 
  */
 public class ModificarAsignaturas extends javax.swing.JFrame {
-
+ 
     /**
      * Creates new form INTERFAZ
      */
     public ModificarAsignaturas() {
         initComponents();
-        mostrardatos();
+        mostrardatosmodificar();
     }
-     void mostrardatos(){
-
-         
-//for (int i = 0; i < columna.length; i++) {
-   //tablamodificarasignaturas.getColumnModel().getColumn(columna[i]).setMaxWidth(0);
-    //tablamodificarasignaturas.getColumnModel().getColumn(columna[i]).setMinWidth(0);
-    //tablamodificarasignaturas.getTableHeader().getColumnModel().getColumn(columna[i]).setMaxWidth(0);
-    //tablamodificarasignaturas.getTableHeader().getColumnModel().getColumn(columna[i]).setMinWidth(0);
-
-
+     void mostrardatosmodificar(){
                  
-       modelo = new DefaultTableModel();
-            //Ocultando id
+       modelomodificar = new DefaultTableModel();
+       modelomodificar.addColumn("ID");
+       modelomodificar.addColumn("Nombre");
+       modelomodificar.addColumn("Clave");
+       modelomodificar.addColumn("creditos");
+       modelomodificar.addColumn("horas");
            
-            modelo.addColumn("ID");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Clave");
-            modelo.addColumn("creditos");
-            modelo.addColumn("horas");
+            String sqlmodificar = "SELECT *FROM asignatura WHERE cuatrimestre_id LIKE '%" + buscarmodificarr.getText() + "%' "
+                    + "OR nombre LIKE '%" + buscarmodificarr.getText() + "%'"
+                    + "OR clave LIKE '%" + buscarmodificarr.getText() + "%'"
+                    + "OR creditos LIKE '%" + buscarmodificarr.getText() + "%'"
+                    + "OR horas LIKE '%" + buscarmodificarr.getText() + "%'";
         
-        tablamodificarasignaturas.setModel(modelo);
-        String []datos = new String [11];
+        tablamodificarasignaturas.setModel(modelomodificar);
+        String []datos = new String [10];
         try{
         Statement st = con2.createStatement();
-        ResultSet rs= st.executeQuery("SELECT * FROM asignatura");
+        ResultSet rs= st.executeQuery(sqlmodificar);
         while (rs.next()){
         datos [0]=rs.getString(1);
         datos [1]=rs.getString(2);
@@ -58,18 +64,9 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
         
-       
         
-        
-       
-        
-        
-        
-        
-        
-        
-         modelo.addRow(datos);
-        tablamodificarasignaturas.setModel(modelo);
+         modelomodificar.addRow(datos);
+        tablamodificarasignaturas.setModel(modelomodificar);
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
@@ -123,6 +120,14 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         Id2 = new javax.swing.JLabel();
         Creditos = new javax.swing.JLabel();
         Creditos1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        try {
+            buscarmodificarr =(javax.swing.JTextField)java.beans.Beans.instantiate(getClass().getClassLoader(), "inicio.ModificarAsignaturas_buscarmodificarr");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -295,6 +300,14 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
 
+        tablamodificarasignaturas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         jScrollPane1.setViewportView(tablamodificarasignaturas);
 
         botonguardarcambio.setText("Modificar seleccionado");
@@ -313,6 +326,19 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         Creditos.setText("Creditos");
 
         Creditos1.setText("Horas");
+
+        jLabel1.setText("Buscar asignatura");
+
+        buscarmodificarr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarmodificarrActionPerformed(evt);
+            }
+        });
+        buscarmodificarr.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buscarmodificarrKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -362,41 +388,52 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(577, 577, 577))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Id))
+                                        .addGap(28, 28, 28)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Id2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(16, 16, 16)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Creditos1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botonguardarcambio, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AltaGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Id))
-                            .addGap(28, 28, 28)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(27, 27, 27)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Id2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(16, 16, 16)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Creditos1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(botonguardarcambio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1)))
                 .addGap(276, 276, 276))
         );
         layout.setVerticalGroup(
@@ -447,7 +484,10 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botonguardarcambio)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonguardarcambio)
+                            .addComponent(jLabel1)
+                            .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Creditos1)
@@ -555,7 +595,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //Solo para que refresque los datos
-        mostrardatos();
+        mostrardatosmodificar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
@@ -574,6 +614,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
 
     private void botonguardarcambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonguardarcambioActionPerformed
         // TODO add your handling code here:
+        try {
         int fila= tablamodificarasignaturas.getSelectedRow();
     if(fila>=0){
         campoid.setText(tablamodificarasignaturas.getValueAt(fila, 0).toString());
@@ -581,32 +622,56 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         clavemodificar.setText(tablamodificarasignaturas.getValueAt(fila, 2).toString());
         creditosmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 3).toString());
         horasmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 4).toString());
+       
         
+         }
+    }catch (Exception e) {
+        System.out.print(e.getMessage());
+        JOptionPane.showMessageDialog(rootPane,"Ingresa los datos correctamente");
+        mostrardatosmodificar();   
+     }    
     }//GEN-LAST:event_botonguardarcambioActionPerformed
-}
+
+      
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
        
         try {
         PreparedStatement pst;
         pst = con2.prepareStatement("UPDATE asignatura SET nombre='"+nombremodificar.getText()+"',clave='"+clavemodificar.getText()+"',creditos='"+creditosmodificar.getText()+"',horas='"+horasmodificar.getText()+"' WHERE cuatrimestre_id='"+campoid.getText()+"'");
         pst.executeUpdate();
-        mostrardatos();
+        mostrardatosmodificar();
+        JOptionPane.showMessageDialog(rootPane,"Datos modificados correctamente");
+        
           
-        } catch (Exception e) {
+        }catch (Exception e) {
         System.out.print(e.getMessage());
         JOptionPane.showMessageDialog(rootPane,"Ingrese los datos correctamente");
-        mostrardatos();
-                    
+        mostrardatosmodificar();
+        
+        
+    }           
                 
     }//GEN-LAST:event_AltaGuardarActionPerformed
-}
-    /**
-     * @param args the command line arguments
-     */
+
+    private void buscarmodificarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarmodificarrActionPerformed
+        // TODO add your handling code here:
+        mostrardatosmodificar();
+    }//GEN-LAST:event_buscarmodificarrActionPerformed
+
+    private void buscarmodificarrKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarmodificarrKeyPressed
+        // TODO add your handling code here:
+        mostrardatosmodificar();
+    }//GEN-LAST:event_buscarmodificarrKeyPressed
+
+    
+    
+   
+    
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AltaGuardar;
+    public javax.swing.JButton AltaGuardar;
     private javax.swing.JButton AltasdeUsuarios;
     private javax.swing.JButton AsignaciondePrivilegios;
     private javax.swing.JButton AsignarMaterias;
@@ -628,11 +693,13 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton botonguardarcambio;
+    public javax.swing.JTextField buscarmodificarr;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField clavemodificar;
     private javax.swing.JTextField creditosmodificar;
     private javax.swing.JTextField horasmodificar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
@@ -645,7 +712,9 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JTextField nombremodificar;
     private javax.swing.JTable tablamodificarasignaturas;
     // End of variables declaration//GEN-END:variables
-       Conexion con=new Conexion();
+   
+    
+        Conexion con=new Conexion();
         Connection con2=con.conexion();
-        DefaultTableModel modelo;
+        DefaultTableModel modelomodificar;
 }

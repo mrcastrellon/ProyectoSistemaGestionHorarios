@@ -28,10 +28,13 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         initComponents();
         mostrardatos ();
     }
+    
     public ConsultaUsuarios(String usuario){
-    usuar.setText(usuario);
+        initComponents();
+        label1.setText(usuario);
         setResizable(true);
         setVisible(true);
+        mostrardatos ();
     }
     void limpiar (){
     campoid.setText("");
@@ -40,7 +43,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     campocontraseña.setText("");
     campotipo_usuario.setText("");
 } 
-    void mostrardatos(){
+    public void mostrardatos(){
         modelo = new DefaultTableModel();
         modelo.addColumn("id");
         modelo.addColumn("nombre");
@@ -66,7 +69,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
-        System.out.println("chupando faros" + e);
+        System.out.println("error vuelve a intentarlo" + e);
     }
     }
     @SuppressWarnings("unchecked")
@@ -105,6 +108,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         campotipo_usuario = new javax.swing.JTextField();
         Modificar = new javax.swing.JButton();
         campoid = new javax.swing.JTextField();
+        label1 = new javax.swing.JLabel();
 
         jMenuItem1.setText("Modificar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +243,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(466, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(401, 401, 401))
         );
@@ -361,6 +365,10 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         Modificar.setBounds(892, 552, 93, 25);
         getContentPane().add(campoid);
         campoid.setBounds(892, 298, 132, 20);
+
+        label1.setText("jLabel1");
+        getContentPane().add(label1);
+        label1.setBounds(1010, 50, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -527,6 +535,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel label1;
     private javax.swing.JTable tablausuarios;
     private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables

@@ -18,13 +18,12 @@ public class IngresaralSistema extends javax.swing.JFrame {
         
     }
                                                          //METODO PARA INGRESAR AL SISTEMA.
-    void ingresar(String usuario, String password){
+   public void ingresar(String usuario, String password){
         Conexion con=new Conexion();
         Connection con2=con.conexion();
         String cap=" ",usuarionom="";
         String sql="SELECT * FROM usuarios WHERE nombre_usuario='"+usuario+"'AND contrasena='"+password+"'";        ;        
-        
-        try {
+                try {
             Statement st=con2.createStatement();
             ResultSet rs=st.executeQuery(sql);
             while (rs.next()){

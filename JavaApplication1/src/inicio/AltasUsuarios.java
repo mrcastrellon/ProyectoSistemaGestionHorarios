@@ -196,7 +196,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(454, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(401, 401, 401))
         );
@@ -270,7 +270,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AltaGuardar);
-        AltaGuardar.setBounds(669, 547, 79, 25);
+        AltaGuardar.setBounds(648, 547, 100, 25);
 
         AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña1.setText("Tipo de Usuario");
@@ -285,7 +285,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(464, 547, 61, 25);
+        jButton1.setBounds(464, 547, 90, 25);
 
         tipo_usuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Invitado", "Administrador"}));
         getContentPane().add(tipo_usuario);

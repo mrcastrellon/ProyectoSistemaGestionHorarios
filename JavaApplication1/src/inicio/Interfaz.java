@@ -30,6 +30,7 @@ public class Interfaz extends javax.swing.JFrame {
         label1.setText(usuario);
         setResizable(true);
         setVisible(true);
+        nombreetiqueta=usuario;
     }
 
     /**
@@ -216,7 +217,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
        // Link para modulo usuarios
-        Usuarios obj=new Usuarios();
+        Usuarios obj=new Usuarios(nombreetiqueta);
         obj.setVisible(true);
         this.dispose();
        
@@ -294,4 +295,5 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
 public javax.swing.JLabel usua;
+private String nombreetiqueta;
 }

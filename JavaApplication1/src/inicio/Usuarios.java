@@ -25,7 +25,9 @@ public class Usuarios extends javax.swing.JFrame {
         initComponents();
     }
     public Usuarios(String usuario){
-        label1=setText(usuario);
+        initComponents();
+        label1.setText(usuario);
+        variable=usuario;
     }
 
     /**
@@ -55,7 +57,7 @@ public class Usuarios extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        ConsultaUsuarios = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         label1 = new javax.swing.JLabel();
 
@@ -184,7 +186,7 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(482, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(394, 394, 394))
         );
@@ -219,15 +221,15 @@ public class Usuarios extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(64, 268, 197, 27);
 
-        jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton5.setText("Consultar Usuarios");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ConsultaUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        ConsultaUsuarios.setText("Consultar Usuarios");
+        ConsultaUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ConsultaUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(64, 313, 197, 27);
+        getContentPane().add(ConsultaUsuarios);
+        ConsultaUsuarios.setBounds(64, 313, 197, 27);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel4.setText("Usuarios");
@@ -313,13 +315,15 @@ public class Usuarios extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ConsultaUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaUsuariosActionPerformed
         // Link para asignación de privilegios
-        ConsultaUsuarios obj=new ConsultaUsuarios ();
+        ConsultaUsuarios obj=new ConsultaUsuarios(variable);
         obj.setVisible(true);
         this.dispose();
+        
+        
 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ConsultaUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,6 +331,7 @@ public class Usuarios extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConsultaUsuarios;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
     private javax.swing.JButton GeneraciondeHorarios;
@@ -339,7 +344,6 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
@@ -353,4 +357,5 @@ public class Usuarios extends javax.swing.JFrame {
     private JLabel setText(String usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    private String variable;
 }

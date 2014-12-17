@@ -176,14 +176,14 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         // Link para modulo cerrar sesion
         IngresaralSistema obj=new IngresaralSistema();
         obj.setVisible(true);
-        dispose();
+       this.dispose();
     }//GEN-LAST:event_CerrarSesionActionPerformed
 
     private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
         // Link para modulo altas de asignaturas
         AltasAsignaturas obj=new AltasAsignaturas();
         obj.setVisible(true);
-        dispose();
+        this.dispose();
 
     }//GEN-LAST:event_AltasdeUsuariosActionPerformed
 
@@ -191,21 +191,21 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         // Link para alta cuatrimestre
         AltasCuatrimestre obj=new AltasCuatrimestre();
         obj.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
 
     private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
         // Link para eliminar asignatura
         EliminarAsignaturas obj=new EliminarAsignaturas();
         obj.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
 
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
         // Link para modificar asignatura
         ModificarAsignaturas obj=new ModificarAsignaturas();
         obj.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
     /**

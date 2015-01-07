@@ -44,7 +44,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     campocontraseña.setText("");
     campotipo_usuario.setText("");
 } 
-    public void mostrardatos(){
+  private void mostrardatos(){
         modelo = new DefaultTableModel();
         modelo.addColumn("id");
         modelo.addColumn("nombre");
@@ -92,7 +92,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         LogoUnipoli = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         usuar = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
@@ -227,11 +226,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         getContentPane().add(usuar);
         usuar.setBounds(1132, 51, 0, 0);
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(592, 137, 222, 35);
-
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
         jPanel2.setPreferredSize(new java.awt.Dimension(860, 25));
@@ -289,15 +283,15 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         getContentPane().add(jButton4);
         jButton4.setBounds(370, 420, 197, 27);
 
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel8.setText("Usuarios");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(675, 178, 98, 17);
+        jLabel8.setBounds(640, 150, 140, 30);
 
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel9.setText("Consultar Usuarios");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(648, 201, 125, 17);
+        jLabel9.setBounds(610, 190, 230, 26);
 
         eliminar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         eliminar.setText("Eliminar Usuarios");
@@ -497,7 +491,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         limpiar();
         JOptionPane.showInternalMessageDialog(null, "Información Actualizada");
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(rootPane,"Selecciona un Usuario y presiona modificar");
         System.out.print(e.getMessage());
     }
     }//GEN-LAST:event_ModificarActionPerformed
@@ -527,7 +520,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

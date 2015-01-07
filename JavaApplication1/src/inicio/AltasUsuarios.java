@@ -7,7 +7,7 @@
 package inicio;
 
 import Conexion_base_de_datos.Conexion;
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 

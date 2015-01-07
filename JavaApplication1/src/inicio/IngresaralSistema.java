@@ -1,5 +1,6 @@
 package inicio;
 import Conexion_base_de_datos.*;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +32,7 @@ public class IngresaralSistema extends javax.swing.JFrame {
                 usuarionom=rs.getString("nombre");
                 
             }
-            if (cap.equals("administrador")){
+            if (cap.equals("Administrador")){
             
             this.setVisible(true);
             JOptionPane.showMessageDialog(rootPane,"Bienvenido Administrador");
@@ -158,12 +159,22 @@ public class IngresaralSistema extends javax.swing.JFrame {
                 usuarioActionPerformed(evt);
             }
         });
+        usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                usuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(usuario);
         usuario.setBounds(57, 309, 139, 20);
 
         contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contrasenaActionPerformed(evt);
+            }
+        });
+        contrasena.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                contrasenaKeyTyped(evt);
             }
         });
         getContentPane().add(contrasena);
@@ -197,6 +208,20 @@ public class IngresaralSistema extends javax.swing.JFrame {
     private void contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contrasenaActionPerformed
+
+    private void usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usuarioKeyTyped
+        char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+       btnIngresar.doClick();
+        }
+    }//GEN-LAST:event_usuarioKeyTyped
+
+    private void contrasenaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contrasenaKeyTyped
+        char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+        btnIngresar.doClick();
+        }
+    }//GEN-LAST:event_contrasenaKeyTyped
 //borrame okis
     /**
     // * @param args the command line arguments

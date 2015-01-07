@@ -7,6 +7,7 @@
 package inicio;
 
 import Conexion_base_de_datos.Conexion;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -249,10 +250,28 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaContraseña.setText("Contraseña");
         getContentPane().add(AltaContraseña);
         AltaContraseña.setBounds(494, 370, 86, 21);
+
+        camponombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                camponombreKeyTyped(evt);
+            }
+        });
         getContentPane().add(camponombre);
         camponombre.setBounds(598, 272, 150, 20);
+
+        campousuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campousuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(campousuario);
         campousuario.setBounds(598, 319, 150, 20);
+
+        campocontraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campocontraseñaKeyTyped(evt);
+            }
+        });
         getContentPane().add(campocontraseña);
         campocontraseña.setBounds(598, 372, 150, 20);
 
@@ -292,6 +311,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
         Salir.setBounds(464, 547, 90, 25);
 
         tipo_usuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Invitado", "Administrador"}));
+        tipo_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tipo_usuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(tipo_usuario);
         tipo_usuario.setBounds(598, 438, 150, 20);
 
@@ -427,6 +451,34 @@ public class AltasUsuarios extends javax.swing.JFrame {
         obj.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_SalirActionPerformed
+
+    private void camponombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_camponombreKeyTyped
+        char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+        AltaGuardar.doClick();
+}
+    }//GEN-LAST:event_camponombreKeyTyped
+
+    private void campousuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campousuarioKeyTyped
+       char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+        AltaGuardar.doClick();
+        }
+    }//GEN-LAST:event_campousuarioKeyTyped
+
+    private void campocontraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campocontraseñaKeyTyped
+        char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+        AltaGuardar.doClick();
+        }
+    }//GEN-LAST:event_campocontraseñaKeyTyped
+
+    private void tipo_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tipo_usuarioKeyTyped
+        char cTeclaPresionada=evt.getKeyChar();
+        if(cTeclaPresionada==KeyEvent.VK_ENTER){
+        AltaGuardar.doClick();
+        }
+    }//GEN-LAST:event_tipo_usuarioKeyTyped
 
     /**
      * @param args the command line arguments

@@ -291,7 +291,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel9.setText("Consultar Usuarios");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(610, 190, 230, 26);
+        jLabel9.setBounds(600, 190, 230, 26);
 
         eliminar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         eliminar.setText("Eliminar Usuarios");

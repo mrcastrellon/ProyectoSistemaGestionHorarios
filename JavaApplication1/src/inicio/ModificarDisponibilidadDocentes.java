@@ -6,6 +6,11 @@
 
 package inicio;
 
+import Conexion_base_de_datos.Conexion;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 
 
@@ -20,6 +25,51 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
      */
     public ModificarDisponibilidadDocentes() {
         initComponents();
+         mostrardatos();
+    }
+    void mostrardatos(){
+       modelo = new DefaultTableModel();
+        modelo.addColumn("modulo_1");
+        modelo.addColumn("modulo_2");
+        modelo.addColumn("modulo_3");
+        modelo.addColumn("modulo_4");
+        modelo.addColumn("modulo_5");
+        modelo.addColumn("modulo_6");
+        modelo.addColumn("modulo_7");
+        modelo.addColumn("modulo_8");
+        modelo.addColumn("modulo_9");
+        modelo.addColumn("modulo_10");
+        modelo.addColumn("modulo_11");
+        modelo.addColumn("modulo_12");
+        modelo.addColumn("id_docente");
+        
+        tablaconsultadisponibilidad.setModel(modelo);
+        String []datos = new String [13];
+        try{
+        Statement st = con2.createStatement();
+        ResultSet rs= st.executeQuery("SELECT * FROM disponibilidad");
+        while (rs.next()){
+        datos [0]=rs.getString(1);
+        datos [1]=rs.getString(2);
+        datos [2]=rs.getString(3);
+        datos [3]=rs.getString(4);
+        datos [4]=rs.getString(5);
+        datos [5]=rs.getString(6);
+        datos [6]=rs.getString(7);
+        datos [7]=rs.getString(8);
+        datos [8]=rs.getString(9);
+        datos [9]=rs.getString(10);
+        datos [10]=rs.getString(11);
+        datos [11]=rs.getString(12);
+        datos [12]=rs.getString(13);
+       
+        modelo.addRow(datos);
+        tablaconsultadisponibilidad.setModel(modelo);
+}
+    }catch (Exception e){
+       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
+        System.out.println("SE HA GENERADO UN ERROR" + e);
+    }
     }
 
     /**
@@ -65,31 +115,35 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        modulo6campo = new javax.swing.JCheckBox();
+        modulo2campo = new javax.swing.JCheckBox();
+        modulo1campo = new javax.swing.JCheckBox();
+        modulo3campo = new javax.swing.JCheckBox();
+        modulo4campo = new javax.swing.JCheckBox();
+        modulo5campo = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        modulo7campo = new javax.swing.JCheckBox();
+        modulo8campo = new javax.swing.JCheckBox();
+        modulo10campo = new javax.swing.JCheckBox();
+        modulo9campo = new javax.swing.JCheckBox();
+        modulo11campo = new javax.swing.JCheckBox();
+        modulo12campo = new javax.swing.JCheckBox();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaconsultadisponibilidad = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(null);
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -100,6 +154,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
+        getContentPane().add(Cuatrimestre);
+        Cuatrimestre.setBounds(68, 93, 111, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -109,6 +165,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
+        getContentPane().add(Docentes);
+        Docentes.setBounds(216, 93, 104, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -118,6 +176,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosExternos);
+        HorariosExternos.setBounds(370, 93, 141, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -127,6 +187,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos);
+        HorariosAlumnos.setBounds(563, 93, 148, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -136,6 +198,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(Usuarios);
+        Usuarios.setBounds(934, 93, 93, 25);
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -145,17 +209,29 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
+        getContentPane().add(GeneraciondeHorarios);
+        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 85, 1320, 2);
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(0, 124, 1320, 2);
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(0, 647, 1320, 0);
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
+        getContentPane().add(SGH);
+        SGH.setBounds(233, 38, 414, 29);
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
+        getContentPane().add(LogoUnipoli);
+        LogoUnipoli.setBounds(685, 20, 324, 56);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -165,11 +241,17 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1176, 51, 113, 25);
 
         jLabel1.setText("Nombre del Usuario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(1051, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(550, 137, 222, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -183,7 +265,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(506, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(394, 394, 394))
         );
@@ -194,6 +276,9 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 653, 1320, 23);
+
         HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         HorariosAlumnos1.setText("Asignar Materias");
@@ -202,6 +287,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 HorariosAlumnos1ActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos1);
+        HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton2.setText("Altas de Docentes");
@@ -210,6 +297,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(64, 264, 211, 27);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton3.setText("Baja de Docentes");
@@ -218,6 +307,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(64, 308, 211, 27);
 
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton4.setText("Modificar Docentes");
@@ -226,6 +317,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(64, 345, 211, 27);
 
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton5.setText("Consultar de Docentes");
@@ -234,9 +327,13 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(64, 390, 211, 27);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel4.setText("Docentes");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(613, 178, 56, 17);
 
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton6.setText("Alta de Disponibilidad");
@@ -245,6 +342,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(64, 435, 211, 27);
 
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton7.setText("Modificar Disponibilidad");
@@ -253,6 +352,8 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(64, 480, 211, 27);
 
         jButton8.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton8.setText("Bitacora de Modificaciones");
@@ -261,300 +362,142 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(64, 525, 211, 27);
 
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel12.setText("Modificar Disponibilidad");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(577, 201, 160, 17);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel5.setText("Docente a Asignar Disponibilidad");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(310, 229, 199, 17);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(310, 268, 199, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Modulo 6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(910, 310, 53, 17);
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel7.setText("Modulo 1");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(340, 310, 53, 17);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Modulo 2");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(450, 310, 53, 17);
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel9.setText("Modulo 3");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(570, 310, 53, 17);
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel10.setText("Modulo 4");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(680, 310, 53, 17);
 
         jLabel11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel11.setText("Modulo 5");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(790, 310, 53, 17);
+        getContentPane().add(modulo6campo);
+        modulo6campo.setBounds(980, 310, 21, 21);
+        getContentPane().add(modulo2campo);
+        modulo2campo.setBounds(510, 310, 21, 21);
+        getContentPane().add(modulo1campo);
+        modulo1campo.setBounds(400, 310, 21, 21);
+        getContentPane().add(modulo3campo);
+        modulo3campo.setBounds(630, 310, 21, 21);
+        getContentPane().add(modulo4campo);
+        modulo4campo.setBounds(740, 310, 21, 21);
+        getContentPane().add(modulo5campo);
+        modulo5campo.setBounds(860, 310, 21, 21);
 
         jLabel13.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel13.setText("Modulo 7");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(340, 350, 53, 17);
 
         jLabel14.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel14.setText("Modulo 8");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(450, 350, 53, 17);
 
         jLabel15.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel15.setText("Modulo 9");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(570, 350, 53, 17);
 
         jLabel16.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel16.setText("Modulo 10");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(680, 350, 60, 17);
 
         jLabel17.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel17.setText("Modulo 11");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(790, 350, 60, 17);
 
         jLabel18.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel18.setText("Modulo 12");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(910, 350, 60, 17);
+        getContentPane().add(modulo7campo);
+        modulo7campo.setBounds(400, 350, 21, 21);
+        getContentPane().add(modulo8campo);
+        modulo8campo.setBounds(510, 350, 21, 21);
+        getContentPane().add(modulo10campo);
+        modulo10campo.setBounds(740, 350, 21, 21);
+        getContentPane().add(modulo9campo);
+        modulo9campo.setBounds(630, 350, 21, 21);
+        getContentPane().add(modulo11campo);
+        modulo11campo.setBounds(860, 350, 21, 21);
+        getContentPane().add(modulo12campo);
+        modulo12campo.setBounds(980, 350, 21, 21);
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
+        getContentPane().add(jButton9);
+        jButton9.setBounds(880, 570, 110, 25);
 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Guardar");
+        getContentPane().add(jButton10);
+        jButton10.setBounds(750, 570, 110, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
-            .addComponent(jSeparator3)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(550, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(630, 630, 630))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(527, 527, 527))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(Cuatrimestre)
-                                .addGap(37, 37, 37)
-                                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(HorariosExternos)
-                                .addGap(52, 52, 52)
-                                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(GeneraciondeHorarios))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton10)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jButton9))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(64, 64, 64)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(310, 310, 310)
-                                                .addComponent(jLabel5))))
-                                    .addGap(208, 208, 208)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel11))
-                                    .addGap(62, 62, 62)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel18))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox6)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel17))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel16))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel15))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel14))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox3)
-                                            .addGap(110, 110, 110)
-                                            .addComponent(jLabel13)))
-                                    .addGap(51, 51, 51)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jCheckBox7)
-                                        .addComponent(jCheckBox8)
-                                        .addComponent(jCheckBox9)
-                                        .addComponent(jCheckBox10)
-                                        .addComponent(jCheckBox11)
-                                        .addComponent(jCheckBox12)))))
-                        .addGap(0, 48, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(562, 562, 562))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jLabel1)))
-                        .addGap(9, 9, 9))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios)
-                    .addComponent(HorariosAlumnos1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel13)
-                                                .addComponent(jCheckBox3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox7)
-                                                .addGap(4, 4, 4)))
-                                        .addGap(13, 13, 13))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jButton3)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jButton2)
-                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(27, 27, 27)
-                                                .addComponent(jLabel7)))
-                                        .addGap(10, 10, 10)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton4)
-                                        .addComponent(jLabel8))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jCheckBox2)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jCheckBox8)
-                                            .addComponent(jLabel14))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jButton5)
-                                            .addComponent(jLabel9)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel15))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox10))))
-                            .addComponent(jCheckBox4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton6)
-                                .addComponent(jLabel10))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel16)
-                                .addComponent(jCheckBox5)
-                                .addComponent(jCheckBox9)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton7)
-                                    .addComponent(jLabel11)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox11)
-                                    .addComponent(jLabel17)))))
-                    .addComponent(jCheckBox6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton8)
-                                .addComponent(jLabel6))
-                            .addComponent(jLabel18)
-                            .addComponent(jCheckBox12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton10))
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addContainerGap())))
-        );
+        jButton11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jButton11.setText("Actualizar");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(1010, 570, 120, 25);
+
+        tablaconsultadisponibilidad.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tablaconsultadisponibilidad);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(310, 390, 970, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -645,10 +588,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // Link para modificar docentes
-       ModificarDocentes obj=new ModificarDocentes();
-        obj.setVisible(true);
-        dispose();
+
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -661,10 +601,26 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // Link para modificar disponibilidad docentes
-       ModificarDisponibilidadDocentes obj=new ModificarDisponibilidadDocentes ();
-        obj.setVisible(true);
-        dispose();
+ int fila= tablaconsultadisponibilidad.getSelectedRow();
+    if(fila>=0){
+        modulo1campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 0).toString());
+        modulo2campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 1).toString());
+        modulo3campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 2).toString());
+        modulo4campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 3).toString());
+        modulo5campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 4).toString());
+        modulo6campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 5).toString());
+        modulo7campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 6).toString());
+        modulo8campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 7).toString());
+        modulo9campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 8).toString());
+        modulo10campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 9).toString());
+        modulo11campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 10).toString());
+        modulo12campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 11).toString());
+    }
+    else{
+    JOptionPane.showMessageDialog(null,"no seleciono fila");
+    }        // Link para modificar docentes
+             // Link para modificar disponibilidad docentes
+      
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -678,11 +634,22 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
-       BajaDocentes obj=new BajaDocentes ();
+       BajaDocentes1 obj=new BajaDocentes1 ();
         obj.setVisible(true);
         dispose();
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+ try {
+        PreparedStatement pst;
+        pst = con2.prepareStatement("UPDATE docentes SET modulo_1='"+modulo1campo.getText()+"',modulo_2='"+modulo2campo.getText()+"',modulo_3='"+modulo3campo.getText()+"',modulo_4='"+modulo4campo.getText()+"',modulo_5='"+modulo5campo.getText()+"',modulo_6='"+modulo6campo.getText()+"',modulo_7='"+modulo7campo.getText()+"',modulo_8='"+modulo8campo.getText()+"',modulo_9='"+modulo9campo.getText()+"',modulo_10='"+modulo10campo.getText()+"',modulo_11='"+modulo11campo.getText()+"',modulo_12='"+modulo12campo.getText()+"' WHERE modulo_1='"+modulo1campo.getText()+"'");
+        pst.executeUpdate();
+        mostrardatos();
+            } catch (Exception e) {
+        System.out.print(e.getMessage());
+    }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -701,6 +668,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -709,18 +677,6 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -741,8 +697,25 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JCheckBox modulo10campo;
+    private javax.swing.JCheckBox modulo11campo;
+    private javax.swing.JCheckBox modulo12campo;
+    private javax.swing.JCheckBox modulo1campo;
+    private javax.swing.JCheckBox modulo2campo;
+    private javax.swing.JCheckBox modulo3campo;
+    private javax.swing.JCheckBox modulo4campo;
+    private javax.swing.JCheckBox modulo5campo;
+    private javax.swing.JCheckBox modulo6campo;
+    private javax.swing.JCheckBox modulo7campo;
+    private javax.swing.JCheckBox modulo8campo;
+    private javax.swing.JCheckBox modulo9campo;
+    private javax.swing.JTable tablaconsultadisponibilidad;
     // End of variables declaration//GEN-END:variables
+Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        DefaultTableModel modelo;
 }

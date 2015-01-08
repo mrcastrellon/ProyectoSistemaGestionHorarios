@@ -464,7 +464,7 @@ public class BitacoraDocentes extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Link para modificar docentes
-       ModificarDocentes obj=new ModificarDocentes();
+       ModificarDocentes1 obj=new ModificarDocentes1();
         obj.setVisible(true);
         dispose();
 
@@ -496,7 +496,7 @@ public class BitacoraDocentes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
-       BajaDocentes obj=new BajaDocentes ();
+       BajaDocentes1 obj=new BajaDocentes1 ();
         obj.setVisible(true);
         dispose();
 

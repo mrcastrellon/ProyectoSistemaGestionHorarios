@@ -6,6 +6,11 @@
 //paquetes
 package inicio;
 
+import Conexion_base_de_datos.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 
 
 
@@ -66,26 +71,27 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        modulo6campo = new javax.swing.JCheckBox();
+        modulo2campo = new javax.swing.JCheckBox();
+        modulo1campo = new javax.swing.JCheckBox();
+        modulo3campo = new javax.swing.JCheckBox();
+        modulo4campo = new javax.swing.JCheckBox();
+        modulo5campo = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        modulo7campo = new javax.swing.JCheckBox();
+        modulo8campo = new javax.swing.JCheckBox();
+        modulo10campo = new javax.swing.JCheckBox();
+        modulo9campo = new javax.swing.JCheckBox();
+        modulo11campo = new javax.swing.JCheckBox();
+        modulo12campo = new javax.swing.JCheckBox();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        tbmostrarmodulos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -312,6 +318,13 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Guardar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        tbmostrarmodulos.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -393,37 +406,38 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                     .addGap(62, 62, 62)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox1)
+                                            .addComponent(modulo6campo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel18))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox6)
+                                            .addComponent(modulo5campo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel17))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox5)
+                                            .addComponent(modulo4campo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel16))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox4)
+                                            .addComponent(modulo3campo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel15))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jCheckBox2)
+                                            .addComponent(modulo2campo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel14))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox3)
+                                            .addComponent(modulo1campo)
                                             .addGap(110, 110, 110)
                                             .addComponent(jLabel13)))
                                     .addGap(51, 51, 51)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jCheckBox7)
-                                        .addComponent(jCheckBox8)
-                                        .addComponent(jCheckBox9)
-                                        .addComponent(jCheckBox10)
-                                        .addComponent(jCheckBox11)
-                                        .addComponent(jCheckBox12)))))
+                                        .addComponent(modulo7campo)
+                                        .addComponent(modulo8campo)
+                                        .addComponent(modulo10campo)
+                                        .addComponent(modulo9campo)
+                                        .addComponent(modulo11campo)
+                                        .addComponent(modulo12campo)))
+                                .addComponent(tbmostrarmodulos, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 48, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -475,9 +489,9 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel13)
-                                                .addComponent(jCheckBox3))
+                                                .addComponent(modulo1campo))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox7)
+                                                .addComponent(modulo7campo)
                                                 .addGap(4, 4, 4)))
                                         .addGap(13, 13, 13))
                                     .addGroup(layout.createSequentialGroup()
@@ -497,9 +511,9 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                         .addComponent(jButton4)
                                         .addComponent(jLabel8))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jCheckBox2)
+                                        .addComponent(modulo2campo)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jCheckBox8)
+                                            .addComponent(modulo8campo)
                                             .addComponent(jLabel14))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -512,8 +526,8 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                         .addComponent(jLabel15))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox10))))
-                            .addComponent(jCheckBox4))
+                                        .addComponent(modulo9campo))))
+                            .addComponent(modulo3campo))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -521,8 +535,8 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                 .addComponent(jLabel10))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel16)
-                                .addComponent(jCheckBox5)
-                                .addComponent(jCheckBox9)))
+                                .addComponent(modulo4campo)
+                                .addComponent(modulo10campo)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -532,29 +546,27 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox11)
+                                    .addComponent(modulo11campo)
                                     .addComponent(jLabel17)))))
-                    .addComponent(jCheckBox6))
+                    .addComponent(modulo5campo))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton8)
-                                .addComponent(jLabel6))
-                            .addComponent(jLabel18)
-                            .addComponent(jCheckBox12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton10))
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addContainerGap())))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton8)
+                        .addComponent(jLabel6))
+                    .addComponent(jLabel18)
+                    .addComponent(modulo12campo)
+                    .addComponent(modulo6campo))
+                .addGap(11, 11, 11)
+                .addComponent(tbmostrarmodulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jButton10))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -646,7 +658,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Link para modificar docentes
-       ModificarDocentes obj=new ModificarDocentes();
+       ModificarDocentes1 obj=new ModificarDocentes1();
         obj.setVisible(true);
         dispose();
 
@@ -678,11 +690,137 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
-       BajaDocentes obj=new BajaDocentes ();
+       BajaDocentes1 obj=new BajaDocentes1 ();
         obj.setVisible(true);
         dispose();
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+
+        String mensaje2="";
+        String[] mensaje=new String [12];
+           if(modulo1campo.isSelected())
+    {
+        mensaje[0]="1";
+    }else{
+        mensaje[0]="0";   
+    }
+        if(modulo2campo.isSelected())
+    {
+       mensaje[1]="1";
+    }else{
+        mensaje[1]="0";   
+    
+    }
+          if(modulo3campo.isSelected())
+    {
+       mensaje[2]="1";
+    }else{
+        mensaje[2]="0";   
+    
+    }
+              if(modulo4campo.isSelected())
+    {
+       mensaje[3]="1";
+    }else{
+        mensaje[3]="0";   
+    
+    }
+        if(modulo5campo.isSelected())
+    {
+        mensaje[4]="1";
+    }else{
+        mensaje[4]="0";   
+    
+    }
+        if(modulo6campo.isSelected())
+    {
+        mensaje[5]="1";
+    }else{
+        mensaje[5]="0";
+    }
+        if(modulo7campo.isSelected())
+    {
+       mensaje[6]="1";
+    }else{
+        mensaje[6]="0";
+    }
+        if(modulo8campo.isSelected())
+    {
+        mensaje[7]="1";
+    }else{
+        mensaje[7]="0";
+    }
+        if(modulo9campo.isSelected())
+    {
+        mensaje[8]="1";
+    }else{
+        mensaje[8]="0";
+    }
+        if(modulo10campo.isSelected())
+    {
+        mensaje[9]="1";
+    }else{
+        mensaje[9]="0";
+    }
+        if(modulo11campo.isSelected())
+    {
+       mensaje[10]="1";
+    }else{
+        mensaje[10]="0";
+    }
+        if(modulo12campo.isSelected())
+    {
+        mensaje[11]="1";
+    }else{
+        mensaje[11]="0";
+    }
+     for(int i=0; i<mensaje.length; i++){
+      mensaje2=mensaje2+mensaje[i];
+     }  
+     tbmostrarmodulos.setText(mensaje2);
+
+          String sql;
+        //declaro la variable error
+        String mensajeerror;
+        //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+                   
+        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        //le digo a la variable que hara la del error para luego ser llamada
+        mensajeerror="Ingresa los datos correctamente";
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+            pst.setString(1,mensaje[0]);
+            pst.setString(2,mensaje[1]);
+            pst.setString(3,mensaje[2]);
+            pst.setString(4,mensaje[3]);
+            pst.setString(5,mensaje[4]);
+            pst.setString(6,mensaje[5]);
+            pst.setString(7,mensaje[6]);
+            pst.setString(8,mensaje[7]);
+            pst.setString(9,mensaje[8]);
+            pst.setString(10,mensaje[9]);
+            pst.setString(11,mensaje[10]);
+            pst.setString(12,mensaje[11]);
+            int n=pst.executeUpdate();
+            if (n>=0){
+                //son los mensajes de que se ejecuto correctamente la insercion
+             JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                    }
+{
+            
+                        }
+         }catch (Exception e){
+             //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             //este mensaje solo se imprimira en el registro--
+             System.out.println("Ingresa los datos correctamente" + e);
+             
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -709,18 +847,6 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -744,5 +870,20 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JCheckBox modulo10campo;
+    private javax.swing.JCheckBox modulo11campo;
+    private javax.swing.JCheckBox modulo12campo;
+    private javax.swing.JCheckBox modulo1campo;
+    private javax.swing.JCheckBox modulo2campo;
+    private javax.swing.JCheckBox modulo3campo;
+    private javax.swing.JCheckBox modulo4campo;
+    private javax.swing.JCheckBox modulo5campo;
+    private javax.swing.JCheckBox modulo6campo;
+    private javax.swing.JCheckBox modulo7campo;
+    private javax.swing.JCheckBox modulo8campo;
+    private javax.swing.JCheckBox modulo9campo;
+    private javax.swing.JTextField tbmostrarmodulos;
     // End of variables declaration//GEN-END:variables
+Conexion con=new Conexion();
+        Connection con2=con.conexion();
 }

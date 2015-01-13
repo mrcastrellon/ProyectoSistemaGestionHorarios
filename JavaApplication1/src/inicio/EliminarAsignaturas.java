@@ -24,6 +24,9 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     public EliminarAsignaturas() {
         initComponents();
          mostrardatos();
+         setResizable(false);
+            setSize(1300,648);
+            setTitle("Eliminar asignatura");
     }
     void mostrardatos(){
        modelo = new DefaultTableModel();
@@ -32,6 +35,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         modelo.addColumn("clave");
         modelo.addColumn("creditos");
         modelo.addColumn("horas");
+        modelo.addColumn("Cuatrimestre");
         
        String sql = "SELECT *FROM asignatura WHERE cuatrimestre_id LIKE '%" + buscartodo.getText() + "%' "
                     + "OR nombre LIKE '%" + buscartodo.getText() + "%'"
@@ -51,6 +55,7 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
+        datos [5]=rs.getString(6);
        
        
         modelo.addRow(datos);
@@ -101,7 +106,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         turno4 = new javax.swing.JLabel();
         turno5 = new javax.swing.JLabel();
         turno6 = new javax.swing.JLabel();
-        btnbuscar = new javax.swing.JButton();
         buscartodo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -291,14 +295,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         turno6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         turno6.setText("Buscar asignatura ");
 
-        btnbuscar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        btnbuscar.setText("Buscar");
-        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbuscarActionPerformed(evt);
-            }
-        });
-
         buscartodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscartodoActionPerformed(evt);
@@ -374,14 +370,12 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(turno6)
                         .addGap(18, 18, 18)
-                        .addComponent(buscartodo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(btnbuscar))
+                        .addComponent(buscartodo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(turno4)
                         .addGap(18, 18, 18)
                         .addComponent(botoneliminar)))
-                .addGap(361, 361, 361))
+                .addGap(386, 386, 386))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -441,7 +435,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(turno6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnbuscar)
                     .addComponent(buscartodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -583,11 +576,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_botoneliminarActionPerformed
 
-    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        // Mandando llamar el metodo de buscar, claro es de la creacion de la tabla
-        
-    }//GEN-LAST:event_btnbuscarActionPerformed
-
     private void buscartodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscartodoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buscartodoActionPerformed
@@ -619,7 +607,6 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton botoneliminar;
-    private javax.swing.JButton btnbuscar;
     private javax.swing.JTextField buscartodo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

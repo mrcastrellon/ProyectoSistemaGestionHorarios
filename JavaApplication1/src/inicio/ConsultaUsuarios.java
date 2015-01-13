@@ -42,7 +42,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     camponombre.setText("");
     campousuario.setText("");
     campocontraseña.setText("");
-    campotipo_usuario.setText("");
+    
 } 
   private void mostrardatos(){
         modelo = new DefaultTableModel();
@@ -105,10 +105,10 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         camponombre = new javax.swing.JTextField();
         campousuario = new javax.swing.JTextField();
         campocontraseña = new javax.swing.JTextField();
-        campotipo_usuario = new javax.swing.JTextField();
         Modificar = new javax.swing.JButton();
         campoid = new javax.swing.JTextField();
         label1 = new javax.swing.JLabel();
+        tipousuario = new javax.swing.JComboBox();
 
         jMenuItem1.setText("Modificar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -346,8 +346,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         });
         getContentPane().add(campocontraseña);
         campocontraseña.setBounds(892, 421, 132, 20);
-        getContentPane().add(campotipo_usuario);
-        campotipo_usuario.setBounds(892, 497, 132, 20);
 
         Modificar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         Modificar.setText("Actualizar");
@@ -364,6 +362,10 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         label1.setText("jLabel1");
         getContentPane().add(label1);
         label1.setBounds(1010, 50, 150, 30);
+
+        tipousuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Invitado" }));
+        getContentPane().add(tipousuario);
+        tipousuario.setBounds(890, 470, 130, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -447,7 +449,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         camponombre.setText(tablausuarios.getValueAt(fila, 1).toString());
         campousuario.setText(tablausuarios.getValueAt(fila, 2).toString());
         campocontraseña.setText(tablausuarios.getValueAt(fila, 3).toString());
-        campotipo_usuario.setText(tablausuarios.getValueAt(fila, 4).toString());
+        
     }
     else{
     JOptionPane.showMessageDialog(rootPane,"no seleciono fila");
@@ -485,7 +487,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         try {
         PreparedStatement pst;
-            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',tipo_usuario='"+campotipo_usuario.getText()+"' WHERE id='"+campoid.getText()+"'");
+            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',tipo_usuario='"+tipousuario.getSelectedItem()+"' WHERE id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
         limpiar();
@@ -515,7 +517,6 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JTextField campocontraseña;
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField camponombre;
-    private javax.swing.JTextField campotipo_usuario;
     private javax.swing.JTextField campousuario;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton1;
@@ -532,6 +533,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel label1;
     private javax.swing.JTable tablausuarios;
+    private javax.swing.JComboBox tipousuario;
     private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
 Conexion con=new Conexion();

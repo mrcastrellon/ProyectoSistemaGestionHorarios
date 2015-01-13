@@ -311,6 +311,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
         Salir.setBounds(464, 547, 90, 25);
 
         tipo_usuario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Invitado", "Administrador"}));
+        tipo_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipo_usuarioActionPerformed(evt);
+            }
+        });
         tipo_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tipo_usuarioKeyTyped(evt);
@@ -399,6 +404,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
         // Link para asignación de privilegios
         ConsultaUsuarios obj=new ConsultaUsuarios (vinusuario);
         obj.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
 
@@ -479,6 +485,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
         AltaGuardar.doClick();
         }
     }//GEN-LAST:event_tipo_usuarioKeyTyped
+
+    private void tipo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipo_usuarioActionPerformed
 
     /**
      * @param args the command line arguments

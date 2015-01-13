@@ -599,7 +599,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jButton6ActionPerformed
-
+//codigo para modificar la disponibilidad de los docentes
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
  int fila= tablaconsultadisponibilidad.getSelectedRow();
     identificadorcheck= tablaconsultadisponibilidad.getValueAt(fila, 12).toString();

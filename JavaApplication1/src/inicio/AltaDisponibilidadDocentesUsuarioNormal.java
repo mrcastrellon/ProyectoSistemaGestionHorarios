@@ -246,7 +246,7 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Guardar");
         getContentPane().add(jButton10);
-        jButton10.setBounds(730, 510, 120, 30);
+        jButton10.setBounds(750, 510, 120, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

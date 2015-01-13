@@ -45,10 +45,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         usuar = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        AltasdeUsuarios = new javax.swing.JButton();
-        AsignaciondePrivilegios = new javax.swing.JButton();
         ModificaciondeUsuarios = new javax.swing.JButton();
-        ConsultarUsuarios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         label1 = new javax.swing.JLabel();
 
@@ -119,26 +116,6 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 690, 1304, 23);
 
-        AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AltasdeUsuarios.setText("Alta Docentes");
-        AltasdeUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AltasdeUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(72, 292, 189, 27);
-
-        AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AsignaciondePrivilegios.setText("Modificar Docentes");
-        AsignaciondePrivilegios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AsignaciondePrivilegiosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(72, 351, 189, 27);
-
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificaciondeUsuarios.setText("Alta de Disponibilidad");
         ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -147,17 +124,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(72, 410, 189, 27);
-
-        ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ConsultarUsuarios.setText("Modificar Disponibilidad");
-        ConsultarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(72, 471, 189, 27);
+        ModificaciondeUsuarios.setBounds(80, 270, 189, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/UNIPOLI.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -179,34 +146,12 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_CerrarSesionActionPerformed
 
-    private void AltasdeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltasdeUsuariosActionPerformed
-        // Link para modulo altas de asignaturas
-        AltasAsignaturas obj=new AltasAsignaturas();
-        obj.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_AltasdeUsuariosActionPerformed
-
-    private void ConsultarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuariosActionPerformed
-        // Link para alta cuatrimestre
-        AltasCuatrimestre obj=new AltasCuatrimestre();
-        obj.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ConsultarUsuariosActionPerformed
-
     private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
         // Link para eliminar asignatura
-        EliminarAsignaturas obj=new EliminarAsignaturas();
+        AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal();
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
-
-    private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
-        // Link para modificar asignatura
-        ModificarAsignaturas obj=new ModificarAsignaturas();
-        obj.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,10 +159,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AltasdeUsuarios;
-    private javax.swing.JButton AsignaciondePrivilegios;
     private javax.swing.JButton CerrarSesion;
-    private javax.swing.JButton ConsultarUsuarios;
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel SGH;

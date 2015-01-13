@@ -36,6 +36,9 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     public ModificarAsignaturas() {
         initComponents();
         mostrardatosmodificar();
+        setResizable(false);
+        setSize(1300,648);
+        setTitle("Modificar asignatura");
     }
      void mostrardatosmodificar(){
                  
@@ -45,6 +48,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
        modelomodificar.addColumn("Clave");
        modelomodificar.addColumn("creditos");
        modelomodificar.addColumn("horas");
+       modelomodificar.addColumn("Cuatrimestre");
+       
            
             String sqlmodificar = "SELECT *FROM asignatura WHERE cuatrimestre_id LIKE '%" + buscarmodificarr.getText() + "%' "
                     + "OR nombre LIKE '%" + buscarmodificarr.getText() + "%'"
@@ -63,6 +68,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
+        datos [5]=rs.getString(6);
         
         
          modelomodificar.addRow(datos);
@@ -128,11 +134,14 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         } catch (java.io.IOException e) {
             e.printStackTrace();
         }
+        Creditos2 = new javax.swing.JLabel();
+        cuatrimestremodificarasignatura = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(null);
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -143,6 +152,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
+        getContentPane().add(Cuatrimestre);
+        Cuatrimestre.setBounds(68, 93, 111, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -152,6 +163,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
+        getContentPane().add(Docentes);
+        Docentes.setBounds(216, 93, 104, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -161,6 +174,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosExternos);
+        HorariosExternos.setBounds(370, 93, 141, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -170,6 +185,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos);
+        HorariosAlumnos.setBounds(563, 93, 148, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -179,6 +196,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(Usuarios);
+        Usuarios.setBounds(934, 93, 93, 25);
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -188,17 +207,29 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
+        getContentPane().add(GeneraciondeHorarios);
+        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 85, 1304, 2);
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(0, 124, 1304, 2);
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(0, 663, 1304, 2);
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
+        getContentPane().add(SGH);
+        SGH.setBounds(233, 38, 414, 29);
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
+        getContentPane().add(LogoUnipoli);
+        LogoUnipoli.setBounds(685, 20, 329, 56);
 
         CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
         CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -208,11 +239,17 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 CerrarSesionActionPerformed(evt);
             }
         });
+        getContentPane().add(CerrarSesion);
+        CerrarSesion.setBounds(1181, 51, 113, 25);
 
         NombredelUsuario.setText("Nombre del Usuario");
+        getContentPane().add(NombredelUsuario);
+        NombredelUsuario.setBounds(1056, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(555, 137, 222, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -237,6 +274,9 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 671, 1304, 23);
+
         AsignarMaterias.setBackground(new java.awt.Color(255, 102, 0));
         AsignarMaterias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AsignarMaterias.setText("Asignar Materias");
@@ -245,6 +285,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AsignarMateriasActionPerformed(evt);
             }
         });
+        getContentPane().add(AsignarMaterias);
+        AsignarMaterias.setBounds(747, 93, 148, 25);
 
         AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AltasdeUsuarios.setText("Altas Asignaturas");
@@ -253,6 +295,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AltasdeUsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(AltasdeUsuarios);
+        AltasdeUsuarios.setBounds(86, 257, 167, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Modificar Asignatura");
@@ -261,6 +305,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AsignaciondePrivilegiosActionPerformed(evt);
             }
         });
+        getContentPane().add(AsignaciondePrivilegios);
+        AsignaciondePrivilegios.setBounds(86, 316, 167, 27);
 
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificaciondeUsuarios.setText("Eliminar Asignatura");
@@ -269,6 +315,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 ModificaciondeUsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(ModificaciondeUsuarios);
+        ModificaciondeUsuarios.setBounds(86, 376, 167, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -277,12 +325,18 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 ConsultarUsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(ConsultarUsuarios);
+        ConsultarUsuarios.setBounds(86, 439, 167, 27);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(629, 178, 98, 17);
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel9.setText(" Modificar Asignaturas");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(592, 201, 135, 17);
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
@@ -291,6 +345,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AltaGuardarActionPerformed(evt);
             }
         });
+        getContentPane().add(AltaGuardar);
+        AltaGuardar.setBounds(846, 522, 79, 25);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");
@@ -299,6 +355,8 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(943, 522, 85, 25);
 
         tablamodificarasignaturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,24 +368,51 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablamodificarasignaturas);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(397, 283, 631, 98);
+
         botonguardarcambio.setText("Modificar seleccionado");
         botonguardarcambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonguardarcambioActionPerformed(evt);
             }
         });
+        getContentPane().add(botonguardarcambio);
+        botonguardarcambio.setBounds(791, 399, 237, 23);
+        getContentPane().add(campoid);
+        campoid.setBounds(390, 490, 93, 20);
 
         Id.setText("Id");
+        getContentPane().add(Id);
+        Id.setBounds(400, 460, 10, 14);
+        getContentPane().add(nombremodificar);
+        nombremodificar.setBounds(490, 490, 93, 20);
 
         Id1.setText("Nombre");
+        getContentPane().add(Id1);
+        Id1.setBounds(490, 460, 52, 14);
+        getContentPane().add(creditosmodificar);
+        creditosmodificar.setBounds(710, 490, 93, 20);
+        getContentPane().add(clavemodificar);
+        clavemodificar.setBounds(600, 490, 93, 20);
+        getContentPane().add(horasmodificar);
+        horasmodificar.setBounds(820, 490, 93, 20);
 
         Id2.setText("Clave");
+        getContentPane().add(Id2);
+        Id2.setBounds(600, 460, 52, 14);
 
         Creditos.setText("Creditos");
+        getContentPane().add(Creditos);
+        Creditos.setBounds(710, 460, 52, 14);
 
         Creditos1.setText("Horas");
+        getContentPane().add(Creditos1);
+        Creditos1.setBounds(820, 460, 52, 14);
 
         jLabel1.setText("Buscar asignatura");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(397, 403, 86, 14);
 
         buscarmodificarr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,178 +424,14 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 buscarmodificarrKeyPressed(evt);
             }
         });
+        getContentPane().add(buscarmodificarr);
+        buscarmodificarr.setBounds(493, 400, 175, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1304, Short.MAX_VALUE)
-            .addComponent(jSeparator3)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(NombredelUsuario)
-                        .addGap(32, 32, 32)
-                        .addComponent(CerrarSesion))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Cuatrimestre)
-                        .addGap(37, 37, 37)
-                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(HorariosExternos)
-                        .addGap(52, 52, 52)
-                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(AsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GeneraciondeHorarios)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(527, 527, 527))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(577, 577, 577))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ModificaciondeUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Id))
-                                        .addGap(28, 28, 28)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Id2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(16, 16, 16)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Creditos1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(botonguardarcambio, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AltaGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
-                .addGap(276, 276, 276))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(CerrarSesion)
-                                        .addComponent(NombredelUsuario)))
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Cuatrimestre)
-                            .addComponent(Docentes)
-                            .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HorariosAlumnos)
-                            .addComponent(Usuarios)
-                            .addComponent(GeneraciondeHorarios)
-                            .addComponent(AsignarMaterias))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addGap(39, 39, 39)
-                        .addComponent(AltasdeUsuarios)
-                        .addGap(32, 32, 32)
-                        .addComponent(AsignaciondePrivilegios)
-                        .addGap(33, 33, 33)
-                        .addComponent(ModificaciondeUsuarios)
-                        .addGap(36, 36, 36)
-                        .addComponent(ConsultarUsuarios))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonguardarcambio)
-                            .addComponent(jLabel1)
-                            .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Creditos1)
-                            .addComponent(Creditos)
-                            .addComponent(Id2)
-                            .addComponent(Id1)
-                            .addComponent(Id))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AltaGuardar)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        Creditos2.setText("Cuatrimestre");
+        getContentPane().add(Creditos2);
+        Creditos2.setBounds(930, 460, 90, 14);
+        getContentPane().add(cuatrimestremodificarasignatura);
+        cuatrimestremodificarasignatura.setBounds(930, 490, 93, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -622,7 +543,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         clavemodificar.setText(tablamodificarasignaturas.getValueAt(fila, 2).toString());
         creditosmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 3).toString());
         horasmodificar.setText(tablamodificarasignaturas.getValueAt(fila, 4).toString());
-       
+        cuatrimestremodificarasignatura.setText(tablamodificarasignaturas.getValueAt(fila, 5).toString());
         
          }
     }catch (Exception e) {
@@ -637,7 +558,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
        
         try {
         PreparedStatement pst;
-        pst = con2.prepareStatement("UPDATE asignatura SET nombre='"+nombremodificar.getText()+"',clave='"+clavemodificar.getText()+"',creditos='"+creditosmodificar.getText()+"',horas='"+horasmodificar.getText()+"' WHERE cuatrimestre_id='"+campoid.getText()+"'");
+        pst = con2.prepareStatement("UPDATE asignatura SET nombre='"+nombremodificar.getText()+"',clave='"+clavemodificar.getText()+"',creditos='"+creditosmodificar.getText()+"',horas='"+horasmodificar.getText()+"',cuatrimestreasignatura='"+cuatrimestremodificarasignatura.getText()+"' WHERE cuatrimestre_id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatosmodificar();
         JOptionPane.showMessageDialog(rootPane,"Datos modificados correctamente");
@@ -679,6 +600,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JButton ConsultarUsuarios;
     private javax.swing.JLabel Creditos;
     private javax.swing.JLabel Creditos1;
+    private javax.swing.JLabel Creditos2;
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
     private javax.swing.JButton GeneraciondeHorarios;
@@ -697,6 +619,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JTextField campoid;
     private javax.swing.JTextField clavemodificar;
     private javax.swing.JTextField creditosmodificar;
+    private javax.swing.JTextField cuatrimestremodificarasignatura;
     private javax.swing.JTextField horasmodificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

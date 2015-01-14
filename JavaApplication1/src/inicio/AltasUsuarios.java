@@ -434,8 +434,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane,"No debe contener espacios vacios");
                 return;
             }
-            
-            
         sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES (?,?,?,'"+tipo_usuario.getSelectedItem()+"')";
         //le digo a la variable que hara la del error para luego ser llamada
         

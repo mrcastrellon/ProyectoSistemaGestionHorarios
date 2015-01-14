@@ -185,7 +185,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1152, 51, 113, 25);
+        CerrarSesion.setBounds(1110, 50, 130, 30);
         getContentPane().add(usuar);
         usuar.setBounds(1027, 57, 0, 0);
 
@@ -251,6 +251,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
         getContentPane().add(AltaContraseña);
         AltaContraseña.setBounds(494, 370, 86, 21);
 
+        camponombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                camponombreActionPerformed(evt);
+            }
+        });
         camponombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 camponombreKeyTyped(evt);
@@ -417,24 +422,33 @@ public class AltasUsuarios extends javax.swing.JFrame {
         //declaro la variable error
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
-                   
-        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES ('"+camponombre.getText()+"','"+campousuario.getText()+"','"+campocontraseña.getText()+"','"+tipo_usuario.getSelectedItem()+"')";
+            if (camponombre.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane,"No debe contener espacios vacios");
+                return;
+            }
+            if (campousuario.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane,"No debe contener espacios vacios");
+                return;
+            } 
+            if (campocontraseña.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane,"No debe contener espacios vacios");
+                return;
+            }
+            
+            
+        sql="INSERT INTO usuarios(nombre,nombre_usuario,contrasena,tipo_usuario)VALUES (?,?,?,'"+tipo_usuario.getSelectedItem()+"')";
         //le digo a la variable que hara la del error para luego ser llamada
         
         mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
-            /*
-            PreparedStatement pst=con2.prepareStatement(sql);
-            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
             pst.setString(1,camponombre.getText());
-            camponombre.setText(null);
+            //camponombre.setText(null);
             pst.setString(2,campousuario.getText());
-            campousuario.setText(null);
-             pst.setString(3,campocontraseña.getText());
-            campocontraseña.setText(null);
-            pst.setString(4,tipo_usuario.getSelectedItem());
-            */
+            //campousuario.setText(null);
+            pst.setString(3,campocontraseña.getText());
+           // campocontraseña.setText(null);
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
@@ -442,12 +456,11 @@ public class AltasUsuarios extends javax.swing.JFrame {
              limpiar();
              System.out.println("Guardado correctamente");
                     }
-{
-            
-                        }
+           
          }catch (Exception e){
+             System.out.println(e);
              //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
-             JOptionPane.showMessageDialog(rootPane,"Ingresa los datos correctamente");
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
              //este mensaje solo se imprimira en el registro--
         }        // TODO add your handling code here:
     }//GEN-LAST:event_AltaGuardarActionPerformed
@@ -489,6 +502,10 @@ public class AltasUsuarios extends javax.swing.JFrame {
     private void tipo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipo_usuarioActionPerformed
+
+    private void camponombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camponombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_camponombreActionPerformed
 
     /**
      * @param args the command line arguments

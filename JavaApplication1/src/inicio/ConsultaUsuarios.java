@@ -355,7 +355,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(Modificar);
-        Modificar.setBounds(892, 552, 140, 25);
+        Modificar.setBounds(880, 520, 140, 25);
         getContentPane().add(campoid);
         campoid.setBounds(892, 298, 132, 20);
 

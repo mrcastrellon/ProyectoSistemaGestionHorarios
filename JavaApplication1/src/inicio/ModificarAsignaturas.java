@@ -153,7 +153,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 93, 111, 25);
+        Cuatrimestre.setBounds(68, 93, 120, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -263,7 +263,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(483, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(401, 401, 401))
         );
@@ -296,17 +296,17 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(86, 257, 167, 27);
+        AltasdeUsuarios.setBounds(86, 257, 170, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        AsignaciondePrivilegios.setText("Modificar Asignatura");
+        AsignaciondePrivilegios.setText("ModificarAsignatura");
         AsignaciondePrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AsignaciondePrivilegiosActionPerformed(evt);
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(86, 316, 167, 27);
+        AsignaciondePrivilegios.setBounds(86, 316, 170, 27);
 
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificaciondeUsuarios.setText("Eliminar Asignatura");
@@ -316,7 +316,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(86, 376, 167, 27);
+        ModificaciondeUsuarios.setBounds(86, 376, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -326,7 +326,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(86, 439, 167, 27);
+        ConsultarUsuarios.setBounds(86, 439, 170, 27);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");

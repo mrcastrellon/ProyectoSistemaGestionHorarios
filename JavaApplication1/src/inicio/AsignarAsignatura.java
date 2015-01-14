@@ -41,7 +41,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         setResizable(false);
         setSize(1350,648);
         setTitle("Asignar asignaturas");
-       
+        cargarBD();
       
         
         
@@ -70,8 +70,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         
         
         //para poder cerrar la conexion y poder utilizar otra cosa.
-        rs.close();
-        con2.close();
+        //rs.close();
+        //con2.close();
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
@@ -129,11 +129,9 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        combobbbox = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaasignarasignaturas = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cmbDB = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -284,12 +282,6 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton3.setText("Cancelar");
 
-        combobbbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combobbboxActionPerformed(evt);
-            }
-        });
-
         tablaasignarasignaturas.setBackground(new java.awt.Color(153, 255, 153));
         tablaasignarasignaturas.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         tablaasignarasignaturas.setModel(new javax.swing.table.DefaultTableModel(
@@ -313,12 +305,14 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         tablaasignarasignaturas.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(tablaasignarasignaturas);
 
-        jLabel11.setText("no funciono");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cmbDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cmbDBActionPerformed(evt);
+            }
+        });
+        cmbDB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cmbDBKeyPressed(evt);
             }
         });
 
@@ -364,28 +358,22 @@ public class AsignarAsignatura extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
                         .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(jLabel11))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(38, 38, 38)
-                                .addComponent(jButton3))
-                            .addComponent(combobbbox, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton3))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(59, 59, 59)
+                        .addComponent(cmbDB, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
@@ -429,21 +417,17 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(combobbbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(65, 65, 65)
                         .addComponent(jLabel8)
                         .addGap(34, 34, 34)
                         .addComponent(jLabel9)
                         .addGap(41, 41, 41)
                         .addComponent(jLabel10))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel11)
-                        .addGap(138, 138, 138)
+                        .addGap(297, 297, 297)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2)
                             .addComponent(jButton3))))
@@ -516,40 +500,33 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void combobbboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobbboxActionPerformed
+    private void cmbDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDBActionPerformed
         // TODO add your handling code here:
-        ArrayList modeloCombo=new ArrayList();
+       
         
-         try {
-             combobbbox.removeAllItems();
-            Statement st = con3.createStatement();
-            
-            ResultSet rs = st.executeQuery("SELECT * FROM asignatura ");                 
-                     while (rs.next()) {
-                   modeloCombo.add(rs.getString("3"));
-                   
-                   System.out.println(rs.getString("3"));
-                   //jComboBox1.showMessageDialog(rootPane,"Ingresa los datos correctamente");
-                            //cerrando la conexion
-                            rs.close();
-                             con3.close();
-    } 
-                     modeloCombo.add("3");
-                     combobbbox.setModel((ComboBoxModel) modeloCombo);
-                     
-        } catch (Exception e) {
-            System.out.println("NO FUNCIONA"+ e);
-        }
-    }//GEN-LAST:event_combobbboxActionPerformed
+     cargarBD();
+        
+        
+    }//GEN-LAST:event_cmbDBActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cmbDBKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbDBKeyPressed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cmbDBKeyPressed
  
-     
-    
-    
+    public void cargarBD(){
+       try {
+            Statement st=con2.createStatement();
+        ResultSet rs =st.executeQuery("SELECT nombre FROM asignatura;");
+        cmbDB.removeAllItems();
+        while(rs.next());
+        cmbDB.addItem(rs.getString(2));
+        System.out.println(2);
+            
+        } catch (Exception e) {
+            System.out.println("no jala"+e);
+        } 
+           
+    }
     
     
     /**
@@ -567,14 +544,12 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JComboBox combobbbox;
+    public javax.swing.JComboBox cmbDB;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -597,7 +572,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         
         //otra conexion para ver si funciona el combo box consultando de la base de datos
         
-       Connection con3=con.conexion();
+       
         
         
         }

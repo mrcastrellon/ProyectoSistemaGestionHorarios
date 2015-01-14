@@ -46,11 +46,11 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
 } 
   private void mostrardatos(){
         modelo = new DefaultTableModel();
-        modelo.addColumn("id");
-        modelo.addColumn("nombre");
-        modelo.addColumn("nombre_usuario");
-        modelo.addColumn("contrasena");
-        modelo.addColumn("tipo_usuario");
+        modelo.addColumn("Id");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Nombre_Usuario");
+        modelo.addColumn("Contrasena");
+        modelo.addColumn("Tipo de Usuario");
         tablausuarios.setModel(modelo);
         String []datos = new String [5];
         try{

@@ -38,12 +38,12 @@ public class AsignarAsignatura extends javax.swing.JFrame {
      */
     public AsignarAsignatura() {
         initComponents();
-        mostrardatosasignarasignatura();
         mostrardatosencombobox1();
         mostrardatosencombobox2();
         mostrardatosencombobox3();
         mostrardatosencombobox4();
         mostrardatosencombobox5();
+        mostrardatosdocente();
         setResizable(false);
         setSize(1350,750);
         setTitle("Asignar asignaturas");
@@ -53,41 +53,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         
         
     }
-    void mostrardatosasignarasignatura(){
-       modeloasignarasignatura = new DefaultTableModel();
-        modeloasignarasignatura.addColumn("id_docente");
-        modeloasignarasignatura.addColumn("correo");
-        modeloasignarasignatura.addColumn("direccion");
-        modeloasignarasignatura.addColumn("especialidad");
-        modeloasignarasignatura.addColumn("nombre_completo");
-        modeloasignarasignatura.addColumn("telefono");
-        
-                
-        tablaasignarasignaturas.setModel(modeloasignarasignatura);
-        String []datos = new String [11];
-        try{
-        Statement st = con2.createStatement();
-        ResultSet rs= st.executeQuery("SELECT * FROM docentes");
-        while (rs.next()){
-        datos [0]=rs.getString(1);
-        datos [1]=rs.getString(2);
-        datos [2]=rs.getString(3);
-        datos [3]=rs.getString(4);
-        datos [4]=rs.getString(5);
-        datos [5]=rs.getString(6);
-        modeloasignarasignatura.addRow(datos);
-        tablaasignarasignaturas.setModel(modeloasignarasignatura);
-        
-        
-        //para poder cerrar la conexion y poder utilizar otra cosa.
-        //rs.close();
-        //con2.close();
-}
-    }catch (Exception e){
-       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
-        System.out.println("Error" + e);
-    }
-    }
+    
     
     
       
@@ -139,13 +105,12 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaasignarasignaturas = new javax.swing.JTable();
         comboasignatura1 = new javax.swing.JComboBox();
         comboasignatura2 = new javax.swing.JComboBox();
         comboasignatura3 = new javax.swing.JComboBox();
         comboasignatura4 = new javax.swing.JComboBox();
         comboasignatura5 = new javax.swing.JComboBox();
+        nombredocenteasignatura = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -306,32 +271,32 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Seleccione el Docente para Asignar Asignatura");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(121, 237, 282, 17);
+        jLabel6.setBounds(220, 310, 282, 17);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Materia 1");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(870, 310, 71, 21);
+        jLabel5.setBounds(620, 310, 71, 21);
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel7.setText("Materia 2");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(870, 370, 71, 21);
+        jLabel7.setBounds(620, 370, 71, 21);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel8.setText("Materia 3");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(870, 440, 71, 21);
+        jLabel8.setBounds(620, 440, 71, 21);
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel9.setText("Materia 4");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(870, 510, 71, 21);
+        jLabel9.setBounds(620, 510, 71, 21);
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel10.setText("Materia 5");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(870, 570, 71, 21);
+        jLabel10.setBounds(620, 570, 71, 21);
 
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton2.setText("Guardar");
@@ -341,38 +306,12 @@ public class AsignarAsignatura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(1029, 610, 100, 25);
+        jButton2.setBounds(790, 610, 100, 25);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton3.setText("Cancelar");
         getContentPane().add(jButton3);
-        jButton3.setBounds(1155, 610, 100, 25);
-
-        tablaasignarasignaturas.setBackground(new java.awt.Color(153, 255, 153));
-        tablaasignarasignaturas.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        tablaasignarasignaturas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        tablaasignarasignaturas.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(tablaasignarasignaturas);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 312, 760, 357);
+        jButton3.setBounds(920, 610, 100, 25);
 
         comboasignatura1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,7 +319,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(comboasignatura1);
-        comboasignatura1.setBounds(980, 310, 283, 20);
+        comboasignatura1.setBounds(730, 310, 283, 20);
 
         comboasignatura2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -393,16 +332,29 @@ public class AsignarAsignatura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(comboasignatura2);
-        comboasignatura2.setBounds(980, 370, 283, 20);
+        comboasignatura2.setBounds(730, 370, 283, 20);
 
         getContentPane().add(comboasignatura3);
-        comboasignatura3.setBounds(980, 440, 280, 20);
+        comboasignatura3.setBounds(730, 440, 280, 20);
 
         getContentPane().add(comboasignatura4);
-        comboasignatura4.setBounds(980, 510, 283, 20);
+        comboasignatura4.setBounds(730, 510, 283, 20);
 
+        comboasignatura5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(comboasignatura5);
-        comboasignatura5.setBounds(980, 570, 283, 20);
+        comboasignatura5.setBounds(730, 570, 283, 20);
+
+        nombredocenteasignatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombredocenteasignaturaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nombredocenteasignatura);
+        nombredocenteasignatura.setBounds(220, 360, 300, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -465,6 +417,36 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String mensajeerror="Error al guardar";
+        //podemos programarlo de esta manera o de la anterior donde separabamos donde teniamos el String
+        //getSelectedItem va despues del combo box ----
+        
+        //String sql="INSERT INTO cuatrimestre (no_cuatrimestre,turno,grupo)VALUES('"+cuatrimestreactivar.getSelectedItem()+"','"+turnoactivar.getSelectedItem()+"','"+grupoactivar.getSelectedItem()+"')";
+            
+        
+        String sqlasignaturas="INSERT INTO asignacion_materia (asignatura1,asignatura2,asignatura3,asignatura4,asignatura5,nombrecompletodocente,id_docente_asignarmateria) VALUES ('"+comboasignatura1.getSelectedItem()+"','"+comboasignatura2.getSelectedItem()+"','"+comboasignatura3.getSelectedItem()+"','"+comboasignatura4.getSelectedItem()+"','"+comboasignatura5.getSelectedItem()+"','"+nombredocenteasignatura.getSelectedItem()+"','"+nombredocenteasignatura.getSelectedIndex()+"')";
+        try {
+            //se usa el mismo execute y preparestatement
+            PreparedStatement pst=con3.prepareStatement(sqlasignaturas);
+             //pst.setString(1,tablaasignarasignaturas.getText());
+            int n=pst.executeUpdate();
+            if (n>=0){
+             //mensajes de felicidades
+                JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                // poner el metodo actualizar mostrardatos();
+            }
+            {
+
+            }
+        }catch (Exception e){
+            //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+            JOptionPane.showMessageDialog(rootPane,mensajeerror);
+            //este mensaje solo se imprimira en el registro--
+            System.out.println("Ingresa los datos correctamente" + e);
+
+        
+    }  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void comboasignatura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura1ActionPerformed
@@ -478,8 +460,16 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
     private void comboasignatura2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboasignatura2MouseClicked
         // TODO add your handling code here:
-        mostrardatosasignarasignatura();
+       
     }//GEN-LAST:event_comboasignatura2MouseClicked
+
+    private void comboasignatura5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboasignatura5ActionPerformed
+
+    private void nombredocenteasignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombredocenteasignaturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombredocenteasignaturaActionPerformed
  
    //combobox numero 1
     private void mostrardatosencombobox1(){
@@ -636,6 +626,37 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     
     
     }
+    //para seleccionar el docente
+    private void mostrardatosdocente(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre_completo,id_docente FROM docentes";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        nombredocenteasignatura.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre_completo"));
+         
+         modelocombo.add(rs.getString("nombre_completo"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           nombredocenteasignatura.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
 
 
 
@@ -674,11 +695,10 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable tablaasignarasignaturas;
+    private javax.swing.JComboBox nombredocenteasignatura;
     // End of variables declaration//GEN-END:variables
 
  Conexion con=new Conexion();

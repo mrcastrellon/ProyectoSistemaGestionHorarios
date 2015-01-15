@@ -33,7 +33,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
          mostrardatos();
          nombreusuario.setText(usuario);
          user=usuario;
-         usuario=usuario;
+         
     }
     void mostrardatos(){
        modelo = new DefaultTableModel();
@@ -55,7 +55,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         String []datos = new String [13];
         try{
         Statement st = con2.createStatement();
-        ResultSet rs= st.executeQuery("SELECT * FROM disponibilidad WHERE docente='"+usuario+"'");
+        ResultSet rs= st.executeQuery("SELECT * FROM disponibilidad WHERE docente='"+user+"'");
         while (rs.next()){
         datos [0]=rs.getString(1);
         datos [1]=rs.getString(2);
@@ -128,7 +128,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         Actualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaconsultadisponibilidad = new javax.swing.JTable();
-        jButton12 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -329,10 +329,15 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(310, 390, 970, 150);
 
-        jButton12.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton12.setText("Editar");
-        getContentPane().add(jButton12);
-        jButton12.setBounds(310, 560, 71, 27);
+        jButton7.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton7.setText("Modificar Disponibilidad");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(320, 560, 211, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -347,7 +352,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
 
     private void altdisponibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altdisponibilidadActionPerformed
         // Link para alta disponibilidad docente
-       AltaDisponibilidadDocentes obj=new AltaDisponibilidadDocentes();
+       AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal(user);
         obj.setVisible(true);
         dispose();
 
@@ -358,95 +363,210 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
       String[] campos= new  String[12];
         try {
      if(modulo1campo.isSelected()){
-         campos[0]="1";
+         campos[0]="si";
          
-     }else{campos[0]="0";
+     }else{campos[0]="no";
      }
      
      
      if(modulo2campo.isSelected()){
-         campos[1]="1";
+         campos[1]="si";
          
-     }else{campos[1]="0";
+     }else{campos[1]="no";
      }
      
      
      if(modulo3campo.isSelected()){
-         campos[2]="1";
+         campos[2]="si";
          
-     }else{campos[2]="0";
+     }else{campos[2]="no";
      }
      
      
      if(modulo4campo.isSelected()){
-         campos[3]="1";
+         campos[3]="si";
          
-     }else{campos[3]="0";
+     }else{campos[3]="no";
      }
      
      
      if(modulo5campo.isSelected()){
-         campos[4]="1";
+         campos[4]="si";
          
-     }else{campos[4]="0";
+     }else{campos[4]="no";
      }
      
      
      if(modulo6campo.isSelected()){
-         campos[5]="1";
+         campos[5]="si";
          
-     }else{campos[5]="0";
+     }else{campos[5]="no";
      }
      
      
      if(modulo7campo.isSelected()){
-         campos[6]="1";
+         campos[6]="si";
          
-     }else{campos[6]="0";
+     }else{campos[6]="no";
      }
      
      
      if(modulo8campo.isSelected()){
-         campos[7]="1";
+         campos[7]="si";
          
-     }else{campos[7]="0";
+     }else{campos[7]="no";
      }
      
      
      if(modulo9campo.isSelected()){
-         campos[8]="1";
+         campos[8]="si";
          
-     }else{campos[8]="0";
+     }else{campos[8]="no";
      }
      
      
      if(modulo10campo.isSelected()){
-         campos[9]="1";
+         campos[9]="si";
          
-     }else{campos[9]="0";
+     }else{campos[9]="no";
      }
      
      if(modulo11campo.isSelected()){
-         campos[10]="1";
+         campos[10]="si";
          
-     }else{campos[10]="0";
+     }else{campos[10]="no";
      }
      
      if(modulo12campo.isSelected()){
-         campos[11]="1";
+         campos[11]="si";
          
-     }else{campos[11]="0";
+     }else{campos[11]="no";
      }
      
    
         PreparedStatement pst;
-        pst = con2.prepareStatement("UPDATE disponibilidad SET modulo_1='"+campos[0]+"',modulo_2='"+campos[1]+"',modulo_3='"+campos[2]+"',modulo_4='"+campos[3]+"',modulo_5='"+campos[4]+"',modulo_6='"+campos[5]+"',modulo_7='"+campos[6]+"',modulo_8='"+campos[7]+"',modulo_9='"+campos[8]+"',modulo_10='"+campos[9]+"',modulo_11='"+campos[10]+"',modulo_12='"+campos[11]+"' WHERE docente_id='"+identificadorcheck+"'");
+        pst = con2.prepareStatement("UPDATE disponibilidad SET modulo_1='"+campos[0]+"',modulo_2='"+campos[1]+"',modulo_3='"+campos[2]+"',modulo_4='"+campos[3]+"',modulo_5='"+campos[4]+"',modulo_6='"+campos[5]+"',modulo_7='"+campos[6]+"',modulo_8='"+campos[7]+"',modulo_9='"+campos[8]+"',modulo_10='"+campos[9]+"',modulo_11='"+campos[10]+"',modulo_12='"+campos[11]+"' WHERE docente='"+identificadorcheck+"'");
         pst.executeUpdate();
         mostrardatos();
             } catch (Exception e) {
         System.out.print(e.getMessage());
     }        // TODO add your handling code here:
     }//GEN-LAST:event_ActualizarActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        int fila= tablaconsultadisponibilidad.getSelectedRow();
+        identificadorcheck= tablaconsultadisponibilidad.getValueAt(fila, 12).toString();
+        if(fila>=0){
+            System.out.println(tablaconsultadisponibilidad.getValueAt(fila, 0).toString().charAt(0));
+            if(tablaconsultadisponibilidad.getValueAt(fila, 0).toString().charAt(0)=='0'){
+                modulo1campo.setSelected(false);
+
+            }else{
+                modulo1campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 1).toString().charAt(0)=='0'){
+                modulo2campo.setSelected(false);
+
+            }else{
+                modulo2campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 2).toString().charAt(0)=='0'){
+                modulo3campo.setSelected(false);
+
+            }else{
+                modulo3campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 3).toString().charAt(0)=='0'){
+                modulo4campo.setSelected(false);
+
+            }else{
+                modulo4campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 4).toString().charAt(0)=='0'){
+                modulo5campo.setSelected(false);
+
+            }else{
+                modulo5campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 5).toString().charAt(0)=='0'){
+                modulo6campo.setSelected(false);
+
+            }else{
+                modulo6campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 6).toString().charAt(0)=='0'){
+                modulo7campo.setSelected(false);
+
+            }else{
+                modulo7campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 7).toString().charAt(0)=='0'){
+                modulo7campo.setSelected(false);
+
+            }else{
+                modulo7campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 7).toString().charAt(0)=='0'){
+                modulo8campo.setSelected(false);
+
+            }else{
+                modulo8campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 8).toString().charAt(0)=='0'){
+                modulo9campo.setSelected(false);
+
+            }else{
+                modulo9campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 9).toString().charAt(0)=='0'){
+                modulo10campo.setSelected(false);
+
+            }else{
+                modulo10campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 10).toString().charAt(0)=='0'){
+                modulo11campo.setSelected(false);
+
+            }else{
+                modulo11campo.setSelected(true);
+            }
+
+            if(tablaconsultadisponibilidad.getValueAt(fila, 11).toString().charAt(0)=='0'){
+                modulo12campo.setSelected(false);
+
+            }else{
+                modulo12campo.setSelected(true);
+            }
+            /* modulo1campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 0).toString());
+            modulo2campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 1).toString());
+            modulo3campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 2).toString());
+            modulo4campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 3).toString());
+            modulo5campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 4).toString());
+            modulo6campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 5).toString());
+            modulo7campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 6).toString());
+            modulo8campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 7).toString());
+            modulo9campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 8).toString());
+            modulo10campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 9).toString());
+            modulo11campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 10).toString());
+            modulo12campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 11).toString());*/
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"no seleciono fila");
+        }        // Link para modificar docentes
+        // Link para modificar disponibilidad docentes
+
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -460,7 +580,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
     private javax.swing.JButton altdisponibilidad;
     private javax.swing.JButton cancelar;
     private javax.swing.JButton cerrarsesion;
-    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -500,5 +620,5 @@ private String identificadorcheck;
         Connection con2=con.conexion();
         DefaultTableModel modelo;
 public String user;
-public String usuario;
+
 }

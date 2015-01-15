@@ -284,7 +284,7 @@ public class BajaDocentes extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel12.setText("Consultar Docentes");
+        jLabel12.setText("Baja Docentes");
 
         consultareliminardocente.setBackground(new java.awt.Color(153, 255, 153));
         consultareliminardocente.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -371,7 +371,7 @@ public class BajaDocentes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(587, 587, 587))
+                .addGap(577, 577, 577))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

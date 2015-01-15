@@ -121,7 +121,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 88, 111, 25);
+        Cuatrimestre.setBounds(68, 88, 120, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -231,7 +231,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(523, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(527, 527, 527))
         );
@@ -264,7 +264,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(85, 287, 175, 27);
+        AltasdeUsuarios.setBounds(85, 287, 180, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Modificar Asignaturas");
@@ -274,7 +274,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(85, 354, 175, 27);
+        AsignaciondePrivilegios.setBounds(85, 354, 180, 27);
 
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificaciondeUsuarios.setText("Eliminar Asignaturas");
@@ -284,7 +284,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(85, 417, 175, 27);
+        ModificaciondeUsuarios.setBounds(85, 417, 180, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Altas Cuatrimestres");
@@ -294,7 +294,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(85, 472, 175, 27);
+        ConsultarUsuarios.setBounds(85, 472, 180, 27);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel8.setText("Usuarios");

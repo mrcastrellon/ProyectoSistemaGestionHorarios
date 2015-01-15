@@ -147,7 +147,7 @@ void limpiar (){
             }
         });
         getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 93, 111, 25);
+        Cuatrimestre.setBounds(68, 93, 120, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -290,7 +290,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(89, 290, 167, 27);
+        AltasdeUsuarios.setBounds(89, 290, 170, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Modificar Asignatura");
@@ -300,7 +300,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(89, 349, 167, 27);
+        AsignaciondePrivilegios.setBounds(89, 349, 170, 27);
 
         ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ModificaciondeUsuarios.setText("Eliminar Asignatura");
@@ -310,7 +310,7 @@ void limpiar (){
             }
         });
         getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(89, 409, 167, 27);
+        ModificaciondeUsuarios.setBounds(89, 409, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -320,7 +320,7 @@ void limpiar (){
             }
         });
         getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(89, 472, 167, 27);
+        ConsultarUsuarios.setBounds(89, 472, 170, 27);
 
         AltaUsuario.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaUsuario.setText("Clave");

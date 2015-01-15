@@ -423,10 +423,9 @@ public class Docentes extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Link para modulo alta docentes
-       AltadeDocentes obj=new AltadeDocentes ();
+        AltadeDocentes obj=new AltadeDocentes();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

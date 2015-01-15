@@ -46,11 +46,11 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
 } 
   private void mostrardatos(){
         modelo = new DefaultTableModel();
-        modelo.addColumn("id");
-        modelo.addColumn("nombre");
-        modelo.addColumn("nombre_usuario");
-        modelo.addColumn("contrasena");
-        modelo.addColumn("tipo_usuario");
+        modelo.addColumn("Id");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Nombre_Usuario");
+        modelo.addColumn("Contrasena");
+        modelo.addColumn("Tipo de Usuario");
         tablausuarios.setModel(modelo);
         String []datos = new String [5];
         try{
@@ -355,7 +355,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(Modificar);
-        Modificar.setBounds(892, 552, 140, 25);
+        Modificar.setBounds(880, 520, 140, 25);
         getContentPane().add(campoid);
         campoid.setBounds(892, 298, 132, 20);
 
@@ -464,7 +464,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             //JOptionPane.showMessageDialog(rootPane, id);
             Statement st = con2.createStatement();
           //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
-            st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
+             st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
     
             JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
             mostrardatos();

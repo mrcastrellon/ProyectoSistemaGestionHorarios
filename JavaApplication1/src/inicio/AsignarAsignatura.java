@@ -39,7 +39,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     public AsignarAsignatura() {
         initComponents();
         mostrardatosasignarasignatura();
-        Fillcombo();
+        mostrardatosencombobox();
         setResizable(false);
         setSize(1350,750);
         setTitle("Asignar asignaturas");
@@ -495,20 +495,25 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
  
    
-    private void Fillcombo(){
-    
+    private void mostrardatosencombobox(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
        try {
-      //String consulta="";
-        Statement st= con2.createStatement();
-        ResultSet rs =st.executeQuery("SELECT nombre FROM asignatura");
-        //cmbDB.removeAllItems();
-         while(rs.next());
-         String nombre = rs.getString("nombre");
-         cmbDB.addItem(nombre);
-                
+      
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        cmbDB.removeAllItems();
+         while(rs.next()){
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         cmbDB.addItem(modelocombo);
+         }      
         System.out.println("Si consulta");
-        
-            JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+        //System.out.println(rs.getString("nombre"));
+           JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
         } catch (Exception e) {
             System.out.println("No funciona"+e);
             JOptionPane.showMessageDialog(rootPane,"Error al consultar");
@@ -560,7 +565,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
  Conexion con=new Conexion();
         Connection con2=con.conexion();
-        //Connection con3=con.conexion();
+        Connection con3=con.conexion();
         DefaultTableModel modeloasignarasignatura;
         
         //otra conexion para ver si funciona el combo box consultando de la base de datos

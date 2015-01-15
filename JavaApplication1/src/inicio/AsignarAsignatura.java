@@ -134,6 +134,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaasignarasignaturas = new javax.swing.JTable();
         cmbDB = new javax.swing.JComboBox();
+        jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -307,6 +308,18 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         tablaasignarasignaturas.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(tablaasignarasignaturas);
 
+        cmbDB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDBActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -322,10 +335,15 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton2)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jButton2)
+                                .addGap(38, 38, 38)
+                                .addComponent(jButton3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(35, 35, 35)
@@ -412,8 +430,10 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(34, 34, 34)
-                        .addComponent(jLabel7)
-                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
                         .addComponent(jLabel8)
                         .addGap(34, 34, 34)
                         .addComponent(jLabel9)
@@ -493,6 +513,15 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void cmbDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbDBActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+         mostrardatosasignarasignatura();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
  
    
     private void mostrardatosencombobox(){
@@ -504,15 +533,22 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         ResultSet rs =st.executeQuery(consulta);
         cmbDB.removeAllItems();
          while(rs.next()){
+             System.out.println(rs.getString("nombre"));
          
          modelocombo.add(rs.getString("nombre"));
          //cmbDB.addItem("modelocombo");
          //String consultaatabla = rs.getString("nombre");
-         cmbDB.addItem(modelocombo);
-         }      
+        
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           cmbDB.addItem(modelocombo.get(i));  
+         }
+          
+          
         System.out.println("Si consulta");
         //System.out.println(rs.getString("nombre"));
-           JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
          
         } catch (Exception e) {
             System.out.println("No funciona"+e);
@@ -545,6 +581,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

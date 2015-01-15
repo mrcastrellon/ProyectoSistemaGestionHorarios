@@ -25,6 +25,7 @@ import com.sun.rowset.CachedRowSetImpl;
 import java.time.Clock;
 import java.util.ArrayList;
 import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,10 +39,15 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     public AsignarAsignatura() {
         initComponents();
         mostrardatosasignarasignatura();
+        mostrardatosencombobox1();
+        mostrardatosencombobox2();
+        mostrardatosencombobox3();
+        mostrardatosencombobox4();
+        mostrardatosencombobox5();
         setResizable(false);
-        setSize(1350,648);
+        setSize(1350,750);
         setTitle("Asignar asignaturas");
-        cargarBD();
+        
       
         
         
@@ -53,7 +59,10 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         modeloasignarasignatura.addColumn("correo");
         modeloasignarasignatura.addColumn("direccion");
         modeloasignarasignatura.addColumn("especialidad");
+        modeloasignarasignatura.addColumn("nombre_completo");
+        modeloasignarasignatura.addColumn("telefono");
         
+                
         tablaasignarasignaturas.setModel(modeloasignarasignatura);
         String []datos = new String [11];
         try{
@@ -65,6 +74,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
+        datos [5]=rs.getString(6);
         modeloasignarasignatura.addRow(datos);
         tablaasignarasignaturas.setModel(modeloasignarasignatura);
         
@@ -131,12 +141,17 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaasignarasignaturas = new javax.swing.JTable();
-        cmbDB = new javax.swing.JComboBox();
+        comboasignatura1 = new javax.swing.JComboBox();
+        comboasignatura2 = new javax.swing.JComboBox();
+        comboasignatura3 = new javax.swing.JComboBox();
+        comboasignatura4 = new javax.swing.JComboBox();
+        comboasignatura5 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(null);
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -147,6 +162,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
+        getContentPane().add(Cuatrimestre);
+        Cuatrimestre.setBounds(68, 93, 111, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -156,6 +173,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
+        getContentPane().add(Docentes);
+        Docentes.setBounds(216, 93, 104, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -165,6 +184,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosExternos);
+        HorariosExternos.setBounds(370, 93, 141, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -174,6 +195,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos);
+        HorariosAlumnos.setBounds(563, 93, 148, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -183,6 +206,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(Usuarios);
+        Usuarios.setBounds(934, 93, 93, 25);
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -192,17 +217,29 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
+        getContentPane().add(GeneraciondeHorarios);
+        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 85, 1592, 2);
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(0, 124, 1592, 2);
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(0, 675, 1592, 2);
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
+        getContentPane().add(SGH);
+        SGH.setBounds(233, 38, 414, 29);
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
+        getContentPane().add(LogoUnipoli);
+        LogoUnipoli.setBounds(685, 20, 617, 56);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -212,11 +249,17 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1469, 51, 113, 25);
 
         jLabel1.setText("Nombre del Usuario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(1344, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(843, 137, 222, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -241,6 +284,9 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 683, 1592, 23);
+
         HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         HorariosAlumnos1.setText("Asignar Materias");
@@ -249,27 +295,43 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosAlumnos1ActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos1);
+        HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel4.setText("Asignar Asignatura");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(881, 178, 145, 17);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Seleccione el Docente para Asignar Asignatura");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(121, 237, 282, 17);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Materia 1");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(870, 310, 71, 21);
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel7.setText("Materia 2");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(870, 370, 71, 21);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel8.setText("Materia 3");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(870, 440, 71, 21);
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel9.setText("Materia 4");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(870, 510, 71, 21);
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel10.setText("Materia 5");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(870, 570, 71, 21);
 
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton2.setText("Guardar");
@@ -278,9 +340,13 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(1029, 610, 100, 25);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton3.setText("Cancelar");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(1155, 610, 100, 25);
 
         tablaasignarasignaturas.setBackground(new java.awt.Color(153, 255, 153));
         tablaasignarasignaturas.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -305,137 +371,38 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         tablaasignarasignaturas.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(tablaasignarasignaturas);
 
-        cmbDB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbDBActionPerformed(evt);
-            }
-        });
-        cmbDB.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                cmbDBKeyPressed(evt);
-            }
-        });
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 312, 760, 357);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(Cuatrimestre)
-                .addGap(37, 37, 37)
-                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(HorariosExternos)
-                .addGap(52, 52, 52)
-                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(GeneraciondeHorarios))
-            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(843, 843, 843)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(881, 881, 881)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jLabel6))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton2)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(cmbDB, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1592, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jButton1)))
-                .addGap(9, 9, 9)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(HorariosAlumnos1)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios))
-                .addGap(6, 6, 6)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel2)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel4)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6)
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(cmbDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel7)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel8)
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel9)
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel10))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
-                .addGap(6, 6, 6)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        comboasignatura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboasignatura1);
+        comboasignatura1.setBounds(980, 310, 283, 20);
+
+        comboasignatura2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comboasignatura2MouseClicked(evt);
+            }
+        });
+        comboasignatura2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboasignatura2);
+        comboasignatura2.setBounds(980, 370, 283, 20);
+
+        getContentPane().add(comboasignatura3);
+        comboasignatura3.setBounds(980, 440, 280, 20);
+
+        getContentPane().add(comboasignatura4);
+        comboasignatura4.setBounds(980, 510, 283, 20);
+
+        getContentPane().add(comboasignatura5);
+        comboasignatura5.setBounds(980, 570, 283, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -500,34 +467,178 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void cmbDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDBActionPerformed
+    private void comboasignatura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura1ActionPerformed
         // TODO add your handling code here:
-       
-        
-     cargarBD();
-        
-        
-    }//GEN-LAST:event_cmbDBActionPerformed
+    }//GEN-LAST:event_comboasignatura1ActionPerformed
 
-    private void cmbDBKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbDBKeyPressed
+    private void comboasignatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbDBKeyPressed
+         
+    }//GEN-LAST:event_comboasignatura2ActionPerformed
+
+    private void comboasignatura2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboasignatura2MouseClicked
+        // TODO add your handling code here:
+        mostrardatosasignarasignatura();
+    }//GEN-LAST:event_comboasignatura2MouseClicked
  
-    public void cargarBD(){
+   //combobox numero 1
+    private void mostrardatosencombobox1(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
        try {
-            Statement st=con2.createStatement();
-        ResultSet rs =st.executeQuery("SELECT nombre FROM asignatura;");
-        cmbDB.removeAllItems();
-        while(rs.next());
-        cmbDB.addItem(rs.getString(2));
-        System.out.println(2);
-            
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura1.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura1.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
         } catch (Exception e) {
-            System.out.println("no jala"+e);
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
         } 
-           
-    }
     
+    
+    }
+    //combobox numero 2
+    private void mostrardatosencombobox2(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura2.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura2.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 3
+    private void mostrardatosencombobox3(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura3.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura3.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 4
+    private void mostrardatosencombobox4(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura4.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura4.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 5
+    private void mostrardatosencombobox5(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura5.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura5.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+
+
+
     
     /**
      * @param args the command line arguments
@@ -544,7 +655,11 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    public javax.swing.JComboBox cmbDB;
+    private javax.swing.JComboBox comboasignatura1;
+    private javax.swing.JComboBox comboasignatura2;
+    private javax.swing.JComboBox comboasignatura3;
+    private javax.swing.JComboBox comboasignatura4;
+    private javax.swing.JComboBox comboasignatura5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -568,6 +683,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
  Conexion con=new Conexion();
         Connection con2=con.conexion();
+        Connection con3=con.conexion();
         DefaultTableModel modeloasignarasignatura;
         
         //otra conexion para ver si funciona el combo box consultando de la base de datos

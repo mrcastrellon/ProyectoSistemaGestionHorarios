@@ -464,7 +464,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             //JOptionPane.showMessageDialog(rootPane, id);
             Statement st = con2.createStatement();
           //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
-            st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
+             st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
     
             JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
             mostrardatos();

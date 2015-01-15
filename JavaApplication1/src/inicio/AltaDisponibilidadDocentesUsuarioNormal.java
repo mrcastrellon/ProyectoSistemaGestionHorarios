@@ -17,15 +17,34 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author BENJAMIN
+ * @author MARCOS
  */
 public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame {
-
+      public void limpiar(){
+          campo1.setText(" ");
+          campo2.setText(" ");
+          campo3.setText(" ");
+          campo4.setText(" ");
+          campo5.setText(" ");
+          campo6.setText(" ");
+          campo7.setText(" ");
+          campo8.setText(" ");
+          campo9.setText(" ");
+          campo10.setText(" ");
+          campo11.setText(" ");
+          campo12.setText(" ");
+      }
     /**
+     * 
      * Creates new form INTERFAZ
      */
     public AltaDisponibilidadDocentesUsuarioNormal() {
         initComponents();
+    }
+    public AltaDisponibilidadDocentesUsuarioNormal(String usuario) {
+        initComponents();
+        jLabel1.setText(usuario);
+        usuarioexp=(usuario);
     }
 
     /**
@@ -258,8 +277,6 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         });
         getContentPane().add(guardar);
         guardar.setBounds(750, 510, 120, 30);
-
-        tbmostrarmodulos.setText("jLabel2");
         getContentPane().add(tbmostrarmodulos);
         tbmostrarmodulos.setBounds(490, 470, 290, 20);
 
@@ -275,99 +292,102 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+       ModificarDisponibilidadDocentesusuarionormal obj=new ModificarDisponibilidadDocentesusuarionormal(usuarioexp);
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-         String mensaje2="";
+       
+        String mensaje2="";
         String[] mensaje=new String [12];
            if(campo1.isSelected())
     {
-        mensaje[0]="1";
+        mensaje[0]="si,";
     }else{
-        mensaje[0]="0";   
+        mensaje[0]="no,";   
     }
         if(campo2.isSelected())
     {
-       mensaje[1]="1";
+       mensaje[1]="si";
     }else{
-        mensaje[1]="0";   
+        mensaje[1]="no";   
     
     }
           if(campo3.isSelected())
     {
-       mensaje[2]="1";
+       mensaje[2]="si";
     }else{
-        mensaje[2]="0";   
+        mensaje[2]="no";   
     
     }
               if(campo4.isSelected())
     {
-       mensaje[3]="1";
+       mensaje[3]="si";
     }else{
-        mensaje[3]="0";   
+        mensaje[3]="no";   
     
     }
         if(campo5.isSelected())
     {
-        mensaje[4]="1";
+        mensaje[4]="si";
     }else{
-        mensaje[4]="0";   
+        mensaje[4]="no";   
     
     }
         if(campo6.isSelected())
     {
-        mensaje[5]="1";
+        mensaje[5]="si";
     }else{
-        mensaje[5]="0";
+        mensaje[5]="no";
     }
         if(campo7.isSelected())
     {
-       mensaje[6]="1";
+       mensaje[6]="si";
     }else{
-        mensaje[6]="0";
+        mensaje[6]="no";
     }
         if(campo8.isSelected())
     {
-        mensaje[7]="1";
+        mensaje[7]="si";
     }else{
-        mensaje[7]="0";
+        mensaje[7]="no";
     }
         if(campo9.isSelected())
     {
-        mensaje[8]="1";
+        mensaje[8]="si";
     }else{
-        mensaje[8]="0";
+        mensaje[8]="no";
     }
         if(campo10.isSelected())
     {
-        mensaje[9]="1";
+        mensaje[9]="si";
     }else{
-        mensaje[9]="0";
+        mensaje[9]="no";
     }
         if(campo11.isSelected())
     {
-       mensaje[10]="1";
+       mensaje[10]="si";
     }else{
-        mensaje[10]="0";
+        mensaje[10]="no";
     }
         if(campo12.isSelected())
     {
-        mensaje[11]="1";
+        mensaje[11]="si";
     }else{
-        mensaje[11]="0";
+        mensaje[11]="no";
     }
      for(int i=0; i<mensaje.length; i++){
       mensaje2=mensaje2+mensaje[i];
      }  
-     tbmostrarmodulos.setText(mensaje2);
+     
 
           String sql;
         //declaro la variable error
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12,docente)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'"+usuarioexp+"')";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
@@ -389,7 +409,9 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion
              JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
+             limpiar();
                 System.out.println("Guardado correctamente");
+                
                     }
 {
             
@@ -399,8 +421,9 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
              JOptionPane.showMessageDialog(rootPane,mensajeerror);
              //este mensaje solo se imprimira en el registro--
              System.out.println("Ingresa los datos correctamente" + e);
-             
-        }        // TODO add your handling code here:
+     
+        } 
+        // TODO add your handling code here:
     
         
     }//GEN-LAST:event_guardarActionPerformed
@@ -452,4 +475,5 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     // End of variables declaration//GEN-END:variables
 Conexion con=new Conexion();
 Connection con2=con.conexion();
+public String usuarioexp;
 }

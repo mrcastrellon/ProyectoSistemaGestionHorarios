@@ -25,6 +25,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
         this.setSize(1000,600);
         label1.setText(usuario);
         setVisible(true);
+        varnom=(usuario);
     }
 
     /**
@@ -148,7 +149,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
 
     private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
         // Link para eliminar asignatura
-        AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal();
+        AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal(varnom);
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
@@ -172,4 +173,5 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     private javax.swing.JLabel label1;
     private javax.swing.JLabel usuar;
     // End of variables declaration//GEN-END:variables
+public String varnom;
 }

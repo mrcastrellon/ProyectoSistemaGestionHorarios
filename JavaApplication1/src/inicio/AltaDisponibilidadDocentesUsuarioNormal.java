@@ -308,9 +308,9 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         String[] mensaje=new String [12];
            if(campo1.isSelected())
     {
-        mensaje[0]="si,";
+        mensaje[0]="si";
     }else{
-        mensaje[0]="no,";   
+        mensaje[0]="no";   
     }
         if(campo2.isSelected())
     {
@@ -434,7 +434,7 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     }//GEN-LAST:event_guardarActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       DocentesUsuarioComun obj=new DocentesUsuarioComun();
+       DocentesUsuarioComun obj=new DocentesUsuarioComun(usuarioexp);
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton9ActionPerformed

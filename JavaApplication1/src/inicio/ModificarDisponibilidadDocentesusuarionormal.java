@@ -576,7 +576,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        DocentesUsuarioComun obj=new DocentesUsuarioComun();
+        DocentesUsuarioComun obj=new DocentesUsuarioComun(user);
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed

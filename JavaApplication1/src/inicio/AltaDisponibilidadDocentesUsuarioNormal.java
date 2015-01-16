@@ -265,6 +265,11 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton9);
         jButton9.setBounds(550, 510, 120, 30);
 
@@ -303,9 +308,9 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         String[] mensaje=new String [12];
            if(campo1.isSelected())
     {
-        mensaje[0]="si,";
+        mensaje[0]="si";
     }else{
-        mensaje[0]="no,";   
+        mensaje[0]="no";   
     }
         if(campo2.isSelected())
     {
@@ -427,6 +432,12 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     
         
     }//GEN-LAST:event_guardarActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       DocentesUsuarioComun obj=new DocentesUsuarioComun(usuarioexp);
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -30,9 +30,11 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
     }
     public ModificarDisponibilidadDocentesusuarionormal(String usuario) {
         initComponents();
-         mostrardatos();
-         nombreusuario.setText(usuario);
-         user=usuario;
+        user=usuario;
+        mostrardatos();
+        nombreusuario.setText(usuario);
+         
+         
          
     }
     void mostrardatos(){
@@ -300,6 +302,11 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
 
         cancelar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(cancelar);
         cancelar.setBounds(880, 570, 110, 25);
 
@@ -568,6 +575,12 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        DocentesUsuarioComun obj=new DocentesUsuarioComun(user);
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_cancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -615,10 +628,10 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
     private javax.swing.JLabel nombreusuario;
     private javax.swing.JTable tablaconsultadisponibilidad;
     // End of variables declaration//GEN-END:variables
-private String identificadorcheck;
+private String identificadorcheck,user;
     Conexion con=new Conexion();
         Connection con2=con.conexion();
         DefaultTableModel modelo;
-public String user;
+
 
 }

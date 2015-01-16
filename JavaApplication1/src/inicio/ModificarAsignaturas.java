@@ -369,7 +369,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablamodificarasignaturas);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(397, 283, 631, 98);
+        jScrollPane1.setBounds(400, 300, 631, 98);
 
         botonguardarcambio.setText("Modificar seleccionado");
         botonguardarcambio.addActionListener(new java.awt.event.ActionListener() {

@@ -21,6 +21,12 @@ public class Docentes extends javax.swing.JFrame {
      */
     public Docentes() {
         initComponents();
+        
+    }
+    public Docentes(String usuario) {
+        initComponents();
+        jLabel1.setText(usuario);
+        varnom=usuario;
     }
 //boorra este comentario no sirve sale para q no lo tomes en cuenta
     /**
@@ -529,4 +535,5 @@ public class Docentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
+private String varnom;
 }

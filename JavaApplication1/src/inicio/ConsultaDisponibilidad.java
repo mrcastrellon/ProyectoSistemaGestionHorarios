@@ -7,45 +7,48 @@
 package inicio;
 
 import Conexion_base_de_datos.Conexion;
-import java.sql.*;
-import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
+
 
 
 
 
 /**
  *
- * @author BENJAMIN
+// * @author BENJAMIN
  */
-public class BajaDocentes extends javax.swing.JFrame {
+public class ConsultaDisponibilidad extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public BajaDocentes() {
+    public ConsultaDisponibilidad() {
         initComponents();
         mostrardatos();
     }
     void mostrardatos(){
-       modelo = new DefaultTableModel();
-        modelo.addColumn("id_docente");
-        modelo.addColumn("correo");
-        modelo.addColumn("direccion");
-        modelo.addColumn("especialidad");
-        modelo.addColumn("nombre_completo");
-        modelo.addColumn("telefono");
-        modelo.addColumn("materiaten1");
-        modelo.addColumn("materiaten2");
-        modelo.addColumn("materiaten3");
-        modelo.addColumn("materiaten4");
-        modelo.addColumn("materiaten5");
-        
-        consultareliminardocente.setModel(modelo);
-        String []datos = new String [11];
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Modulo_1");
+        modelo.addColumn("Modulo_2");
+        modelo.addColumn("Modulo_3");
+        modelo.addColumn("Modulo_4");
+        modelo.addColumn("Modulo_5");
+        modelo.addColumn("Modulo_6");
+        modelo.addColumn("Modulo_7");
+        modelo.addColumn("Modulo_8");
+        modelo.addColumn("Modulo_9");
+        modelo.addColumn("Modulo_10");
+        modelo.addColumn("Modulo_11");
+        modelo.addColumn("Modulo_12");
+        modelo.addColumn("Docente");
+        consultadisponibilidad.setModel(modelo);
+        String []datos = new String [13];
         try{
         Statement st = con2.createStatement();
-        ResultSet rs= st.executeQuery("SELECT * FROM docentes");
+        ResultSet rs= st.executeQuery("SELECT * FROM disponibilidad");
         while (rs.next()){
         datos [0]=rs.getString(1);
         datos [1]=rs.getString(2);
@@ -58,17 +61,17 @@ public class BajaDocentes extends javax.swing.JFrame {
         datos [8]=rs.getString(9);
         datos [9]=rs.getString(10);
         datos [10]=rs.getString(11);
+        datos [11]=rs.getString(12);
+        datos [12]=rs.getString(13);
         modelo.addRow(datos);
-        consultareliminardocente.setModel(modelo);
+        consultadisponibilidad.setModel(modelo);
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
         System.out.println("chupando faros" + e);
     }
     }
-    
-    
-
+//boorra este comentario no sirve sale para q no lo tomes en cuenta
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -103,11 +106,9 @@ public class BajaDocentes extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        consultareliminardocente = new javax.swing.JTable();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        consultadisponibilidad = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -259,7 +260,7 @@ public class BajaDocentes extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel4.setText("Docentes");
+        jLabel4.setText("Consulta Disponibilidad");
 
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton6.setText("Alta de Disponibilidad");
@@ -285,20 +286,16 @@ public class BajaDocentes extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel12.setText("Baja Docentes");
+        jButton9.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton9.setText("Consultar Disponibilidad");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
-        consultareliminardocente.setBackground(new java.awt.Color(153, 255, 153));
-        consultareliminardocente.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        consultareliminardocente.setModel(new javax.swing.table.DefaultTableModel(
+        consultadisponibilidad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
                 {},
                 {},
                 {},
@@ -308,19 +305,7 @@ public class BajaDocentes extends javax.swing.JFrame {
 
             }
         ));
-        consultareliminardocente.setGridColor(new java.awt.Color(204, 0, 0));
-        jScrollPane1.setViewportView(consultareliminardocente);
-
-        jButton9.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton9.setText("Consultar Disponibilidad");
-
-        jButton10.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton10.setText("Consulta Disponibilidad");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
+        jScrollPane1.setViewportView(consultadisponibilidad);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -330,15 +315,6 @@ public class BajaDocentes extends javax.swing.JFrame {
             .addComponent(jSeparator2)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
             .addComponent(jSeparator3)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(550, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(630, 630, 630))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(527, 527, 527))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -351,45 +327,45 @@ public class BajaDocentes extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(Cuatrimestre)
-                                .addGap(37, 37, 37)
-                                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(HorariosExternos)
-                                .addGap(52, 52, 52)
-                                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(GeneraciondeHorarios))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 941, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(760, 760, 760)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(68, 68, 68)
+                        .addComponent(Cuatrimestre)
+                        .addGap(37, 37, 37)
+                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(HorariosExternos)
+                        .addGap(52, 52, 52)
+                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(GeneraciondeHorarios)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(577, 577, 577))
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(527, 527, 527))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(569, 569, 569))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,30 +399,26 @@ public class BajaDocentes extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addGap(31, 31, 31)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton4)
                         .addGap(18, 18, 18)
                         .addComponent(jButton5)
                         .addGap(18, 18, 18)
                         .addComponent(jButton6)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton7)
-                        .addGap(8, 8, 8)
-                        .addComponent(jButton9)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10)
-                        .addGap(11, 11, 11)
-                        .addComponent(jButton8))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(jButton7))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addComponent(jButton9)
+                .addGap(18, 18, 18)
+                .addComponent(jButton8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -461,6 +433,7 @@ public class BajaDocentes extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
 
+
     }//GEN-LAST:event_HorariosExternosActionPerformed
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
@@ -469,15 +442,13 @@ public class BajaDocentes extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
 
-
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void GeneraciondeHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneraciondeHorariosActionPerformed
-        // Link para modulo usuarios
+        // Link para modulo generacion de horarios
         PaginaPrincipalGeneraciondeHorarios obj=new PaginaPrincipalGeneraciondeHorarios();
         obj.setVisible(true);
         dispose();
-
 
     }//GEN-LAST:event_GeneraciondeHorariosActionPerformed
 
@@ -487,7 +458,6 @@ public class BajaDocentes extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
 
-
     }//GEN-LAST:event_CuatrimestreActionPerformed
 
     private void HorariosAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosAlumnosActionPerformed
@@ -495,7 +465,6 @@ public class BajaDocentes extends javax.swing.JFrame {
         HorariosAlumnos obj=new HorariosAlumnos();
         obj.setVisible(true);
         dispose();
-
 
     }//GEN-LAST:event_HorariosAlumnosActionPerformed
 
@@ -517,33 +486,30 @@ public class BajaDocentes extends javax.swing.JFrame {
 
     private void DocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocentesActionPerformed
         // Link para modulo docentes
-        Docentes obj=new Docentes();
+        ConsultaDisponibilidad obj=new ConsultaDisponibilidad();
         obj.setVisible(true);
         dispose();
-
 
     }//GEN-LAST:event_DocentesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Link para modulo alta docentes
-       AltadeDocentes obj=new AltadeDocentes ();
+        AltadeDocentes obj=new AltadeDocentes();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // Link para consultar docente
-       BajaDocentes obj=new BajaDocentes();
+       ConsultaDocentes obj=new ConsultaDocentes();
         obj.setVisible(true);
         dispose();
-        
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Link para modificar docentes
-       ModificarDocentes1 obj=new ModificarDocentes1();
+       ModificarDocente obj=new ModificarDocente();
         obj.setVisible(true);
         dispose();
 
@@ -574,42 +540,24 @@ public class BajaDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      // El como eliminar
-      
-      //JOptionPane.showMessageDialog(rootPane, id);
-      String id=consultareliminardocente.getValueAt(consultareliminardocente.getSelectedRow(), 0).toString();
-        try {
-            
-            // si gustamos imprimir el id
-            JOptionPane.showMessageDialog(rootPane, id);
-            Statement st = con2.createStatement();
-          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
-       st.executeUpdate("DELETE FROM docentes WHERE id_docente='"+id+"'");
-                  
-             JOptionPane.showMessageDialog(rootPane,"Eliminado correctamente");
-                System.out.println("Eliminado bien");
-                //para refrescar la pantalla
-                mostrardatos();
-            //ResultSet rs= st.executeQuery("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
-        //st=executeQuery("DELETE FROM asignatura WHERE ='"+id+"'");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane , e );
-            JOptionPane.showMessageDialog(rootPane,"No es posible eliminar");
-                System.out.println("Eliminado mal");
-        }
+        // Link para baja de docentes
+       BajaDocentes obj=new BajaDocentes ();
+        obj.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // link para consultar docentes:
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
         ConsultaDisponibilidad obj=new ConsultaDisponibilidad();
         obj.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cuatrimestre;
@@ -621,9 +569,8 @@ public class BajaDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JTable consultareliminardocente;
+    private javax.swing.JTable consultadisponibilidad;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -633,7 +580,6 @@ public class BajaDocentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -643,7 +589,7 @@ public class BajaDocentes extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
- Conexion con=new Conexion();
+Conexion con=new Conexion();
         Connection con2=con.conexion();
         DefaultTableModel modelo;
 }

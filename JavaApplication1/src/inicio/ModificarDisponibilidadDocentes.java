@@ -29,19 +29,19 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     }
     void mostrardatos(){
        modelo = new DefaultTableModel();
-        modelo.addColumn("modulo_1");
-        modelo.addColumn("modulo_2");
-        modelo.addColumn("modulo_3");
-        modelo.addColumn("modulo_4");
-        modelo.addColumn("modulo_5");
-        modelo.addColumn("modulo_6");
-        modelo.addColumn("modulo_7");
-        modelo.addColumn("modulo_8");
-        modelo.addColumn("modulo_9");
-        modelo.addColumn("modulo_10");
-        modelo.addColumn("modulo_11");
-        modelo.addColumn("modulo_12");
-        modelo.addColumn("id_docente");
+        modelo.addColumn("Modulo_1");
+        modelo.addColumn("Modulo_2");
+        modelo.addColumn("Modulo_3");
+        modelo.addColumn("Modulo_4");
+        modelo.addColumn("Modulo_5");
+        modelo.addColumn("Modulo_6");
+        modelo.addColumn("Modulo_7");
+        modelo.addColumn("Modulo_8");
+        modelo.addColumn("Modulo_9");
+        modelo.addColumn("Modulo_10");
+        modelo.addColumn("Modulo_11");
+        modelo.addColumn("Modulo_12");
+        modelo.addColumn("Docente");
         
         tablaconsultadisponibilidad.setModel(modelo);
         String []datos = new String [13];
@@ -741,89 +741,89 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
       String[] campos= new  String[12];
         try {
      if(modulo1campo.isSelected()){
-         campos[0]="1";
+         campos[0]="si";
          
-     }else{campos[0]="0";
+     }else{campos[0]="no";
      }
      
      
      if(modulo2campo.isSelected()){
-         campos[1]="1";
+         campos[1]="si";
          
-     }else{campos[1]="0";
+     }else{campos[1]="no";
      }
      
      
      if(modulo3campo.isSelected()){
-         campos[2]="1";
+         campos[2]="si";
          
-     }else{campos[2]="0";
+     }else{campos[2]="no";
      }
      
      
      if(modulo4campo.isSelected()){
-         campos[3]="1";
+         campos[3]="si";
          
-     }else{campos[3]="0";
+     }else{campos[3]="no";
      }
      
      
      if(modulo5campo.isSelected()){
-         campos[4]="1";
+         campos[4]="si";
          
-     }else{campos[4]="0";
+     }else{campos[4]="no";
      }
      
      
      if(modulo6campo.isSelected()){
-         campos[5]="1";
+         campos[5]="si";
          
-     }else{campos[5]="0";
+     }else{campos[5]="no";
      }
      
      
      if(modulo7campo.isSelected()){
-         campos[6]="1";
+         campos[6]="si";
          
-     }else{campos[6]="0";
+     }else{campos[6]="no";
      }
      
      
      if(modulo8campo.isSelected()){
-         campos[7]="1";
+         campos[7]="si";
          
-     }else{campos[7]="0";
+     }else{campos[7]="no";
      }
      
      
      if(modulo9campo.isSelected()){
-         campos[8]="1";
+         campos[8]="si";
          
-     }else{campos[8]="0";
+     }else{campos[8]="no";
      }
      
      
      if(modulo10campo.isSelected()){
-         campos[9]="1";
+         campos[9]="si";
          
-     }else{campos[9]="0";
+     }else{campos[9]="no";
      }
      
      if(modulo11campo.isSelected()){
-         campos[10]="1";
+         campos[10]="si";
          
-     }else{campos[10]="0";
+     }else{campos[10]="no";
      }
      
      if(modulo12campo.isSelected()){
-         campos[11]="1";
+         campos[11]="si";
          
-     }else{campos[11]="0";
+     }else{campos[11]="no";
      }
      
    
         PreparedStatement pst;
-        pst = con2.prepareStatement("UPDATE disponibilidad SET modulo_1='"+campos[0]+"',modulo_2='"+campos[1]+"',modulo_3='"+campos[2]+"',modulo_4='"+campos[3]+"',modulo_5='"+campos[4]+"',modulo_6='"+campos[5]+"',modulo_7='"+campos[6]+"',modulo_8='"+campos[7]+"',modulo_9='"+campos[8]+"',modulo_10='"+campos[9]+"',modulo_11='"+campos[10]+"',modulo_12='"+campos[11]+"' WHERE docente_id='"+identificadorcheck+"'");
+        pst = con2.prepareStatement("UPDATE disponibilidad SET Modulo_1='"+campos[0]+"',Modulo_2='"+campos[1]+"',Modulo_3='"+campos[2]+"',Modulo_4='"+campos[3]+"',Modulo_5='"+campos[4]+"',Modulo_6='"+campos[5]+"',Modulo_7='"+campos[6]+"',Modulo_8='"+campos[7]+"',Modulo_9='"+campos[8]+"',Modulo_10='"+campos[9]+"',Modulo_11='"+campos[10]+"',Modulo_12='"+campos[11]+"' WHERE docente='"+identificadorcheck+"'");
         pst.executeUpdate();
         mostrardatos();
             } catch (Exception e) {

@@ -9,6 +9,9 @@ package inicio;
 import Conexion_base_de_datos.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -26,6 +29,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
      */
     public AltaDisponibilidadDocentes() {
         initComponents();
+        mostrardatosencombobox1();
     }
 
     /**
@@ -64,7 +68,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbxaltadisponibilidad = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -92,6 +96,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         tbmostrarmodulos = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -275,7 +280,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel5.setText("Docente a Asignar Disponibilidad");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxaltadisponibilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Modulo 6");
@@ -331,6 +336,14 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
 
         tbmostrarmodulos.setText("jTextField1");
 
+        jButton11.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton11.setText("Consultar Disponibilidad");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -383,6 +396,13 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                     .addComponent(jButton9))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(cbxaltadisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGap(310, 310, 310)
+                                                .addComponent(jLabel5)))
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(64, 64, 64)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -392,14 +412,8 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                                 .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(310, 310, 310)
-                                                .addComponent(jLabel5))))
+                                                .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                     .addGap(208, 208, 208)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel6)
@@ -507,7 +521,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                     .addComponent(jButton2)
-                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(cbxaltadisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(27, 27, 27)
                                                 .addComponent(jLabel7)))
                                         .addGap(10, 10, 10)))
@@ -557,17 +571,19 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton8)
-                        .addComponent(jLabel6))
+                        .addComponent(jLabel6)
+                        .addComponent(jButton11))
                     .addComponent(jLabel18)
                     .addComponent(modulo12campo)
                     .addComponent(modulo6campo))
-                .addGap(11, 11, 11)
+                .addGap(15, 15, 15)
+                .addComponent(jButton8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(tbmostrarmodulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -791,7 +807,7 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12,docente)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'"+cbxaltadisponibilidad.getSelectedItem()+"')";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {
@@ -831,6 +847,48 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // link para consultar disponibilidad:
+        ConsultaDisponibilidad obj=new ConsultaDisponibilidad();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+//combobox numero 1
+    private void mostrardatosencombobox1(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre_completo FROM docentes";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        cbxaltadisponibilidad.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre_completo"));
+         
+         modelocombo.add(rs.getString("nombre_completo"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           cbxaltadisponibilidad.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+       
+       
+       
+       
+       
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -846,8 +904,10 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JComboBox cbxaltadisponibilidad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -856,7 +916,6 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -895,4 +954,5 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 Conexion con=new Conexion();
         Connection con2=con.conexion();
+        Connection con3=con.conexion();
 }

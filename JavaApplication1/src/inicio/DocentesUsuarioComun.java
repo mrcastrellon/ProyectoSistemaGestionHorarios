@@ -143,7 +143,7 @@ public class DocentesUsuarioComun extends javax.swing.JFrame {
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
         // Link para modulo cerrar sesion
         IngresaralSistema obj=new IngresaralSistema();
-        obj.setVisible(true);
+        obj.setVisible(true); 
        this.dispose();
     }//GEN-LAST:event_CerrarSesionActionPerformed
 

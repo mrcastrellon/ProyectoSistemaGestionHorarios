@@ -359,7 +359,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
 
     private void altdisponibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altdisponibilidadActionPerformed
         // Link para alta disponibilidad docente
-       AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal();
+       AltaDisponibilidadDocentesUsuarioNormal obj=new AltaDisponibilidadDocentesUsuarioNormal(user);
         obj.setVisible(true);
         dispose();
 

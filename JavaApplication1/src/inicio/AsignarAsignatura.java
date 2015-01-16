@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-
+//ya funciona 
 
 //librerias posibles solo las agrege por que en los ejemplos asi salia..-.
 

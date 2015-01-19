@@ -185,7 +185,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1110, 50, 130, 30);
+        CerrarSesion.setBounds(1120, 10, 130, 30);
         getContentPane().add(usuar);
         usuar.setBounds(1027, 57, 0, 0);
 

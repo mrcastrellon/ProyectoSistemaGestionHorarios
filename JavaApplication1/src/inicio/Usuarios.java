@@ -170,7 +170,7 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1173, 51, 113, 25);
+        jButton1.setBounds(1160, 0, 113, 25);
         getContentPane().add(usuar);
         usuar.setBounds(1048, 57, 0, 0);
 

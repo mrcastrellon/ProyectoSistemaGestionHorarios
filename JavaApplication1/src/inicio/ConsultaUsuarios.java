@@ -132,7 +132,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 93, 111, 25);
+        Cuatrimestre.setBounds(29, 93, 150, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -219,7 +219,7 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1164, 51, 113, 25);
+        jButton1.setBounds(1120, 10, 160, 25);
         getContentPane().add(usuar);
         usuar.setBounds(1132, 51, 0, 0);
 

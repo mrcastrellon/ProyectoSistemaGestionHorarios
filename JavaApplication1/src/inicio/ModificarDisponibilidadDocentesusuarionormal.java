@@ -211,10 +211,10 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         getContentPane().add(altdisponibilidad);
         altdisponibilidad.setBounds(40, 230, 211, 27);
 
-        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel12.setText("Modificar Disponibilidad");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(600, 140, 160, 17);
+        jLabel12.setBounds(530, 140, 270, 26);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Modulo 6");

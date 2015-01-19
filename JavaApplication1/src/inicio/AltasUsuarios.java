@@ -185,7 +185,7 @@ public class AltasUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1110, 50, 130, 30);
+        CerrarSesion.setBounds(1120, 10, 130, 30);
         getContentPane().add(usuar);
         usuar.setBounds(1027, 57, 0, 0);
 
@@ -417,7 +417,6 @@ public class AltasUsuarios extends javax.swing.JFrame {
         Conexion con=new Conexion();
         Connection con2=con.conexion();
         //declarando 
-        
         String sql;
         //declaro la variable error
         String mensajeerror;
@@ -440,13 +439,9 @@ public class AltasUsuarios extends javax.swing.JFrame {
         mensajeerror="Ingresa los datos correctamente";
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
-             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
             pst.setString(1,camponombre.getText());
-            //camponombre.setText(null);
             pst.setString(2,campousuario.getText());
-            //campousuario.setText(null);
             pst.setString(3,campocontraseña.getText());
-           // campocontraseña.setText(null);
             int n=pst.executeUpdate();
             if (n>=0){
                 //son los mensajes de que se ejecuto correctamente la insercion

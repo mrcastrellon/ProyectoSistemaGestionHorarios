@@ -6,7 +6,26 @@
 
 package inicio;
 
+import Conexion_base_de_datos.Conexion;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
+
+//librerias posibles solo las agrege por que en los ejemplos asi salia..-.
+
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.sql.rowset.CachedRowSet;
+import com.sun.rowset.CachedRowSetImpl;
+import java.time.Clock;
+import java.util.ArrayList;
+import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +38,81 @@ public class AsignarAsignatura extends javax.swing.JFrame {
      */
     public AsignarAsignatura() {
         initComponents();
+        mostrardatosencombobox1();
+        mostrardatosencombobox2();
+        mostrardatosencombobox3();
+        mostrardatosencombobox4();
+        mostrardatosencombobox5();
+        mostrarasignaturaseliminar();
+        mostrardatosdocente();
+        setResizable(false);
+        setSize(1350,750);
+        setTitle("Asignar asignaturas");
+        
+          
+        
+        
     }
+    
+    
+    
+      
+    //maS para los combo box
+   
+   void mostrarasignaturaseliminar(){
+                 
+       modeloasignarasignatura = new DefaultTableModel();
+       modeloasignarasignatura.addColumn("Nombre");
+       modeloasignarasignatura.addColumn("Materia 1");       
+       modeloasignarasignatura.addColumn("Materia 2");
+       modeloasignarasignatura.addColumn("Materia 3");
+       modeloasignarasignatura.addColumn("Materia 4");
+       modeloasignarasignatura.addColumn("Materia 5");
+       modeloasignarasignatura.addColumn("iddocente");
+       
+       
+       
+           
+            String sqlmodificar = "SELECT *FROM asignacion_materia WHERE nombrecompletodocente LIKE '%" + buscarasignaciones.getText() + "%' "
+                    + "OR asignatura1 LIKE '%" + buscarasignaciones.getText() + "%'"
+                    + "OR asignatura3 LIKE '%" + buscarasignaciones.getText() + "%'"
+                    + "OR asignatura3 LIKE '%" + buscarasignaciones.getText() + "%'"
+                    + "OR asignatura4 LIKE '%" + buscarasignaciones.getText() + "%'"
+                    + "OR asignatura5 LIKE '%" + buscarasignaciones.getText() + "%'"
+                    + "OR id_docente_asignarmateria LIKE '%" + buscarasignaciones.getText() + "%'";
+        
+        materiasasignadas.setModel(modeloasignarasignatura);
+        String []datos = new String [10];
+        try{
+        Statement st = con2.createStatement();
+        ResultSet rs= st.executeQuery(sqlmodificar);
+        while (rs.next()){
+        datos [0]=rs.getString("nombrecompletodocente");
+        datos [1]=rs.getString("asignatura1");
+        datos [2]=rs.getString("asignatura2");
+        datos [3]=rs.getString("asignatura3");
+        datos [4]=rs.getString("asignatura4");
+        datos [5]=rs.getString("asignatura5");        
+        datos [6]=rs.getString("id_docente_asignarmateria");
+        
+        
+         modeloasignarasignatura.addRow(datos);
+        materiasasignadas.setModel(modeloasignarasignatura);
+}
+    }catch (Exception e){
+       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
+        System.out.println("No funciona" + e);
+    }
+ }
+    
+    
+    
+            
+            
+            
+        
+        
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +142,6 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         HorariosAlumnos1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -57,16 +149,23 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
-        jComboBox5 = new javax.swing.JComboBox();
-        jComboBox6 = new javax.swing.JComboBox();
+        comboasignatura1 = new javax.swing.JComboBox();
+        comboasignatura2 = new javax.swing.JComboBox();
+        comboasignatura3 = new javax.swing.JComboBox();
+        comboasignatura4 = new javax.swing.JComboBox();
+        comboasignatura5 = new javax.swing.JComboBox();
+        nombredocenteasignatura = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        materiasasignadas = new javax.swing.JTable();
+        buscarasignaciones = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(null);
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -77,6 +176,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
+        getContentPane().add(Cuatrimestre);
+        Cuatrimestre.setBounds(68, 93, 111, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -86,6 +187,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
+        getContentPane().add(Docentes);
+        Docentes.setBounds(216, 93, 104, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -95,6 +198,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosExternos);
+        HorariosExternos.setBounds(370, 93, 141, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -104,6 +209,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos);
+        HorariosAlumnos.setBounds(563, 93, 148, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -113,6 +220,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
+        getContentPane().add(Usuarios);
+        Usuarios.setBounds(934, 93, 93, 25);
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -122,17 +231,29 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
+        getContentPane().add(GeneraciondeHorarios);
+        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 85, 1592, 2);
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(0, 124, 1592, 2);
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(0, 676, 1592, 2);
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
+        getContentPane().add(SGH);
+        SGH.setBounds(233, 38, 414, 29);
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
+        getContentPane().add(LogoUnipoli);
+        LogoUnipoli.setBounds(685, 20, 617, 56);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -142,11 +263,17 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1469, 51, 113, 25);
 
         jLabel1.setText("Nombre del Usuario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(1344, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel2.setText("Página Principal");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(790, 137, 222, 35);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -160,7 +287,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(778, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(394, 394, 394))
         );
@@ -171,6 +298,9 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 684, 1592, 23);
+
         HorariosAlumnos1.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         HorariosAlumnos1.setText("Asignar Materias");
@@ -179,29 +309,43 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 HorariosAlumnos1ActionPerformed(evt);
             }
         });
+        getContentPane().add(HorariosAlumnos1);
+        HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel4.setText("Asignar Asignatura");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(862, 178, 145, 17);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Seleccione el Docente para Asignar Asignatura");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(680, 200, 282, 17);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel5.setText("Materia 1");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(40, 520, 71, 21);
 
         jLabel7.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel7.setText("Materia 2");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(40, 580, 71, 21);
 
         jLabel8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel8.setText("Materia 3");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(480, 460, 71, 21);
 
         jLabel9.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel9.setText("Materia 4");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(480, 520, 71, 21);
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel10.setText("Materia 5");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(480, 580, 71, 21);
 
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton2.setText("Guardar");
@@ -210,164 +354,94 @@ public class AsignarAsignatura extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(790, 611, 100, 25);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton3.setText("Cancelar");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(920, 611, 100, 25);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboasignatura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboasignatura1);
+        comboasignatura1.setBounds(150, 520, 283, 20);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboasignatura2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comboasignatura2MouseClicked(evt);
+            }
+        });
+        comboasignatura2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboasignatura2);
+        comboasignatura2.setBounds(150, 580, 283, 20);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(comboasignatura3);
+        comboasignatura3.setBounds(590, 460, 280, 20);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(comboasignatura4);
+        comboasignatura4.setBounds(590, 520, 283, 20);
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboasignatura5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboasignatura5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboasignatura5);
+        comboasignatura5.setBounds(590, 580, 283, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addComponent(jSeparator2)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
-            .addComponent(jSeparator3)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(566, 566, 566))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(90, 90, 90))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(233, 233, 233)
-                                        .addComponent(jButton2)))
-                                .addGap(38, 38, 38)
-                                .addComponent(jButton3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(50, 50, 50)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(314, 314, 314))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(Cuatrimestre)
-                        .addGap(37, 37, 37)
-                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(HorariosExternos)
-                        .addGap(52, 52, 52)
-                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(GeneraciondeHorarios)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jLabel1)))
-                        .addGap(9, 9, 9))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cuatrimestre)
-                    .addComponent(Docentes)
-                    .addComponent(HorariosExternos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HorariosAlumnos)
-                    .addComponent(Usuarios)
-                    .addComponent(GeneraciondeHorarios)
-                    .addComponent(HorariosAlumnos1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addGap(41, 41, 41)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
+        nombredocenteasignatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombredocenteasignaturaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nombredocenteasignatura);
+        nombredocenteasignatura.setBounds(150, 460, 283, 20);
+
+        jLabel11.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel11.setText("Docente");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(40, 460, 62, 21);
+
+        materiasasignadas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(materiasasignadas);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 230, 940, 180);
+
+        buscarasignaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarasignacionesActionPerformed(evt);
+            }
+        });
+        buscarasignaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                buscarasignacionesKeyPressed(evt);
+            }
+        });
+        getContentPane().add(buscarasignaciones);
+        buscarasignaciones.setBounds(220, 190, 179, 20);
+
+        jLabel12.setText("Buscar docente asignado");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(50, 190, 190, 14);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -430,43 +504,267 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String mensajeerror="Error al guardar";
+        //podemos programarlo de esta manera o de la anterior donde separabamos donde teniamos el String
+        //getSelectedItem va despues del combo box ----
+        
+        //String sql="INSERT INTO cuatrimestre (no_cuatrimestre,turno,grupo)VALUES('"+cuatrimestreactivar.getSelectedItem()+"','"+turnoactivar.getSelectedItem()+"','"+grupoactivar.getSelectedItem()+"')";
+            
+       
+       
+        String sqlasignaturas="INSERT INTO asignacion_materia (asignatura1,asignatura2,asignatura3,asignatura4,asignatura5,nombrecompletodocente,id_docente_asignarmateria) VALUES ('"+comboasignatura1.getSelectedItem()+"','"+comboasignatura2.getSelectedItem()+"','"+comboasignatura3.getSelectedItem()+"','"+comboasignatura4.getSelectedItem()+"','"+comboasignatura5.getSelectedItem()+"','"+nombredocenteasignatura.getSelectedItem()+"','"+iddocente.get(nombredocenteasignatura.getSelectedIndex())+"')";
+        try {
+            //se usa el mismo execute y preparestatement
+            PreparedStatement pst=con3.prepareStatement(sqlasignaturas);
+             //pst.setString(1,tablaasignarasignaturas.getText());
+            int n=pst.executeUpdate();
+            if (n>=0){
+             //mensajes de felicidades
+                JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                
+                // poner el metodo actualizar mostrardatos();
+            }
+            {
+            mostrarasignaturaseliminar();
+            }
+        }catch (Exception e){
+            //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+            JOptionPane.showMessageDialog(rootPane,mensajeerror);
+            //este mensaje solo se imprimira en el registro--
+            System.out.println("Ingresa los datos correctamente" + e);
+            mostrarasignaturaseliminar();
+        
+    }  
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void comboasignatura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboasignatura1ActionPerformed
+
+    private void comboasignatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura2ActionPerformed
+        // TODO add your handling code here:
+         
+    }//GEN-LAST:event_comboasignatura2ActionPerformed
+
+    private void comboasignatura2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboasignatura2MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_comboasignatura2MouseClicked
+
+    private void comboasignatura5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboasignatura5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboasignatura5ActionPerformed
+
+    private void nombredocenteasignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombredocenteasignaturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombredocenteasignaturaActionPerformed
+
+    private void buscarasignacionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarasignacionesKeyPressed
+        // TODO add your handling code here:
+        mostrarasignaturaseliminar();
+    }//GEN-LAST:event_buscarasignacionesKeyPressed
+
+    private void buscarasignacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarasignacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarasignacionesActionPerformed
+ 
+   //combobox numero 1
+    private void mostrardatosencombobox1(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura1.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura1.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 2
+    private void mostrardatosencombobox2(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura2.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura2.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 3
+    private void mostrardatosencombobox3(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura3.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura3.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 4
+    private void mostrardatosencombobox4(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura4.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura4.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //combobox numero 5
+    private void mostrardatosencombobox5(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre FROM asignatura";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        comboasignatura5.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre"));
+         
+         modelocombo.add(rs.getString("nombre"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           comboasignatura5.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+    //para seleccionar el docente
+    private void mostrardatosdocente(){
+        ArrayList modelocombo=new ArrayList();
+        String consulta="SELECT nombre_completo,id_docente FROM docentes";
+       try {
+        Statement st= con3.createStatement();
+        ResultSet rs =st.executeQuery(consulta);
+        nombredocenteasignatura.removeAllItems();
+         while(rs.next()){
+             System.out.println(rs.getString("nombre_completo"));
+         
+         modelocombo.add(rs.getString("nombre_completo"));
+         iddocente.add(rs.getString("id_docente"));
+         //cmbDB.addItem("modelocombo");
+         //String consultaatabla = rs.getString("nombre");
+         }  
+         
+         for(int i=0; i<modelocombo.size();i++){
+           nombredocenteasignatura.addItem(modelocombo.get(i));  
+         }
+                   
+        System.out.println("Si consulta");
+        //System.out.println(rs.getString("nombre"));
+           //JOptionPane.showMessageDialog(rootPane,"Se consulto correctamente");
+         
+        } catch (Exception e) {
+            System.out.println("No funciona"+e);
+            JOptionPane.showMessageDialog(rootPane,"Error al consultar");
+        } 
+    
+    
+    }
+
+
+
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConsultarHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConsultarHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConsultarHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConsultarHorariosDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AsignarAsignatura().setVisible(true);
-            }
-        });
-    }
-
+    
+ ArrayList iddocente=new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cuatrimestre;
     private javax.swing.JButton Docentes;
@@ -477,17 +775,19 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JTextField buscarasignaciones;
+    private javax.swing.JComboBox comboasignatura1;
+    private javax.swing.JComboBox comboasignatura2;
+    private javax.swing.JComboBox comboasignatura3;
+    private javax.swing.JComboBox comboasignatura4;
+    private javax.swing.JComboBox comboasignatura5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -497,8 +797,22 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTable materiasasignadas;
+    private javax.swing.JComboBox nombredocenteasignatura;
     // End of variables declaration//GEN-END:variables
-}
+
+ Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        Connection con3=con.conexion();
+        DefaultTableModel modeloasignarasignatura;
+        
+        //otra conexion para ver si funciona el combo box consultando de la base de datos
+        
+       
+        
+        
+        }

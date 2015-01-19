@@ -62,16 +62,13 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
         datos [2]=rs.getString(3);
         datos [3]=rs.getString(4);
         datos [4]=rs.getString(5);
-        
-       
-       
         modelo.addRow(datos);
         tablausuarios.setModel(modelo);
-}
-    }catch (Exception e){
-       //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
-        System.out.println("error vuelve a intentarlo" + e);
-    }
+        }
+        }catch (Exception e){
+         
+            System.out.println("error vuelve a intentarlo" + e);
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -459,16 +456,11 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         String id=tablausuarios.getValueAt(tablausuarios.getSelectedRow(), 0).toString();
         try {
-            
-            // si gustamos imprimir el id
-            //JOptionPane.showMessageDialog(rootPane, id);
             Statement st = con2.createStatement();
-          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
-             st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
-    
+            st.executeUpdate("DELETE FROM usuarios WHERE id='"+id+"'");
             JOptionPane.showMessageDialog(rootPane,"Usuario eliminado correctamente");
             mostrardatos();
-           } catch (Exception e) {
+            } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane,"Selecciona un usuario" + e);
             System.out.print(e);
         }
@@ -487,12 +479,12 @@ public class ConsultaUsuarios extends javax.swing.JFrame  {
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         try {
         PreparedStatement pst;
-            pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',tipo_usuario='"+tipousuario.getSelectedItem()+"' WHERE id='"+campoid.getText()+"'");
+        pst = con2.prepareStatement("UPDATE usuarios SET nombre='"+camponombre.getText()+"',nombre_usuario='"+campousuario.getText()+"',contrasena='"+campocontraseña.getText()+"',tipo_usuario='"+tipousuario.getSelectedItem()+"' WHERE id='"+campoid.getText()+"'");
         pst.executeUpdate();
         mostrardatos();
         limpiar();
         JOptionPane.showInternalMessageDialog(null, "Información Actualizada");
-    } catch (Exception e) {
+        } catch (Exception e) {
         System.out.print(e.getMessage());
     }
     }//GEN-LAST:event_ModificarActionPerformed

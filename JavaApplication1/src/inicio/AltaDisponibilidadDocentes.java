@@ -1,4 +1,4 @@
-/*
+/*rayal rumble
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -333,8 +333,6 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-
-        tbmostrarmodulos.setText("jTextField1");
 
         jButton11.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton11.setText("Consultar Disponibilidad");
@@ -723,79 +721,79 @@ public class AltaDisponibilidadDocentes extends javax.swing.JFrame {
         String[] mensaje=new String [12];
            if(modulo1campo.isSelected())
     {
-        mensaje[0]="1";
+        mensaje[0]="si";
     }else{
-        mensaje[0]="0";   
+        mensaje[0]="no";   
     }
         if(modulo2campo.isSelected())
     {
-       mensaje[1]="1";
+       mensaje[1]="si";
     }else{
-        mensaje[1]="0";   
+        mensaje[1]="no";   
     
     }
           if(modulo3campo.isSelected())
     {
-       mensaje[2]="1";
+       mensaje[2]="si";
     }else{
-        mensaje[2]="0";   
+        mensaje[2]="no";   
     
     }
               if(modulo4campo.isSelected())
     {
-       mensaje[3]="1";
+       mensaje[3]="si";
     }else{
-        mensaje[3]="0";   
+        mensaje[3]="no";   
     
     }
         if(modulo5campo.isSelected())
     {
-        mensaje[4]="1";
+        mensaje[4]="si";
     }else{
-        mensaje[4]="0";   
+        mensaje[4]="no";   
     
     }
         if(modulo6campo.isSelected())
     {
-        mensaje[5]="1";
+        mensaje[5]="si";
     }else{
-        mensaje[5]="0";
+        mensaje[5]="no";
     }
         if(modulo7campo.isSelected())
     {
-       mensaje[6]="1";
+       mensaje[6]="si";
     }else{
-        mensaje[6]="0";
+        mensaje[6]="no";
     }
         if(modulo8campo.isSelected())
     {
-        mensaje[7]="1";
+        mensaje[7]="si";
     }else{
-        mensaje[7]="0";
+        mensaje[7]="no";
     }
         if(modulo9campo.isSelected())
     {
-        mensaje[8]="1";
+        mensaje[8]="si";
     }else{
-        mensaje[8]="0";
+        mensaje[8]="no";
     }
         if(modulo10campo.isSelected())
     {
-        mensaje[9]="1";
+        mensaje[9]="si";
     }else{
-        mensaje[9]="0";
+        mensaje[9]="no";
     }
         if(modulo11campo.isSelected())
     {
-       mensaje[10]="1";
+       mensaje[10]="si";
     }else{
-        mensaje[10]="0";
+        mensaje[10]="no";
     }
         if(modulo12campo.isSelected())
     {
-        mensaje[11]="1";
+        mensaje[11]="so";
     }else{
-        mensaje[11]="0";
+        mensaje[11]="no";
     }
      for(int i=0; i<mensaje.length; i++){
       mensaje2=mensaje2+mensaje[i];

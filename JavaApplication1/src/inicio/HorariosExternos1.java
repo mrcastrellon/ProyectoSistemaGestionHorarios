@@ -6,17 +6,19 @@
 
 package inicio;
 
+import inicio.IngresaralSistema;
+
 
 /**
  *
  * @author BENJAMIN
  */
-public class HorariosExternos extends javax.swing.JFrame {
+public class HorariosExternos1 extends javax.swing.JFrame {
 
     /**
      * Creates new form INTERFAZ
      */
-    public HorariosExternos() {
+    public HorariosExternos1() {
         initComponents();
     }
 
@@ -319,7 +321,7 @@ public class HorariosExternos extends javax.swing.JFrame {
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
         // Link para modulo horarios externos
-        HorariosExternos obj=new HorariosExternos();
+        HorariosExternos1 obj=new HorariosExternos1();
         obj.setVisible(true);
         dispose();
 
@@ -376,7 +378,7 @@ public class HorariosExternos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          // Link para altas horarios externos
-        AltaHorariosExternos obj=new AltaHorariosExternos();
+        AltaHorariosExternos1 obj=new AltaHorariosExternos1();
         obj.setVisible(true);
         dispose(); 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -390,22 +392,46 @@ public class HorariosExternos extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        ConsultarmodificarHorariosExternos1 obj=new ConsultarmodificarHorariosExternos1();
-        obj.setVisible(true);
-        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        ConsultarHorariosExternos obj=new ConsultarHorariosExternos();
-        obj.setVisible(true);
-        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new HorariosExternos1().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cuatrimestre;

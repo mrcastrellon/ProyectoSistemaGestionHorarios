@@ -208,7 +208,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void HorariosExternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorariosExternosActionPerformed
         // Link para modulo horarios externos
-        HorariosExternos obj=new HorariosExternos();
+        HorariosExternos1 obj=new HorariosExternos1();
         obj.setVisible(true);
         this.dispose();
       

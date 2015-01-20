@@ -15,7 +15,20 @@ package inicio;
  * @author BENJAMIN
  */
 public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame {
-
+    public void limpiar(){		
+          campo1.setText(" ");		
+          campo2.setText(" ");		
+          campo3.setText(" ");		
+          campo3.setText(" ");		
+          campo5.setText(" ");		
+          campo6.setText(" ");		
+          campo7.setText(" ");		
+          campo8.setText(" ");		
+         campo9.setText(" ");		
+          campo10.setText(" ");		
+         campo11.setText(" ");		
+         campo12.setText(" ");		
+    }		
     /**
      * Creates new form INTERFAZ
      */
@@ -51,24 +64,24 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        campo6 = new javax.swing.JCheckBox();
+        campo2 = new javax.swing.JCheckBox();
+        campo1 = new javax.swing.JCheckBox();
+        campo3 = new javax.swing.JCheckBox();
+        campo4 = new javax.swing.JCheckBox();
+        campo5 = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        campo7 = new javax.swing.JCheckBox();
+        campo8 = new javax.swing.JCheckBox();
+        campo10 = new javax.swing.JCheckBox();
+        campo9 = new javax.swing.JCheckBox();
+        campo11 = new javax.swing.JCheckBox();
+        campo12 = new javax.swing.JCheckBox();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
@@ -186,19 +199,19 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         jLabel11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel11.setText("Modulo 5");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(490, 390, 53, 17);
-        getContentPane().add(jCheckBox1);
-        jCheckBox1.setBounds(600, 450, 21, 21);
-        getContentPane().add(jCheckBox2);
-        jCheckBox2.setBounds(600, 290, 21, 21);
-        getContentPane().add(jCheckBox3);
-        jCheckBox3.setBounds(600, 250, 21, 21);
-        getContentPane().add(jCheckBox4);
-        jCheckBox4.setBounds(600, 330, 21, 21);
-        getContentPane().add(jCheckBox5);
-        jCheckBox5.setBounds(600, 370, 21, 21);
-        getContentPane().add(jCheckBox6);
-        jCheckBox6.setBounds(600, 410, 21, 21);
+        jLabel11.setBounds(490, 410, 53, 17);
+        getContentPane().add(campo6);
+        campo6.setBounds(600, 450, 21, 21);
+        getContentPane().add(campo2);
+        campo2.setBounds(600, 290, 21, 21);
+        getContentPane().add(campo1);
+        campo1.setBounds(600, 250, 21, 21);
+        getContentPane().add(campo3);
+        campo3.setBounds(600, 330, 21, 21);
+        getContentPane().add(campo4);
+        campo4.setBounds(600, 370, 21, 21);
+        getContentPane().add(campo5);
+        campo5.setBounds(600, 410, 21, 21);
 
         jLabel13.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel13.setText("Modulo 7");
@@ -229,18 +242,18 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         jLabel18.setText("Modulo 12");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(730, 450, 60, 17);
-        getContentPane().add(jCheckBox7);
-        jCheckBox7.setBounds(840, 250, 21, 21);
-        getContentPane().add(jCheckBox8);
-        jCheckBox8.setBounds(840, 290, 21, 21);
-        getContentPane().add(jCheckBox9);
-        jCheckBox9.setBounds(840, 370, 21, 21);
-        getContentPane().add(jCheckBox10);
-        jCheckBox10.setBounds(840, 330, 21, 21);
-        getContentPane().add(jCheckBox11);
-        jCheckBox11.setBounds(840, 410, 21, 21);
-        getContentPane().add(jCheckBox12);
-        jCheckBox12.setBounds(840, 450, 21, 21);
+        getContentPane().add(campo7);
+        campo7.setBounds(840, 250, 21, 21);
+        getContentPane().add(campo8);
+        campo8.setBounds(840, 290, 21, 21);
+        getContentPane().add(campo10);
+        campo10.setBounds(840, 370, 21, 21);
+        getContentPane().add(campo9);
+        campo9.setBounds(840, 330, 21, 21);
+        getContentPane().add(campo11);
+        campo11.setBounds(840, 410, 21, 21);
+        getContentPane().add(campo12);
+        campo12.setBounds(840, 450, 21, 21);
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
@@ -282,22 +295,22 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
+    private javax.swing.JCheckBox campo1;
+    private javax.swing.JCheckBox campo10;
+    private javax.swing.JCheckBox campo11;
+    private javax.swing.JCheckBox campo12;
+    private javax.swing.JCheckBox campo2;
+    private javax.swing.JCheckBox campo3;
+    private javax.swing.JCheckBox campo4;
+    private javax.swing.JCheckBox campo5;
+    private javax.swing.JCheckBox campo6;
+    private javax.swing.JCheckBox campo7;
+    private javax.swing.JCheckBox campo8;
+    private javax.swing.JCheckBox campo9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

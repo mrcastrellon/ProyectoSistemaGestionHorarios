@@ -383,7 +383,7 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     }
         if(campo12.isSelected())
     {
-        mensaje[11]="so";
+        mensaje[11]="si";
     }else{
         mensaje[11]="no";
     }

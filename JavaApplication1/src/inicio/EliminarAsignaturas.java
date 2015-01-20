@@ -24,8 +24,8 @@ public class EliminarAsignaturas extends javax.swing.JFrame {
     public EliminarAsignaturas() {
         initComponents();
          mostrardatos();
-         setResizable(false);
-            setSize(1300,648);
+         setResizable(true);
+            setSize(1330,648);
             setTitle("Eliminar asignatura");
     }
     void mostrardatos(){

@@ -131,6 +131,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaconsultadisponibilidad = new javax.swing.JTable();
         jButton7 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -211,10 +212,10 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         getContentPane().add(altdisponibilidad);
         altdisponibilidad.setBounds(40, 230, 211, 27);
 
-        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel12.setText("Modificar Disponibilidad");
+        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel12.setText("Seleccione los modulos donde se este disponible.");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(530, 140, 270, 26);
+        jLabel12.setBounds(510, 240, 370, 30);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Modulo 6");
@@ -345,6 +346,11 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
         });
         getContentPane().add(jButton7);
         jButton7.setBounds(320, 560, 211, 27);
+
+        jLabel19.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel19.setText("Modificar Disponibilidad");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(530, 140, 270, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -603,6 +609,7 @@ public class ModificarDisponibilidadDocentesusuarionormal extends javax.swing.JF
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -132,11 +132,11 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         modulo11campo = new javax.swing.JCheckBox();
         modulo12campo = new javax.swing.JCheckBox();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaconsultadisponibilidad = new javax.swing.JTable();
         jButton12 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -355,9 +355,11 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
-
-        jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jButton10.setText("Guardar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton11.setText("Actualizar");
@@ -388,123 +390,131 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
             }
         });
 
+        jLabel19.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel19.setText("Selecciona los modulos correspondientes a la disponibilidad del docente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(Cuatrimestre)
-                .addGap(37, 37, 37)
-                .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(HorariosExternos)
-                .addGap(52, 52, 52)
-                .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(GeneraciondeHorarios))
-            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(550, 550, 550)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(613, 613, 613)
-                .addComponent(jLabel4))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(577, 577, 577)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jLabel7)
-                .addGap(7, 7, 7)
-                .addComponent(modulo1campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel8)
-                .addGap(7, 7, 7)
-                .addComponent(modulo2campo)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel9)
-                .addGap(7, 7, 7)
-                .addComponent(modulo3campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel10)
-                .addGap(7, 7, 7)
-                .addComponent(modulo4campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel11)
-                .addGap(17, 17, 17)
-                .addComponent(modulo5campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel6)
-                .addGap(17, 17, 17)
-                .addComponent(modulo6campo))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jLabel13)
-                .addGap(7, 7, 7)
-                .addComponent(modulo7campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel14)
-                .addGap(7, 7, 7)
-                .addComponent(modulo8campo)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel15)
-                .addGap(7, 7, 7)
-                .addComponent(modulo9campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel16)
-                .addGap(0, 0, 0)
-                .addComponent(modulo10campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel17)
-                .addGap(10, 10, 10)
-                .addComponent(modulo11campo)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel18)
-                .addGap(10, 10, 10)
-                .addComponent(modulo12campo))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(750, 750, 750)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(35, 35, 35)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel7)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo1campo))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo2campo)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel9)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo3campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel10)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo4campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel11)
+                        .addGap(17, 17, 17)
+                        .addComponent(modulo5campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel6)
+                        .addGap(17, 17, 17)
+                        .addComponent(modulo6campo))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel1)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton1))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(Cuatrimestre)
+                        .addGap(37, 37, 37)
+                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(HorariosExternos)
+                        .addGap(52, 52, 52)
+                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(HorariosAlumnos1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(GeneraciondeHorarios))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(550, 550, 550)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(613, 613, 613)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(577, 577, 577)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel13)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo7campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel14)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo8campo)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel15)
+                        .addGap(7, 7, 7)
+                        .addComponent(modulo9campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel16)
+                        .addGap(0, 0, 0)
+                        .addComponent(modulo10campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel17)
+                        .addGap(10, 10, 10)
+                        .addComponent(modulo11campo)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel18)
+                        .addGap(10, 10, 10)
+                        .addComponent(modulo12campo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(880, 880, 880)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton8)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(35, 35, 35)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,7 +551,9 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(jLabel12)
                 .addGap(46, 46, 46)
-                .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel19))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
@@ -593,7 +605,6 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
                 .addComponent(jButton8)
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10)
                     .addComponent(jButton9)
                     .addComponent(jButton11))
                 .addGap(12, 12, 12)
@@ -691,7 +702,9 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+ModificarDocente obj=new ModificarDocente();
+        obj.setVisible(true);
+        dispose();
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -941,6 +954,13 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        Docentes obj=new Docentes();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -957,7 +977,6 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
@@ -978,6 +997,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

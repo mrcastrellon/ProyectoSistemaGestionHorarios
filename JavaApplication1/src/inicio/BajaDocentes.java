@@ -106,7 +106,6 @@ public class BajaDocentes extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         consultareliminardocente = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -311,9 +310,6 @@ public class BajaDocentes extends javax.swing.JFrame {
         consultareliminardocente.setGridColor(new java.awt.Color(204, 0, 0));
         jScrollPane1.setViewportView(consultareliminardocente);
 
-        jButton9.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton9.setText("Consultar Disponibilidad");
-
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jButton10.setText("Consulta Disponibilidad");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +371,6 @@ public class BajaDocentes extends javax.swing.JFrame {
                                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(30, 30, 30)
@@ -437,14 +432,12 @@ public class BajaDocentes extends javax.swing.JFrame {
                         .addComponent(jButton6)
                         .addGap(18, 18, 18)
                         .addComponent(jButton7)
-                        .addGap(8, 8, 8)
-                        .addComponent(jButton9)
                         .addGap(18, 18, 18)
                         .addComponent(jButton10)
-                        .addGap(11, 11, 11)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton8))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(11, 11, 11)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -631,7 +624,6 @@ public class BajaDocentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

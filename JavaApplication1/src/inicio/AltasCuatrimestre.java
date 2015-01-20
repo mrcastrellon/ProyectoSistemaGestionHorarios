@@ -27,7 +27,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         initComponents();
         mostrardatos();
         setResizable(false);
-        setSize(1300,648);
+        setSize(1300,668);
         setTitle("Alta cuatrimestre");
     }
     void mostrardatos(){
@@ -86,7 +86,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
-        ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -274,17 +273,7 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(85, 354, 180, 27);
-
-        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Eliminar Asignaturas");
-        ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificaciondeUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(85, 417, 180, 27);
+        AsignaciondePrivilegios.setBounds(80, 380, 180, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Altas Cuatrimestres");
@@ -479,13 +468,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
-    private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
-        // Link para eliminar asignaturas
-        EliminarAsignaturas obj=new EliminarAsignaturas();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
-
     private void AltaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaGuardarActionPerformed
           
         // codigo para boton de guardar usando combo box
@@ -571,7 +553,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
     private javax.swing.JButton HorariosAlumnos;
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
-    private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;

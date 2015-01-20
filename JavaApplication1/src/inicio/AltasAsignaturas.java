@@ -25,7 +25,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         initComponents();
          mostrardatos();
          setResizable(false);
-        setSize(1300,648);
+        setSize(1300,720);
         setTitle("Altas asignaturas");
          }
         //este codigo es para trabajar en los formularios 
@@ -105,13 +105,11 @@ void limpiar (){
         LogoUnipoli = new javax.swing.JLabel();
         CerrarSesion = new javax.swing.JButton();
         NombredelUsuario = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
-        ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
         AltaUsuario = new javax.swing.JLabel();
         AltaNombre = new javax.swing.JLabel();
@@ -240,11 +238,6 @@ void limpiar (){
         getContentPane().add(NombredelUsuario);
         NombredelUsuario.setBounds(1056, 57, 93, 14);
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(555, 137, 222, 35);
-
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
         jPanel2.setPreferredSize(new java.awt.Dimension(860, 25));
@@ -300,17 +293,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(89, 349, 170, 27);
-
-        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Eliminar Asignatura");
-        ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificaciondeUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(89, 409, 170, 27);
+        AsignaciondePrivilegios.setBounds(90, 380, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -521,13 +504,6 @@ desbloquear();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
-        // Link para eliminar asignatura
-        EliminarAsignaturas obj=new EliminarAsignaturas();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
-
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
         // Link para modificar asignatura
         ModificarAsignaturas obj=new ModificarAsignaturas();
@@ -623,7 +599,6 @@ desbloquear();
     private javax.swing.JButton HorariosAlumnos;
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
-    private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
@@ -633,7 +608,6 @@ desbloquear();
     private javax.swing.JTextField horascampo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

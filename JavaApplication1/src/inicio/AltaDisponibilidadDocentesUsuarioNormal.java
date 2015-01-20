@@ -6,6 +6,11 @@
 
 package inicio;
 
+import Conexion_base_de_datos.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 
 
 
@@ -257,11 +262,21 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
 
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton9.setText("Cancelar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton9);
         jButton9.setBounds(770, 520, 85, 25);
 
         jButton10.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton10.setText("Guardar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton10);
         jButton10.setBounds(680, 520, 79, 25);
 
@@ -286,6 +301,137 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
       obj.setVisible(true);
       dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       DocentesUsuarioComun obj=new DocentesUsuarioComun(user);
+       obj.setVisible(true);
+      dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+      String mensaje2="";
+        String[] mensaje=new String [12];
+           if(campo1.isSelected())
+    {
+        mensaje[0]="si";
+    }else{
+        mensaje[0]="no";   
+    }
+        if(campo2.isSelected())
+    {
+       mensaje[1]="si";
+    }else{
+        mensaje[1]="no";   
+    
+    }
+          if(campo3.isSelected())
+    {
+       mensaje[2]="si";
+    }else{
+        mensaje[2]="no";   
+    
+    }
+              if(campo4.isSelected())
+    {
+       mensaje[3]="si";
+    }else{
+        mensaje[3]="no";   
+    
+    }
+        if(campo5.isSelected())
+    {
+        mensaje[4]="si";
+    }else{
+        mensaje[4]="no";   
+    
+    }
+        if(campo6.isSelected())
+    {
+        mensaje[5]="si";
+    }else{
+        mensaje[5]="no";
+    }
+        if(campo7.isSelected())
+    {
+       mensaje[6]="si";
+    }else{
+        mensaje[6]="no";
+    }
+        if(campo8.isSelected())
+    {
+        mensaje[7]="si";
+    }else{
+        mensaje[7]="no";
+    }
+        if(campo9.isSelected())
+    {
+        mensaje[8]="si";
+    }else{
+        mensaje[8]="no";
+    }
+        if(campo10.isSelected())
+    {
+        mensaje[9]="si";
+    }else{
+        mensaje[9]="no";
+    }
+        if(campo11.isSelected())
+    {
+       mensaje[10]="si";
+    }else{
+        mensaje[10]="no";
+    }
+        if(campo12.isSelected())
+    {
+        mensaje[11]="so";
+    }else{
+        mensaje[11]="no";
+    }
+     for(int i=0; i<mensaje.length; i++){
+      mensaje2=mensaje2+mensaje[i];
+     }  
+     
+
+          String sql;
+        //declaro la variable error
+        String mensajeerror;
+        //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+                   
+        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12,docente)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        //le digo a la variable que hara la del error para luego ser llamada
+        mensajeerror="Ingresa los datos correctamente";
+        try {
+            PreparedStatement pst=con2.prepareStatement(sql);
+            //pst.setString(numero de campo,nombre de la caja de texto,gettext());
+            pst.setString(1,mensaje[0]);
+            pst.setString(2,mensaje[1]);
+            pst.setString(3,mensaje[2]);
+            pst.setString(4,mensaje[3]);
+            pst.setString(5,mensaje[4]);
+            pst.setString(6,mensaje[5]);
+            pst.setString(7,mensaje[6]);
+            pst.setString(8,mensaje[7]);
+            pst.setString(9,mensaje[8]);
+            pst.setString(10,mensaje[9]);
+            pst.setString(11,mensaje[10]);
+            pst.setString(12,mensaje[11]);
+            int n=pst.executeUpdate();
+            if (n>=0){
+                //son los mensajes de que se ejecuto correctamente la insercion
+             JOptionPane.showMessageDialog(rootPane,"registrado con exito en la base de datos");
+                System.out.println("Guardado correctamente");
+                    }
+{
+            
+                        }
+         }catch (Exception e){
+             //lo puse de esta manera para mostrarle que no introdujo correctamente los datos
+             JOptionPane.showMessageDialog(rootPane,mensajeerror);
+             //este mensaje solo se imprimira en el registro--
+             System.out.println("Ingresa los datos correctamente" + e);
+             
+        } 
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,4 +479,7 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 private String user;
+Conexion con=new Conexion();
+        Connection con2=con.conexion();
+        Connection con3=con.conexion();
 }

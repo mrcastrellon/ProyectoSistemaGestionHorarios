@@ -397,7 +397,7 @@ public class AltaDisponibilidadDocentesUsuarioNormal extends javax.swing.JFrame 
         String mensajeerror;
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
                    
-        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12,docente)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql="INSERT INTO disponibilidad(modulo_1,modulo_2,modulo_3,modulo_4,modulo_5,modulo_6,modulo_7,modulo_8,modulo_9,modulo_10,modulo_11,modulo_12,docente)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'"+user+"')";
         //le digo a la variable que hara la del error para luego ser llamada
         mensajeerror="Ingresa los datos correctamente";
         try {

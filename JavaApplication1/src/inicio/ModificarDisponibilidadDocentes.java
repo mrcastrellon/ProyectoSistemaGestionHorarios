@@ -704,7 +704,7 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 //codigo para modificar la disponibilidad de los docentes
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
- int fila= tablaconsultadisponibilidad.getSelectedRow();
+     int fila= tablaconsultadisponibilidad.getSelectedRow();
     identificadorcheck= tablaconsultadisponibilidad.getValueAt(fila, 12).toString();
     if(fila>=0){
         System.out.println(tablaconsultadisponibilidad.getValueAt(fila, 0).toString().charAt(0));
@@ -802,25 +802,11 @@ public class ModificarDisponibilidadDocentes extends javax.swing.JFrame {
         }else{
             modulo12campo.setSelected(true);
        }
-       /* modulo1campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 0).toString());
-        modulo2campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 1).toString());
-        modulo3campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 2).toString());
-        modulo4campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 3).toString());
-        modulo5campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 4).toString());
-        modulo6campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 5).toString());
-        modulo7campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 6).toString());
-        modulo8campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 7).toString());
-        modulo9campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 8).toString());
-        modulo10campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 9).toString());
-        modulo11campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 10).toString());
-        modulo12campo.setText(tablaconsultadisponibilidad.getValueAt(fila, 11).toString());*/
-    }
+       }
     else{
     JOptionPane.showMessageDialog(null,"no seleciono fila");
     }        // Link para modificar docentes
              // Link para modificar disponibilidad docentes
-      
-
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

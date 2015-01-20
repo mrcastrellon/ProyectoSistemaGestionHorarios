@@ -5,12 +5,13 @@
  */
 
 package inicio;
+
 import Conexion_base_de_datos.Conexion;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-
+//ya funciona no borrar ..
 
 //librerias posibles solo las agrege por que en los ejemplos asi salia..-.
 
@@ -45,7 +46,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         mostrarasignaturaseliminar();
         mostrardatosdocente();
         setResizable(false);
-        setSize(1350,750);
+        setSize(1300,735);
         setTitle("Asignar asignaturas");
         
           
@@ -135,7 +136,6 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         LogoUnipoli = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         HorariosAlumnos1 = new javax.swing.JButton();
@@ -159,6 +159,9 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         materiasasignadas = new javax.swing.JTable();
         buscarasignaciones = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        eliminarasignaciones = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -252,7 +255,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
         getContentPane().add(LogoUnipoli);
-        LogoUnipoli.setBounds(685, 20, 617, 56);
+        LogoUnipoli.setBounds(685, 20, 320, 56);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -263,16 +266,11 @@ public class AsignarAsignatura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1469, 51, 113, 25);
+        jButton1.setBounds(1130, 50, 130, 25);
 
         jLabel1.setText("Nombre del Usuario");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(1344, 57, 93, 14);
-
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(790, 137, 222, 35);
+        jLabel1.setBounds(1020, 60, 93, 14);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -285,16 +283,16 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(778, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(397, 397, 397)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(394, 394, 394))
+                .addContainerGap(775, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel3))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -312,9 +310,9 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         HorariosAlumnos1.setBounds(747, 93, 148, 25);
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel4.setText("Asignar Asignatura");
+        jLabel4.setText("para eliminar asignación");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(862, 178, 145, 17);
+        jLabel4.setBounds(1020, 290, 170, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel6.setText("Seleccione el Docente para Asignar Asignatura");
@@ -442,6 +440,25 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         getContentPane().add(jLabel12);
         jLabel12.setBounds(50, 190, 190, 14);
 
+        eliminarasignaciones.setText("Eliminar asignación");
+        eliminarasignaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarasignacionesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(eliminarasignaciones);
+        eliminarasignaciones.setBounds(1020, 320, 150, 23);
+
+        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel13.setText("Asignar Asignatura");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(800, 160, 210, 21);
+
+        jLabel14.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel14.setText("Seleccione un docente ");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(1020, 270, 170, 30);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -567,6 +584,33 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private void buscarasignacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarasignacionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buscarasignacionesActionPerformed
+
+    private void eliminarasignacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarasignacionesActionPerformed
+        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(rootPane, id);
+      String id=materiasasignadas.getValueAt(materiasasignadas.getSelectedRow(), 0).toString();
+        try {
+            
+            // si gustamos imprimir el id
+            //JOptionPane.showMessageDialog(rootPane, id);
+            Statement st = con3.createStatement();
+          //modelo.executeUpdate("DELETE FROM asignatura WHERE ='"+id+"'");
+       st.executeUpdate("DELETE  FROM asignacion_materia WHERE nombrecompletodocente='"+id+"'");
+                  
+             JOptionPane.showMessageDialog(rootPane,"Eliminado correctamente");
+                System.out.println("Eliminado bien");
+                //para refrescar la pantalla
+                mostrarasignaturaseliminar();
+                
+            //ResultSet rs= st.executeQuery("DELETE FROM asignatura WHERE cuatrimestre_id='"+id+"'");
+        //st=executeQuery("DELETE FROM asignatura WHERE ='"+id+"'");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane , e );
+            JOptionPane.showMessageDialog(rootPane,"No es posible eliminar");
+                System.out.println("Eliminado mal");
+        }
+          
+    }//GEN-LAST:event_eliminarasignacionesActionPerformed
  
    //combobox numero 1
     private void mostrardatosencombobox1(){
@@ -780,6 +824,7 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JComboBox comboasignatura3;
     private javax.swing.JComboBox comboasignatura4;
     private javax.swing.JComboBox comboasignatura5;
+    private javax.swing.JButton eliminarasignaciones;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -787,7 +832,8 @@ public class AsignarAsignatura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

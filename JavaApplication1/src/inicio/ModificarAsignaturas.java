@@ -8,17 +8,7 @@ package inicio;
 
 // son los import nesesarios eee
 import Conexion_base_de_datos.Conexion;
-import inicio.AltasAsignaturas;
-import inicio.AltasCuatrimestre;
-import inicio.AsignarAsignatura;
-import inicio.Docentes;
-import inicio.EliminarAsignaturas;
-import inicio.HorariosAlumnos;
-import inicio.HorariosExternos;
-import inicio.IngresaralSistema;
-import inicio.PaginaPrincipalGeneraciondeHorarios;
-import inicio.Usuarios;
-import inicio.cuatrimestres;
+
 import java.sql.*;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -37,7 +27,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         initComponents();
         mostrardatosmodificar();
         setResizable(false);
-        setSize(1300,648);
+        setSize(1300,675);
         setTitle("Modificar asignatura");
     }
      void mostrardatosmodificar(){
@@ -107,7 +97,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
-        ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -306,17 +295,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(86, 316, 170, 27);
-
-        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Eliminar Asignatura");
-        ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificaciondeUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(86, 376, 170, 27);
+        AsignaciondePrivilegios.setBounds(90, 350, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -526,13 +505,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_AsignaciondePrivilegiosActionPerformed
 
-    private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
-        // Link para eliminar asignatura
-        EliminarAsignaturas obj=new EliminarAsignaturas();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
-
     private void botonguardarcambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonguardarcambioActionPerformed
         // TODO add your handling code here:
         try {
@@ -610,7 +582,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel Id1;
     private javax.swing.JLabel Id2;
     private javax.swing.JLabel LogoUnipoli;
-    private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;

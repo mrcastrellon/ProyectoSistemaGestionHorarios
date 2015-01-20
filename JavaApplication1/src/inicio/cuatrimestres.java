@@ -51,7 +51,6 @@ public class cuatrimestres extends javax.swing.JFrame {
         AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
-        ModificaciondeUsuarios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -225,17 +224,7 @@ public class cuatrimestres extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(94, 351, 167, 27);
-
-        ModificaciondeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ModificaciondeUsuarios.setText("Eliminar Asignatura");
-        ModificaciondeUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificaciondeUsuariosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ModificaciondeUsuarios);
-        ModificaciondeUsuarios.setBounds(94, 411, 167, 27);
+        AsignaciondePrivilegios.setBounds(90, 390, 167, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -336,13 +325,6 @@ public class cuatrimestres extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ConsultarUsuariosActionPerformed
 
-    private void ModificaciondeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaciondeUsuariosActionPerformed
-        // Link para eliminar asignatura
-        EliminarAsignaturas obj=new EliminarAsignaturas();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ModificaciondeUsuariosActionPerformed
-
     private void AsignaciondePrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignaciondePrivilegiosActionPerformed
         // Link para modificar asignatura
         ModificarAsignaturas obj=new ModificarAsignaturas();
@@ -367,7 +349,6 @@ public class cuatrimestres extends javax.swing.JFrame {
     private javax.swing.JButton HorariosAlumnos;
     private javax.swing.JButton HorariosExternos;
     private javax.swing.JLabel LogoUnipoli;
-    private javax.swing.JButton ModificaciondeUsuarios;
     private javax.swing.JLabel NombredelUsuario;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;

@@ -224,7 +224,7 @@ public class cuatrimestres extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(90, 390, 167, 27);
+        AsignaciondePrivilegios.setBounds(90, 390, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");

@@ -87,8 +87,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         turnoactivar = new javax.swing.JComboBox();
@@ -207,16 +205,16 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1177, 51, 113, 25);
+        CerrarSesion.setBounds(1170, 51, 120, 25);
 
         NombredelUsuario.setText("Nombre del Usuario");
         getContentPane().add(NombredelUsuario);
         NombredelUsuario.setBounds(1066, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
+        jLabel2.setText("Alta de cuatrimestres");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(714, 132, 222, 35);
+        jLabel2.setBounds(560, 140, 320, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -284,16 +282,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
         });
         getContentPane().add(ConsultarUsuarios);
         ConsultarUsuarios.setBounds(85, 472, 180, 27);
-
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Usuarios");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(788, 173, 98, 17);
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText("Altas Cuatrimestre");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(758, 196, 118, 17);
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
@@ -564,8 +552,6 @@ public class AltasCuatrimestre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

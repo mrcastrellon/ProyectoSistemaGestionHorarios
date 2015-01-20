@@ -449,10 +449,10 @@ public class AsignarAsignatura extends javax.swing.JFrame {
         getContentPane().add(eliminarasignaciones);
         eliminarasignaciones.setBounds(1020, 320, 150, 23);
 
-        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel13.setText("Asignar Asignatura");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(800, 160, 210, 21);
+        jLabel13.setBounds(600, 140, 370, 35);
 
         jLabel14.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel14.setText("Seleccione un docente ");

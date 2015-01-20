@@ -25,7 +25,7 @@ public class AltasAsignaturas extends javax.swing.JFrame {
         initComponents();
          mostrardatos();
          setResizable(false);
-        setSize(1300,720);
+        setSize(1300,660);
         setTitle("Altas asignaturas");
          }
         //este codigo es para trabajar en los formularios 
@@ -100,13 +100,13 @@ void limpiar (){
         GeneraciondeHorarios = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
         SGH = new javax.swing.JLabel();
         LogoUnipoli = new javax.swing.JLabel();
         CerrarSesion = new javax.swing.JButton();
         NombredelUsuario = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         AsignarMaterias = new javax.swing.JButton();
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
@@ -117,7 +117,6 @@ void limpiar (){
         AltaConfirmarContraseña = new javax.swing.JLabel();
         nombrecampo = new javax.swing.JTextField();
         clavecampo = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
         creditoscampo = new javax.swing.JTextField();
@@ -210,10 +209,6 @@ void limpiar (){
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(0, 124, 1304, 2);
 
-        jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator3);
-        jSeparator3.setBounds(0, 657, 1304, 2);
-
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
         getContentPane().add(SGH);
@@ -232,7 +227,7 @@ void limpiar (){
             }
         });
         getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1181, 51, 113, 25);
+        CerrarSesion.setBounds(1174, 51, 120, 25);
 
         NombredelUsuario.setText("Nombre del Usuario");
         getContentPane().add(NombredelUsuario);
@@ -245,24 +240,32 @@ void limpiar (){
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel3.setText("Universidad Politecnica de Durango, Area de Desarollo de Software");
 
+        jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(483, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(401, 401, 401))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(401, 401, 401))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 665, 1304, 23);
+        jPanel2.setBounds(0, 596, 1304, 23);
 
         AsignarMaterias.setBackground(new java.awt.Color(255, 102, 0));
         AsignarMaterias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -283,7 +286,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(89, 290, 170, 27);
+        AltasdeUsuarios.setBounds(100, 240, 170, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("Modificar Asignatura");
@@ -293,7 +296,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(90, 380, 170, 27);
+        AsignaciondePrivilegios.setBounds(100, 330, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -303,27 +306,27 @@ void limpiar (){
             }
         });
         getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(89, 472, 170, 27);
+        ConsultarUsuarios.setBounds(100, 430, 170, 27);
 
         AltaUsuario.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaUsuario.setText("Clave");
         getContentPane().add(AltaUsuario);
-        AltaUsuario.setBounds(375, 342, 43, 21);
+        AltaUsuario.setBounds(380, 280, 43, 21);
 
         AltaNombre.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaNombre.setText("Nombre");
         getContentPane().add(AltaNombre);
-        AltaNombre.setBounds(359, 290, 59, 21);
+        AltaNombre.setBounds(360, 230, 59, 21);
 
         AltaContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaContraseña.setText("Creditos");
         getContentPane().add(AltaContraseña);
-        AltaContraseña.setBounds(359, 395, 64, 21);
+        AltaContraseña.setBounds(360, 330, 64, 21);
 
         AltaConfirmarContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña.setText("Horas");
         getContentPane().add(AltaConfirmarContraseña);
-        AltaConfirmarContraseña.setBounds(378, 451, 45, 21);
+        AltaConfirmarContraseña.setBounds(380, 390, 45, 21);
 
         nombrecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,7 +334,7 @@ void limpiar (){
             }
         });
         getContentPane().add(nombrecampo);
-        nombrecampo.setBounds(441, 292, 152, 20);
+        nombrecampo.setBounds(440, 230, 152, 20);
 
         clavecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,17 +342,12 @@ void limpiar (){
             }
         });
         getContentPane().add(clavecampo);
-        clavecampo.setBounds(441, 344, 152, 20);
+        clavecampo.setBounds(440, 280, 152, 20);
 
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Usuarios");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(629, 178, 98, 17);
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel9.setText("Altas Asignaturas");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(600, 201, 118, 17);
+        jLabel9.setBounds(560, 140, 250, 40);
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
@@ -359,7 +357,7 @@ void limpiar (){
             }
         });
         getContentPane().add(AltaGuardar);
-        AltaGuardar.setBounds(414, 570, 79, 25);
+        AltaGuardar.setBounds(420, 510, 79, 25);
 
         creditoscampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,7 +365,7 @@ void limpiar (){
             }
         });
         getContentPane().add(creditoscampo);
-        creditoscampo.setBounds(441, 397, 152, 20);
+        creditoscampo.setBounds(440, 330, 152, 20);
 
         horascampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,7 +373,7 @@ void limpiar (){
             }
         });
         getContentPane().add(horascampo);
-        horascampo.setBounds(441, 453, 152, 20);
+        horascampo.setBounds(440, 390, 152, 20);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");
@@ -385,7 +383,7 @@ void limpiar (){
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(518, 570, 85, 25);
+        jButton1.setBounds(520, 510, 85, 25);
 
         tablaaltaasignaturayaagregadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -401,12 +399,12 @@ void limpiar (){
         jScrollPane1.setViewportView(tablaaltaasignaturayaagregadas);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(650, 350, 470, 160);
+        jScrollPane1.setBounds(650, 290, 470, 160);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Lista de asignaturas ya registradas en la base de datos ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(670, 300, 437, 22);
+        jLabel1.setBounds(670, 240, 437, 22);
 
         cuatrimestrecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,12 +412,12 @@ void limpiar (){
             }
         });
         getContentPane().add(cuatrimestrecampo);
-        cuatrimestrecampo.setBounds(441, 511, 152, 20);
+        cuatrimestrecampo.setBounds(440, 450, 152, 20);
 
         AltaConfirmarContraseña1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         AltaConfirmarContraseña1.setText("Cuatrimestre");
         getContentPane().add(AltaConfirmarContraseña1);
-        AltaConfirmarContraseña1.setBounds(324, 511, 99, 21);
+        AltaConfirmarContraseña1.setBounds(330, 450, 99, 21);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -609,7 +607,6 @@ desbloquear();
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

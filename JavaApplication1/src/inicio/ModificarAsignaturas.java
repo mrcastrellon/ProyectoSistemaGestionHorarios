@@ -27,7 +27,7 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         initComponents();
         mostrardatosmodificar();
         setResizable(false);
-        setSize(1300,675);
+        setSize(1300,660);
         setTitle("Modificar asignatura");
     }
      void mostrardatosmodificar(){
@@ -98,8 +98,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         AltasdeUsuarios = new javax.swing.JButton();
         AsignaciondePrivilegios = new javax.swing.JButton();
         ConsultarUsuarios = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         AltaGuardar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -130,7 +128,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(153, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().setLayout(null);
 
         Cuatrimestre.setBackground(new java.awt.Color(255, 102, 0));
         Cuatrimestre.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -141,8 +138,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 CuatrimestreActionPerformed(evt);
             }
         });
-        getContentPane().add(Cuatrimestre);
-        Cuatrimestre.setBounds(68, 93, 120, 25);
 
         Docentes.setBackground(new java.awt.Color(255, 102, 0));
         Docentes.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -152,8 +147,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 DocentesActionPerformed(evt);
             }
         });
-        getContentPane().add(Docentes);
-        Docentes.setBounds(216, 93, 104, 25);
 
         HorariosExternos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosExternos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -163,8 +156,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 HorariosExternosActionPerformed(evt);
             }
         });
-        getContentPane().add(HorariosExternos);
-        HorariosExternos.setBounds(370, 93, 141, 25);
 
         HorariosAlumnos.setBackground(new java.awt.Color(255, 102, 0));
         HorariosAlumnos.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -174,8 +165,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 HorariosAlumnosActionPerformed(evt);
             }
         });
-        getContentPane().add(HorariosAlumnos);
-        HorariosAlumnos.setBounds(563, 93, 148, 25);
 
         Usuarios.setBackground(new java.awt.Color(255, 102, 0));
         Usuarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -185,8 +174,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(Usuarios);
-        Usuarios.setBounds(934, 93, 93, 25);
 
         GeneraciondeHorarios.setBackground(new java.awt.Color(255, 102, 102));
         GeneraciondeHorarios.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -196,29 +183,17 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 GeneraciondeHorariosActionPerformed(evt);
             }
         });
-        getContentPane().add(GeneraciondeHorarios);
-        GeneraciondeHorarios.setBounds(1068, 93, 173, 25);
 
         jSeparator1.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(0, 85, 1304, 2);
 
         jSeparator2.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(0, 124, 1304, 2);
 
         jSeparator3.setForeground(new java.awt.Color(255, 102, 0));
-        getContentPane().add(jSeparator3);
-        jSeparator3.setBounds(0, 663, 1304, 2);
 
         SGH.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         SGH.setText("SISTEMA DE GESTIÓN DE HORARIOS");
-        getContentPane().add(SGH);
-        SGH.setBounds(233, 38, 414, 29);
 
         LogoUnipoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.jpg"))); // NOI18N
-        getContentPane().add(LogoUnipoli);
-        LogoUnipoli.setBounds(685, 20, 329, 56);
 
         CerrarSesion.setBackground(new java.awt.Color(255, 102, 0));
         CerrarSesion.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -228,17 +203,11 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 CerrarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(CerrarSesion);
-        CerrarSesion.setBounds(1181, 51, 113, 25);
 
         NombredelUsuario.setText("Nombre del Usuario");
-        getContentPane().add(NombredelUsuario);
-        NombredelUsuario.setBounds(1056, 57, 93, 14);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setText("Página Principal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(555, 137, 222, 35);
+        jLabel2.setText("Modificar Asignaturas");
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setMaximumSize(new java.awt.Dimension(23767, 32767));
@@ -263,9 +232,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 .addComponent(jLabel3))
         );
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 671, 1304, 23);
-
         AsignarMaterias.setBackground(new java.awt.Color(255, 102, 0));
         AsignarMaterias.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AsignarMaterias.setText("Asignar Materias");
@@ -274,8 +240,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AsignarMateriasActionPerformed(evt);
             }
         });
-        getContentPane().add(AsignarMaterias);
-        AsignarMaterias.setBounds(747, 93, 148, 25);
 
         AltasdeUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AltasdeUsuarios.setText("Altas Asignaturas");
@@ -284,8 +248,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AltasdeUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(AltasdeUsuarios);
-        AltasdeUsuarios.setBounds(86, 257, 170, 27);
 
         AsignaciondePrivilegios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         AsignaciondePrivilegios.setText("ModificarAsignatura");
@@ -294,8 +256,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AsignaciondePrivilegiosActionPerformed(evt);
             }
         });
-        getContentPane().add(AsignaciondePrivilegios);
-        AsignaciondePrivilegios.setBounds(90, 350, 170, 27);
 
         ConsultarUsuarios.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ConsultarUsuarios.setText("Alta Cuatrimestres");
@@ -304,18 +264,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 ConsultarUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(ConsultarUsuarios);
-        ConsultarUsuarios.setBounds(86, 439, 170, 27);
-
-        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel8.setText("Usuarios");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(629, 178, 98, 17);
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jLabel9.setText(" Modificar Asignaturas");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(592, 201, 135, 17);
 
         AltaGuardar.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         AltaGuardar.setText("Guardar");
@@ -324,8 +272,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 AltaGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(AltaGuardar);
-        AltaGuardar.setBounds(846, 522, 79, 25);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jButton1.setText("Cancelar");
@@ -334,8 +280,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(943, 522, 85, 25);
 
         tablamodificarasignaturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -347,51 +291,24 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablamodificarasignaturas);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(400, 300, 631, 98);
-
         botonguardarcambio.setText("Modificar seleccionado");
         botonguardarcambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonguardarcambioActionPerformed(evt);
             }
         });
-        getContentPane().add(botonguardarcambio);
-        botonguardarcambio.setBounds(791, 399, 237, 23);
-        getContentPane().add(campoid);
-        campoid.setBounds(390, 490, 93, 20);
 
         Id.setText("Id");
-        getContentPane().add(Id);
-        Id.setBounds(400, 460, 10, 14);
-        getContentPane().add(nombremodificar);
-        nombremodificar.setBounds(490, 490, 93, 20);
 
         Id1.setText("Nombre");
-        getContentPane().add(Id1);
-        Id1.setBounds(490, 460, 52, 14);
-        getContentPane().add(creditosmodificar);
-        creditosmodificar.setBounds(710, 490, 93, 20);
-        getContentPane().add(clavemodificar);
-        clavemodificar.setBounds(600, 490, 93, 20);
-        getContentPane().add(horasmodificar);
-        horasmodificar.setBounds(820, 490, 93, 20);
 
         Id2.setText("Clave");
-        getContentPane().add(Id2);
-        Id2.setBounds(600, 460, 52, 14);
 
         Creditos.setText("Creditos");
-        getContentPane().add(Creditos);
-        Creditos.setBounds(710, 460, 52, 14);
 
         Creditos1.setText("Horas");
-        getContentPane().add(Creditos1);
-        Creditos1.setBounds(820, 460, 52, 14);
 
         jLabel1.setText("Buscar asignatura");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(397, 403, 86, 14);
 
         buscarmodificarr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,14 +320,179 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
                 buscarmodificarrKeyPressed(evt);
             }
         });
-        getContentPane().add(buscarmodificarr);
-        buscarmodificarr.setBounds(493, 400, 175, 20);
 
         Creditos2.setText("Cuatrimestre");
-        getContentPane().add(Creditos2);
-        Creditos2.setBounds(930, 460, 90, 14);
-        getContentPane().add(cuatrimestremodificarasignatura);
-        cuatrimestremodificarasignatura.setBounds(930, 490, 93, 20);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(NombredelUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(CerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(Cuatrimestre, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(Docentes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(HorariosExternos)
+                        .addGap(52, 52, 52)
+                        .addComponent(HorariosAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(AsignarMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(GeneraciondeHorarios))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(397, 397, 397)
+                        .addComponent(jLabel1)
+                        .addGap(10, 10, 10)
+                        .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(botonguardarcambio, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(ConsultarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addComponent(Id)
+                        .addGap(80, 80, 80)
+                        .addComponent(Id1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(Id2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(Creditos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(Creditos1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(Creditos2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(cuatrimestremodificarasignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(846, 846, 846)
+                        .addComponent(AltaGuardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(AsignaciondePrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(144, 144, 144)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AltasdeUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(555, 555, 555)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(SGH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LogoUnipoli, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(NombredelUsuario))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(CerrarSesion)))
+                .addGap(9, 9, 9)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cuatrimestre)
+                    .addComponent(Docentes)
+                    .addComponent(HorariosExternos)
+                    .addComponent(HorariosAlumnos)
+                    .addComponent(AsignarMaterias)
+                    .addComponent(Usuarios)
+                    .addComponent(GeneraciondeHorarios))
+                .addGap(6, 6, 6)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(AltasdeUsuarios)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(AsignaciondePrivilegios)))
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(buscarmodificarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonguardarcambio))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ConsultarUsuarios)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Id)
+                            .addComponent(Id1)
+                            .addComponent(Id2)
+                            .addComponent(Creditos)
+                            .addComponent(Creditos1)
+                            .addComponent(Creditos2))))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombremodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clavemodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(creditosmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(horasmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cuatrimestremodificarasignatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AltaGuardar)
+                    .addComponent(jButton1))
+                .addGap(42, 42, 42)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -596,8 +678,6 @@ public class ModificarAsignaturas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

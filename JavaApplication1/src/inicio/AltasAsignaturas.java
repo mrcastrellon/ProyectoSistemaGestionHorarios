@@ -357,11 +357,16 @@ void limpiar (){
             }
         });
         getContentPane().add(AltaGuardar);
-        AltaGuardar.setBounds(420, 510, 79, 25);
+        AltaGuardar.setBounds(400, 510, 90, 25);
 
         creditoscampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 creditoscampoActionPerformed(evt);
+            }
+        });
+        creditoscampo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                creditoscampoKeyTyped(evt);
             }
         });
         getContentPane().add(creditoscampo);
@@ -370,6 +375,11 @@ void limpiar (){
         horascampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 horascampoActionPerformed(evt);
+            }
+        });
+        horascampo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                horascampoKeyTyped(evt);
             }
         });
         getContentPane().add(horascampo);
@@ -383,7 +393,7 @@ void limpiar (){
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(520, 510, 85, 25);
+        jButton1.setBounds(505, 510, 100, 25);
 
         tablaaltaasignaturayaagregadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -409,6 +419,11 @@ void limpiar (){
         cuatrimestrecampo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cuatrimestrecampoActionPerformed(evt);
+            }
+        });
+        cuatrimestrecampo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cuatrimestrecampoKeyTyped(evt);
             }
         });
         getContentPane().add(cuatrimestrecampo);
@@ -573,6 +588,30 @@ desbloquear();
     private void cuatrimestrecampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatrimestrecampoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cuatrimestrecampoActionPerformed
+
+    private void creditoscampoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_creditoscampoKeyTyped
+        // TODO add your handling code here:
+        //codigo para que pueda introducir solamente numeros
+        
+        char c= evt.getKeyChar();
+        if(c<'0'||c>'9')evt.consume(); 
+        
+        
+        
+        
+    }//GEN-LAST:event_creditoscampoKeyTyped
+
+    private void horascampoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_horascampoKeyTyped
+        // TODO add your handling code here:
+         char c= evt.getKeyChar();
+        if(c<'0'||c>'9')evt.consume(); 
+    }//GEN-LAST:event_horascampoKeyTyped
+
+    private void cuatrimestrecampoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cuatrimestrecampoKeyTyped
+        // TODO add your handling code here:
+         char c= evt.getKeyChar();
+        if(c<'0'||c>'9')evt.consume(); 
+    }//GEN-LAST:event_cuatrimestrecampoKeyTyped
     
     /**
      * @param args the command line arguments

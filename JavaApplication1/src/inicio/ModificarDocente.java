@@ -742,7 +742,7 @@ public class ModificarDocente extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
-       BajaDocentes1 obj=new BajaDocentes1 ();
+       BajaDocentes obj=new BajaDocentes ();
         obj.setVisible(true);
         dispose();
 

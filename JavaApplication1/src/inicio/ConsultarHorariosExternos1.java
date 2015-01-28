@@ -53,7 +53,7 @@ public class ConsultarHorariosExternos1 extends javax.swing.JFrame {
 }
     }catch (Exception e){
        //  Logger.getLogger(consultadocentes.class.getName()).log(Level.SEVERE, null, ex); 
-        System.out.println("chupando faros" + e);
+        System.out.println("se genero un error" + e);
     }
     }
 

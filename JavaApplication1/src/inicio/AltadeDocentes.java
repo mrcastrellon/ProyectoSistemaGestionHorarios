@@ -79,7 +79,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         tentativas2campo = new javax.swing.JTextField();
-        barrauno = new javax.swing.JScrollBar();
         tentativas5campo = new javax.swing.JTextField();
         tentativas3campo = new javax.swing.JTextField();
         tentativas4campo = new javax.swing.JTextField();
@@ -323,12 +322,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
             }
         });
 
-        barrauno.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
-            public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
-                barraunoAdjustmentValueChanged(evt);
-            }
-        });
-
         tentativas5campo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tentativas5campoActionPerformed(evt);
@@ -435,9 +428,7 @@ public class AltadeDocentes extends javax.swing.JFrame {
                                             .addComponent(tentativas5campo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(329, 329, 329)
-                                        .addComponent(jLabel9)))
-                                .addGap(73, 73, 73)
-                                .addComponent(barrauno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel9)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -498,26 +489,23 @@ public class AltadeDocentes extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(direccioncampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(barrauno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(telefonocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(correocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(especialidadcampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(tentativas1campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(telefonocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(correocampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(especialidadcampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(tentativas1campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(9, 9, 9)
                         .addComponent(tentativas2campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -694,11 +682,73 @@ public class AltadeDocentes extends javax.swing.JFrame {
         String sql;
         //declaro la variable error
         String mensajeerror;
+        mensajeerror="Ingresa los datos correctamente en";
         //usamos las variables anteriormente declaradas, para referenciales que equivalen a lo que se muestra en los campos de texto
+        if (correocampo.getText()==""){
+            System.out.println(mensajeerror+" "+"correo");
+            return;
+        }else if (direccioncampo.getText()==""){
+            System.out.println(mensajeerror+" "+"direccion");
+            return;
+        }
+        
+        
+        
+        
+        else if (especialidadcampo.getText()==""){
+            System.out.println(mensajeerror+" "+"especialidad");
+            return;
+        }
+        
+        
+        else if (nombrecompletocampo.getText()==""){
+            System.out.println(mensajeerror+" "+"nombre completo");
+            return;
+        }
+        
+        
+        else if (telefonocampo.getText()==""){
+            System.out.println(mensajeerror+" "+"telefono");
+            return;
+        }
+        
+        
+        else if (tentativas1campo.getText()==""){
+            System.out.println(mensajeerror+" "+"tentativas1");
+            return;
+        }
+        
+        
+        else if (tentativas2campo.getText()==""){
+            System.out.println(mensajeerror+" "+"tentativas2");
+            return;
+        }
+        
+        
+         else if (tentativas3campo.getText()==""){
+            System.out.println(mensajeerror+" "+"tentativas3");
+            return;
+        }
+         
+         
+          else if (tentativas4campo.getText()==""){
+            System.out.println(mensajeerror+" "+"tentativas4");
+            return;
+        }
+          
+          
+        
+         else if (tentativas5campo.getText()==""){
+            System.out.println(mensajeerror+" "+"tentativas5");
+            return;
+        }
+        
+        
+        else{
                    
         sql="INSERT INTO docentes(correo,direccion,especialidad,nombre_completo,telefono,materiaten1,materiaten2,materiaten3,materiaten4,materiaten5)VALUES (?,?,?,?,?,?,?,?,?,?)";
         //le digo a la variable que hara la del error para luego ser llamada
-        mensajeerror="Ingresa los datos correctamente";
+        
         try {
             PreparedStatement pst=con2.prepareStatement(sql);
             //pst.setString(numero de campo,nombre de la caja de texto,gettext());
@@ -727,7 +777,8 @@ public class AltadeDocentes extends javax.swing.JFrame {
              //este mensaje solo se imprimira en el registro--
              System.out.println("Ingresa los datos correctamente" + e);
              
-        }        
+        } 
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void tentativas2campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas2campoActionPerformed
@@ -745,10 +796,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private void tentativas4campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentativas4campoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tentativas4campoActionPerformed
-
-    private void barraunoAdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_barraunoAdjustmentValueChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_barraunoAdjustmentValueChanged
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
@@ -809,7 +856,6 @@ public class AltadeDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel LogoUnipoli;
     private javax.swing.JLabel SGH;
     private javax.swing.JButton Usuarios;
-    private javax.swing.JScrollBar barrauno;
     private javax.swing.JTextField correocampo;
     private javax.swing.JTextField direccioncampo;
     private javax.swing.JTextField especialidadcampo;

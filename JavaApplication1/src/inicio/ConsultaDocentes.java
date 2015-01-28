@@ -520,7 +520,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Link para modificar docentes
-       ModificarDocentes1 obj=new ModificarDocentes1();
+       ModificarDocente obj=new ModificarDocente();
         obj.setVisible(true);
         dispose();
 
@@ -544,7 +544,7 @@ public class ConsultaDocentes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Link para baja de docentes
-       BajaDocentes1 obj=new BajaDocentes1 ();
+       BajaDocentes obj=new BajaDocentes ();
         obj.setVisible(true);
         dispose();
 
